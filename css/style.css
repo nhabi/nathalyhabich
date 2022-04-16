@@ -423,7 +423,7 @@ a {
       padding: 10px 20px;
       display: block;
       position: relative;
-      color: #212529; }
+      color: #3d3183; }
       .site-mobile-menu .site-nav-wrap a:hover {
         color: #EE3F75; }
     .site-mobile-menu .site-nav-wrap li {
@@ -468,6 +468,7 @@ a {
       width: 100%; }
       .site-mobile-menu .site-nav-wrap > li > a {
         padding-left: 20px;
+        text-transform: uppercase;
         font-size: 20px; }
       .site-mobile-menu .site-nav-wrap > li > ul {
         padding: 0;
