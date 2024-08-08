@@ -1,1 +1,3 @@
-permalink: /:name/
+baseurl: "nhabi" # Si usas un repositorio con un nombre de usuario, agrega "/<nombre-del-repositorio>"
+url: "https://nhabi.github.io" # Cambia esto por la URL de tu página
+permalink: /:title/
