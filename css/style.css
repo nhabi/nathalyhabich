@@ -1169,7 +1169,7 @@ a {
     /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
     filter: gray;
     /* IE5+ */
-    -webkit-filter: grayscale(1);
+    -webkit-filter: none;
     /* Webkit Nightlies & Chrome Canary */
     -webkit-transition: all .1s ease-in-out; }
   .image-wrap-2:hover img {
