@@ -1249,3 +1249,7 @@ img {
     filter: none;
     -webkit-filter: grayscale(0);
     -webkit-transform: scale(1.01); }
+img, video {
+    pointer-events: none; /* Deshabilita las interacciones con el mouse */
+}
+
