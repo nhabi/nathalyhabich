@@ -39,10 +39,21 @@
     }
     .reel-hero__video {
       width: 100%;
-      height: auto;
+      height: 75vh;
       display: block;
-      object-fit: cover;
-      max-height: 75vh;
+      border: 0;
+    }
+    .projects-section {
+      padding: 48px 0 16px;
+    }
+    .projects-title {
+      font-size: 28px;
+      letter-spacing: 3px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .about-section {
+      padding: 48px 0 24px;
     }
   </style>
 
@@ -74,10 +85,7 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="active"><a href="/">Portfolio</a></li>
                
-                <li><a href="/online/">Servicios</a></li>
-                <li><a href="/about/">Sobre mí</a></li>
-                
-              </ul>
+                <li><a href="/online/">Servicios</a></li>              </ul>
             </nav>
           </div>
 
@@ -106,43 +114,83 @@
     </header>
 
     <section class="reel-hero" aria-label="Video reel">
-      <video class="reel-hero__video" src="/dl3-a.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      <iframe
+        class="reel-hero__video"
+        src="https://www.youtube-nocookie.com/embed/QuPQYvbqJ-4?autoplay=1&mute=1&loop=1&playlist=QuPQYvbqJ-4&controls=0&modestbranding=1&rel=0&playsinline=1"
+        title="Video reel"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </section>
 
-    <div class="container-fluid" data-aos="fade" data-aos-delay="500">
-      <div class="row">
-        <div class="col-lg-4">
-
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3"></h2>
-              <a href="/Residencial/" class="btn btn-outline-white py-2 px-4">INTERIORES</a>
-            </div>
-            <img src="/images/portada interiores.jpg" alt="Image" class="img-fluid">
-          </div>
-
-        </div>
-        <div class="col-lg-4">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3"></h2>
-              <a href="/direcciondearte/" class="btn btn-outline-white py-2 px-4">DIRECCIÓN DE ARTE</a>
-            </div>
-            <img src="/images/try.png" alt="Image" class="img-fluid">
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="image-wrap-2">
-            <div class="image-info">
-              <h2 class="mb-3"></h2>
-              <a href="/styling/" class="btn btn-outline-white py-2 px-4">styling</a>
-            </div>
-            <img src="/images/portada styling.jpg" alt="Image" class="img-fluid">
-          </div>
-        </div>            
-       
+    <section class="projects-section" aria-label="Proyectos">
+      <div class="container-fluid text-center">
+        <h2 class="projects-title">Proyectos</h2>
       </div>
-    </div>
+      <div class="container-fluid" data-aos="fade" data-aos-delay="500">
+        <div class="row">
+          <div class="col-lg-4">
+
+            <div class="image-wrap-2">
+              <div class="image-info">
+                <h2 class="mb-3"></h2>
+                <a href="/Residencial/" class="btn btn-outline-white py-2 px-4">INTERIORES</a>
+              </div>
+              <a href="/Residencial/"><img src="/images/portada interiores.jpg" alt="Interiores" class="img-fluid"></a>
+            </div>
+
+          </div>
+          <div class="col-lg-4">
+            <div class="image-wrap-2">
+              <div class="image-info">
+                <h2 class="mb-3"></h2>
+                <a href="/direcciondearte/" class="btn btn-outline-white py-2 px-4">DIRECCIÓN DE ARTE</a>
+              </div>
+              <a href="/direcciondearte/"><img src="/images/try.png" alt="Dirección de arte" class="img-fluid"></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="image-wrap-2">
+              <div class="image-info">
+                <h2 class="mb-3"></h2>
+                <a href="/styling/" class="btn btn-outline-white py-2 px-4">styling</a>
+              </div>
+              <a href="/styling/"><img src="/images/portada styling.jpg" alt="Styling" class="img-fluid"></a>
+            </div>
+          </div>            
+         
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" aria-label="Sobre mí">
+      <div class="container-fluid" data-aos="fade">
+        <div class="row justify-content-center">
+          <div class="col-md-7">
+            <div class="row mb-5">
+              <div class="col-12">
+                <h2 class="site-section-heading text-center">¡Hola!</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <img src="/images/photo_2023-05-05_01-07-55.jpg" alt="Nathaly Habich" width="400" height="auto" class="img-fluid">
+            <div class="image-info">
+              <h2 class="mb-4"></h2>
+              <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20vengo%20de%20tu%20web%20y%20quer%C3%ADa%20preguntarte%20sobre%20" class="btn btn-outline-white py-2 px-4">Contacto al Whatsapp</a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <p style="text-align: justify; margin-top: 0px;">Mi nombre es Nathaly Habich soy arquitecta de interiores de Lima, Per&uacute;. Tengo m&aacute;s de 6 a&ntilde;os de experiencia trabajando con espacios interiores y exteriores en diferentes estudios de dise&ntilde;o que me han mostrado diversas percepciones del mundo creativo y han sido fundamentales en la creaci&oacute;n de mi propia visi&oacute;n y estilo.</p>
+            <p style="text-align: justify;">Mi mejor forma de expresi&oacute;n es el color, y no como una capa superficial sino como materialidad que suena, huele, baila, da forma, transforma, te cura y abraza. El color nunca tiene un solo sentido, muta seg&uacute;n la intenci&oacute;n que queremos darle, ese proceso de transformaci&oacute;n es arte y me apasiona completamente.</p>
+            <p style="text-align: justify;">Sin pasi&oacute;n no hay vida. Vivimos para apasionarnos por lo que nos gusta y nos rodea, es por eso que mi prop&oacute;sito es dise&ntilde;ar a trav&eacute;s del color, espacios que cuenten la mejor de sus historias. Historias apasionantes que queremos mostrar al mundo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     </div>
 
