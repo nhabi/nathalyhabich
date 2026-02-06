@@ -89,6 +89,25 @@ jQuery(document).ready(function($) {
 	}; 
 	siteMenuClone();
 
+	var siteNavbarScroll = function() {
+		var $navbar = $('.site-navbar');
+		if (!$navbar.length) {
+			return;
+		}
+
+		var toggleNavbar = function() {
+			if ($(window).scrollTop() > 100) {
+				$navbar.addClass('is-scrolled');
+			} else {
+				$navbar.removeClass('is-scrolled');
+			}
+		};
+
+		toggleNavbar();
+		$(window).on('scroll', toggleNavbar);
+	};
+	siteNavbarScroll();
+
 
 	var sitePlusMinus = function() {
 		$('.js-btn-minus').on('click', function(e){
