@@ -13,7 +13,7 @@ body {
   line-height: 1.2;
   color: var(--text-dark);
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 18px;
   background: #ffffff;
   font-family: var(--body-font); }
 
@@ -22,7 +22,7 @@ h2 {
   font-family: var(--title-font);
   color: var(--brand-blue);
   text-transform: uppercase;
-  letter-spacing: 0.1em; }
+  letter-spacing: 0.15em; }
 
 h3,
 h4,
@@ -89,11 +89,16 @@ a {
     visibility: visible; }
 
 .btn {
-  border-radius: 0; }
+  border-radius: 0;
+  background: #22A3AC;
+  color: #fff;
+  border: none; }
   .btn:hover, .btn:active, .btn:focus {
     outline: none;
     -webkit-box-shadow: none;
-    box-shadow: none; }
+    box-shadow: none;
+    background: #22A3AC;
+    color: #fff; }
   .btn.btn-black {
     color: #fff;
     background-color: #000; }
@@ -257,7 +262,14 @@ a {
 .site-navbar {
   margin-bottom: 0px;
   z-index: 9;
-  position: relative; }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  transition: background 0.3s ease; }
+  .site-navbar.is-scrolled {
+    background: rgba(61, 49, 131, 0.95); }
   .site-navbar.transparent {
     background: transparent; }
   .site-navbar.absolute {
@@ -276,7 +288,7 @@ a {
   .site-navbar .site-navigation .site-menu {
     margin-bottom: 0; }
   .site-navbar .site-navigation .site-menu .active > a {
-      color: var(--brand-magenta); }
+      color: #fff; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
       font-size: 15px;
@@ -288,12 +300,12 @@ a {
         padding: 10px 10px;
         text-transform: lowercase;
         letter-spacing: 0.1em;
-        color: var(--brand-blue);
+        color: #fff;
         font-size: 12px;
         font-family: var(--nav-font);
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: var(--brand-magenta); }
+          color: #fff; }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
@@ -1174,14 +1186,14 @@ a {
 
 .btn-outline-white {
   border-color: none;
-  background: #EE3F75;
+  background: #22A3AC;
   color: #fff;
   border-width: 2px;
   text-transform: uppercase;
   font-size: 11px;
   letter-spacing: .1em; }
   .btn-outline-white:hover {
-    background: #fdba4d;
+    background: #22A3AC;
     color: #fff; }
 
 .image-wrap-2 {
