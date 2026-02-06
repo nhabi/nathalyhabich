@@ -1,10 +1,46 @@
 /* Base */
+:root {
+  --brand-blue: #3d3183;
+  --brand-magenta: #ee3f75;
+  --text-dark: #2d2d2d;
+  --title-font: "Futura Md BT", "Futura", "Trebuchet MS", sans-serif;
+  --accent-font: "Golden Plains", "Brush Script MT", "Segoe Script", cursive;
+  --nav-font: "Futura Bold", "Futura", "Trebuchet MS", sans-serif;
+  --body-font: "Helvetica LT Light", "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
 body {
   line-height: 1.2;
-  color: #949494;
-  font-weight: 100;
+  color: var(--text-dark);
+  font-weight: 300;
   font-size: 1rem;
-  background: #ffffff; }
+  background: #ffffff;
+  font-family: var(--body-font); }
+
+h1,
+h2 {
+  font-family: var(--title-font);
+  color: var(--brand-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.1em; }
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--nav-font);
+  color: var(--brand-blue);
+  text-transform: lowercase;
+  letter-spacing: 0.1em; }
+
+p {
+  color: var(--text-dark); }
+
+.accent-script {
+  font-family: var(--accent-font);
+  color: var(--brand-magenta);
+  text-transform: none;
+  letter-spacing: normal; }
 
 ::-moz-selection {
   background: #000;
@@ -93,10 +129,10 @@ a {
     padding: 4em 0; }
 
 .site-section-heading {
-  color: #3d3183;
+  color: var(--brand-blue);
   position: relative;
   text-transform: uppercase;
-    letter-spacing: .2em;
+  letter-spacing: 0.1em;
   font-size: 1.5rem; }
   @media (min-width: 768px) {
     .site-section-heading {
@@ -120,7 +156,7 @@ a {
     position: absolute;
     width: 500px;
     height: 0px;
-    background: #EE3F75; }
+    background: var(--brand-magenta); }
 
 .border-top {
   border-top: 1px solid #edf0f5 !important; }
@@ -239,8 +275,8 @@ a {
     border-bottom: 1px solid #f3f3f4 !important; }
   .site-navbar .site-navigation .site-menu {
     margin-bottom: 0; }
-    .site-navbar .site-navigation .site-menu .active > a {
-      color: #EE3F75; }
+  .site-navbar .site-navigation .site-menu .active > a {
+      color: var(--brand-magenta); }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
       font-size: 15px;
@@ -250,13 +286,14 @@ a {
       padding: 10px 5px; }
       .site-navbar .site-navigation .site-menu > li > a {
         padding: 10px 10px;
-        text-transform: uppercase;
-        letter-spacing: .1em;
-        color:  rgb(61 49 131);
+        text-transform: lowercase;
+        letter-spacing: 0.1em;
+        color: var(--brand-blue);
         font-size: 12px;
+        font-family: var(--nav-font);
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #EE3F75; }
+          color: var(--brand-magenta); }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
@@ -1252,4 +1289,3 @@ img {
 img, video {
     pointer-events: none; /* Deshabilita las interacciones con el mouse */
 }
-
