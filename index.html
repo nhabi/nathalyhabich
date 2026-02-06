@@ -151,12 +151,16 @@
     <section class="reel-hero" aria-label="Video reel">
       <video
         class="reel-hero__video"
-        src="images/Work-NathalyHabich.mp4" 
         autoplay
         muted
         loop
         playsinline
-      ></video>
+        preload="auto"
+        poster="/images/links.jpg"
+      >
+        <source src="{{ site.baseurl }}/dl3-a.mp4" type="video/mp4">
+        Tu navegador no soporta el video de portada.
+      </video>
     </section>
 
     <section class="intro-text" aria-label="Introducción">
