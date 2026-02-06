@@ -31,6 +31,21 @@
 
   <link rel="stylesheet" href="/css/style.css">
 
+  <style>
+    .reel-hero {
+      width: 100%;
+      background: #000;
+      overflow: hidden;
+    }
+    .reel-hero__video {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      max-height: 75vh;
+    }
+  </style>
+
 </head>
 <body>
 
@@ -90,7 +105,9 @@
       
     </header>
 
-
+    <section class="reel-hero" aria-label="Video reel">
+      <video class="reel-hero__video" src="/dl3-a.mp4" autoplay muted loop playsinline preload="metadata"></video>
+    </section>
 
     <div class="container-fluid" data-aos="fade" data-aos-delay="500">
       <div class="row">
