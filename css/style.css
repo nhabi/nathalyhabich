@@ -17,7 +17,7 @@ body {
   font-size: 15px;
   background: #ffffff;
   font-family: var(--body-font);
-  padding-top: 130px !important; }
+  padding-top: var(--navbar-height); }
 
 h1,
 h2 {
@@ -279,7 +279,7 @@ a {
 /* Navbar */
 .site-navbar {
   margin-bottom: 0px;
-  z-index: 9999;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
