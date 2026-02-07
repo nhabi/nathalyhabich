@@ -63,6 +63,16 @@ a {
 .bg-black {
   background: #000 !important; }
 
+.footer {
+  background: var(--brand-blue); }
+
+.footer-legal {
+  margin: 0;
+  font-family: var(--title-font);
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase; }
+
 .site-wrap:before {
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
