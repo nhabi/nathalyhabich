@@ -282,6 +282,8 @@ a {
   width: 100%;
   background: var(--brand-blue);
   transition: background 0.3s ease; }
+  .home-page .site-navbar {
+    position: absolute; }
   .site-navbar.is-scrolled {
     background: var(--brand-blue); }
   .site-navbar.transparent {
