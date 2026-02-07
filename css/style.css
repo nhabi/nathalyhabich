@@ -278,6 +278,10 @@ a {
   width: 100%;
   background: transparent;
   transition: background 0.3s ease; }
+  body:not(.home-page) .site-navbar {
+    background: rgba(61, 49, 131, 1); }
+  body:not(.home-page) .site-wrap {
+    padding-top: 90px; }
   .site-navbar.is-scrolled {
     background: rgba(61, 49, 131, 1); }
   .site-navbar.transparent {
