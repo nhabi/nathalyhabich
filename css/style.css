@@ -153,6 +153,7 @@ a {
 
 .site-section-heading {
   color: var(--brand-blue);
+  padding: 40px;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 0.1em;
