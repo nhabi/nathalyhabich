@@ -269,7 +269,7 @@ a {
   background: transparent;
   transition: background 0.3s ease; }
   .site-navbar.is-scrolled {
-    background: #3d3183; }
+    background: rgba(61, 49, 131, 0.95); }
   .site-navbar.transparent {
     background: transparent; }
   .site-navbar.absolute {
@@ -301,11 +301,14 @@ a {
       padding: 10px 5px; }
       .site-navbar .site-navigation .site-menu > li > a {
         padding: 10px 10px;
+        text-transform: lowercase;
+        letter-spacing: 0.1em;
         color: #fff;
-        font-size: 14px;
+        font-size: 12px;
+        font-family: var(--nav-font);
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #EE3F75; }
+          color: #fff; }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
