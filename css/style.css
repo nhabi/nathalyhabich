@@ -281,7 +281,7 @@ a {
   .site-navbar.is-scrolled {
     background: rgba(61, 49, 131, 0.95); }
   .site-navbar.transparent {
-    background: transparent; }
+    background: #3d3183; }
   .site-navbar.absolute {
     position: absolute;
     top: 0;
