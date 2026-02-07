@@ -414,7 +414,7 @@ a {
           opacity: 1; }
 
 .site-menu[data-class="social"] a {
-  color: rgb(61 49 131); }
+  color: #fff; }
   .site-menu[data-class="social"] a:hover {
     color: #EE3F75; }
 
