@@ -7,7 +7,7 @@
   --accent-font: "Golden Plains", "Brush Script MT", "Segoe Script", cursive;
   --nav-font: "Futura Md BT", "Montserrat", "Spartan", "Trebuchet MS", sans-serif;
   --body-font: "Helvetica LT Light", "Inter", "Helvetica Neue", Arial, sans-serif;
-  --navbar-height: 72px;
+  --navbar-height: 60px;
 }
 
 body {
@@ -16,7 +16,8 @@ body {
   font-weight: 300;
   font-size: 15px;
   background: #ffffff;
-  font-family: var(--body-font); }
+  font-family: var(--body-font);
+  padding-top: var(--navbar-height); }
 
 h1,
 h2 {
@@ -90,7 +91,7 @@ a {
   visibility: hidden; }
 
 .site-wrap {
-  padding-top: var(--navbar-height); }
+  padding-top: 0; }
 
 .offcanvas-menu .site-wrap {
   position: absolute;
@@ -275,21 +276,23 @@ a {
 /* Navbar */
 .site-navbar {
   margin-bottom: 0px;
-  z-index: 9;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--brand-blue);
-  transition: background 0.3s ease; }
+  height: var(--navbar-height);
+  min-height: var(--navbar-height);
+  padding: 5px 0 !important;
+  background: #3D3183; }
   .home-page .site-navbar {
-    position: absolute; }
+    position: fixed; }
   .site-navbar.is-scrolled {
-    background: var(--brand-blue); }
+    background: #3D3183; }
   .site-navbar.transparent {
-    background: var(--brand-blue); }
+    background: #3D3183; }
   .site-navbar.absolute {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%; }
@@ -297,7 +300,7 @@ a {
     position: absolute;
     left: 0;
     top: 0;
-    margin-top: -20px;
+    margin-top: 0;
     color: #EE3F75; }
   .site-navbar .site-navigation.border-bottom {
     border-bottom: 1px solid #f3f3f4 !important; }
