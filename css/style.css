@@ -5,7 +5,7 @@
   --text-dark: #2d2d2d;
   --title-font: "Futura Md BT", "Futura", "Trebuchet MS", sans-serif;
   --accent-font: "Golden Plains", "Brush Script MT", "Segoe Script", cursive;
-  --nav-font: "Futura Bold", "Futura", "Trebuchet MS", sans-serif;
+  --nav-font: "Futura Md BT", "Montserrat", "Spartan", "Trebuchet MS", sans-serif;
   --body-font: "Helvetica LT Light", "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -291,8 +291,11 @@ a {
       color: #fff; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
-      font-size: 15px;
-      display: inline-block; }
+      font-size: 14px;
+      display: inline-block;
+      font-family: var(--nav-font);
+      text-transform: uppercase;
+      letter-spacing: 0.15em; }
     .site-navbar .site-navigation .site-menu > li {
       display: inline-block;
       padding: 10px 5px; }
