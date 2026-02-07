@@ -311,10 +311,10 @@ a {
       padding: 10px 5px; }
       .site-navbar .site-navigation .site-menu > li > a {
         padding: 10px 10px;
-        text-transform: lowercase;
+        text-transform: uppercase;
         letter-spacing: 0.1em;
         color: #fff;
-        font-size: 12px;
+        font-size: 15px;
         font-family: var(--nav-font);
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
