@@ -12,6 +12,8 @@
   --navbar-height: 80px;
 }
 
+html { -webkit-text-size-adjust: 100%; }
+
 body {
   line-height: 1.65;
   color: var(--text-dark);
@@ -19,6 +21,7 @@ body {
   font-size: 17px;
   background: #ffffff;
   font-family: var(--body-font);
+  letter-spacing: 0;
   padding-top: var(--navbar-height); }
 
 @media (max-width: 767.98px) {
@@ -332,7 +335,65 @@ a {
 .overlap-to-top {
   margin-top: -150px; }
 
+
+header, .header, .site-header, .site-navbar {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+}
+
+.logo, .site-logo, .navbar-brand {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  transform: translateY(1px);
+}
+
+.logo img, .site-logo img, .navbar-brand img,
+.logo svg, .site-logo svg, .navbar-brand svg {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+nav a, .nav a, .menu a {
+  font-family: var(--font-text);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1199px) {
+  header, .header, .site-header, .site-navbar {
+    height: 80px;
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  header, .header, .site-header, .site-navbar {
+    height: 72px;
+    padding: 0 20px;
+  }
+
+  nav a, .nav a, .menu a {
+    font-size: 14px;
+  }
+
+  .logo img, .site-logo img, .navbar-brand img {
+    height: 24px;
+  }
+}
+
 /* Navbar */
+
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1000;
@@ -342,7 +403,7 @@ a {
   width: 100%;
   height: var(--navbar-height);
   min-height: var(--navbar-height);
-  padding: 5px 0 !important;
+  padding: 0 48px !important;
   background: #3D3183; }
   .home-page .site-navbar {
     position: fixed; }
