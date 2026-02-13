@@ -10,9 +10,7 @@
   
   <meta property="og:image" content="/images/links.jpg" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Sora:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/fonts/icomoon/style.css">
 
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -62,21 +60,21 @@
       text-align: center;
     }
     .intro-text__title {
-      font-family: var(--font-display);
-      font-weight: 800;
-      font-size: 60px;
-      line-height: 1.03;
-      letter-spacing: -0.015em;
+      font-family: "Fraunces", serif;
+      font-weight: 400;
+      font-size: 68px;
+      line-height: 1.05;
+      letter-spacing: 0;
       text-transform: none;
-      margin: 0 auto 24px;
-      max-width: 880px;
+      margin: 0 auto 28px;
+      max-width: 12ch;
       color: var(--brand-blue);
     }
     .intro-text__subtitle {
-      font-family: var(--font-text);
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 1.5;
+      font-family: "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 19px;
+      line-height: 1.45;
       letter-spacing: 0;
       margin: 0 auto;
       max-width: 640px;
@@ -86,8 +84,8 @@
       padding: 120px 0;
     }
     .projects-title {
-      font-family: var(--font-display);
-      font-weight: 700;
+      font-family: "Fraunces", serif;
+      font-weight: 400;
       font-size: 42px;
       line-height: 1.1;
       letter-spacing: 0;
@@ -105,7 +103,7 @@
     .marquee__track {
       display: inline-block;
       animation: marquee 18s linear infinite;
-      font-family: var(--font-text);
+      font-family: "Inter", sans-serif;
       font-weight: 500;
       font-size: 56px;
       letter-spacing: 0.15em;
@@ -120,19 +118,6 @@
       100% { transform: translateX(-50%); }
     }
 
-    @media (max-width: 1199px) {
-      .intro-text__title {
-        font-size: 48px;
-        line-height: 1.05;
-        max-width: 92%;
-      }
-
-      .intro-text__subtitle {
-        font-size: 17px;
-        max-width: 92%;
-      }
-    }
-
     @media (max-width: 767.98px) {
       .intro-text,
       .about-section,
@@ -141,16 +126,12 @@
       }
 
       .intro-text__title {
-        font-size: 36px;
+        font-size: 40px;
         line-height: 1.1;
-        letter-spacing: -0.01em;
-        max-width: 100%;
       }
 
       .intro-text__subtitle {
-        font-size: 16px;
-        line-height: 1.6;
-        max-width: 100%;
+        font-size: 17px;
       }
 
       .projects-title {
