@@ -32,6 +32,29 @@
   <link rel="stylesheet" href="/css/style.css">
 
   <style>
+    .reel-hero {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      overflow: hidden;
+    }
+    .reel-hero__video {
+      width: 100%;
+      height: auto;
+      max-height: 100vh;
+      display: block;
+      border: 0;
+      object-fit: cover;
+    }
+    @media (min-width: 992px) {
+      .reel-hero {
+        height: 100vh;
+      }
+      .reel-hero__video {
+        width: 100vw;
+        height: 100vh;
+      }
+    }
     .hero {
       min-height: 80vh;
       padding: 140px 16px 100px;
@@ -152,6 +175,21 @@
       </div>
       
     </header>
+
+    <section class="reel-hero" aria-label="Video reel">
+      <video
+        class="reel-hero__video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="Work- Nathaly Habich.mp4"
+      >
+        <source src="Work- Nathaly Habich.mp4" type="video/mp4">
+        Tu navegador no soporta el video de portada.
+      </video>
+    </section>
 
     <section class="hero" aria-label="Introducción principal">
       <div class="hero__content">
