@@ -68,13 +68,13 @@
     }
     .hero__title {
       font-family: var(--title-font);
-      font-size: clamp(40px, 7vw, 78px);
+      font-size: clamp(36px, 5.2vw, 62px);
       line-height: 1.08;
       margin: 0 0 24px;
       color: #1f1f23;
     }
     .hero__subtitle {
-      font-size: clamp(20px, 2.8vw, 46px);
+      font-size: clamp(20px, 2.2vw, 32px);
       line-height: 1.3;
       margin: 0;
       color: #7d7d80;
@@ -83,7 +83,67 @@
       margin-top: 36px;
     }
     .about-section {
-      padding: 40px 0 24px;
+      padding: 56px 0 24px;
+    }
+    .about-intro {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 36px;
+    }
+    .about-intro__image,
+    .about-intro__content {
+      flex: 1 1 320px;
+    }
+    .about-intro__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .about-intro__subtitle {
+      font-size: clamp(22px, 3vw, 34px);
+      line-height: 1.2;
+      margin: 0;
+      color: #1f1f23;
+    }
+    .about-intro__title {
+      font-family: var(--title-font);
+      font-size: clamp(36px, 4.6vw, 56px);
+      line-height: 1.1;
+      margin: 0 0 24px;
+      color: #1f1f23;
+    }
+    .about-intro__content p {
+      font-size: clamp(16px, 1.4vw, 20px);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: #1f1f23;
+    }
+    .about-intro__cta {
+      margin-top: 28px;
+    }
+    .about-intro__cta .btn {
+      text-align: center;
+    }
+    @media (max-width: 991.98px) {
+      .about-intro {
+        gap: 24px;
+      }
+      .about-intro__subtitle {
+        font-size: clamp(20px, 6vw, 30px);
+      }
+      .about-intro__title {
+        font-size: clamp(32px, 9vw, 46px);
+      }
+      .about-intro__content p {
+        font-size: 16px;
+      }
+      .about-intro__cta .btn {
+        width: auto;
+      }
     }
     .projects-section {
       padding: 40px 0 16px;
@@ -203,28 +263,21 @@
 
     <section class="about-section" aria-label="Sobre mí">
       <div class="container-fluid" data-aos="fade">
-        <div class="row justify-content-center">
-          <div class="col-md-7">
-            <div class="row mb-5">
-              <div class="col-12">
-                <h2 class="site-section-heading text-center">¡Hola!</h2>
-              </div>
-            </div>
+        <div class="about-intro">
+          <div class="about-intro__image">
+            <img src="/images/photo_2023-05-05_01-07-55.jpg" alt="Nathaly Habich" class="img-fluid">
           </div>
-        </div>
-
-        <div class="row mb-5">
-          <div class="col-md-4">
-            <img src="/images/photo_2023-05-05_01-07-55.jpg" alt="Nathaly Habich" width="400" height="auto" class="img-fluid">
-            <div class="image-info">
-              <h2 class="mb-4"></h2>
-              <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20vengo%20de%20tu%20web%20y%20quer%C3%ADa%20preguntarte%20sobre%20" class="btn btn-outline-white py-2 px-4">Contacto al Whatsapp</a>
+          <div class="about-intro__content">
+            <h3 class="about-intro__subtitle">¡Hola!</h3>
+            <h2 class="about-intro__title">Soy Nathaly</h2>
+            <p>Creo <strong>espacios narrativos</strong> a trav&eacute;s de la <strong>Direcci&oacute;n de Arte</strong>, el <strong>dise&ntilde;o espacial</strong> y la <strong>direcci&oacute;n crom&aacute;tica.</strong></p>
+            <p>Hoy m&aacute;s que nunca, cuando todo compite por <strong>atenci&oacute;n</strong> en segundos, <strong>lo visual no puede improvisarse</strong>, necesita <strong>intenci&oacute;n, criterio y estructura.</strong></p>
+            <p>El espacio dej&oacute; de ser fondo. Es <strong>narrativa, ritmo y emoci&oacute;n.</strong></p>
+            <p>Si est&aacute;s aqu&iacute;, probablemente tu proyecto necesita una <strong>visi&oacute;n que se pueda ejecutar.</strong></p>
+            <p>Juntos vamos a <strong>elevar el nivel</strong> a tu proyecto para llevarlo a realidad.</p>
+            <div class="about-intro__cta">
+              <a href="#proyectos" class="btn btn-outline-white px-4">Explorar Proyectos</a>
             </div>
-          </div>
-          <div class="col-md-4">
-            <p style="text-align: justify; margin-top: 0px;">Mi nombre es Nathaly Habich soy arquitecta de interiores de Lima, Per&uacute;. Tengo m&aacute;s de 6 a&ntilde;os de experiencia trabajando con espacios interiores y exteriores en diferentes estudios de dise&ntilde;o que me han mostrado diversas percepciones del mundo creativo y han sido fundamentales en la creaci&oacute;n de mi propia visi&oacute;n y estilo.</p>
-            <p style="text-align: justify;">Mi mejor forma de expresi&oacute;n es el color, y no como una capa superficial sino como materialidad que suena, huele, baila, da forma, transforma, te cura y abraza. El color nunca tiene un solo sentido, muta seg&uacute;n la intenci&oacute;n que queremos darle, ese proceso de transformaci&oacute;n es arte y me apasiona completamente.</p>
-            <p style="text-align: justify;">Sin pasi&oacute;n no hay vida. Vivimos para apasionarnos por lo que nos gusta y nos rodea, es por eso que mi prop&oacute;sito es dise&ntilde;ar a trav&eacute;s del color, espacios que cuenten la mejor de sus historias. Historias apasionantes que queremos mostrar al mundo.</p>
           </div>
         </div>
       </div>
@@ -241,7 +294,7 @@
       </div>
     </div>
 
-    <section class="projects-section" aria-label="Proyectos">
+    <section id="proyectos" class="projects-section" aria-label="Proyectos">
       <div class="container-fluid text-center">
         <h2 class="projects-title">Proyectos</h2>
       </div>
