@@ -91,7 +91,7 @@
       display: flex;
       flex-wrap: wrap;
       align-items: stretch;
-      gap: 36px;
+      gap: 40px;
     }
     .about-intro__image,
     .about-intro__content {
@@ -103,46 +103,38 @@
       object-fit: cover;
       display: block;
     }
-    .about-intro__subtitle {
-      font-size: clamp(22px, 3vw, 34px);
-      line-height: 1.2;
-      margin: 0;
-      color: #1f1f23;
-    }
-    .about-intro__title {
+    .about-intro__heading {
       font-family: var(--title-font);
-      font-size: clamp(36px, 4.6vw, 56px);
-      line-height: 1.1;
-      margin: 0 0 24px;
-      color: #1f1f23;
+      font-size: clamp(40px, 5vw, 62px);
+      line-height: 1.05;
+      margin: 0 0 28px;
+      color: #000;
     }
     .about-intro__content p {
-      font-size: clamp(16px, 1.4vw, 20px);
-      line-height: 1.6;
-      margin-bottom: 16px;
+      font-size: clamp(22px, 2.2vw, 38px);
+      line-height: 1.25;
+      margin-bottom: 20px;
       color: #1f1f23;
     }
     .about-intro__cta {
-      margin-top: 28px;
+      margin-top: 36px;
     }
     .about-intro__cta .btn {
+      min-width: 300px;
       text-align: center;
+      padding-top: 14px !important;
+      padding-bottom: 14px !important;
     }
     @media (max-width: 991.98px) {
       .about-intro {
         gap: 24px;
       }
-      .about-intro__subtitle {
-        font-size: clamp(20px, 6vw, 30px);
-      }
-      .about-intro__title {
-        font-size: clamp(32px, 9vw, 46px);
-      }
       .about-intro__content p {
-        font-size: 16px;
+        font-size: clamp(18px, 4.7vw, 30px);
       }
       .about-intro__cta .btn {
-        width: auto;
+        min-width: 0;
+        width: 100%;
       }
     }
     .projects-section {
@@ -268,8 +260,7 @@
             <img src="/images/photo_2023-05-05_01-07-55.jpg" alt="Nathaly Habich" class="img-fluid">
           </div>
           <div class="about-intro__content">
-            <h3 class="about-intro__subtitle">¡Hola!</h3>
-            <h2 class="about-intro__title">Soy Nathaly</h2>
+            <h2 class="about-intro__heading">¡Hola!<br>Soy Nathaly</h2>
             <p>Creo <strong>espacios narrativos</strong> a trav&eacute;s de la <strong>Direcci&oacute;n de Arte</strong>, el <strong>dise&ntilde;o espacial</strong> y la <strong>direcci&oacute;n crom&aacute;tica.</strong></p>
             <p>Hoy m&aacute;s que nunca, cuando todo compite por <strong>atenci&oacute;n</strong> en segundos, <strong>lo visual no puede improvisarse</strong>, necesita <strong>intenci&oacute;n, criterio y estructura.</strong></p>
             <p>El espacio dej&oacute; de ser fondo. Es <strong>narrativa, ritmo y emoci&oacute;n.</strong></p>
