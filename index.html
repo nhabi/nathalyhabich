@@ -55,12 +55,8 @@
         height: 100vh;
       }
     }
-    .hero {
-      min-height: 80vh;
-      padding: 140px 16px 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .hero-about-section {
+      padding: 104px 16px 24px;
     }
     .hero__content {
       max-width: 980px;
@@ -80,8 +76,63 @@
       margin: 0 0 6px;
       color: #7d7d80;
     }
-    .hero__cta {
-      margin-top: 36px;
+    .about-intro {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      gap: 36px;
+    }
+    .about-intro__image,
+    .about-intro__content {
+      flex: 1 1 320px;
+    }
+    .about-intro__content {
+      font-size: 16px;
+      font-weight: 400;
+      max-width: 560px;
+    }
+    .about-intro__image {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+    }
+    .about-intro__image img {
+      width: auto;
+      height: 100%;
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .about-intro__subtitle {
+      font-size: clamp(16px, 1.2vw, 20px);
+      line-height: 1.25;
+      margin: 0 0 6px;
+      color: #1f1f23;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .about-intro__title {
+      font-family: var(--title-font);
+      font-size: clamp(30px, 2.6vw, 40px);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      color: #1f1f23;
+      text-transform: none;
+      letter-spacing: normal;
+    }
+    .about-intro__content p {
+      font-size: 16px !important;
+      line-height: 1.6 !important;
+      margin-bottom: 14px;
+      color: #1f1f23;
+      font-weight: 400;
+    }
+    .about-intro__content strong {
+      font-weight: 700 !important;
+      color: #000 !important;
     }
     .about-section {
       padding: 56px 0 24px;
@@ -244,17 +295,7 @@
       </video>
     </section>
 
-    <section class="hero" aria-label="Introducción principal">
-      <div class="hero__content">
-        <h2 class="hero__title">Cada historia merece un mundo a su altura.</h2>
-        <p class="hero__subtitle">Dirección y diseño visual para proyectos que buscan nivel.</p>
-        <div class="hero__cta">
-          <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20empezar%20mi%20proyecto" class="btn btn-outline-white py-2 px-4">Quiero empezar</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-section" aria-label="Sobre mí">
+    <section class="hero-about-section" aria-label="Introducción principal y sobre mí">
       <div class="container-fluid" data-aos="fade">
         <div class="about-intro">
           <div class="about-intro__image">
