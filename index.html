@@ -55,19 +55,32 @@
         height: 100vh;
       }
     }
-    .intro-text {
-      padding: 80px 0 40px;
+    .hero {
+      min-height: 80vh;
+      padding: 140px 16px 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero__content {
+      max-width: 980px;
       text-align: center;
     }
-    .intro-text__title {
-      font-size: 32px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
+    .hero__title {
+      font-family: var(--title-font);
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0 0 8px;
+      color: #1f1f23;
     }
-    .intro-text__subtitle {
-      font-size: 20px;
+    .hero__subtitle {
+      font-size: 16px;
+      line-height: 1.6;
       margin: 0;
+      color: #7d7d80;
+    }
+    .hero__cta {
+      margin-top: 36px;
     }
     .about-section {
       padding: 40px 0 24px;
@@ -178,10 +191,13 @@
       </video>
     </section>
 
-    <section class="intro-text" aria-label="Introducción">
-      <div class="container-fluid">
-        <h2 class="intro-text__title">ARQUITECTURA ESCENOGRÁFICA PARA LA CONSTRUCCIÓN DE MUNDOS NARRATIVOS.</h2>
-        <p class="intro-text__subtitle">Dirección cromática y diseño espacial aplicada a producción real.</p>
+    <section class="hero" aria-label="Introducción principal">
+      <div class="hero__content">
+        <h2 class="hero__title">Cada historia merece un mundo a su altura.</h2>
+        <p class="hero__subtitle">Dirección y diseño visual para proyectos que buscan nivel.</p>
+        <div class="hero__cta">
+          <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20empezar%20mi%20proyecto" class="btn btn-outline-white py-2 px-4">Quiero empezar</a>
+        </div>
       </div>
     </section>
 
