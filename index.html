@@ -68,16 +68,12 @@
       line-height: 1.1;
       margin: 0 0 14px;
       color: #fff;
-      text-transform: none;
-      letter-spacing: normal;
     }
     .reel-hero__subtitle {
       font-size: clamp(16px, 2vw, 28px);
       line-height: 1.35;
       margin: 0;
       color: rgba(255, 255, 255, 0.9);
-      text-transform: none;
-      letter-spacing: normal;
     }
     .reel-hero__actions {
       margin-top: 28px;
@@ -100,31 +96,6 @@
       }
     }
     @media (max-width: 767.98px) {
-      .reel-hero {
-        height: calc(100vh - var(--navbar-height));
-        min-height: calc(100vh - var(--navbar-height));
-      }
-      .reel-hero__video {
-        height: 100%;
-      }
-      .reel-hero__overlay {
-        align-items: center;
-        padding: 20px 16px;
-      }
-      .reel-hero__overlay-content {
-        width: 100%;
-        max-width: 520px;
-      }
-      .reel-hero__title {
-        font-size: clamp(24px, 8.5vw, 34px);
-      }
-      .reel-hero__subtitle {
-        font-size: clamp(14px, 4.8vw, 18px);
-      }
-      .reel-hero__actions {
-        margin-top: 16px;
-        gap: 10px;
-      }
       .reel-hero__actions .btn {
         width: 100%;
         min-width: 0;
@@ -237,6 +208,9 @@
       margin: 0 0 28px;
       color: #3d3183;
     }
+    .about-intro__heading-mobile {
+      display: none;
+    }
     .about-intro__content p {
       font-size: clamp(22px, 2.2vw, 38px);
       line-height: 1.25;
@@ -256,12 +230,32 @@
       .about-intro {
         gap: 24px;
       }
+      .about-intro__heading-mobile {
+        display: block;
+        width: 100%;
+        margin: 0;
+        font-family: var(--title-font);
+        line-height: 1.05;
+        color: #3d3183;
+      }
+      .about-intro__heading-desktop {
+        display: none;
+      }
       .about-intro__content p {
         font-size: clamp(18px, 4.7vw, 30px);
       }
       .about-intro__cta .btn {
         min-width: 0;
         width: 100%;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .about-intro__heading-mobile {
+        font-size: 35px;
+      }
+      .about-intro__content p {
+        font-size: 18px;
+        line-height: 1.45;
       }
     }
     .projects-section {
@@ -383,11 +377,12 @@
     <section class="hero-about-section" aria-label="Introducción principal y sobre mí">
       <div class="container-fluid" data-aos="fade">
         <div class="about-intro">
+          <h2 class="about-intro__heading-mobile">¡Hola!<br>Soy Nathaly</h2>
           <div class="about-intro__image">
             <img src="nh1.png" alt="Nathaly Habich" class="img-fluid">
           </div>
           <div class="about-intro__content">
-            <h2 class="about-intro__heading">¡Hola!<br>Soy Nathaly</h2>
+            <h2 class="about-intro__heading about-intro__heading-desktop">¡Hola!<br>Soy Nathaly</h2>
             <p>Creo <strong>espacios narrativos</strong> a trav&eacute;s de la <strong>Direcci&oacute;n de Arte</strong>, el <strong>dise&ntilde;o espacial</strong> y la <strong>direcci&oacute;n crom&aacute;tica.</strong></p>
             <p>Hoy m&aacute;s que nunca, cuando todo compite por <strong>atenci&oacute;n</strong> en segundos, <strong>lo visual no puede improvisarse</strong>, necesita <strong>intenci&oacute;n, criterio y estructura.</strong></p>
             <p>El espacio dej&oacute; de ser fondo. Es <strong>narrativa, ritmo y emoci&oacute;n.</strong></p>
