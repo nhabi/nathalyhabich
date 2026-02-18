@@ -1212,15 +1212,15 @@ a {
 
 .btn-outline-white {
   border-color: none;
-  background: #22A3AC;
+  background: #ee3f75;
   color: #fff;
   border-width: 2px;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: .1em; }
   .btn-outline-white:hover {
-    background: #22A3AC;
-    color: #ee3f75; }
+    background: #fdba4d;
+    color: #000; }
 
 .image-wrap-2 {
   display: block;
