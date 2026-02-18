@@ -33,6 +33,7 @@
 
   <style>
     .reel-hero {
+      position: relative;
       width: 100%;
       height: auto;
       margin: 0 0 6px;
@@ -46,6 +47,64 @@
       border: 0;
       object-fit: cover;
     }
+    .reel-hero__overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.55) 100%);
+      padding: 24px;
+      z-index: 2;
+    }
+    .reel-hero__overlay-content {
+      max-width: 900px;
+      color: #fff;
+    }
+    .reel-hero__title {
+      font-family: var(--title-font);
+      font-size: clamp(32px, 4.8vw, 62px);
+      line-height: 1.1;
+      margin: 0 0 14px;
+      color: #fff;
+    }
+    .reel-hero__subtitle {
+      font-size: clamp(16px, 2vw, 28px);
+      line-height: 1.35;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    .reel-hero__actions {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .reel-hero__actions .btn {
+      min-width: 210px;
+      padding: 12px 22px !important;
+      border-radius: 0;
+      text-transform: none;
+      letter-spacing: 0.3px;
+      font-size: 15px;
+    }
+    .reel-hero__actions .btn-light {
+      background-color: #fff;
+      color: #1f1f23;
+      border: 1px solid #fff;
+    }
+    .reel-hero__actions .btn-outline-light {
+      border: 1px solid #fff;
+      color: #fff;
+      background: transparent;
+    }
+    .reel-hero__actions .btn-outline-light:hover,
+    .reel-hero__actions .btn-outline-light:focus {
+      background: #fff;
+      color: #1f1f23;
+    }
     @media (min-width: 992px) {
       .reel-hero {
         height: 100vh;
@@ -53,6 +112,12 @@
       .reel-hero__video {
         width: 100vw;
         height: 100vh;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .reel-hero__actions .btn {
+        width: 100%;
+        min-width: 0;
       }
     }
     .hero-about-section {
@@ -293,6 +358,16 @@
         <source src="Work- Nathaly Habich.mp4" type="video/mp4">
         Tu navegador no soporta el video de portada.
       </video>
+      <div class="reel-hero__overlay">
+        <div class="reel-hero__overlay-content">
+          <h2 class="reel-hero__title">Cada historia merece un mundo a su altura.</h2>
+          <p class="reel-hero__subtitle">Direcci&oacute;n de arte y dise&ntilde;o espacial con intenci&oacute;n y estructura.</p>
+          <div class="reel-hero__actions">
+            <a href="/online/" class="btn btn-light">&rarr; Iniciar proyecto</a>
+            <a href="#proyectos" class="btn btn-outline-light">&rarr; Ver proyectos</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="hero-about-section" aria-label="Introducción principal y sobre mí">
