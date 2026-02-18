@@ -312,10 +312,7 @@ a {
     margin-bottom: 0; }
 .site-navbar .site-navigation .site-menu .active > a {
       color: #fff; }
-  .site-navbar .site-menu-toggle,
-  .site-navbar .site-menu-toggle.text-black,
-  .site-navbar .site-menu-toggle .icon-menu,
-  .site-navbar .site-menu-toggle .icon-menu:before {
+  .site-navbar .site-menu-toggle {
     color: #fff !important; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
