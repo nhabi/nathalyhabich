@@ -269,50 +269,48 @@
     }
     .positioning-section {
       padding: 48px 16px 36px;
-      background: #fff !important;
-      border: 0 !important;
     }
-    .positioning-content {
+    .positioning-card {
       max-width: 1120px;
       margin: 0 auto;
-      text-align: center;
-      background: #fff !important;
-      border: 0 !important;
-      border-radius: 0 !important;
-      box-shadow: none !important;
+      background: #f4f2fb;
+      border: 1px solid rgba(61, 49, 131, 0.15);
+      border-radius: 18px;
+      padding: clamp(24px, 4vw, 54px);
     }
     .positioning-title {
       font-family: var(--title-font);
-      font-size: clamp(40px, 5vw, 50px);
-      line-height: 1.05;
-      margin: 0 0 28px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.08;
       color: #3d3183;
-      text-align: center;
+      margin: 0 0 24px;
     }
     .positioning-text {
-      max-width: 980px;
-      margin: 0 auto;
-      text-align: center;
+      max-width: 900px;
+      font-size: clamp(20px, 2.1vw, 34px);
+      line-height: 1.28;
+      color: #1f1f23;
+      margin: 0;
     }
     .positioning-text p {
-      font-size: 18px !important;
-      line-height: 1.45 !important;
-      margin-bottom: 20px;
-      color: #1f1f23;
-      text-align: center !important;
+      margin-bottom: 16px;
     }
     .positioning-text p:last-child {
       margin-bottom: 0;
     }
     .positioning-action {
-      margin-top: 36px;
+      margin-top: 26px;
+    }
+    .positioning-action .btn {
+      min-width: 290px;
       text-align: center;
-      display: flex;
-      justify-content: center;
+      padding-top: 14px !important;
+      padding-bottom: 14px !important;
     }
     @media (max-width: 767.98px) {
-      .positioning-title {
-        font-size: 35px;
+      .positioning-action .btn {
+        min-width: 0;
+        width: 100%;
       }
     }
     .projects-section {
@@ -451,7 +449,7 @@
     </section>
 
     <section class="positioning-section" aria-label="Valor estratégico del espacio visual">
-      <div class="positioning-content" data-aos="fade-up">
+      <div class="positioning-card" data-aos="fade-up">
         <h2 class="positioning-title">Un fondo funciona.<br>Un mundo visual posiciona.</h2>
         <div class="positioning-text">
           <p>Hoy muchas marcas producen contenido desde espacios funcionales.</p>
@@ -460,7 +458,7 @@
           <p>La diferencia no est&aacute; en producir m&aacute;s.<br>Est&aacute; en dirigir mejor.</p>
         </div>
         <div class="positioning-action">
-          <a href="/servicios/" class="btn py-2 px-4">&rarr; Descubre c&oacute;mo trabajo</a>
+          <a href="/servicios/" class="btn btn-primary py-2 px-4">&rarr; Descubre c&oacute;mo trabajo</a>
         </div>
       </div>
     </section>
