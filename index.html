@@ -192,38 +192,57 @@
       padding: 56px 0 24px;
     }
     .about-intro {
-      max-width: 1120px;
+      max-width: 1060px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
-      align-items: stretch;
-      gap: 40px;
+      align-items: center;
+      gap: 28px;
     }
     .about-intro__image,
     .about-intro__content {
       flex: 1 1 320px;
     }
+    .about-intro__content {
+      max-width: 500px;
+      order: 1;
+    }
+    .about-intro__image {
+      order: 2;
+    }
     .about-intro__image img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      max-width: 420px;
       object-fit: cover;
       display: block;
     }
     .about-intro__heading {
       font-family: var(--title-font);
-      font-size: clamp(40px, 5vw, 50px);
-      line-height: 1.05;
-      margin: 0 0 28px;
+      line-height: 1;
+      margin: 0 0 18px;
       color: #3d3183;
+    }
+    .about-intro__heading-greeting {
+      display: block;
+      font-size: clamp(28px, 2.7vw, 40px);
+      font-style: italic;
+      font-weight: 500;
+      line-height: 0.95;
+    }
+    .about-intro__heading-name {
+      display: block;
+      font-size: clamp(50px, 6vw, 72px);
+      line-height: 0.95;
     }
     .about-intro__heading-mobile {
       display: none;
     }
     .about-intro__content p,
     .positioning-text p {
-      font-size: clamp(22px, 2.2vw, 38px);
-      line-height: 1.25;
-      margin-bottom: 20px;
+      font-size: clamp(20px, 1.7vw, 30px);
+      line-height: 1.35;
+      margin-bottom: 16px;
       color: #1f1f23;
       font-weight: 400;
       letter-spacing: 0;
@@ -241,6 +260,10 @@
       .about-intro {
         gap: 24px;
       }
+      .about-intro__content,
+      .about-intro__image {
+        order: initial;
+      }
       .about-intro__heading-mobile {
         display: block;
         width: 100%;
@@ -251,6 +274,12 @@
       }
       .about-intro__heading-desktop {
         display: none;
+      }
+      .about-intro__heading-mobile .about-intro__heading-greeting {
+        font-size: 30px;
+      }
+      .about-intro__heading-mobile .about-intro__heading-name {
+        font-size: 52px;
       }
       .about-intro__content p,
       .positioning-text p {
@@ -264,7 +293,13 @@
     }
     @media (max-width: 767.98px) {
       .about-intro__heading-mobile {
-        font-size: 35px;
+        line-height: 1;
+      }
+      .about-intro__heading-mobile .about-intro__heading-greeting {
+        font-size: 24px;
+      }
+      .about-intro__heading-mobile .about-intro__heading-name {
+        font-size: 42px;
       }
       .about-intro__content p,
       .positioning-text p {
@@ -435,12 +470,12 @@
     <section class="hero-about-section" aria-label="Introducción principal y sobre mí">
       <div class="container-fluid" data-aos="fade">
         <div class="about-intro">
-          <h2 class="about-intro__heading-mobile">¡Hola!<br>Soy Nathaly</h2>
+          <h2 class="about-intro__heading-mobile"><span class="about-intro__heading-greeting">¡hola!</span><span class="about-intro__heading-name">Soy Nathaly</span></h2>
           <div class="about-intro__image">
             <img src="nh1.png" alt="Nathaly Habich" class="img-fluid">
           </div>
           <div class="about-intro__content">
-            <h2 class="about-intro__heading about-intro__heading-desktop">¡Hola!<br>Soy Nathaly</h2>
+            <h2 class="about-intro__heading about-intro__heading-desktop"><span class="about-intro__heading-greeting">¡hola!</span><span class="about-intro__heading-name">Soy Nathaly</span></h2>
             <p>Dirijo el desarrollo visual de proyectos que necesitan <strong>coherencia con su identidad y ejecuci&oacute;n en campo.</strong></p>
             <p>Soy arquitecta de interiores especializada en <strong>Direcci&oacute;n de Arte.</strong> Trabajo con producciones y marcas que buscan <strong>elevar su est&aacute;ndar visual</strong> m&aacute;s all&aacute; de la est&eacute;tica superficial.</p>
             <p>Combino <strong>estructura espacial y direcci&oacute;n crom&aacute;tica</strong> para transformar conceptos en mundos ejecutables en producciones, escenas y experiencias.</p>
