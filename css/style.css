@@ -3,49 +3,78 @@
   --brand-blue: #3d3183;
   --brand-magenta: #ee3f75;
   --text-dark: #2d2d2d;
-  --title-font: "Futura Md BT", "Futura", "Trebuchet MS", sans-serif;
-  --accent-font: "Golden Plains", "Brush Script MT", "Segoe Script", cursive;
-  --nav-font: "Futura Md BT", "Montserrat", "Spartan", "Trebuchet MS", sans-serif;
-  --body-font: "Helvetica LT Light", "Inter", "Helvetica Neue", Arial, sans-serif;
-  --navbar-height: 80px;
+  --title-font: "Sora", sans-serif;
+  --accent-font: "Paytone One", sans-serif;
+  --nav-font: "IBM Plex Sans", sans-serif;
+  --body-font: "IBM Plex Sans", sans-serif;
+  --navbar-height: 88px;
 }
 
 body {
-  line-height: 1.2;
+  line-height: 1.65;
   color: var(--text-dark);
-  font-weight: 300;
-  font-size: 15px;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0;
   background: #ffffff;
   font-family: var(--body-font);
   padding-top: var(--navbar-height); }
 
-h1,
+h1 {
+  font-family: var(--title-font);
+  font-weight: 800;
+  font-size: 60px;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  margin: 0 0 24px;
+  max-width: 880px;
+  color: var(--brand-blue);
+  text-transform: uppercase; }
+
 h2 {
   font-family: var(--title-font);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
+  margin: 0 0 20px;
   color: var(--brand-blue);
-  text-transform: uppercase;
-  letter-spacing: 0.15em; }
-
-h1 {
-  margin-top: 20px !important; }
+  text-transform: uppercase; }
 
 h3,
 h4,
 h5,
 h6 {
-  font-family: var(--nav-font);
+  font-family: var(--title-font);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0 0 16px;
   color: var(--brand-blue);
-  text-transform: lowercase;
-  letter-spacing: 0.1em; }
+  letter-spacing: 0; }
 
 p {
-  color: var(--text-dark); }
+  color: var(--text-dark);
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.65;
+  margin: 0 0 18px;
+  max-width: 70ch; }
 
 .accent-script {
   font-family: var(--accent-font);
   color: var(--brand-magenta);
-  text-transform: none;
-  letter-spacing: normal; }
+  text-transform: uppercase;
+  letter-spacing: 0.01em; }
+
+.impact-word {
+  font-family: var(--accent-font);
+  font-weight: 400;
+  font-size: clamp(64px, 8vw, 110px);
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
 
 ::-moz-selection {
   background: #000;
@@ -110,7 +139,13 @@ a {
   border-radius: 0;
   background: #22A3AC;
   color: #fff;
-  border: none; }
+  border: none;
+  font-family: var(--body-font);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase; }
   .btn:hover, .btn:active, .btn:focus {
     outline: none;
     -webkit-box-shadow: none;
@@ -287,7 +322,10 @@ a {
   width: 100%;
   height: var(--navbar-height);
   min-height: var(--navbar-height);
-  padding: 5px 0 !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background: #3D3183; }
   .home-page .site-navbar {
     position: fixed; }
@@ -316,11 +354,13 @@ a {
     color: #fff !important; }
     .site-navbar .site-navigation .site-menu a {
       text-decoration: none !important;
-      font-size: 14px;
+      font-size: 15px;
+      font-weight: 500;
       display: inline-block;
       font-family: var(--nav-font);
       text-transform: uppercase;
-      letter-spacing: 0.15em; }
+      line-height: 1;
+      letter-spacing: 0.04em; }
     .site-navbar .site-navigation .site-menu > li {
       display: inline-block;
       padding: 10px 5px; }
@@ -330,6 +370,8 @@ a {
         letter-spacing: 0.1em;
         color: #fff;
         font-size: 15px;
+        font-weight: 500;
+        line-height: 1;
         font-family: var(--nav-font);
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
@@ -1328,4 +1370,33 @@ img {
     -webkit-transform: scale(1.01); }
 img, video {
     pointer-events: none; /* Deshabilita las interacciones con el mouse */
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 72px;
+  }
+
+  body,
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 22px;
+  }
 }
