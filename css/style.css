@@ -1,9 +1,25 @@
+@font-face{
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans/GeneralSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans/GeneralSans-Extrabold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Base */
 :root {
   --brand-blue: #3d3183;
   --brand-magenta: #ee3f75;
   --text-dark: #2d2d2d;
-  --title-font: "Sora", sans-serif;
+  --font-display: "General Sans", sans-serif;
+  --title-font: var(--font-display);
   --accent-font: "Paytone One", sans-serif;
   --nav-font: "IBM Plex Sans", sans-serif;
   --body-font: "IBM Plex Sans", sans-serif;
@@ -51,6 +67,15 @@ h6 {
   margin: 0 0 16px;
   color: var(--brand-blue);
   letter-spacing: 0; }
+
+h1,
+h2,
+h3,
+.reel-hero__title,
+.hero-title,
+.section-title {
+  font-family: var(--font-display);
+}
 
 p {
   color: var(--text-dark);
@@ -313,6 +338,16 @@ a {
   margin-top: -150px; }
 
 /* Navbar */
+header {
+  height: 88px;
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  line-height: 1;
+}
+
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1000;
