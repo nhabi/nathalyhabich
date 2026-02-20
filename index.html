@@ -407,7 +407,7 @@
       min-height: clamp(248px, 26vw, 296px);
       background: transparent;
     }
-    .service-item__card h3 {
+    .service-item__title {
       color: #e63372;
       text-align: center;
       text-transform: none;
@@ -415,6 +415,7 @@
       line-height: 0.95;
       margin: 0 0 clamp(24px, 2.1vw, 30px);
       letter-spacing: 0;
+      text-wrap: balance;
     }
     .service-item__card p {
       margin: 0 0 6px;
@@ -443,13 +444,19 @@
         width: 100%;
       }
       .services-content {
-        width: calc(100% - 32px);
+        width: min(520px, calc(100% - 32px));
+        margin: 0 auto;
       }
       .services-content h2 {
         line-height: 0.98;
       }
       .services-grid {
         grid-template-columns: 1fr;
+      }
+      .service-item__title {
+        max-width: 11ch;
+        margin-left: auto;
+        margin-right: auto;
       }
       .service-item__card {
         min-height: 0;
@@ -612,7 +619,7 @@
         <div class="services-grid">
           <article class="service-item">
             <div class="service-item__card">
-              <h3>Diagnostico<br>estratégico</h3>
+              <h3 class="service-item__title">Diagnostico<br>estratégico</h3>
               <p>Define con claridad qué cambiar para que tu proyecto deje de verse improvisado.</p>
               <p>Decisiones concretas para ordenar y estructurar desde el inicio.</p>
             </div>
@@ -621,7 +628,7 @@
 
           <article class="service-item">
             <div class="service-item__card">
-              <h3>Diseño de dirección<br>de arte</h3>
+              <h3 class="service-item__title">Diseño de dirección<br>de arte</h3>
               <p>Convierte tu idea en un sistema visual con coherencia, identidad y nivel.</p>
               <p>Aquí se construye el lenguaje visual del proyecto.</p>
             </div>
@@ -630,7 +637,7 @@
 
           <article class="service-item">
             <div class="service-item__card">
-              <h3>Dirección en<br>producción</h3>
+              <h3 class="service-item__title">Dirección en<br>producción</h3>
               <p>Asegura que lo diseñado se sostenga en la realidad, no solo en concepto.</p>
               <p>Supervisión y criterio para mantener el nivel en ejecución.</p>
             </div>
