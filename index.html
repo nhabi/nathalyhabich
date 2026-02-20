@@ -393,8 +393,9 @@
       gap: clamp(16px, 1.7vw, 26px);
     }
     .service-item {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      height: 100%;
     }
     .service-item__card {
       border: 1px solid #ee3f75;
@@ -434,6 +435,9 @@
       .positioning-action .btn {
         min-width: 0;
         width: 100%;
+      }
+      .services-content {
+        width: calc(100% - 32px);
       }
       .services-content h2 {
         line-height: 0.98;
