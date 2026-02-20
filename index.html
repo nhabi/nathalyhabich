@@ -371,26 +371,66 @@
       padding-bottom: 14px !important;
     }
     .services-section {
-      padding: clamp(46px, 7vw, 86px) 16px;
+      padding: clamp(46px, 7vw, 86px) 0;
       background: #fff;
     }
     .services-content {
-      max-width: 920px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0 clamp(16px, 2.5vw, 40px);
     }
     .services-content h2 {
-      margin-bottom: 24px;
+      max-width: 980px;
+      margin: 0 auto clamp(30px, 4vw, 52px);
       color: #3d3183;
       text-transform: none;
+      text-align: center;
+      line-height: 1;
     }
-    .services-content h3 {
-      margin: 26px 0 10px;
-      color: #1f1f23;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+    .service-item {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      height: 100%;
+    }
+    .service-item__card {
+      border: 2px solid #ff4a8c;
+      padding: clamp(20px, 2vw, 30px) clamp(16px, 1.8vw, 24px);
+      background: #fff;
+      min-height: clamp(250px, 20vw, 300px);
+      flex: 1;
+    }
+    .service-item__card h3 {
+      color: #e63372;
+      text-align: center;
       text-transform: none;
+      margin: 0 0 clamp(16px, 1.7vw, 22px);
+      font-size: clamp(28px, 2.7vw, 40px);
+      line-height: 1;
+      letter-spacing: 0;
     }
-    .services-content p {
-      margin-bottom: 10px;
+    .service-item__card p {
+      margin: 0 0 10px;
       color: #1f1f23;
+      font-size: clamp(20px, 1.7vw, 30px);
+      line-height: 1.35;
+      font-weight: 400;
+    }
+    .service-item__card p:last-child {
+      margin-bottom: 0;
+    }
+    .service-item .btn {
+      width: 100%;
+      text-align: center;
+      padding-top: 14px !important;
+      padding-bottom: 14px !important;
     }
     @media (max-width: 767.98px) {
       .positioning-text p {
@@ -400,6 +440,16 @@
       .positioning-action .btn {
         min-width: 0;
         width: 100%;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .service-item {
+        gap: 12px;
+        height: auto;
+      }
+      .service-item__card {
+        min-height: 0;
       }
     }
     .projects-section {
@@ -557,17 +607,34 @@
       <div class="services-content" data-aos="fade-up">
         <h2>Servicios para proyectos que necesitan dirección visual real.</h2>
 
-        <h3>🟢 Lectura estratégica del espacio</h3>
-        <p>Define con claridad qué cambiar para que tu proyecto deje de verse improvisado.</p>
-        <p>Decisiones concretas para ordenar y estructurar desde el inicio.</p>
+        <div class="services-grid">
+          <article class="service-item">
+            <div class="service-item__card">
+              <h3>Diagnostico<br>estratégico</h3>
+              <p>Define con claridad qué cambiar para que tu proyecto deje de verse improvisado.</p>
+              <p>Decisiones concretas para ordenar y estructurar desde el inicio.</p>
+            </div>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4">&rarr; Quiero claridad para mi espacio</a>
+          </article>
 
-        <h3>🔵 Diseño de dirección de arte</h3>
-        <p>Convierte tu idea en un sistema visual con coherencia, identidad y nivel.</p>
-        <p>Aquí se construye el lenguaje visual del proyecto.</p>
+          <article class="service-item">
+            <div class="service-item__card">
+              <h3>Diseño de dirección<br>de arte</h3>
+              <p>Convierte tu idea en un sistema visual con coherencia, identidad y nivel.</p>
+              <p>Aquí se construye el lenguaje visual del proyecto.</p>
+            </div>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4">&rarr; Quiero diseñar mi proyecto</a>
+          </article>
 
-        <h3>🔴 Dirección en producción</h3>
-        <p>Asegura que lo diseñado se sostenga en la realidad, no solo en concepto.</p>
-        <p>Supervisión y criterio para mantener el nivel en ejecución.</p>
+          <article class="service-item">
+            <div class="service-item__card">
+              <h3>Dirección en<br>producción</h3>
+              <p>Asegura que lo diseñado se sostenga en la realidad, no solo en concepto.</p>
+              <p>Supervisión y criterio para mantener el nivel en ejecución.</p>
+            </div>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4">&rarr; Quiero llevarlo a la realidad</a>
+          </article>
+        </div>
       </div>
     </section>
 
