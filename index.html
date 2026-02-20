@@ -326,7 +326,7 @@
     .positioning-title-main {
       display: block;
       color: #3d3183;
-      font-size: clamp(50px, 6vw, 72px);
+      font-size: clamp(28px, 2.7vw, 40px);
       letter-spacing: 0.8px;
     }
     .positioning-title-main + .positioning-title-main {
@@ -335,7 +335,7 @@
     .positioning-title-accent {
       display: inline-block;
       color: var(--brand-magenta);
-      font-size: clamp(64px, 8vw, 110px);
+      font-size: clamp(50px, 6vw, 72px);
       line-height: 0.9;
       letter-spacing: 0.01em;
       text-decoration: underline;
@@ -369,6 +369,77 @@
       text-align: center;
       padding-top: 14px !important;
       padding-bottom: 14px !important;
+    }
+    .services-section {
+      padding: clamp(46px, 7vw, 86px) 16px;
+      background: #fff;
+    }
+    .services-content {
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+    .services-content h2 {
+      margin: 0 auto 38px;
+      color: #3d3183;
+      text-align: center;
+      font-size: clamp(38px, 4.2vw, 60px);
+      line-height: 0.95;
+      max-width: 980px;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .services-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .services-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .services-card__box {
+      border: 2px solid #ff4a86;
+      background: transparent;
+      padding: 26px 24px;
+      min-height: 280px;
+    }
+    .services-card h3 {
+      margin: 0 0 16px;
+      color: #ef2f72;
+      text-align: center;
+      font-size: clamp(28px, 2.5vw, 46px);
+      line-height: 1;
+      text-transform: none;
+    }
+    .services-card p {
+      margin: 0;
+      color: #0f0f12;
+      font-size: clamp(18px, 1.35vw, 32px);
+      line-height: 1.22;
+    }
+    .services-card__button {
+      display: block;
+      text-decoration: none;
+      text-align: center;
+      background: #ef3a79;
+      color: #fff;
+      padding: 13px 16px;
+      font-size: clamp(16px, 1.05vw, 22px);
+      line-height: 1;
+      font-weight: 500;
+    }
+    .services-card__button:hover {
+      color: #fff;
+      opacity: 0.92;
+    }
+    @media (max-width: 991.98px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .services-card__box {
+        min-height: 0;
+      }
     }
     @media (max-width: 767.98px) {
       .positioning-text p {
@@ -527,6 +598,40 @@
         </div>
         <div class="positioning-action">
           <a href="/servicios/" class="btn btn-outline-white py-2 px-4">&rarr; Descubre c&oacute;mo trabajo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" aria-label="Servicios de dirección visual">
+      <div class="services-content" data-aos="fade-up">
+        <h2>Servicios para proyectos que necesitan dirección visual real.</h2>
+        <div class="services-grid">
+          <article class="services-card">
+            <div class="services-card__box">
+              <h3>Diagn&oacute;stico estrat&eacute;gico</h3>
+              <p>Define con claridad qu&eacute; cambiar para que tu proyecto deje de verse improvisado.</p>
+              <p>Decisiones concretas para ordenar y estructurar desde el inicio.</p>
+            </div>
+            <a class="services-card__button" href="/online/">&rarr; Quiero claridad para mi espacio</a>
+          </article>
+
+          <article class="services-card">
+            <div class="services-card__box">
+              <h3>Dise&ntilde;o de direcci&oacute;n de arte</h3>
+              <p>Convierte tu idea en un sistema visual con coherencia, identidad y nivel.</p>
+              <p>Aqu&iacute; se construye el lenguaje visual del proyecto.</p>
+            </div>
+            <a class="services-card__button" href="/online/">&rarr; Quiero dise&ntilde;ar mi proyecto</a>
+          </article>
+
+          <article class="services-card">
+            <div class="services-card__box">
+              <h3>Direcci&oacute;n en producci&oacute;n</h3>
+              <p>Asegura que lo dise&ntilde;ado se sostenga en la realidad, no solo en concepto.</p>
+              <p>Supervisi&oacute;n y criterio para mantener el nivel en ejecuci&oacute;n.</p>
+            </div>
+            <a class="services-card__button" href="/online/">&rarr; Quiero llevarlo a la realidad</a>
+          </article>
         </div>
       </div>
     </section>
