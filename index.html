@@ -462,6 +462,97 @@
         min-height: 0;
       }
     }
+    .workflow-section {
+      padding: clamp(52px, 7vw, 82px) 16px;
+      background: #f2f2f2;
+    }
+    .workflow-content {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .workflow-title {
+      margin: 0 0 18px;
+      text-align: center;
+      color: #3d3183;
+      font-family: var(--title-font);
+      font-size: clamp(44px, 5.2vw, 66px);
+      line-height: 0.95;
+      text-transform: none;
+    }
+    .workflow-intro {
+      max-width: 860px;
+      margin: 0 auto clamp(30px, 3.6vw, 42px);
+      text-align: center;
+      color: #000;
+    }
+    .workflow-intro p {
+      margin: 0;
+      font-size: clamp(20px, 1.7vw, 36px);
+      line-height: 1.3;
+    }
+    .workflow-list {
+      display: grid;
+      gap: 18px;
+    }
+    .workflow-item {
+      display: grid;
+      grid-template-columns: 72px minmax(190px, 260px) 1fr;
+      align-items: center;
+      gap: clamp(14px, 2.2vw, 34px);
+      border-radius: 14px;
+      background: #3d3183;
+      color: #fff;
+      padding: clamp(16px, 1.6vw, 22px) clamp(18px, 2.2vw, 30px);
+    }
+    .workflow-item__number {
+      font-family: var(--title-font);
+      font-size: clamp(48px, 5vw, 64px);
+      line-height: 1;
+      text-align: center;
+      color: #fff;
+    }
+    .workflow-item__title {
+      margin: 0;
+      font-family: var(--title-font);
+      font-size: clamp(24px, 1.8vw, 34px);
+      line-height: 0.92;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .workflow-item__text {
+      margin: 0;
+      font-size: clamp(20px, 1.5vw, 30px);
+      line-height: 1.2;
+      color: #fff;
+    }
+    @media (max-width: 991.98px) {
+      .workflow-item {
+        grid-template-columns: 54px 1fr;
+      }
+      .workflow-item__title,
+      .workflow-item__text {
+        grid-column: 2;
+      }
+      .workflow-item__number {
+        grid-row: span 2;
+      }
+    }
+    @media (max-width: 767.98px) {
+      .workflow-intro p {
+        font-size: 18px !important;
+        line-height: 1.45 !important;
+      }
+      .workflow-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .workflow-item__number,
+      .workflow-item__title,
+      .workflow-item__text {
+        grid-column: auto;
+        text-align: left;
+      }
+    }
     .projects-section {
       padding: 40px 0 16px;
     }
@@ -642,6 +733,40 @@
               <p>Supervisión y criterio para mantener el nivel en ejecución.</p>
             </div>
             <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">&rarr; Quiero llevarlo a la realidad</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow-section" aria-label="Cómo trabajo">
+      <div class="workflow-content" data-aos="fade-up">
+        <h2 class="workflow-title">¿Cómo trabajo?</h2>
+        <div class="workflow-intro">
+          <p>Un proyecto sólido no depende de inspiración.</p>
+          <p>Depende de estructura y decisiones claras.</p>
+          <p>Cada etapa es importante para asegurar coherencia visual y viabilidad.</p>
+        </div>
+
+        <div class="workflow-list">
+          <article class="workflow-item">
+            <span class="workflow-item__number">1</span>
+            <h3 class="workflow-item__title">Definición estratégica</h3>
+            <p class="workflow-item__text">Alineamos intención, narrativa, identidad y alcance real.</p>
+          </article>
+          <article class="workflow-item">
+            <span class="workflow-item__number">2</span>
+            <h3 class="workflow-item__title">Construcción del sistema visual</h3>
+            <p class="workflow-item__text">Concepto, espacio y dirección cromática se articulan bajo una lógica coherente.</p>
+          </article>
+          <article class="workflow-item">
+            <span class="workflow-item__number">3</span>
+            <h3 class="workflow-item__title">Aterrizaje técnico</h3>
+            <p class="workflow-item__text">Las decisiones se traducen en soluciones ejecutables, no en ideas abstractas.</p>
+          </article>
+          <article class="workflow-item">
+            <span class="workflow-item__number">4</span>
+            <h3 class="workflow-item__title">Implementación supervisada</h3>
+            <p class="workflow-item__text">Control en montaje y producción para mantener el nivel definido.</p>
           </article>
         </div>
       </div>
