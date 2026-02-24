@@ -557,6 +557,21 @@
       padding: 52px 0 40px;
       background: #fff;
     }
+    .projects-title {
+      font-family: var(--title-font);
+      font-size: clamp(30px, 3vw, 46px);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+    }
+    .projects-subtitle {
+      margin: 0 auto 30px;
+      max-width: 860px;
+      font-size: clamp(16px, 1.3vw, 22px);
+      color: #7d7d80;
+      line-height: 1.35;
+    }
     .projects-showcase {
       max-width: 1360px;
       margin: 0 auto;
@@ -566,30 +581,16 @@
       margin-bottom: 26px;
       background: #fff;
     }
-    .project-block__header {
-      padding: 8px 6vw 10px;
-      background: #fff;
+    .project-block__slider {
+      width: 100%;
+      padding: 16px 0 22px;
     }
-    .project-block__name {
-      margin: 0 0 6px;
-      font-family: var(--title-font);
-      font-size: clamp(34px, 3.4vw, 54px);
-      line-height: 1;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--brand-blue);
-    }
-    .project-block__meta {
-      margin: 0;
-      max-width: 600px;
-      font-size: clamp(15px, 1.1vw, 18px);
-      color: #1f1f23;
-      line-height: 1.35;
-    }
-    .project-block__slider-wrap {
-      position: relative;
-      background: #e2a2cf;
+    .projects-carousel .swiper-slide {
+      width: 82%;
+      max-width: 920px;
+      border-radius: 14px;
       overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
     }
     .project-block__slider {
       width: 100%;
@@ -598,39 +599,64 @@
     .project-block__slider .swiper-slide {
       width: 55%;
       max-width: 760px;
+      min-height: 290px;
       display: flex;
       justify-content: center;
       align-items: center;
       background: #e63b7c;
-      aspect-ratio: 16 / 9;
     }
     .project-block__slider .swiper-slide img {
       width: 100%;
-      height: 100%;
-      aspect-ratio: 16 / 9;
+      height: 290px;
       object-fit: cover;
       display: block;
     }
-    .project-block,
-    .project-block__slider-wrap,
-    .project-block__slider .swiper-slide,
-    .project-block__slider .swiper-slide img {
-      border-radius: 0 !important;
+    .project-block__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 56px;
+      height: 56px;
+      border: none;
+      border-radius: 50%;
+      background: transparent;
+      color: #fff;
+      z-index: 5;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 38px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .project-block__nav--prev {
+      left: 16px;
+    }
+    .project-block__nav--next {
+      right: 16px;
     }
     @media (max-width: 767.98px) {
       .project-block__header {
         padding: 8px 18px 10px;
       }
-      .project-block__name {
-        font-size: clamp(30px, 10vw, 44px);
+      .projects-carousel .swiper-slide {
+        width: 88%;
       }
       .project-block__slider-wrap,
       .project-block__slider .swiper-slide,
       .project-block__slider .swiper-slide img {
-        aspect-ratio: 16 / 9;
+        min-height: 220px;
+        height: 220px;
       }
-      .project-block__slider .swiper-slide {
-        width: 72%;
+    }
+    @media (min-width: 992px) {
+      .projects-carousel .swiper-slide {
+        width: 68%;
+      }
+      .project-block__nav {
+        width: 46px;
+        height: 46px;
+        font-size: 30px;
       }
     }
     .marquee {
@@ -855,21 +881,51 @@
     </div>
 
     <section id="proyectos" class="projects-section" aria-label="Proyectos">
+      <div class="container-fluid text-center">
+        <h2 class="projects-title">Proyectos</h2>
+        <p class="projects-subtitle">Sección 6: cinco galerías con archivos cargados en Dirección de Arte.</p>
+      </div>
       <div class="projects-showcase" data-aos="fade" data-aos-delay="500">
-
-        <article class="project-block">
-          <div class="project-block__header">
-            <h3 class="project-block__name">TITULO DEL PROYECTO</h3>
-            <p class="project-block__meta">Quick snaps de archivos cargados en Dirección de Arte.</p>
-          </div>
-          <div class="project-block__slider-wrap">
-            <div class="project-block__slider js-project-gallery">
-              <div class="swiper-wrapper">
-                <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/PGL Wallachia Season 1/PGL WALLACHIA3 - NATHALY HABICH.png" alt="Galería 1"></a>
-                <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/ESL One Birmingham 2024/ESL ONE - BIRMINGHAM FINAL - NATHALY HABICH.png" alt="Galería 1"></a>
-                <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH.png" alt="Galería 1"></a>
-              </div>
+        <div class="projects-carousel" id="art-projects-carousel">
+          <div class="swiper projects-carousel__swiper">
+            <div class="swiper-wrapper">
+              <a href="/direcciondearte/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/PGL Wallachia Season 1/PGL WALLACHIA3 - NATHALY HABICH.png" alt="PGL Wallachia Season 1">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">Galería 1</h3>
+                  <p class="projects-carousel__meta">Archivos en Dirección de Arte</p>
+                </div>
+              </a>
+              <a href="/direcciondearte/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/ESL One Birmingham 2024/ESL ONE - BIRMINGHAM FINAL - NATHALY HABICH.png" alt="ESL One Birmingham 2024">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">Galería 2</h3>
+                  <p class="projects-carousel__meta">Archivos en Dirección de Arte</p>
+                </div>
+              </a>
+              <a href="/direcciondearte/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH.png" alt="EliteLeague Season 1">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">Galería 3</h3>
+                  <p class="projects-carousel__meta">Archivos en Dirección de Arte</p>
+                </div>
+              </a>
+              <a href="/direcciondearte/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/BetBoom Dacha/BETBOOM FINAL- NATHALY HABICH.png" alt="BetBoom Dacha Dubai 2024">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">Galería 4</h3>
+                  <p class="projects-carousel__meta">Archivos en Dirección de Arte</p>
+                </div>
+              </a>
+              <a href="/direcciondearte/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH.png" alt="PGL Major Copenhagen 2024">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">Galería 5</h3>
+                  <p class="projects-carousel__meta">Archivos en Dirección de Arte</p>
+                </div>
+              </a>
             </div>
+            <button class="project-block__nav project-block__nav--next" type="button" aria-label="Siguiente"><span class="icon-chevron-right"></span></button>
           </div>
         </article>
 
@@ -879,13 +935,15 @@
             <p class="project-block__meta">Quick snaps de archivos cargados en Dirección de Arte.</p>
           </div>
           <div class="project-block__slider-wrap">
-            <div class="project-block__slider js-project-gallery">
+            <button class="project-block__nav project-block__nav--prev" type="button" aria-label="Anterior"><span class="icon-chevron-left"></span></button>
+            <div class="swiper project-block__slider js-project-gallery">
               <div class="swiper-wrapper">
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/ESL One Birmingham 2024/ESL ONE - BIRMINGHAM FINAL - NATHALY HABICH.png" alt="Galería 2"></a>
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/BetBoom Dacha/BETBOOM FINAL- NATHALY HABICH.png" alt="Galería 2"></a>
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH.png" alt="Galería 2"></a>
               </div>
             </div>
+            <button class="project-block__nav project-block__nav--next" type="button" aria-label="Siguiente"><span class="icon-chevron-right"></span></button>
           </div>
         </article>
 
@@ -895,13 +953,15 @@
             <p class="project-block__meta">Quick snaps de archivos cargados en Dirección de Arte.</p>
           </div>
           <div class="project-block__slider-wrap">
-            <div class="project-block__slider js-project-gallery">
+            <button class="project-block__nav project-block__nav--prev" type="button" aria-label="Anterior"><span class="icon-chevron-left"></span></button>
+            <div class="swiper project-block__slider js-project-gallery">
               <div class="swiper-wrapper">
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH.png" alt="Galería 3"></a>
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH.png" alt="Galería 3"></a>
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/PGL Wallachia Season 1/PGL WALLACHIA3 - NATHALY HABICH.png" alt="Galería 3"></a>
               </div>
             </div>
+            <button class="project-block__nav project-block__nav--next" type="button" aria-label="Siguiente"><span class="icon-chevron-right"></span></button>
           </div>
         </article>
 
@@ -911,13 +971,15 @@
             <p class="project-block__meta">Quick snaps de archivos cargados en Dirección de Arte.</p>
           </div>
           <div class="project-block__slider-wrap">
-            <div class="project-block__slider js-project-gallery">
+            <button class="project-block__nav project-block__nav--prev" type="button" aria-label="Anterior"><span class="icon-chevron-left"></span></button>
+            <div class="swiper project-block__slider js-project-gallery">
               <div class="swiper-wrapper">
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/BetBoom Dacha/BETBOOM FINAL- NATHALY HABICH.png" alt="Galería 4"></a>
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/PGL Wallachia Season 1/PGL WALLACHIA3 - NATHALY HABICH.png" alt="Galería 4"></a>
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/ESL One Birmingham 2024/ESL ONE - BIRMINGHAM FINAL - NATHALY HABICH.png" alt="Galería 4"></a>
               </div>
             </div>
+            <button class="project-block__nav project-block__nav--next" type="button" aria-label="Siguiente"><span class="icon-chevron-right"></span></button>
           </div>
         </article>
 
@@ -927,13 +989,15 @@
             <p class="project-block__meta">Quick snaps de archivos cargados en Dirección de Arte.</p>
           </div>
           <div class="project-block__slider-wrap">
-            <div class="project-block__slider js-project-gallery">
+            <button class="project-block__nav project-block__nav--prev" type="button" aria-label="Anterior"><span class="icon-chevron-left"></span></button>
+            <div class="swiper project-block__slider js-project-gallery">
               <div class="swiper-wrapper">
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH.png" alt="Galería 5"></a>
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/BetBoom Dacha/BETBOOM FINAL- NATHALY HABICH.png" alt="Galería 5"></a>
                 <a href="/direcciondearte/" class="swiper-slide"><img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH.png" alt="Galería 5"></a>
               </div>
             </div>
+            <button class="project-block__nav project-block__nav--next" type="button" aria-label="Siguiente"><span class="icon-chevron-right"></span></button>
           </div>
         </article>
 
@@ -978,31 +1042,28 @@
     $(document).ready(function(){
       $('#lightgallery').lightGallery();
 
-      if (typeof Swiper !== 'undefined') {
-        document.querySelectorAll('.js-project-gallery').forEach(function(swiperEl) {
-          new Swiper(swiperEl, {
-            loop: true,
-            speed: 5200,
-            centeredSlides: true,
-            slidesPerView: 1.75,
-            spaceBetween: 0,
-            allowTouchMove: false,
-            autoplay: {
-              delay: 1,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: false,
-              reverseDirection: false
+      const carousel = document.getElementById('art-projects-carousel');
+      const swiperElement = carousel ? carousel.querySelector('.projects-carousel__swiper') : null;
+      if (swiperElement && typeof Swiper !== 'undefined') {
+        new Swiper(swiperElement, {
+          loop: true,
+          speed: 900,
+          centeredSlides: true,
+          slidesPerView: 1.08,
+          spaceBetween: 28,
+          autoplay: {
+            delay: 4200,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 1.22,
+              spaceBetween: 34
             },
-            breakpoints: {
-              0: {
-                slidesPerView: 1.2
-              },
-              768: {
-                slidesPerView: 1.45
-              },
-              1200: {
-                slidesPerView: 1.75
-              }
+            1200: {
+              slidesPerView: 1.4,
+              spaceBetween: 42
             }
           });
         });
