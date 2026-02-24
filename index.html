@@ -1040,11 +1040,17 @@
 
           const copyElement = block ? block.parentElement.querySelector('.js-slide-copy') : null;
 
+      if (typeof Swiper !== 'undefined') {
+        document.querySelectorAll('.js-project-gallery').forEach(function(gallery, index) {
+          const block = gallery.closest('.project-block__slider-wrap');
+          const prevButton = block ? block.querySelector('.project-block__nav--prev') : null;
+          const nextButton = block ? block.querySelector('.project-block__nav--next') : null;
+
+          const copyElement = block ? block.parentElement.querySelector('.js-slide-copy') : null;
+
           const updateSlideCopy = function(swiper) {
             if (!copyElement) return;
-            const instance = swiper && swiper.slides ? swiper : this;
-            if (!instance || !instance.slides) return;
-            const activeSlide = instance.slides[instance.activeIndex];
+            const activeSlide = swiper.slides[swiper.activeIndex];
             const activeCopy = activeSlide ? activeSlide.getAttribute('data-copy') : '';
             if (activeCopy) {
               copyElement.textContent = activeCopy;
