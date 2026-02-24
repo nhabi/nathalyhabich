@@ -615,13 +615,14 @@
     }
     .projects-carousel__swiper {
       width: 100%;
-      padding: 0;
+      padding: 16px 0 22px;
     }
     .projects-carousel .swiper-slide {
-      width: 86%;
-      max-width: 980px;
+      width: 82%;
+      max-width: 920px;
       border-radius: 14px;
       overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
     }
     .projects-carousel__slide {
       height: 100%;
@@ -664,7 +665,7 @@
         height: 420px;
       }
       .projects-carousel .swiper-slide {
-        width: 90%;
+        width: 88%;
       }
       .projects-carousel__info {
         padding: 20px;
@@ -672,7 +673,7 @@
     }
     @media (min-width: 992px) {
       .projects-carousel .swiper-slide {
-        width: 72%;
+        width: 68%;
       }
     }
     .marquee {
@@ -991,8 +992,8 @@
           loop: true,
           speed: 900,
           centeredSlides: true,
-          slidesPerView: 1.15,
-          spaceBetween: 18,
+          slidesPerView: 1.08,
+          spaceBetween: 28,
           autoplay: {
             delay: 4200,
             disableOnInteraction: false,
@@ -1000,12 +1001,12 @@
           },
           breakpoints: {
             768: {
-              slidesPerView: 1.35,
-              spaceBetween: 22
+              slidesPerView: 1.22,
+              spaceBetween: 34
             },
             1200: {
-              slidesPerView: 1.6,
-              spaceBetween: 28
+              slidesPerView: 1.4,
+              spaceBetween: 42
             }
           }
         });
