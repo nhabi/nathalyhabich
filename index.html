@@ -558,99 +558,9 @@
       background: #fff;
     }
     .projects-title {
-      margin: 0 0 18px;
-      text-align: center;
-      color: #3d3183;
-      font-family: var(--title-font);
-      font-size: clamp(44px, 5.2vw, 66px);
-      line-height: 0.95;
-      text-transform: none;
-      letter-spacing: normal;
-    }
-    .projects-subtitle {
-      max-width: 760px;
-      text-align: center;
-      color: #1f1f23;
-      margin: 0 auto 36px;
-      font-size: clamp(20px, 1.7vw, 30px);
-      line-height: 1.35;
-      font-weight: 400;
-    }
-    .projects-showcase {
-      max-width: 1380px;
-      margin: 0 auto;
-      padding: 0 12px;
-    }
-    .projects-list {
-      display: grid;
-      gap: 42px;
-    }
-    .project-carousel-card {
-      border: 1px solid #e8e8ea;
-      border-radius: 0;
-      background: #fff;
-      padding: 14px 14px 18px;
-    }
-    .project-carousel {
-      overflow: hidden;
-      border-radius: 0;
-      background: #fff;
-    }
-    .project-carousel .swiper-slide {
-      width: 86%;
-      max-width: 980px;
-      border-radius: 0;
-      overflow: hidden;
-    }
-    .project-carousel .swiper-slide img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      display: block;
-    }
-    .project-carousel__button {
-      width: 48px;
-      height: 48px;
-      border-radius: 999px;
-      background-image: none !important;
-      background-color: rgba(255, 255, 255, 0.95);
-      border: 1px solid rgba(0,0,0,0.18);
-      color: #1f1f23;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-      z-index: 20;
-    }
-    .project-carousel__button.swiper-button-prev {
-      left: 12px;
-    }
-    .project-carousel__button.swiper-button-next {
-      right: 12px;
-    }
-    .project-carousel__button:hover {
-      background-color: #fff;
-      transform: scale(1.04);
-    }
-    .project-carousel__button::after {
-      font-family: var(--title-font);
-      font-size: 24px;
-      font-weight: 700;
-      line-height: 1;
-      color: #1f1f23;
-      text-shadow: none;
-    }
-    .project-carousel__button.swiper-button-prev::after {
-      content: '‹';
-    }
-    .project-carousel__button.swiper-button-next::after {
-      content: '›';
-    }
-    .project-carousel__eyebrow {
-      margin: 14px 0 8px;
-      font-size: 13px;
-      letter-spacing: 2px;
+      font-size: 28px;
+      letter-spacing: 3px;
+      margin-bottom: 8px;
       text-transform: uppercase;
       color: #7d7d80;
     }
@@ -680,6 +590,88 @@
     }
     @media (min-width: 992px) {
       .project-carousel .swiper-slide {
+        width: 72%;
+      }
+    }
+    .projects-subtitle {
+      margin: 0 auto 30px;
+      max-width: 860px;
+      font-size: clamp(18px, 1.5vw, 24px);
+      color: #7d7d80;
+      line-height: 1.35;
+    }
+    .projects-showcase {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+    .projects-carousel {
+      position: relative;
+      background: #fff;
+      border: 1px solid #e8e8ea;
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 560px;
+    }
+    .projects-carousel__swiper {
+      width: 100%;
+      padding: 0;
+    }
+    .projects-carousel .swiper-slide {
+      width: 86%;
+      max-width: 980px;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .projects-carousel__slide {
+      height: 100%;
+      position: relative;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .projects-carousel__slide img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      display: block;
+    }
+    .projects-carousel__info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(12,12,12,0.72) 90%);
+      color: #fff;
+    }
+    .projects-carousel__name {
+      margin: 0;
+      font-family: var(--title-font);
+      font-size: clamp(24px, 2.3vw, 38px);
+      line-height: 1.15;
+    }
+    .projects-carousel__meta {
+      margin: 8px 0 0;
+      font-size: clamp(14px, 1vw, 18px);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 767.98px) {
+      .projects-carousel,
+      .projects-carousel__slide img {
+        min-height: 420px;
+        height: 420px;
+      }
+      .projects-carousel .swiper-slide {
+        width: 90%;
+      }
+      .projects-carousel__info {
+        padding: 20px;
+      }
+    }
+    @media (min-width: 992px) {
+      .projects-carousel .swiper-slide {
         width: 72%;
       }
     }
@@ -773,9 +765,9 @@
         loop
         playsinline
         preload="auto"
-        poster="Work- Nathaly Habich.mp4"
+        poster="Reel3.mp4"
       >
-        <source src="Work- Nathaly Habich.mp4" type="video/mp4">
+        <source src="Reel3.mp4" type="video/mp4">
         Tu navegador no soporta el video de portada.
       </video>
       <div class="reel-hero__overlay">
@@ -910,78 +902,46 @@
         <p class="projects-subtitle">Dirección de arte en cinco proyectos destacados presentados en una galería dinámica.</p>
       </div>
       <div class="projects-showcase" data-aos="fade" data-aos-delay="500">
-        <div class="projects-list">
-
-          <article class="project-carousel-card">
-            <div class="swiper project-carousel js-project-swiper" id="project-swiper-1" data-delay="3800">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/direccion de arte/PGL Wallachia Season 1/PGL WALLACHIA3 - NATHALY HABICH.png" alt="PGL Wallachia Season 1"></div>
-                <div class="swiper-slide"><img src="/images/direccion de arte/PGL Wallachia Season 1/PGL WALLACHIA3 - NATHALY HABICH (1).png" alt="PGL Wallachia Season 1"></div>
-                <div class="swiper-slide"><img src="/images/direccion de arte/PGL Wallachia Season 1/PGL WALLACHIA3 - NATHALY HABICH (2).png" alt="PGL Wallachia Season 1"></div>
-              </div>
-              <div class="swiper-button-prev project-carousel__button" aria-label="Anterior"></div>
-              <div class="swiper-button-next project-carousel__button" aria-label="Siguiente"></div>
+        <div class="projects-carousel" id="art-projects-carousel">
+          <div class="swiper projects-carousel__swiper">
+            <div class="swiper-wrapper">
+              <a href="/ESB- PGL Wallachia Season 1/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/PGL Wallachia Season 1/PGL WALLACHIA3 - NATHALY HABICH.png" alt="PGL Wallachia Season 1">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">PGL Wallachia Season 1</h3>
+                  <p class="projects-carousel__meta">Dirección de arte</p>
+                </div>
+              </a>
+              <a href="/ESB- ESL One Birmingham 2024/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/ESL One Birmingham 2024/ESL ONE - BIRMINGHAM FINAL - NATHALY HABICH.png" alt="ESL One Birmingham 2024">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">ESL One Birmingham 2024</h3>
+                  <p class="projects-carousel__meta">Dirección de arte</p>
+                </div>
+              </a>
+              <a href="/ESB-EliteLeagueS1/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH.png" alt="EliteLeague Season 1">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">EliteLeague Season 1</h3>
+                  <p class="projects-carousel__meta">Dirección de arte</p>
+                </div>
+              </a>
+              <a href="/ESB-BetBoom Dacha 2024/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/BetBoom Dacha/BETBOOM FINAL- NATHALY HABICH.png" alt="BetBoom Dacha Dubai 2024">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">BetBoom Dacha Dubai 2024</h3>
+                  <p class="projects-carousel__meta">Dirección de arte</p>
+                </div>
+              </a>
+              <a href="/PGL Major Copenhagen/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH.png" alt="PGL Major Copenhagen 2024">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">PGL Major Copenhagen 2024</h3>
+                  <p class="projects-carousel__meta">Dirección de arte</p>
+                </div>
+              </a>
             </div>
-            <p class="project-carousel__eyebrow">Proyecto 1</p>
-            <a class="project-carousel__title" href="/ESB- PGL Wallachia Season 1/">PGL Wallachia Season 1</a>
-          </article>
-
-          <article class="project-carousel-card">
-            <div class="swiper project-carousel js-project-swiper" id="project-swiper-2" data-delay="4100">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/direccion de arte/ESL One Birmingham 2024/ESL ONE - BIRMINGHAM FINAL - NATHALY HABICH.png" alt="ESL One Birmingham 2024"></div>
-                <div class="swiper-slide"><img src="/images/direccion de arte/ESL One Birmingham 2024/ESL ONE - BIRMINGHAM FINAL - NATHALY HABICH (1).png" alt="ESL One Birmingham 2024"></div>
-                <div class="swiper-slide"><img src="/images/direccion de arte/ESL One Birmingham 2024/ESL ONE - BIRMINGHAM FINAL - NATHALY HABICH (2).png" alt="ESL One Birmingham 2024"></div>
-              </div>
-              <div class="swiper-button-prev project-carousel__button" aria-label="Anterior"></div>
-              <div class="swiper-button-next project-carousel__button" aria-label="Siguiente"></div>
-            </div>
-            <p class="project-carousel__eyebrow">Proyecto 2</p>
-            <a class="project-carousel__title" href="/ESB- ESL One Birmingham 2024/">ESL One Birmingham 2024</a>
-          </article>
-
-          <article class="project-carousel-card">
-            <div class="swiper project-carousel js-project-swiper" id="project-swiper-3" data-delay="4300">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH.png" alt="EliteLeague Season 1"></div>
-                <div class="swiper-slide"><img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH (1).png" alt="EliteLeague Season 1"></div>
-                <div class="swiper-slide"><img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH (2).png" alt="EliteLeague Season 1"></div>
-              </div>
-              <div class="swiper-button-prev project-carousel__button" aria-label="Anterior"></div>
-              <div class="swiper-button-next project-carousel__button" aria-label="Siguiente"></div>
-            </div>
-            <p class="project-carousel__eyebrow">Proyecto 3</p>
-            <a class="project-carousel__title" href="/ESB-EliteLeagueS1/">EliteLeague Season 1</a>
-          </article>
-
-          <article class="project-carousel-card">
-            <div class="swiper project-carousel js-project-swiper" id="project-swiper-4" data-delay="4600">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/direccion de arte/BetBoom Dacha/BETBOOM FINAL- NATHALY HABICH.png" alt="BetBoom Dacha Dubai 2024"></div>
-                <div class="swiper-slide"><img src="/images/direccion de arte/BetBoom Dacha/1.png" alt="BetBoom Dacha Dubai 2024"></div>
-                <div class="swiper-slide"><img src="/images/direccion de arte/BetBoom Dacha/2.png" alt="BetBoom Dacha Dubai 2024"></div>
-              </div>
-              <div class="swiper-button-prev project-carousel__button" aria-label="Anterior"></div>
-              <div class="swiper-button-next project-carousel__button" aria-label="Siguiente"></div>
-            </div>
-            <p class="project-carousel__eyebrow">Proyecto 4</p>
-            <a class="project-carousel__title" href="/ESB-BetBoom Dacha 2024/">BetBoom Dacha Dubai 2024</a>
-          </article>
-
-          <article class="project-carousel-card">
-            <div class="swiper project-carousel js-project-swiper" id="project-swiper-5" data-delay="4900">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH.png" alt="PGL Major Copenhagen 2024"></div>
-                <div class="swiper-slide"><img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (1).png" alt="PGL Major Copenhagen 2024"></div>
-                <div class="swiper-slide"><img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (2).png" alt="PGL Major Copenhagen 2024"></div>
-              </div>
-              <div class="swiper-button-prev project-carousel__button" aria-label="Anterior"></div>
-              <div class="swiper-button-next project-carousel__button" aria-label="Siguiente"></div>
-            </div>
-            <p class="project-carousel__eyebrow">Proyecto 5</p>
-            <a class="project-carousel__title" href="/PGL Major Copenhagen/">PGL Major Copenhagen 2024</a>
-          </article>
-
+          </div>
         </div>
       </div>
     </section>
@@ -1024,43 +984,30 @@
     $(document).ready(function(){
       $('#lightgallery').lightGallery();
 
-      if (typeof Swiper !== 'undefined') {
-        const swiperIds = ['project-swiper-1', 'project-swiper-2', 'project-swiper-3', 'project-swiper-4', 'project-swiper-5'];
-
-        swiperIds.forEach((swiperId) => {
-          const swiperElement = document.getElementById(swiperId);
-          if (!swiperElement) return;
-
-          const delay = Number(swiperElement.getAttribute('data-delay')) || 4200;
-          const prevBtn = swiperElement.querySelector('.swiper-button-prev');
-          const nextBtn = swiperElement.querySelector('.swiper-button-next');
-
-          new Swiper(swiperElement, {
-            loop: true,
-            speed: 900,
-            centeredSlides: false,
-            slidesPerView: 1,
-            spaceBetween: 18,
-            autoplay: {
-              delay,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true
+      const carousel = document.getElementById('art-projects-carousel');
+      const swiperElement = carousel ? carousel.querySelector('.projects-carousel__swiper') : null;
+      if (swiperElement && typeof Swiper !== 'undefined') {
+        new Swiper(swiperElement, {
+          loop: true,
+          speed: 900,
+          centeredSlides: true,
+          slidesPerView: 1.15,
+          spaceBetween: 18,
+          autoplay: {
+            delay: 4200,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 1.35,
+              spaceBetween: 22
             },
-            navigation: {
-              prevEl: prevBtn,
-              nextEl: nextBtn
-            },
-            breakpoints: {
-              768: {
-                slidesPerView: 1,
-                spaceBetween: 22
-              },
-              1200: {
-                slidesPerView: 1,
-                spaceBetween: 28
-              }
+            1200: {
+              slidesPerView: 1.6,
+              spaceBetween: 28
             }
-          });
+          }
         });
       }
     });
