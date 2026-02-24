@@ -615,13 +615,14 @@
     }
     .projects-carousel__swiper {
       width: 100%;
-      padding: 0;
+      padding: 16px 0 22px;
     }
     .projects-carousel .swiper-slide {
-      width: 86%;
-      max-width: 980px;
+      width: 82%;
+      max-width: 920px;
       border-radius: 14px;
       overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
     }
     .projects-carousel__slide {
       height: 100%;
@@ -664,7 +665,7 @@
         height: 420px;
       }
       .projects-carousel .swiper-slide {
-        width: 90%;
+        width: 88%;
       }
       .projects-carousel__info {
         padding: 20px;
@@ -672,7 +673,7 @@
     }
     @media (min-width: 992px) {
       .projects-carousel .swiper-slide {
-        width: 72%;
+        width: 68%;
       }
     }
     .marquee {
@@ -899,45 +900,45 @@
     <section id="proyectos" class="projects-section" aria-label="Proyectos">
       <div class="container-fluid text-center">
         <h2 class="projects-title">Proyectos</h2>
-        <p class="projects-subtitle">Dirección de arte en cinco proyectos destacados presentados en una galería dinámica.</p>
+        <p class="projects-subtitle">Sección 6: cinco galerías con archivos cargados en Dirección de Arte.</p>
       </div>
       <div class="projects-showcase" data-aos="fade" data-aos-delay="500">
         <div class="projects-carousel" id="art-projects-carousel">
           <div class="swiper projects-carousel__swiper">
             <div class="swiper-wrapper">
-              <a href="/ESB- PGL Wallachia Season 1/" class="swiper-slide projects-carousel__slide">
+              <a href="/direcciondearte/" class="swiper-slide projects-carousel__slide">
                 <img src="/images/direccion de arte/PGL Wallachia Season 1/PGL WALLACHIA3 - NATHALY HABICH.png" alt="PGL Wallachia Season 1">
                 <div class="projects-carousel__info">
-                  <h3 class="projects-carousel__name">PGL Wallachia Season 1</h3>
-                  <p class="projects-carousel__meta">Dirección de arte</p>
+                  <h3 class="projects-carousel__name">Galería 1</h3>
+                  <p class="projects-carousel__meta">Archivos en Dirección de Arte</p>
                 </div>
               </a>
-              <a href="/ESB- ESL One Birmingham 2024/" class="swiper-slide projects-carousel__slide">
+              <a href="/direcciondearte/" class="swiper-slide projects-carousel__slide">
                 <img src="/images/direccion de arte/ESL One Birmingham 2024/ESL ONE - BIRMINGHAM FINAL - NATHALY HABICH.png" alt="ESL One Birmingham 2024">
                 <div class="projects-carousel__info">
-                  <h3 class="projects-carousel__name">ESL One Birmingham 2024</h3>
-                  <p class="projects-carousel__meta">Dirección de arte</p>
+                  <h3 class="projects-carousel__name">Galería 2</h3>
+                  <p class="projects-carousel__meta">Archivos en Dirección de Arte</p>
                 </div>
               </a>
-              <a href="/ESB-EliteLeagueS1/" class="swiper-slide projects-carousel__slide">
+              <a href="/direcciondearte/" class="swiper-slide projects-carousel__slide">
                 <img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH.png" alt="EliteLeague Season 1">
                 <div class="projects-carousel__info">
-                  <h3 class="projects-carousel__name">EliteLeague Season 1</h3>
-                  <p class="projects-carousel__meta">Dirección de arte</p>
+                  <h3 class="projects-carousel__name">Galería 3</h3>
+                  <p class="projects-carousel__meta">Archivos en Dirección de Arte</p>
                 </div>
               </a>
-              <a href="/ESB-BetBoom Dacha 2024/" class="swiper-slide projects-carousel__slide">
+              <a href="/direcciondearte/" class="swiper-slide projects-carousel__slide">
                 <img src="/images/direccion de arte/BetBoom Dacha/BETBOOM FINAL- NATHALY HABICH.png" alt="BetBoom Dacha Dubai 2024">
                 <div class="projects-carousel__info">
-                  <h3 class="projects-carousel__name">BetBoom Dacha Dubai 2024</h3>
-                  <p class="projects-carousel__meta">Dirección de arte</p>
+                  <h3 class="projects-carousel__name">Galería 4</h3>
+                  <p class="projects-carousel__meta">Archivos en Dirección de Arte</p>
                 </div>
               </a>
-              <a href="/PGL Major Copenhagen/" class="swiper-slide projects-carousel__slide">
+              <a href="/direcciondearte/" class="swiper-slide projects-carousel__slide">
                 <img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH.png" alt="PGL Major Copenhagen 2024">
                 <div class="projects-carousel__info">
-                  <h3 class="projects-carousel__name">PGL Major Copenhagen 2024</h3>
-                  <p class="projects-carousel__meta">Dirección de arte</p>
+                  <h3 class="projects-carousel__name">Galería 5</h3>
+                  <p class="projects-carousel__meta">Archivos en Dirección de Arte</p>
                 </div>
               </a>
             </div>
@@ -991,8 +992,8 @@
           loop: true,
           speed: 900,
           centeredSlides: true,
-          slidesPerView: 1.15,
-          spaceBetween: 18,
+          slidesPerView: 1.08,
+          spaceBetween: 28,
           autoplay: {
             delay: 4200,
             disableOnInteraction: false,
@@ -1000,12 +1001,12 @@
           },
           breakpoints: {
             768: {
-              slidesPerView: 1.35,
-              spaceBetween: 22
+              slidesPerView: 1.22,
+              spaceBetween: 34
             },
             1200: {
-              slidesPerView: 1.6,
-              spaceBetween: 28
+              slidesPerView: 1.4,
+              spaceBetween: 42
             }
           }
         });
