@@ -554,13 +554,96 @@
       }
     }
     .projects-section {
-      padding: 40px 0 16px;
+      padding: 52px 0 32px;
+      background: #fff;
     }
     .projects-title {
       font-size: 28px;
       letter-spacing: 3px;
-      margin-bottom: 24px;
+      margin-bottom: 8px;
       text-transform: uppercase;
+    }
+    .projects-subtitle {
+      margin: 0 auto 30px;
+      max-width: 860px;
+      font-size: clamp(18px, 1.5vw, 24px);
+      color: #7d7d80;
+      line-height: 1.35;
+    }
+    .projects-showcase {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 12px;
+    }
+    .projects-carousel {
+      position: relative;
+      background: #fff;
+      border: 1px solid #e8e8ea;
+      border-radius: 18px;
+      overflow: hidden;
+      min-height: 560px;
+    }
+    .projects-carousel__swiper {
+      width: 100%;
+      padding: 0;
+    }
+    .projects-carousel .swiper-slide {
+      width: 86%;
+      max-width: 980px;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .projects-carousel__slide {
+      height: 100%;
+      position: relative;
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .projects-carousel__slide img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      display: block;
+    }
+    .projects-carousel__info {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(12,12,12,0.72) 90%);
+      color: #fff;
+    }
+    .projects-carousel__name {
+      margin: 0;
+      font-family: var(--title-font);
+      font-size: clamp(24px, 2.3vw, 38px);
+      line-height: 1.15;
+    }
+    .projects-carousel__meta {
+      margin: 8px 0 0;
+      font-size: clamp(14px, 1vw, 18px);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    @media (max-width: 767.98px) {
+      .projects-carousel,
+      .projects-carousel__slide img {
+        min-height: 420px;
+        height: 420px;
+      }
+      .projects-carousel .swiper-slide {
+        width: 90%;
+      }
+      .projects-carousel__info {
+        padding: 20px;
+      }
+    }
+    @media (min-width: 992px) {
+      .projects-carousel .swiper-slide {
+        width: 72%;
+      }
     }
     .marquee {
       overflow: hidden;
@@ -786,39 +869,49 @@
     <section id="proyectos" class="projects-section" aria-label="Proyectos">
       <div class="container-fluid text-center">
         <h2 class="projects-title">Proyectos</h2>
+        <p class="projects-subtitle">Dirección de arte en cinco proyectos destacados presentados en una galería dinámica.</p>
       </div>
-      <div class="container-fluid" data-aos="fade" data-aos-delay="500">
-        <div class="row">
-          <div class="col-lg-4">
-
-            <div class="image-wrap-2">
-              <div class="image-info">
-                <h2 class="mb-3"></h2>
-                <a href="/Residencial/" class="btn btn-outline-white py-2 px-4">INTERIORES</a>
-              </div>
-              <a href="/Residencial/"><img src="/images/portada interiores.jpg" alt="Interiores" class="img-fluid"></a>
+      <div class="projects-showcase" data-aos="fade" data-aos-delay="500">
+        <div class="projects-carousel" id="art-projects-carousel">
+          <div class="swiper projects-carousel__swiper">
+            <div class="swiper-wrapper">
+              <a href="/ESB- PGL Wallachia Season 1/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/PGL Wallachia Season 1/PGL WALLACHIA3 - NATHALY HABICH.png" alt="PGL Wallachia Season 1">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">PGL Wallachia Season 1</h3>
+                  <p class="projects-carousel__meta">Dirección de arte</p>
+                </div>
+              </a>
+              <a href="/ESB- ESL One Birmingham 2024/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/ESL One Birmingham 2024/ESL ONE - BIRMINGHAM FINAL - NATHALY HABICH.png" alt="ESL One Birmingham 2024">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">ESL One Birmingham 2024</h3>
+                  <p class="projects-carousel__meta">Dirección de arte</p>
+                </div>
+              </a>
+              <a href="/ESB-EliteLeagueS1/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH.png" alt="EliteLeague Season 1">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">EliteLeague Season 1</h3>
+                  <p class="projects-carousel__meta">Dirección de arte</p>
+                </div>
+              </a>
+              <a href="/ESB-BetBoom Dacha 2024/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/BetBoom Dacha/BETBOOM FINAL- NATHALY HABICH.png" alt="BetBoom Dacha Dubai 2024">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">BetBoom Dacha Dubai 2024</h3>
+                  <p class="projects-carousel__meta">Dirección de arte</p>
+                </div>
+              </a>
+              <a href="/PGL Major Copenhagen/" class="swiper-slide projects-carousel__slide">
+                <img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH.png" alt="PGL Major Copenhagen 2024">
+                <div class="projects-carousel__info">
+                  <h3 class="projects-carousel__name">PGL Major Copenhagen 2024</h3>
+                  <p class="projects-carousel__meta">Dirección de arte</p>
+                </div>
+              </a>
             </div>
-
           </div>
-          <div class="col-lg-4">
-            <div class="image-wrap-2">
-              <div class="image-info">
-                <h2 class="mb-3"></h2>
-                <a href="/direcciondearte/" class="btn btn-outline-white py-2 px-4">DIRECCIÓN DE ARTE</a>
-              </div>
-              <a href="/direcciondearte/"><img src="/images/try.png" alt="Dirección de arte" class="img-fluid"></a>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="image-wrap-2">
-              <div class="image-info">
-                <h2 class="mb-3"></h2>
-                <a href="/styling/" class="btn btn-outline-white py-2 px-4">styling</a>
-              </div>
-              <a href="/styling/"><img src="/images/portada styling.jpg" alt="Styling" class="img-fluid"></a>
-            </div>
-          </div>            
-         
         </div>
       </div>
     </section>
@@ -860,6 +953,33 @@
   <script>
     $(document).ready(function(){
       $('#lightgallery').lightGallery();
+
+      const carousel = document.getElementById('art-projects-carousel');
+      const swiperElement = carousel ? carousel.querySelector('.projects-carousel__swiper') : null;
+      if (swiperElement && typeof Swiper !== 'undefined') {
+        new Swiper(swiperElement, {
+          loop: true,
+          speed: 900,
+          centeredSlides: true,
+          slidesPerView: 1.15,
+          spaceBetween: 18,
+          autoplay: {
+            delay: 4200,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 1.35,
+              spaceBetween: 22
+            },
+            1200: {
+              slidesPerView: 1.6,
+              spaceBetween: 28
+            }
+          }
+        });
+      }
     });
   </script>
 
