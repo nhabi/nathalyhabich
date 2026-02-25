@@ -579,60 +579,86 @@
       display: grid;
       gap: 30px;
     }
-    .project-block {
+    .project-card {
       margin: 0;
       background: #fff;
     }
-    .project-block__viewport {
+    .embla {
       position: relative;
+    }
+    .embla__viewport {
       width: 100%;
       overflow: hidden;
     }
-    .project-block__track {
+    .embla__container {
       display: flex;
-      flex-wrap: nowrap;
-      will-change: transform;
+      gap: 20px;
     }
-    .project-block__slide {
-      flex: 0 0 56%;
+    .embla__slide {
+      flex: 0 0 70%;
       aspect-ratio: 16 / 9;
       display: block;
     }
-    .project-block__slide img,
-    .project-block__slide video {
+    .embla__slide img,
+    .embla__slide video {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
-    .project-block__content {
+    .embla__prev,
+    .embla__next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-size: 34px;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      padding: 0;
+    }
+    .embla__prev {
+      left: 16px;
+    }
+    .embla__next {
+      right: 16px;
+    }
+    .project-card__content {
       margin-top: 14px;
       text-align: left;
       padding: 0 8px;
     }
-    .project-block__title {
+    .project-title {
       margin: 0;
       font-size: clamp(22px, 2vw, 32px);
       line-height: 1.2;
       color: #1f1f23;
     }
-    .project-block__title-link {
+    .project-title-link {
       color: inherit;
       text-decoration: none;
     }
-    .project-block__title-link:hover,
-    .project-block__title-link:focus {
+    .project-title-link:hover,
+    .project-title-link:focus {
       text-decoration: underline;
     }
-    .project-block__excerpt {
+    .project-excerpt {
       margin: 6px 0 0;
       color: #7d7d80;
       font-size: clamp(16px, 1.2vw, 20px);
       line-height: 1.4;
     }
     @media (max-width: 767.98px) {
-      .project-block__slide {
-        flex-basis: 70%;
+      .embla__slide {
+        flex: 0 0 85%;
       }
     }
     .marquee {
@@ -866,11 +892,71 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
       </div>
 
       <div class="projects-showcase" data-aos="fade" data-aos-delay="500">
-        <article class="project-block js-project-carousel-card" data-project="/projects/pgl-wallachia-season-1/media.json"></article>
-        <article class="project-block js-project-carousel-card" data-project="/projects/esl-one-birmingham-2024/media.json"></article>
-        <article class="project-block js-project-carousel-card" data-project="/projects/eliteleague-s1/media.json"></article>
-        <article class="project-block js-project-carousel-card" data-project="/projects/betboom-dacha-2024/media.json"></article>
-        <article class="project-block js-project-carousel-card" data-project="/projects/pgl-major-copenhagen-2024/media.json"></article>
+        <article class="project-card js-project-carousel-card" data-project="/projects/pgl-wallachia-season-1/media.json">
+          <div class="embla" aria-label="Project media carousel">
+            <div class="embla__viewport">
+              <div class="embla__container"></div>
+            </div>
+            <button class="embla__prev" type="button" aria-label="Anterior">‹</button>
+            <button class="embla__next" type="button" aria-label="Siguiente">›</button>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-title"></h3>
+            <p class="project-excerpt"></p>
+          </div>
+        </article>
+        <article class="project-card js-project-carousel-card" data-project="/projects/esl-one-birmingham-2024/media.json">
+          <div class="embla" aria-label="Project media carousel">
+            <div class="embla__viewport">
+              <div class="embla__container"></div>
+            </div>
+            <button class="embla__prev" type="button" aria-label="Anterior">‹</button>
+            <button class="embla__next" type="button" aria-label="Siguiente">›</button>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-title"></h3>
+            <p class="project-excerpt"></p>
+          </div>
+        </article>
+        <article class="project-card js-project-carousel-card" data-project="/projects/eliteleague-s1/media.json">
+          <div class="embla" aria-label="Project media carousel">
+            <div class="embla__viewport">
+              <div class="embla__container"></div>
+            </div>
+            <button class="embla__prev" type="button" aria-label="Anterior">‹</button>
+            <button class="embla__next" type="button" aria-label="Siguiente">›</button>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-title"></h3>
+            <p class="project-excerpt"></p>
+          </div>
+        </article>
+        <article class="project-card js-project-carousel-card" data-project="/projects/betboom-dacha-2024/media.json">
+          <div class="embla" aria-label="Project media carousel">
+            <div class="embla__viewport">
+              <div class="embla__container"></div>
+            </div>
+            <button class="embla__prev" type="button" aria-label="Anterior">‹</button>
+            <button class="embla__next" type="button" aria-label="Siguiente">›</button>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-title"></h3>
+            <p class="project-excerpt"></p>
+          </div>
+        </article>
+        <article class="project-card js-project-carousel-card" data-project="/projects/pgl-major-copenhagen-2024/media.json">
+          <div class="embla" aria-label="Project media carousel">
+            <div class="embla__viewport">
+              <div class="embla__container"></div>
+            </div>
+            <button class="embla__prev" type="button" aria-label="Anterior">‹</button>
+            <button class="embla__next" type="button" aria-label="Siguiente">›</button>
+          </div>
+          <div class="project-card__content">
+            <h3 class="project-title"></h3>
+            <p class="project-excerpt"></p>
+          </div>
+        </article>
       </div>
       </div>
     </section>
@@ -914,125 +1000,99 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
       if ($.fn.lightGallery && $('#lightgallery').length) {
         $('#lightgallery').lightGallery();
       }
-
-      const createMediaElement = function(item, title) {
-        if (item.type === 'video') {
-          return `<video class="project-block__media" autoplay muted loop playsinline preload="metadata"><source src="${item.src}" type="video/mp4"></video>`;
-        }
-        const alt = item.alt || title || 'Proyecto destacado';
-        return `<img class="project-block__media" src="${item.src}" alt="${alt}">`;
-      };
-
-      const buildSlides = function(media, title) {
-        return media.map(function(item) {
-          return `<div class="project-block__slide">${createMediaElement(item, title)}</div>`;
-        }).join('');
-      };
-
-      const setupContinuousCarousel = function(card, mediaItems) {
-        const viewport = card.querySelector('.project-block__viewport');
-        const track = card.querySelector('.project-block__track');
-        if (!viewport || !track || !mediaItems.length) {
-          return;
-        }
-
-        const minSlides = 6;
-        const baseSlides = mediaItems.length >= minSlides ? mediaItems : Array.from({ length: minSlides }, function(_, index) {
-          return mediaItems[index % mediaItems.length];
-        });
-
-        const baseMarkup = buildSlides(baseSlides, card.dataset.projectTitle || 'Proyecto destacado');
-        track.innerHTML = `${baseMarkup}${baseMarkup}${baseMarkup}`;
-
-        const singleSetCount = baseSlides.length;
-        let offset = 0;
-        let slideWidth = 0;
-        let speed = 0.45;
-
-        const refreshMetrics = function() {
-          const firstSlide = track.querySelector('.project-block__slide');
-          if (!firstSlide) {
-            return;
-          }
-          slideWidth = firstSlide.getBoundingClientRect().width;
-          offset = slideWidth * singleSetCount;
-          track.style.transform = `translate3d(${-offset}px, 0, 0)`;
-        };
-
-        const animate = function() {
-          offset += speed;
-          if (offset >= slideWidth * (singleSetCount * 2)) {
-            offset -= slideWidth * singleSetCount;
-          }
-          track.style.transform = `translate3d(${-offset}px, 0, 0)`;
-          card._carouselAnimation = requestAnimationFrame(animate);
-        };
-
-        if (card._carouselAnimation) {
-          cancelAnimationFrame(card._carouselAnimation);
-        }
-
-        refreshMetrics();
-        card._carouselAnimation = requestAnimationFrame(animate);
-
-        let resizeTimer = null;
-        window.addEventListener('resize', function() {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(refreshMetrics, 120);
-        });
-      };
-
-      const renderProjectCard = function(card, data) {
-        const projectHref = data.href || '#';
-        const title = data.title || 'Proyecto';
-        const excerpt = data.excerpt || '';
-        const media = Array.isArray(data.media) ? data.media.filter(function(item) {
-          return item && item.src && (item.type === 'image' || item.type === 'video');
-        }) : [];
-
-        if (!media.length) {
-          card.innerHTML = '';
-          return;
-        }
-
-        card.dataset.projectTitle = title;
-        card.innerHTML = `
-          <div class="project-block__viewport" aria-label="Carrusel de ${title}">
-            <div class="project-block__track"></div>
-          </div>
-          <div class="project-block__content">
-            <h3 class="project-block__title"><a class="project-block__title-link" href="${projectHref}">${title}</a></h3>
-            <p class="project-block__excerpt">${excerpt}</p>
-          </div>
-        `;
-
-        setupContinuousCarousel(card, media);
-      };
-
-      const hydrateProjectCard = async function(card) {
-        const projectDataUrl = card.getAttribute('data-project');
-        if (!projectDataUrl) {
-          return;
-        }
-
-        try {
-          const response = await fetch(projectDataUrl, { cache: 'no-store' });
-          if (!response.ok) {
-            throw new Error('No se pudo cargar ' + projectDataUrl);
-          }
-
-          const data = await response.json();
-          renderProjectCard(card, data);
-        } catch (error) {
-          console.error(error);
-        }
-      };
-
-      const cards = document.querySelectorAll('.js-project-carousel-card');
-      cards.forEach(function(card) {
-        hydrateProjectCard(card);
-      });
     });
+  </script>
+
+  <script type="module">
+    import EmblaCarousel from 'https://esm.sh/embla-carousel@8.5.2';
+    import Autoplay from 'https://esm.sh/embla-carousel-autoplay@8.5.2';
+
+    const createSlide = function(item) {
+      const slide = document.createElement('div');
+      slide.className = 'embla__slide';
+
+      if (item.type === 'video') {
+        slide.innerHTML = `
+          <video playsinline muted loop preload="metadata" poster="${item.poster ?? ''}">
+            <source src="${item.src}" type="video/mp4" />
+          </video>
+        `;
+      } else {
+        slide.innerHTML = `<img src="${item.src}" alt="${item.alt ?? ''}" loading="lazy" />`;
+      }
+
+      return slide;
+    };
+
+    const initProjectCarousel = async function(cardEl) {
+      const url = cardEl.dataset.project;
+      const emblaRoot = cardEl.querySelector('.embla');
+      const viewport = emblaRoot?.querySelector('.embla__viewport');
+      const container = emblaRoot?.querySelector('.embla__container');
+      const prevBtn = emblaRoot?.querySelector('.embla__prev');
+      const nextBtn = emblaRoot?.querySelector('.embla__next');
+
+      if (!url || !viewport || !container || !prevBtn || !nextBtn) {
+        return;
+      }
+
+      try {
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) {
+          throw new Error('No se pudo cargar ' + url);
+        }
+
+        const data = await response.json();
+        const titleEl = cardEl.querySelector('.project-title');
+        const excerptEl = cardEl.querySelector('.project-excerpt');
+        const mediaItems = Array.isArray(data.media)
+          ? data.media.filter((item) => item && item.src && (item.type === 'image' || item.type === 'video'))
+          : [];
+
+        if (titleEl) {
+          const projectHref = data.href || '#';
+          titleEl.innerHTML = `<a class="project-title-link" href="${projectHref}">${data.title ?? ''}</a>`;
+        }
+        if (excerptEl) excerptEl.textContent = data.excerpt ?? '';
+
+        container.innerHTML = '';
+        mediaItems.forEach((item) => container.appendChild(createSlide(item)));
+
+        if (!mediaItems.length) {
+          return;
+        }
+
+        const autoplay = Autoplay(
+          { delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true },
+          (root) => root.parentElement
+        );
+
+        const embla = EmblaCarousel(viewport, { loop: true, align: 'center' }, [autoplay]);
+
+        const pauseFor8s = () => {
+          embla.plugins().autoplay?.stop();
+          window.clearTimeout(cardEl._autoplayResumeTimer);
+          cardEl._autoplayResumeTimer = window.setTimeout(() => {
+            embla.plugins().autoplay?.play();
+          }, 8000);
+        };
+
+        prevBtn.addEventListener('click', () => {
+          embla.scrollPrev();
+          pauseFor8s();
+        });
+
+        nextBtn.addEventListener('click', () => {
+          embla.scrollNext();
+          pauseFor8s();
+        });
+
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    document.querySelectorAll('.project-card[data-project]').forEach(initProjectCarousel);
   </script>
 
 </body>
