@@ -1061,6 +1061,7 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
         if (!mediaItems.length) {
           return;
         }
+        if (excerptEl) excerptEl.textContent = data.excerpt ?? '';
 
         const autoplay = Autoplay(
           { delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true },
