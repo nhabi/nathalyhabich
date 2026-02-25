@@ -1,22 +1,10 @@
 {
   "title": "PGL Major Copenhagen 2024",
   "excerpt": "Diseño narrativo del espacio para elevar la experiencia visual de audiencia y transmisión.",
-  "href": "/PGL Major Copenhagen/",
+  "href": "/PGL Major Copenhagen.html",
   "media": [
-    {
-      "type": "image",
-      "src": "/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (1).png",
-      "alt": "PGL Major Copenhagen frame 1"
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (2).png",
-      "alt": "PGL Major Copenhagen frame 2"
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (3).png",
-      "alt": "PGL Major Copenhagen frame 3"
-    }
+    { "type": "image", "src": "/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (1).png", "alt": "PGL Major Copenhagen frame 1" },
+    { "type": "image", "src": "/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (2).png", "alt": "PGL Major Copenhagen frame 2" },
+    { "type": "image", "src": "/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (3).png", "alt": "PGL Major Copenhagen frame 3" }
   ]
 }

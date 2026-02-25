@@ -982,24 +982,8 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
         });
       };
 
-      const resolveProjectHref = function(card, data) {
-        if (data && typeof data === 'object') {
-          const href = data.href || data.url || data.link;
-          if (href) {
-            return href;
-          }
-        }
-
-        const projectDataUrl = card.getAttribute('data-project') || '';
-        const match = projectDataUrl.match(/^\/projects\/([^/]+)\/media\.json$/);
-        if (match) {
-          return '/' + match[1] + '/';
-        }
-        return '#';
-      };
-
       const renderProjectCard = function(card, data) {
-        const projectHref = resolveProjectHref(card, data);
+        const projectHref = data.href || '#';
         const title = data.title || 'Proyecto';
         const excerpt = data.excerpt || '';
         const media = Array.isArray(data.media) ? data.media.filter(function(item) {
