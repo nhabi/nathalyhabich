@@ -3,21 +3,8 @@
   "excerpt": "Arquitectura visual para contenido competitivo con énfasis en lectura clara y atmósfera inmersiva.",
   "href": "/ESB-BetBoom Dacha 2024.html",
   "media": [
-    {
-      "type": "image",
-      "src": "/images/direccion de arte/BetBoom Dacha/1.png",
-      "alt": "BetBoom Dacha frame 1"
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion de arte/BetBoom Dacha/2.png",
-      "alt": "BetBoom Dacha frame 2"
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion de arte/BetBoom Dacha/3.png",
-      "alt": "BetBoom Dacha frame 3"
-    }
-  ],
-  "publicHref": "/ESB-BetBoom Dacha 2024/"
+    { "type": "image", "src": "/images/direccion de arte/BetBoom Dacha/1.png", "alt": "BetBoom Dacha frame 1" },
+    { "type": "image", "src": "/images/direccion de arte/BetBoom Dacha/2.png", "alt": "BetBoom Dacha frame 2" },
+    { "type": "image", "src": "/images/direccion de arte/BetBoom Dacha/3.png", "alt": "BetBoom Dacha frame 3" }
+  ]
 }
