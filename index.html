@@ -577,131 +577,62 @@
       margin: 0 auto;
       padding: 0;
       display: grid;
-      gap: 24px;
+      gap: 30px;
     }
     .project-block {
       margin: 0;
       background: #fff;
     }
-    .project-block__header {
-      padding: 0 16px 10px;
-      text-align: left;
-    }
-    .project-block__name a {
-      color: inherit;
-      text-decoration: none;
-      transition: opacity 0.25s ease;
-    }
-    .project-block__name a:hover,
-    .project-block__name a:focus {
-      opacity: 0.75;
-      text-decoration: underline;
-    }
-    .project-block__meta {
-      margin: 2px 0 0;
-      color: #1f1f23;
-    }
-    .project-block__title-overlay {
-      position: absolute;
-      left: 16px;
-      bottom: 12px;
-      z-index: 6;
-      margin: 0;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 700;
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      background: rgba(0, 0, 0, 0.45);
-      padding: 8px 12px;
-      transition: opacity 0.25s ease;
-    }
-    .project-block__title-overlay:hover,
-    .project-block__title-overlay:focus {
-      opacity: 0.8;
-      text-decoration: underline;
-      color: #fff;
-    }
-    .project-block__slider-wrap {
+    .project-block__viewport {
       position: relative;
       width: 100%;
       overflow: hidden;
     }
-    .project-block__slider {
-      width: 100%;
-      padding: 0;
-    }
-    .project-block__slider .swiper-slide {
-      width: 62%;
-      max-width: 780px;
-      aspect-ratio: 16 / 9;
+    .project-block__track {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #fff;
+      flex-wrap: nowrap;
+      will-change: transform;
     }
-    .project-block__slider .swiper-slide img {
+    .project-block__slide {
+      flex: 0 0 56%;
+      aspect-ratio: 16 / 9;
+      display: block;
+    }
+    .project-block__slide img,
+    .project-block__slide video {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 0;
-      aspect-ratio: 16 / 9;
     }
-    .project-block__slider .swiper-slide .project-slide__video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 0;
-      aspect-ratio: 16 / 9;
-      pointer-events: none;
+    .project-block__content {
+      margin-top: 14px;
+      text-align: left;
+      padding: 0 8px;
     }
-    .project-block__nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 56px;
-      height: 56px;
-      border: none;
-      border-radius: 0;
-      background: rgba(61, 49, 131, 0.72);
-      color: #fff;
-      z-index: 9;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      line-height: 1;
-      cursor: pointer;
+    .project-block__title {
+      margin: 0;
+      font-size: clamp(22px, 2vw, 32px);
+      line-height: 1.2;
+      color: #1f1f23;
     }
-    .project-block__nav--prev {
-      left: 0;
+    .project-block__title-link {
+      color: inherit;
+      text-decoration: none;
     }
-    .project-block__nav--next {
-      right: 0;
+    .project-block__title-link:hover,
+    .project-block__title-link:focus {
+      text-decoration: underline;
+    }
+    .project-block__excerpt {
+      margin: 6px 0 0;
+      color: #7d7d80;
+      font-size: clamp(16px, 1.2vw, 20px);
+      line-height: 1.4;
     }
     @media (max-width: 767.98px) {
-      .project-block__name {
-        margin: 8px 10px 0;
-        font-size: 14px;
-      }
-      .project-block__title-overlay {
-        left: 10px;
-        right: 10px;
-        bottom: 10px;
-        font-size: 14px;
-      }
-      .project-block__slider .swiper-slide,
-      .project-block__slider .swiper-slide img {
-        width: 82%;
-        aspect-ratio: 16 / 9;
-        height: auto;
-      }
-      .project-block__nav {
-        width: 40px;
-        height: 40px;
-        font-size: 24px;
+      .project-block__slide {
+        flex-basis: 70%;
       }
     }
     .marquee {
@@ -935,105 +866,12 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
       </div>
 
       <div class="projects-showcase" data-aos="fade" data-aos-delay="500">
-        <article class="project-block" data-project-url="/ESB- PGL Wallachia Season 1.html">
-          <div class="project-block__header">
-            <h3 class="project-block__name"><a href="/ESB- PGL Wallachia Season 1/">PGL Wallachia Season 1</a></h3>
-            <p class="project-block__meta">Dirección de Arte · Galería del proyecto</p>
-          </div>
-          <div class="project-block__slider-wrap">
-            <a class="project-block__title-overlay" href="/ESB- PGL Wallachia Season 1.html">PGL Wallachia Season 1</a>
-            <button class="project-block__nav project-block__nav--prev" type="button" aria-label="Anterior"><span class="icon-chevron-left"></span></button>
-            <div class="swiper project-block__slider js-project-gallery">
-              <div class="swiper-wrapper">
-                <a href="/ESB- PGL Wallachia Season 1/" class="swiper-slide" data-copy="Dirección de Arte · Foto 1"><img src="/images/direccion de arte/PGL Wallachia Season 1/4.png" alt="PGL Wallachia foto 1"></a>
-                <a href="/ESB- PGL Wallachia Season 1/" class="swiper-slide" data-copy="Dirección de Arte · Foto 2"><img src="/images/direccion de arte/PGL Wallachia Season 1/5.png" alt="PGL Wallachia foto 2"></a>
-                <a href="/ESB- PGL Wallachia Season 1/" class="swiper-slide" data-copy="Dirección de Arte · Foto 3"><img src="/images/direccion de arte/PGL Wallachia Season 1/6.png" alt="PGL Wallachia foto 3"></a>
-              </div>
-            </div>
-            <button class="project-block__nav project-block__nav--next" type="button" aria-label="Siguiente"><span class="icon-chevron-right"></span></button>
-          </div>
-          <a class="project-block__title" href="/ESB- PGL Wallachia Season 1.html">PGL Wallachia Season 1</a>
-        </article>
-
-        <article class="project-block" data-project-url="/ESB- ESL One Birmingham 2024.html">
-          <div class="project-block__header">
-            <h3 class="project-block__name"><a href="/ESB- ESL One Birmingham 2024/">ESL One Birmingham 2024</a></h3>
-            <p class="project-block__meta">Dirección de Arte · Galería del proyecto</p>
-          </div>
-          <div class="project-block__slider-wrap">
-            <a class="project-block__title-overlay" href="/ESB- ESL One Birmingham 2024.html">ESL One Birmingham 2024</a>
-            <button class="project-block__nav project-block__nav--prev" type="button" aria-label="Anterior"><span class="icon-chevron-left"></span></button>
-            <div class="swiper project-block__slider js-project-gallery">
-              <div class="swiper-wrapper">
-                <a href="/ESB- ESL One Birmingham 2024/" class="swiper-slide" data-copy="Dirección de Arte · Foto 1"><img src="/images/direccion de arte/ESL One Birmingham 2024/1.png" alt="ESL foto 1"></a>
-                <a href="/ESB- ESL One Birmingham 2024/" class="swiper-slide" data-copy="Dirección de Arte · Foto 2"><img src="/images/direccion de arte/ESL One Birmingham 2024/2.png" alt="ESL foto 2"></a>
-                <a href="/ESB- ESL One Birmingham 2024/" class="swiper-slide" data-copy="Dirección de Arte · Foto 3"><img src="/images/direccion de arte/ESL One Birmingham 2024/3.png" alt="ESL foto 3"></a>
-              </div>
-            </div>
-            <button class="project-block__nav project-block__nav--next" type="button" aria-label="Siguiente"><span class="icon-chevron-right"></span></button>
-          </div>
-          <a class="project-block__title" href="/ESB- ESL One Birmingham 2024.html">ESL One Birmingham 2024</a>
-        </article>
-
-        <article class="project-block" data-project-url="/ESB-EliteLeagueS1.html">
-          <div class="project-block__header">
-            <h3 class="project-block__name"><a href="/ESB-EliteLeagueS1/">EliteLeague S1</a></h3>
-            <p class="project-block__meta">Dirección de Arte · Galería del proyecto</p>
-          </div>
-          <div class="project-block__slider-wrap">
-            <a class="project-block__title-overlay" href="/ESB-EliteLeagueS1.html">EliteLeague S1</a>
-            <button class="project-block__nav project-block__nav--prev" type="button" aria-label="Anterior"><span class="icon-chevron-left"></span></button>
-            <div class="swiper project-block__slider js-project-gallery">
-              <div class="swiper-wrapper">
-                <a href="/ESB-EliteLeagueS1/" class="swiper-slide" data-copy="Dirección de Arte · Foto 1"><img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH (1).png" alt="EliteLeague foto 1"></a>
-                <a href="/ESB-EliteLeagueS1/" class="swiper-slide" data-copy="Dirección de Arte · Foto 2"><img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH (2).png" alt="EliteLeague foto 2"></a>
-                <a href="/ESB-EliteLeagueS1/" class="swiper-slide" data-copy="Dirección de Arte · Foto 3"><img src="/images/direccion de arte/EliteLeague S1/ELITE LEAGUE actualizado - NATHALY HABICH (3).png" alt="EliteLeague foto 3"></a>
-              </div>
-            </div>
-            <button class="project-block__nav project-block__nav--next" type="button" aria-label="Siguiente"><span class="icon-chevron-right"></span></button>
-          </div>
-          <a class="project-block__title" href="/ESB-EliteLeagueS1.html">EliteLeague S1</a>
-        </article>
-
-        <article class="project-block" data-project-url="/ESB-BetBoom Dacha 2024.html">
-          <div class="project-block__header">
-            <h3 class="project-block__name"><a href="/ESB-BetBoom Dacha 2024/">BetBoom Dacha</a></h3>
-            <p class="project-block__meta">Dirección de Arte · Galería del proyecto</p>
-          </div>
-          <div class="project-block__slider-wrap">
-            <a class="project-block__title-overlay" href="/ESB-BetBoom Dacha 2024.html">BetBoom Dacha</a>
-            <button class="project-block__nav project-block__nav--prev" type="button" aria-label="Anterior"><span class="icon-chevron-left"></span></button>
-            <div class="swiper project-block__slider js-project-gallery">
-              <div class="swiper-wrapper">
-                <a href="/ESB-BetBoom Dacha 2024/" class="swiper-slide" data-copy="Dirección de Arte · Foto 1"><img src="/images/direccion de arte/BetBoom Dacha/1.png" alt="BetBoom foto 1"></a>
-                <a href="/ESB-BetBoom Dacha 2024/" class="swiper-slide" data-copy="Dirección de Arte · Foto 2"><img src="/images/direccion de arte/BetBoom Dacha/2.png" alt="BetBoom foto 2"></a>
-                <a href="/ESB-BetBoom Dacha 2024/" class="swiper-slide" data-copy="Dirección de Arte · Foto 3"><img src="/images/direccion de arte/BetBoom Dacha/3.png" alt="BetBoom foto 3"></a>
-              </div>
-            </div>
-            <button class="project-block__nav project-block__nav--next" type="button" aria-label="Siguiente"><span class="icon-chevron-right"></span></button>
-          </div>
-          <a class="project-block__title" href="/ESB-BetBoom Dacha 2024.html">BetBoom Dacha</a>
-        </article>
-
-        <article class="project-block" data-project-url="/PGL Major Copenhagen.html">
-          <div class="project-block__header">
-            <h3 class="project-block__name"><a href="/PGL Major Copenhagen/">PGL Major Copenhagen 2024</a></h3>
-            <p class="project-block__meta">Dirección de Arte · Galería del proyecto</p>
-          </div>
-          <div class="project-block__slider-wrap">
-            <a class="project-block__title-overlay" href="/PGL Major Copenhagen.html">PGL Major Copenhagen 2024</a>
-            <button class="project-block__nav project-block__nav--prev" type="button" aria-label="Anterior"><span class="icon-chevron-left"></span></button>
-            <div class="swiper project-block__slider js-project-gallery">
-              <div class="swiper-wrapper">
-                <a href="/PGL Major Copenhagen/" class="swiper-slide" data-copy="Dirección de Arte · Foto 1"><img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (1).png" alt="PGL Major foto 1"></a>
-                <a href="/PGL Major Copenhagen/" class="swiper-slide" data-copy="Dirección de Arte · Foto 2"><img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (2).png" alt="PGL Major foto 2"></a>
-                <a href="/PGL Major Copenhagen/" class="swiper-slide" data-copy="Dirección de Arte · Foto 3"><img src="/images/direccion de arte/PGL Major Copenhagen 2024/PGL MAJOR CS GO2- NATHALY HABICH (3).png" alt="PGL Major foto 3"></a>
-              </div>
-            </div>
-            <button class="project-block__nav project-block__nav--next" type="button" aria-label="Siguiente"><span class="icon-chevron-right"></span></button>
-          </div>
-          <a class="project-block__title" href="/PGL Major Copenhagen.html">PGL Major Copenhagen 2024</a>
-        </article>
+        <article class="project-block js-project-carousel-card" data-project="/projects/pgl-wallachia-season-1/media.json"></article>
+        <article class="project-block js-project-carousel-card" data-project="/projects/esl-one-birmingham-2024/media.json"></article>
+        <article class="project-block js-project-carousel-card" data-project="/projects/eliteleague-s1/media.json"></article>
+        <article class="project-block js-project-carousel-card" data-project="/projects/betboom-dacha-2024/media.json"></article>
+        <article class="project-block js-project-carousel-card" data-project="/projects/pgl-major-copenhagen-2024/media.json"></article>
+      </div>
       </div>
     </section>
 
@@ -1077,68 +915,139 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
         $('#lightgallery').lightGallery();
       }
 
-      const imagePattern = /\.(png|jpe?g|webp|avif|gif)(\?.*)?$/i;
+      const createMediaElement = function(item, title) {
+        if (item.type === 'video') {
+          return `<video class="project-block__media" autoplay muted loop playsinline preload="metadata"><source src="${item.src}" type="video/mp4"></video>`;
+        }
+        const alt = item.alt || title || 'Proyecto destacado';
+        return `<img class="project-block__media" src="${item.src}" alt="${alt}">`;
+      };
 
-      const extractProjectImages = async function(projectUrl) {
-        const response = await fetch(projectUrl, { cache: 'no-store' });
-        if (!response.ok) {
-          throw new Error('No se pudo cargar ' + projectUrl);
+      const buildSlides = function(media, title) {
+        return media.map(function(item) {
+          return `<div class="project-block__slide">${createMediaElement(item, title)}</div>`;
+        }).join('');
+      };
+
+      const setupContinuousCarousel = function(card, mediaItems) {
+        const viewport = card.querySelector('.project-block__viewport');
+        const track = card.querySelector('.project-block__track');
+        if (!viewport || !track || !mediaItems.length) {
+          return;
         }
 
-        const html = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(html, 'text/html');
-        const urls = [];
+        const minSlides = 6;
+        const baseSlides = mediaItems.length >= minSlides ? mediaItems : Array.from({ length: minSlides }, function(_, index) {
+          return mediaItems[index % mediaItems.length];
+        });
 
-          const gallerySwiper = new Swiper(gallery, {
-            loop: true,
-            loopAdditionalSlides: 6,
-            speed: 1400,
-            direction: 'horizontal',
-            centeredSlides: true,
-            initialSlide: 1,
-            slidesPerView: 1.25,
-            spaceBetween: 0,
-            watchOverflow: false,
-            allowTouchMove: true,
-            autoplay: {
-              delay: 2100 + (index * 180),
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-              reverseDirection: false
-            },
-            navigation: {
-              prevEl: prevButton,
-              nextEl: nextButton
-            },
-            1200: {
-              slidesPerView: 1.9
-            }
-          },
-          on: {
-            navigationNext: function() {
-              if (this.autoplay) this.autoplay.start();
-            },
-            on: {
-              init: updateSlideCopy,
-              slideChangeTransitionStart: updateSlideCopy,
-              navigationNext: function() {
-                if (this.autoplay) this.autoplay.start();
-              },
-              navigationPrev: function() {
-                if (this.autoplay) this.autoplay.start();
-              }
-            }
+        const baseMarkup = buildSlides(baseSlides, card.dataset.projectTitle || 'Proyecto destacado');
+        track.innerHTML = `${baseMarkup}${baseMarkup}${baseMarkup}`;
+
+        const singleSetCount = baseSlides.length;
+        let offset = 0;
+        let slideWidth = 0;
+        let speed = 0.45;
+
+        const refreshMetrics = function() {
+          const firstSlide = track.querySelector('.project-block__slide');
+          if (!firstSlide) {
+            return;
           }
+          slideWidth = firstSlide.getBoundingClientRect().width;
+          offset = slideWidth * singleSetCount;
+          track.style.transform = `translate3d(${-offset}px, 0, 0)`;
+        };
+
+        const animate = function() {
+          offset += speed;
+          if (offset >= slideWidth * (singleSetCount * 2)) {
+            offset -= slideWidth * singleSetCount;
+          }
+          track.style.transform = `translate3d(${-offset}px, 0, 0)`;
+          card._carouselAnimation = requestAnimationFrame(animate);
+        };
+
+        if (card._carouselAnimation) {
+          cancelAnimationFrame(card._carouselAnimation);
+        }
+
+        refreshMetrics();
+        card._carouselAnimation = requestAnimationFrame(animate);
+
+        let resizeTimer = null;
+        window.addEventListener('resize', function() {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(refreshMetrics, 120);
         });
       };
 
-      if (typeof Swiper !== 'undefined') {
-        const galleries = document.querySelectorAll('.js-project-gallery');
-        galleries.forEach(function(gallery, index) {
-          hydrateGallery(gallery, index);
-        });
-      }
+      const resolveProjectHref = function(card, data) {
+        if (data && typeof data === 'object') {
+          const href = data.href || data.url || data.link;
+          if (href) {
+            return href;
+          }
+        }
+
+        const projectDataUrl = card.getAttribute('data-project') || '';
+        const match = projectDataUrl.match(/^\/projects\/([^/]+)\/media\.json$/);
+        if (match) {
+          return '/' + match[1] + '/';
+        }
+        return '#';
+      };
+
+      const renderProjectCard = function(card, data) {
+        const projectHref = resolveProjectHref(card, data);
+        const title = data.title || 'Proyecto';
+        const excerpt = data.excerpt || '';
+        const media = Array.isArray(data.media) ? data.media.filter(function(item) {
+          return item && item.src && (item.type === 'image' || item.type === 'video');
+        }) : [];
+
+        if (!media.length) {
+          card.innerHTML = '';
+          return;
+        }
+
+        card.dataset.projectTitle = title;
+        card.innerHTML = `
+          <div class="project-block__viewport" aria-label="Carrusel de ${title}">
+            <div class="project-block__track"></div>
+          </div>
+          <div class="project-block__content">
+            <h3 class="project-block__title"><a class="project-block__title-link" href="${projectHref}">${title}</a></h3>
+            <p class="project-block__excerpt">${excerpt}</p>
+          </div>
+        `;
+
+        setupContinuousCarousel(card, media);
+      };
+
+      const hydrateProjectCard = async function(card) {
+        const projectDataUrl = card.getAttribute('data-project');
+        if (!projectDataUrl) {
+          return;
+        }
+
+        try {
+          const response = await fetch(projectDataUrl, { cache: 'no-store' });
+          if (!response.ok) {
+            throw new Error('No se pudo cargar ' + projectDataUrl);
+          }
+
+          const data = await response.json();
+          renderProjectCard(card, data);
+        } catch (error) {
+          console.error(error);
+        }
+      };
+
+      const cards = document.querySelectorAll('.js-project-carousel-card');
+      cards.forEach(function(card) {
+        hydrateProjectCard(card);
+      });
     });
   </script>
 
