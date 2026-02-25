@@ -579,7 +579,7 @@
       display: grid;
       gap: 30px;
     }
-    .project-block {
+    .project-card {
       margin: 0;
       background: #fff;
     }
@@ -873,6 +873,7 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
         <article class="project-block js-project-carousel-card" data-project="/projects/pgl-major-copenhagen-2024/media.json"></article>
       </div>
       </div>
+      </div>
     </section>
 
     </div>
@@ -914,6 +915,15 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
       if ($.fn.lightGallery && $('#lightgallery').length) {
         $('#lightgallery').lightGallery();
       }
+    });
+  </script>
+
+  <script type="module">
+    import EmblaCarousel from 'https://cdn.jsdelivr.net/npm/embla-carousel@8.5.2/+esm';
+    import Autoplay from 'https://cdn.jsdelivr.net/npm/embla-carousel-autoplay@8.5.2/+esm';
+
+    const resolveProjectHref = function(card, data) {
+      const isLocalEnvironment = ['localhost', '127.0.0.1'].includes(window.location.hostname);
 
       const createMediaElement = function(item, title) {
         if (item.type === 'video') {
@@ -935,6 +945,25 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
         if (!viewport || !track || !mediaItems.length) {
           return;
         }
+        if (!isLocalEnvironment && publicHref) {
+          return publicHref;
+        }
+        if (devHref) {
+          return isLocalEnvironment ? devHref : devHref.replace(/\.html$/i, '/');
+        }
+      }
+
+      const projectDataUrl = card.getAttribute('data-project') || '';
+      const match = projectDataUrl.match(/^\/projects\/([^/]+)\/media\.json$/);
+      if (match) {
+        return '/' + match[1] + '/';
+      }
+      return '#';
+    };
+
+    function createSlide(item, title) {
+      const slide = document.createElement('div');
+      slide.className = 'embla__slide';
 
         const minSlides = 6;
         const baseSlides = mediaItems.length >= minSlides ? mediaItems : Array.from({ length: minSlides }, function(_, index) {
@@ -1034,6 +1063,7 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
       });
     });
   </script>
+
 
 </body>
 </html>
