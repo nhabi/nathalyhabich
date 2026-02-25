@@ -892,7 +892,7 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
       </div>
 
       <div class="projects-showcase" data-aos="fade" data-aos-delay="500">
-        <article class="project-card js-project-carousel-card" data-project="/projects/pgl-wallachia-season-1/media.json" data-href="/ESB-%20PGL%20Wallachia%20Season%201/">
+        <article class="project-card js-project-carousel-card" data-project="/projects/pgl-wallachia-season-1/media.json">
           <div class="embla" aria-label="Project media carousel">
             <div class="embla__viewport">
               <div class="embla__container"></div>
@@ -905,7 +905,7 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
             <p class="project-excerpt"></p>
           </div>
         </article>
-        <article class="project-card js-project-carousel-card" data-project="/projects/esl-one-birmingham-2024/media.json" data-href="/ESB-%20ESL%20One%20Birmingham%202024/">
+        <article class="project-card js-project-carousel-card" data-project="/projects/esl-one-birmingham-2024/media.json">
           <div class="embla" aria-label="Project media carousel">
             <div class="embla__viewport">
               <div class="embla__container"></div>
@@ -918,7 +918,7 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
             <p class="project-excerpt"></p>
           </div>
         </article>
-        <article class="project-card js-project-carousel-card" data-project="/projects/eliteleague-s1/media.json" data-href="/ESB-EliteLeagueS1/">
+        <article class="project-card js-project-carousel-card" data-project="/projects/eliteleague-s1/media.json">
           <div class="embla" aria-label="Project media carousel">
             <div class="embla__viewport">
               <div class="embla__container"></div>
@@ -931,7 +931,7 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
             <p class="project-excerpt"></p>
           </div>
         </article>
-        <article class="project-card js-project-carousel-card" data-project="/projects/betboom-dacha-2024/media.json" data-href="/ESB-BetBoom%20Dacha%202024/">
+        <article class="project-card js-project-carousel-card" data-project="/projects/betboom-dacha-2024/media.json">
           <div class="embla" aria-label="Project media carousel">
             <div class="embla__viewport">
               <div class="embla__container"></div>
@@ -944,7 +944,7 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
             <p class="project-excerpt"></p>
           </div>
         </article>
-        <article class="project-card js-project-carousel-card" data-project="/projects/pgl-major-copenhagen-2024/media.json" data-href="/PGL%20Major%20Copenhagen/">
+        <article class="project-card js-project-carousel-card" data-project="/projects/pgl-major-copenhagen-2024/media.json">
           <div class="embla" aria-label="Project media carousel">
             <div class="embla__viewport">
               <div class="embla__container"></div>
@@ -1024,14 +1024,8 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
       return slide;
     };
 
-    const toFolderUrl = function(url) {
-      if (!url) return '#';
-      return url.replace(/\.html$/i, '/');
-    };
-
     const initProjectCarousel = async function(cardEl) {
       const url = cardEl.dataset.project;
-      const navigationHref = cardEl.dataset.href || '#';
       const emblaRoot = cardEl.querySelector('.embla');
       const viewport = emblaRoot?.querySelector('.embla__viewport');
       const container = emblaRoot?.querySelector('.embla__container');
@@ -1056,7 +1050,7 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
           : [];
 
         if (titleEl) {
-          const projectHref = cardEl.dataset.href || toFolderUrl(data.href || '#');
+          const projectHref = data.href || '#';
           titleEl.innerHTML = `<a class="project-title-link" href="${projectHref}">${data.title ?? ''}</a>`;
         }
         if (excerptEl) excerptEl.textContent = data.excerpt ?? '';
@@ -1091,20 +1085,6 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
         nextBtn.addEventListener('click', () => {
           embla.scrollNext();
           pauseFor8s();
-        });
-
-        cardEl.addEventListener('click', (event) => {
-          if (
-            event.target.closest('a, button') ||
-            event.target.closest('.embla__prev') ||
-            event.target.closest('.embla__next')
-          ) {
-            return;
-          }
-
-          if (navigationHref && navigationHref !== '#') {
-            window.location.href = navigationHref;
-          }
         });
 
       } catch (error) {
