@@ -3,8 +3,25 @@
   "excerpt": "Sistemas visuales aplicados a un entorno en vivo para reforzar narrativa y presencia de marca.",
   "href": "/ESB- ESL One Birmingham 2024.html",
   "media": [
-    { "type": "image", "src": "/images/direccion de arte/ESL One Birmingham 2024/1.png", "alt": "ESL Birmingham frame 1" },
-    { "type": "image", "src": "/images/direccion de arte/ESL One Birmingham 2024/2.png", "alt": "ESL Birmingham frame 2" },
-    { "type": "image", "src": "/images/direccion de arte/ESL One Birmingham 2024/3.png", "alt": "ESL Birmingham frame 3" }
+    {
+      "type": "image",
+      "src": "/images/direccion de arte/ESL One Birmingham 2024/1.png",
+      "alt": "ESL Birmingham frame 1"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion de arte/ESL One Birmingham 2024/ESL final-a.mp4",
+      "alt": "ESL Birmingham video"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion de arte/ESL One Birmingham 2024/2.png",
+      "alt": "ESL Birmingham frame 2"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion de arte/ESL One Birmingham 2024/3.png",
+      "alt": "ESL Birmingham frame 3"
+    }
   ]
 }
