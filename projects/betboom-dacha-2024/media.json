@@ -5,22 +5,22 @@
   "media": [
     {
       "type": "image",
-      "src": "/images/direccion de arte/BetBoom Dacha/1.png",
+      "src": "/images/direccion-de-arte/betboom-dacha/1.png",
       "alt": "BetBoom Dacha frame 1"
     },
     {
       "type": "video",
-      "src": "/images/direccion de arte/BetBoom Dacha/implementacion1.mp4",
+      "src": "/images/direccion-de-arte/betboom-dacha/implementacion1.mp4",
       "alt": "BetBoom Dacha video"
     },
     {
       "type": "image",
-      "src": "/images/direccion de arte/BetBoom Dacha/2.png",
+      "src": "/images/direccion-de-arte/betboom-dacha/2.png",
       "alt": "BetBoom Dacha frame 2"
     },
     {
       "type": "image",
-      "src": "/images/direccion de arte/BetBoom Dacha/3.png",
+      "src": "/images/direccion-de-arte/betboom-dacha/3.png",
       "alt": "BetBoom Dacha frame 3"
     }
   ]
