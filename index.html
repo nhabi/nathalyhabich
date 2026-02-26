@@ -1012,11 +1012,23 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
       slide.className = 'embla__slide';
 
       if (item.type === 'video') {
-        slide.innerHTML = `
-          <video playsinline muted loop preload="metadata" poster="${item.poster ?? ''}">
-            <source src="${item.src}" type="video/mp4" />
-          </video>
-        `;
+        const video = document.createElement('video');
+
+        video.src = item.src;
+        video.muted = true;
+        video.autoplay = true;
+        video.loop = true;
+        video.playsInline = true;
+
+        video.setAttribute('muted', '');
+        video.setAttribute('playsinline', '');
+        video.preload = 'auto';
+
+        video.style.width = '100%';
+        video.style.height = '100%';
+        video.style.objectFit = 'cover';
+
+        slide.appendChild(video);
       } else {
         slide.innerHTML = `<img src="${item.src}" alt="${item.alt ?? ''}" loading="lazy" />`;
       }
@@ -1069,6 +1081,24 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
         );
 
         const embla = EmblaCarousel(viewport, { loop: true, align: 'center' }, [autoplay]);
+
+        function syncVideos() {
+          const slidesInView = embla.slidesInView();
+
+          embla.slideNodes().forEach((slide, index) => {
+            const video = slide.querySelector('video');
+            if (!video) return;
+
+            if (slidesInView.includes(index)) {
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+        }
+
+        embla.on('init', syncVideos);
+        embla.on('select', syncVideos);
 
         const pauseFor8s = () => {
           embla.plugins().autoplay?.stop();
