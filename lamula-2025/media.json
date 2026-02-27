@@ -4,9 +4,19 @@
   "href": "/lamula-2025/",
   "media": [
     {
+      "type": "video",
+      "src": "/images/direccion-de-arte/lamula-2025/Lamula2.mp4",
+      "alt": "Dirección de arte Set La Mula 2025- Streaming - video 1"
+    },
+    {
       "type": "image",
       "src": "/images/direccion-de-arte/lamula-2025/27_resultado.webp",
       "alt": "Dirección de arte Set La Mula 2025- Streaming - imagen 1"
+    },
+     {
+      "type": "video",
+      "src": "/images/direccion-de-arte/lamula-2025/lamulaprograma.mp4",
+      "alt": "Dirección de arte Set La Mula 2025- Streaming - video 2"
     },
     {
       "type": "image",
@@ -27,6 +37,11 @@
       "type": "image",
       "src": "/images/direccion-de-arte/lamula-2025/30_resultado.webp",
       "alt": "Dirección de arte Set La Mula 2025- Streaming - imagen 5"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/lamula-2025/lamulaprograma2.mp4",
+      "alt": "Dirección de arte Set La Mula 2025- Streaming - video 3"
     },
     {
       "type": "image",
@@ -137,22 +152,7 @@
       "type": "image",
       "src": "/images/direccion-de-arte/lamula-2025/lamula.jpg",
       "alt": "Dirección de arte Set La Mula 2025- Streaming - imagen 27"
-    },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/lamula-2025/Lamula2.mp4",
-      "alt": "Dirección de arte Set La Mula 2025- Streaming - video 1"
-    },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/lamula-2025/lamulaprograma.mp4",
-      "alt": "Dirección de arte Set La Mula 2025- Streaming - video 2"
-    },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/lamula-2025/lamulaprograma2.mp4",
-      "alt": "Dirección de arte Set La Mula 2025- Streaming - video 3"
-    },
+    },    
     {
       "type": "video",
       "src": "/images/direccion-de-arte/lamula-2025/lm1.mp4",
