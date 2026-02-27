@@ -1392,6 +1392,35 @@ nav a {
     -webkit-filter: none;
     -webkit-transform: scale(1.01); }
 
+
+/* Masonry-like gallery to avoid large empty gaps with mixed vertical/horizontal assets */
+@media (min-width: 992px) {
+  #lightgallery {
+    display: block;
+    column-count: 3;
+    column-gap: 1.5rem;
+  }
+
+  #lightgallery .item {
+    width: 100%;
+    max-width: 100%;
+    flex: none;
+    display: inline-block;
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  #lightgallery {
+    display: flex;
+    column-count: unset;
+  }
+}
+
 img {
   /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
   filter: gray;
