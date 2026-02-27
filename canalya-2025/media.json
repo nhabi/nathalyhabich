@@ -10,6 +10,11 @@
     },
      {
       "type": "video",
+      "src": "/images/direccion-de-arte/canalya-2025/Canalya-Streaming(1).mp4",
+      "alt": "Diseño de set- CanalYa- Marco Sifuentes- Streaming - video 1"
+    },
+     {
+      "type": "video",
       "src": "/images/direccion-de-arte/canalya-2025/P1-2.mp4",
       "alt": "Diseño de set- CanalYa- Marco Sifuentes- Streaming - video 2"
     },
@@ -18,12 +23,7 @@
       "src": "/images/direccion-de-arte/canalya-2025/1.RGB_color_canalya.webp",
       "alt": "Diseño de set- CanalYa- Marco Sifuentes- Streaming - imagen 2"
     },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/canalya-2025/Canalya-Streaming(1).mp4",
-      "alt": "Diseño de set- CanalYa- Marco Sifuentes- Streaming - video 1"
-    },
-    {
+       {
       "type": "image",
       "src": "/images/direccion-de-arte/canalya-2025/2DA- 2.RGB_color_canalya.webp",
       "alt": "Diseño de set- CanalYa- Marco Sifuentes- Streaming - imagen 3"
