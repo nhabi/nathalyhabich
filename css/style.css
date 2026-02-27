@@ -1395,13 +1395,13 @@ nav a {
 
 /* Masonry-like gallery to avoid large empty gaps with mixed vertical/horizontal assets */
 @media (min-width: 992px) {
-  #lightgallery {
+  #lightgallery.row {
     display: block;
     column-count: 3;
     column-gap: 1.5rem;
   }
 
-  #lightgallery .item {
+  #lightgallery.row .item {
     width: 100%;
     max-width: 100%;
     flex: none;
@@ -1415,7 +1415,7 @@ nav a {
 }
 
 @media (max-width: 991.98px) {
-  #lightgallery {
+  #lightgallery.row {
     display: flex;
     column-count: unset;
   }
