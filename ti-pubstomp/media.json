@@ -9,9 +9,24 @@
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - imagen 1"
     },
     {
+      "src": "/images/direccion-de-arte/ti-pubstomp/ti-streaming.mp4",
+      "type": "video",
+      "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 7"
+    }
+    {
       "src": "/images/direccion-de-arte/ti-pubstomp/13_resultado.webp",
       "type": "image",
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - imagen 2"
+    },
+    {
+      "src": "/images/direccion-de-arte/ti-pubstomp/ti-im2.mp4",
+      "type": "video",
+      "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 3"
+    },
+     {
+      "src": "/images/direccion-de-arte/ti-pubstomp/ti-im5.mp4",
+      "type": "video",
+      "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 4"
     },
     {
       "src": "/images/direccion-de-arte/ti-pubstomp/14_resultado.webp",
@@ -62,6 +77,11 @@
       "src": "/images/direccion-de-arte/ti-pubstomp/4_resultado.webp",
       "type": "image",
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - imagen 12"
+    },
+    {
+      "src": "/images/direccion-de-arte/ti-pubstomp/ti-im15.mp4",
+      "type": "video",
+      "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 2"
     },
     {
       "src": "/images/direccion-de-arte/ti-pubstomp/5_resultado.webp",
@@ -208,21 +228,9 @@
       "type": "video",
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 1"
     },
-    {
-      "src": "/images/direccion-de-arte/ti-pubstomp/ti-im15.mp4",
-      "type": "video",
-      "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 2"
-    },
-    {
-      "src": "/images/direccion-de-arte/ti-pubstomp/ti-im2.mp4",
-      "type": "video",
-      "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 3"
-    },
-    {
-      "src": "/images/direccion-de-arte/ti-pubstomp/ti-im5.mp4",
-      "type": "video",
-      "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 4"
-    },
+    
+    
+   
     {
       "src": "/images/direccion-de-arte/ti-pubstomp/ti-im7.mp4",
       "type": "video",
@@ -233,10 +241,6 @@
       "type": "video",
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 6"
     },
-    {
-      "src": "/images/direccion-de-arte/ti-pubstomp/ti-streaming.mp4",
-      "type": "video",
-      "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 7"
-    }
+    
   ]
 }
