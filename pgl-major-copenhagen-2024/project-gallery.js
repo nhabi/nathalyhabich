@@ -2,25 +2,13 @@
   const gallery = document.getElementById("lightgallery");
   if (!gallery) return;
 
+  // Cache-bust para que siempre cargue lo nuevo
   const url = "./media.json?v=" + Date.now();
-
-  let data;
-  try {
-    const response = await fetch(url, { cache: "no-store" });
-    if (!response.ok) {
-      throw new Error(`No se pudo cargar media.json (${response.status})`);
-    }
-    data = await response.json();
-  } catch (error) {
-    console.error("Error cargando galería:", error);
-    gallery.innerHTML =
-      '<div class="col-12"><p class="text-center text-white">No se pudo cargar la galería en este momento.</p></div>';
-    return;
-  }
+  const data = await fetch(url, { cache: "no-store" }).then(r => r.json());
 
   gallery.innerHTML = "";
 
-  for (const item of data.media || []) {
+  for (const item of (data.media || [])) {
     const col = document.createElement("div");
     col.className = "col-sm-6 col-md-4 col-lg-4 col-xl-4 item";
     col.setAttribute("data-aos", "fade");
@@ -56,9 +44,13 @@
     gallery.appendChild(col);
   }
 
+  // Re-inicializar lightGallery si existe (ajusta el selector si tu init es diferente)
   if (window.lightGallery) {
+    // Si ya estaba inicializado, destrúyelo si tu versión lo soporta
+    // (depende de tu implementación actual)
     window.lightGallery(gallery, {
       selector: ".item"
+      // agrega aquí tus plugins/opciones existentes si ya los usas
     });
   }
 })();
