@@ -1147,20 +1147,42 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
         }
         if (excerptEl) excerptEl.textContent = data.excerpt ?? '';
 
+        // Limpiar y reconstruir slides desde cero para evitar residuos de render previo.
         container.innerHTML = '';
         mediaItems.forEach((item) => container.appendChild(createSlide(item)));
 
         if (!mediaItems.length) {
           return;
         }
-        if (excerptEl) excerptEl.textContent = data.excerpt ?? '';
 
-        const autoplay = Autoplay(
-          { delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true },
-          (root) => root.parentElement
-        );
+        if (!cardEl._embla) {
+          const autoplay = Autoplay(
+            { delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true },
+            (root) => root.parentElement
+          );
 
-        const embla = EmblaCarousel(viewport, { loop: true, align: 'center' }, [autoplay]);
+          cardEl._embla = EmblaCarousel(viewport, { loop: true, align: 'center' }, [autoplay]);
+
+          prevBtn.addEventListener('click', () => {
+            cardEl._embla.scrollPrev();
+            cardEl._embla.plugins().autoplay?.stop();
+            window.clearTimeout(cardEl._autoplayResumeTimer);
+            cardEl._autoplayResumeTimer = window.setTimeout(() => {
+              cardEl._embla.plugins().autoplay?.play();
+            }, 8000);
+          });
+
+          nextBtn.addEventListener('click', () => {
+            cardEl._embla.scrollNext();
+            cardEl._embla.plugins().autoplay?.stop();
+            window.clearTimeout(cardEl._autoplayResumeTimer);
+            cardEl._autoplayResumeTimer = window.setTimeout(() => {
+              cardEl._embla.plugins().autoplay?.play();
+            }, 8000);
+          });
+        }
+
+        const embla = cardEl._embla;
 
         function syncVideos() {
           const slidesInView = embla.slidesInView();
@@ -1177,27 +1199,14 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
           });
         }
 
-        embla.on('init', syncVideos);
-        embla.on('select', syncVideos);
+        if (!cardEl._syncVideosBound) {
+          embla.on('init', syncVideos);
+          embla.on('select', syncVideos);
+          cardEl._syncVideosBound = true;
+        }
 
-        const pauseFor8s = () => {
-          embla.plugins().autoplay?.stop();
-          window.clearTimeout(cardEl._autoplayResumeTimer);
-          cardEl._autoplayResumeTimer = window.setTimeout(() => {
-            embla.plugins().autoplay?.play();
-          }, 8000);
-        };
-
-        prevBtn.addEventListener('click', () => {
-          embla.scrollPrev();
-          pauseFor8s();
-        });
-
-        nextBtn.addEventListener('click', () => {
-          embla.scrollNext();
-          pauseFor8s();
-        });
-
+        embla.reInit();
+        syncVideos();
       } catch (error) {
         console.error(error);
       }
