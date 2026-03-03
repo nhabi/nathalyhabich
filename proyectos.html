@@ -41,7 +41,8 @@
       background: #000;
     }
 
-    .portfolio-card video {
+    .portfolio-card video,
+    .portfolio-card img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -49,7 +50,8 @@
       transition: transform 0.4s ease;
     }
 
-    .portfolio-card:hover video {
+    .portfolio-card:hover video,
+    .portfolio-card:hover img {
       transform: scale(1.03);
     }
 
@@ -199,22 +201,31 @@
       '/esb-eliteleague-s1/media.json',
       '/esb-betboom-dacha-2024/media.json',
       '/ti-pubstomp/media.json',
-      '/pgl-major-copenhagen-2024/media.json'
+      '/pgl-major-copenhagen-2024/media.json',
+      '/billy-elliot/media.json',
+      '/lovesimon/media.json',
+      '/viejamoralidad/media.json'
     ];
 
     function createCard(projectData) {
       const firstVideo = (projectData.media || []).find((item) => item.type === 'video');
+      const firstImage = (projectData.media || []).find((item) => item.type === 'image');
+      const preview = firstVideo || firstImage;
 
-      if (!firstVideo || !projectData.href || !projectData.title) {
+      if (!preview || !projectData.href || !projectData.title) {
         return null;
       }
 
       const col = document.createElement('div');
       col.className = 'col-lg-4';
 
+      const previewMarkup = preview.type === 'video'
+        ? `<video src="${preview.src}" class="img-fluid" autoplay muted loop playsinline preload="metadata"></video>`
+        : `<img src="${preview.src}" class="img-fluid" alt="${projectData.title}" loading="lazy">`;
+
       col.innerHTML = `
         <a class="portfolio-card" href="${projectData.href}" aria-label="${projectData.title}">
-          <video src="${firstVideo.src}" class="img-fluid" autoplay muted loop playsinline preload="metadata"></video>
+          ${previewMarkup}
           <span class="portfolio-card__overlay">
             <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">${projectData.title}</span>
           </span>
