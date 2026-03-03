@@ -476,6 +476,46 @@
       padding: clamp(52px, 7vw, 82px) 16px;
       background: #fff;
     }
+    .brand-logos-section {
+      padding: clamp(52px, 7vw, 82px) 16px;
+      background: #f8f7fb;
+    }
+    .brand-logos-content {
+      max-width: 1180px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .brand-logos-grid {
+      margin-top: clamp(24px, 3vw, 42px);
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: clamp(14px, 2vw, 30px);
+      align-items: center;
+    }
+    .brand-logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 72px;
+      padding: 6px;
+    }
+    .brand-logo-item img {
+      width: 100%;
+      max-width: 160px;
+      height: 52px;
+      object-fit: contain;
+      display: block;
+    }
+    @media (max-width: 991.98px) {
+      .brand-logos-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 575.98px) {
+      .brand-logos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
     .workflow-content {
       max-width: 1180px;
       margin: 0 auto;
@@ -852,6 +892,32 @@
             </div>
             <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">&rarr; Quiero llevarlo a la realidad</a>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-logos-section" aria-label="Marcas que han confiado en mí">
+      <div class="brand-logos-content" data-aos="fade-up">
+        <h2 class="section-title-unified">Marcas que han confiado en mí</h2>
+        <div class="brand-logos-grid">
+          <div class="brand-logo-item">
+            <img src="/images/logos-marcas/america.png" alt="América Televisión">
+          </div>
+          <div class="brand-logo-item">
+            <img src="/images/logos-marcas/canalya.png" alt="Canal Ya">
+          </div>
+          <div class="brand-logo-item">
+            <img src="/images/logos-marcas/catorceyseis.png" alt="Catorce y Seis">
+          </div>
+          <div class="brand-logo-item">
+            <img src="/images/logos-marcas/esb.png" alt="ESB">
+          </div>
+          <div class="brand-logo-item">
+            <img src="/images/logos-marcas/lamula.png" alt="La Mula">
+          </div>
+          <div class="brand-logo-item">
+            <img src="/images/logos-marcas/todogood.png" alt="Todo Good">
+          </div>
         </div>
       </div>
     </section>
