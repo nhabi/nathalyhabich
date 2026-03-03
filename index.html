@@ -488,25 +488,33 @@
     .brand-logos-grid {
       margin-top: clamp(24px, 3vw, 42px);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: clamp(14px, 2vw, 24px);
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: clamp(14px, 2vw, 30px);
       align-items: center;
     }
     .brand-logo-item {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 100px;
-      padding: 14px;
-      background: #fff;
-      border-radius: 12px;
+      min-height: 72px;
+      padding: 6px;
     }
     .brand-logo-item img {
       width: 100%;
       max-width: 160px;
-      height: 58px;
+      height: 52px;
       object-fit: contain;
       display: block;
+    }
+    @media (max-width: 991.98px) {
+      .brand-logos-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    @media (max-width: 575.98px) {
+      .brand-logos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
     .workflow-content {
       max-width: 1180px;
@@ -843,9 +851,9 @@
       </div>
     </section>
 
-    <section class="brand-logos-section" aria-label="Marcas y producciones que han confiado en mí">
+    <section class="brand-logos-section" aria-label="Marcas que han confiado en mí">
       <div class="brand-logos-content" data-aos="fade-up">
-        <h2 class="section-title-unified">Marcas y producciones que han confiado en mí</h2>
+        <h2 class="section-title-unified">Marcas que han confiado en mí</h2>
         <div class="brand-logos-grid">
           <div class="brand-logo-item">
             <img src="/images/logos-marcas/america.png" alt="América Televisión">
