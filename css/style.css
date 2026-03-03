@@ -125,6 +125,13 @@ a {
 .footer {
   background: var(--brand-blue);
   text-align: center; }
+  .footer .container-fluid {
+    display: flex;
+    justify-content: center; }
+  .footer p {
+    width: 100%;
+    margin: 0;
+    text-align: center; }
 
 .footer-legal {
   margin: 0;
