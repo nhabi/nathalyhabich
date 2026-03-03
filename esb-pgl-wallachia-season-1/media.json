@@ -5,6 +5,11 @@
   "media": [
     {
       "type": "video",
+      "src": "/images/direccion-de-arte/pgl-wallachia-season-1/Wallachia1.mp4",
+      "alt": "Wallachia1"
+    },
+    {
+      "type": "video",
       "src": "/images/direccion-de-arte/pgl-wallachia-season-1/0807-1.mp4",
       "alt": "0807-1"
     },
@@ -98,11 +103,7 @@
       "src": "/images/direccion-de-arte/pgl-wallachia-season-1/wall2.mp4",
       "alt": "wall2"
     },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/pgl-wallachia-season-1/Wallachia1.mp4",
-      "alt": "Wallachia1"
-    },
+    
     {
       "type": "video",
       "src": "/images/direccion-de-arte/pgl-wallachia-season-1/wallachia3-a.mp4",
