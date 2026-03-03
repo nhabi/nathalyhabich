@@ -4,6 +4,11 @@
   "href": "/lovesimon/",
   "media": [
     {
+      "type": "video",
+      "src": "/images/direccion-de-arte/love-simon/lovesimon.re-a.mp4",
+      "alt": ""
+    },
+    {
       "type": "image",
       "src": "/images/direccion-de-arte/love-simon/moodboard.png",
       "alt": ""
