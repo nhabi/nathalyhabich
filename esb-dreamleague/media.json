@@ -4,6 +4,11 @@
   "href": "/esb-dreamleague/",
   "media": [
     {
+      "type": "video",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/Dreamleague1.mp4",
+      "alt": "Dreamleague1"
+    },
+    {
       "type": "image",
       "src": "/images/direccion-de-arte/dreamleague-season-22/1.png",
       "alt": "1"
@@ -103,11 +108,7 @@
       "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-a.mp4",
       "alt": "dreamleague-a"
     },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/Dreamleague1.mp4",
-      "alt": "Dreamleague1"
-    },
+    
     {
       "type": "video",
       "src": "/images/direccion-de-arte/dreamleague-season-22/gx010241-a.mp4",
