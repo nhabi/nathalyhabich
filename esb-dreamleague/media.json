@@ -5,78 +5,128 @@
   "media": [
     {
       "type": "image",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-1.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-2.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-4.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-5.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-8.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/planos.jpg",
-      "alt": ""
-    },
-    {
-      "type": "image",
       "src": "/images/direccion-de-arte/dreamleague-season-22/1.png",
-      "alt": ""
-    },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-a.mp4",
-      "alt": ""
+      "alt": "1"
     },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/dreamleague-season-22/3.png",
-      "alt": ""
+      "alt": "3"
     },
     {
-      "type": "video",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/gx010241-a.mp4",
-      "alt": ""
-    },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/gx010248-a.mp4",
-      "alt": ""
-    },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/gx10256-a.mp4",
-      "alt": ""
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/6.png",
+      "alt": "6"
     },
     {
       "type": "video",
       "src": "/images/direccion-de-arte/dreamleague-season-22/dl1-a.mp4",
-      "alt": ""
-    },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/dreamleague-season-22/dl4-a.mp4",
-      "alt": ""
+      "alt": "dl1-a"
     },
     {
       "type": "video",
       "src": "/images/direccion-de-arte/dreamleague-season-22/dl3-a.mp4",
-      "alt": ""
+      "alt": "dl3-a"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dl4-a.mp4",
+      "alt": "dl4-a"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-1.png",
+      "alt": "dreamleague-14-05-nathaly-habich-1"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-10.png",
+      "alt": "dreamleague-14-05-nathaly-habich-10"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-11.png",
+      "alt": "dreamleague-14-05-nathaly-habich-11"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-12.png",
+      "alt": "dreamleague-14-05-nathaly-habich-12"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-13.png",
+      "alt": "dreamleague-14-05-nathaly-habich-13"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-2.png",
+      "alt": "dreamleague-14-05-nathaly-habich-2"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-3.png",
+      "alt": "dreamleague-14-05-nathaly-habich-3"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-4.png",
+      "alt": "dreamleague-14-05-nathaly-habich-4"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-5.png",
+      "alt": "dreamleague-14-05-nathaly-habich-5"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-6.png",
+      "alt": "dreamleague-14-05-nathaly-habich-6"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-7.png",
+      "alt": "dreamleague-14-05-nathaly-habich-7"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-8.png",
+      "alt": "dreamleague-14-05-nathaly-habich-8"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-9.png",
+      "alt": "dreamleague-14-05-nathaly-habich-9"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/dreamleague-a.mp4",
+      "alt": "dreamleague-a"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/Dreamleague1.mp4",
+      "alt": "Dreamleague1"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/gx010241-a.mp4",
+      "alt": "gx010241-a"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/gx010248-a.mp4",
+      "alt": "gx010248-a"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/gx10256-a.mp4",
+      "alt": "gx10256-a"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/dreamleague-season-22/planos.jpg",
+      "alt": "planos"
     }
   ]
 }
