@@ -3,6 +3,11 @@
   "excerpt": "Proyecto de dirección de arte para propuesta escénica y narrativa visual.",
   "href": "/viejamoralidad/",
   "media": [
+   {
+      "type": "video",
+      "src": "/images/direccion-de-arte/viejamoralidad/vm-a.mp4",
+      "alt": ""
+    },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/viejamoralidad/1-moodboard-nathaly-vieja-moralidad.png",
