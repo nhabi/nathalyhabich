@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Elite League S1 &mdash; Nathaly Habich</title>
+  <title>Portafolio &mdash; Nathaly Habich</title>
   <link rel="shortcut icon" href="/images/favicon1.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="/css/owl.carousel.min.css">
   <link rel="stylesheet" href="/css/owl.theme.default.min.css">
 
-  <link rel="stylesheet" href="/css/lightgallery.min.css">    
+  <link rel="stylesheet" href="/css/lightgallery.min.css">
 
   <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
 
@@ -30,6 +30,54 @@
   <link rel="stylesheet" href="/css/aos.css">
 
   <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    .portfolio-card {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      min-height: 320px;
+      margin-bottom: 24px;
+      background: #000;
+    }
+
+    .portfolio-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .portfolio-card:hover video {
+      transform: scale(1.03);
+    }
+
+    .portfolio-card__overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      padding: 16px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .portfolio-card__button {
+      pointer-events: none;
+    }
+
+    #portfolio-grid .col-lg-4 {
+      display: flex;
+    }
+
+    .portfolio-card,
+    .portfolio-card video {
+      border-radius: 2px;
+    }
+  </style>
 
 </head>
 <body>
@@ -44,7 +92,7 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-    
+
     <header class="site-navbar py-3" role="banner">
 
       <div class="container-fluid">
@@ -57,9 +105,10 @@
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="active"><a href="/">INICIO</a></li>
-               
-                <li><a href="https://nathalyhabich.me/direcciondearte/">PORTAFOLIO</a></li>              </ul>
+                <li><a href="/">INICIO</a></li>
+
+                <li class="active"><a href="/portafolio/">PORTAFOLIO</a></li>
+              </ul>
             </nav>
           </div>
 
@@ -74,7 +123,7 @@
                 </li>
                 <li>
                   <a href="mailto:nath.habich@gmail.com" class="pl-3 pr-3"><span class="icon-mail_outline"></span></a>
-                </li>            
+                </li>
               </ul>
             </div>
 
@@ -84,39 +133,40 @@
 
         </div>
       </div>
-      
+
     </header>
 
 
+      <div class="container-fluid">
 
-    <div class="container-fluid">
+        <div class="row justify-content-center" data-aos="fade" data-aos-delay="500">
 
-      <div class="row justify-content-center"data-aos="fade" data-aos-delay="500">
-
-        <div class="col-md-7">
-          <div class="row mb-5">
-            <div class="col-12 ">
-              <h2 class="site-section-heading text-center">Elite League S1</h2>
+          <div class="col-md-7">
+            <div class="row mb-5">
+              <div class="col-12 ">
+                <h2 class="site-section-heading text-center">PORTAFOLIO</h2>
+              </div>
             </div>
           </div>
+
         </div>
 
-      </div>
-        <div class="row" id="lightgallery"></div>
-        <script src="./project-gallery.js" defer></script>
-        
-          
-                
-          
-          
+    <div class="container-fluid" data-aos="fade" data-aos-delay="500">
+      <div class="row" id="portfolio-grid"></div>
     </div>
 
-    
+    </div>
 
-    
+    <div class="footer py-3">
+      <div class="container-fluid text-center">
 
-    
-    
+        <p style="color:#fff">
+© <script>document.write(new Date().getFullYear());</script> NATHALY HABICH | Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+
+
   </div>
 
   <script src="/js/jquery-3.3.1.min.js"></script>
@@ -137,5 +187,75 @@
   <script src="/js/jquery.mousewheel.min.js"></script>
 
   <script src="/js/main.js"></script>
+
+  <script>
+    const projects = [
+      '/evidenciaoculta-2025/media.json',
+      '/todogood-2025/media.json',
+      '/lamula-2025/media.json',
+      '/esb-pgl-wallachia-season-1/media.json',
+      '/canalya-2025/media.json',
+      '/esb-esl-one-birmingham-2024/media.json',
+      '/esb-dreamleague/media.json',
+      '/esb-eliteleague-s1/media.json',
+      '/esb-betboom-dacha-2024/media.json',
+      '/ti-pubstomp/media.json',
+      '/pgl-major-copenhagen-2024/media.json'
+    ];
+
+    function createCard(projectData) {
+      const firstVideo = (projectData.media || []).find((item) => item.type === 'video');
+
+      if (!firstVideo || !projectData.href || !projectData.title) {
+        return null;
+      }
+
+      const col = document.createElement('div');
+      col.className = 'col-lg-4';
+
+      col.innerHTML = `
+        <a class="portfolio-card" href="${projectData.href}" aria-label="${projectData.title}">
+          <video src="${firstVideo.src}" class="img-fluid" autoplay muted loop playsinline preload="metadata"></video>
+          <span class="portfolio-card__overlay">
+            <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">${projectData.title}</span>
+          </span>
+        </a>
+      `;
+
+      return col;
+    }
+
+    async function renderPortfolio() {
+      const grid = document.getElementById('portfolio-grid');
+
+      const loaded = await Promise.all(
+        projects.map(async (path) => {
+          try {
+            const response = await fetch(path);
+            if (!response.ok) {
+              return null;
+            }
+            return await response.json();
+          } catch (error) {
+            return null;
+          }
+        })
+      );
+
+      loaded.forEach((projectData) => {
+        if (!projectData) {
+          return;
+        }
+
+        const card = createCard(projectData);
+        if (card) {
+          grid.appendChild(card);
+        }
+      });
+    }
+
+    renderPortfolio();
+  </script>
+
 </body>
 </html>
