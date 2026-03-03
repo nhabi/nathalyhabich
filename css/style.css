@@ -123,7 +123,8 @@ a {
   background: #000 !important; }
 
 .footer {
-  background: var(--brand-blue); }
+  background: var(--brand-blue);
+  text-align: center; }
 
 .footer-legal {
   margin: 0;
