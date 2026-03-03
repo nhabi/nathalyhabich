@@ -3,51 +3,115 @@
   "excerpt": "Sistemas visuales aplicados a un entorno en vivo para reforzar narrativa y presencia de marca.",
   "href": "/esb-esl-one-birmingham-2024/",
   "media": [
-  
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-one-birmingham-final-nathaly-habich.png",
-      "alt": ""
-    },
     {
       "type": "video",
-      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/Esl.mp4",
-      "alt": ""
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/0807-a.mp4",
+      "alt": "0807-a"
     },
     {
       "type": "image",
-      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/3.png",
-      "alt": ""
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/1.png",
+      "alt": "1"
     },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/esl-one-birmingham-2024/2.png",
-      "alt": ""
+      "alt": "2"
     },
     {
-      "type": "video",
-      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-final-a.mp4",
-      "alt": ""
+      "type": "image",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/3.png",
+      "alt": "3"
     },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/esl-one-birmingham-2024/5.png",
-      "alt": ""
+      "alt": "5"
     },
     {
-      "type": "video",
-      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl1-a.mp4",
-      "alt": ""
+      "type": "image",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/direccion-de-arte-portafolio-nathaly-habich-e-2.png",
+      "alt": "direccion-de-arte-portafolio-nathaly-habich-e-2"
     },
     {
       "type": "video",
       "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-a.mp4",
-      "alt": ""
+      "alt": "esl-a"
     },
     {
       "type": "video",
-      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/0807-a.mp4",
-      "alt": ""
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-final-a.mp4",
+      "alt": "esl-final-a"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-one-birmingham-final-nathaly-habich-1.png",
+      "alt": "esl-one-birmingham-final-nathaly-habich-1"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-one-birmingham-final-nathaly-habich-2.png",
+      "alt": "esl-one-birmingham-final-nathaly-habich-2"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-one-birmingham-final-nathaly-habich-3.png",
+      "alt": "esl-one-birmingham-final-nathaly-habich-3"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-one-birmingham-final-nathaly-habich-4.png",
+      "alt": "esl-one-birmingham-final-nathaly-habich-4"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-one-birmingham-final-nathaly-habich-5.png",
+      "alt": "esl-one-birmingham-final-nathaly-habich-5"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-one-birmingham-final-nathaly-habich-6.png",
+      "alt": "esl-one-birmingham-final-nathaly-habich-6"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-one-birmingham-final-nathaly-habich-7.png",
+      "alt": "esl-one-birmingham-final-nathaly-habich-7"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl-one-birmingham-final-nathaly-habich.png",
+      "alt": "esl-one-birmingham-final-nathaly-habich"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/Esl.mp4",
+      "alt": "Esl"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/esl1-a.mp4",
+      "alt": "esl1-a"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/Vid 20240416 181314.mp4",
+      "alt": "Vid 20240416 181314"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/Vid 20240416 181358.mp4",
+      "alt": "Vid 20240416 181358"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/Vid 20240416 200339.mp4",
+      "alt": "Vid 20240416 200339"
+    },
+    {
+      "type": "video",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/Vid 20240416 200350.mp4",
+      "alt": "Vid 20240416 200350"
     }
   ]
 }
