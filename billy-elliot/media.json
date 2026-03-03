@@ -1,11 +1,23 @@
 {
-  "title": "Billy Elliot- Gimnasio",
-  "excerpt": "",
-  "href": "/billy-elliot/",
   "media": [
     {
       "type": "image",
+      "src": "/images/direccion-de-arte/billyelliot/set-billy-elliot.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
       "src": "/images/direccion-de-arte/billyelliot/billy-elliot-gimnasio.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/billyelliot/billy-elliot-gimnasio3d2.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/billyelliot/elevacion.png",
       "alt": ""
     },
     {
@@ -20,27 +32,12 @@
     },
     {
       "type": "image",
-      "src": "/images/direccion-de-arte/billyelliot/billy-elliot-gimnasio3d2.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
       "src": "/images/direccion-de-arte/billyelliot/4.png",
       "alt": ""
     },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/billyelliot/5.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/billyelliot/elevacion.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/billyelliot/set-billy-elliot.png",
       "alt": ""
     }
   ]
