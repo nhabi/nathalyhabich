@@ -5,6 +5,11 @@
   "media": [
     {
       "type": "video",
+      "src": "/images/direccion-de-arte/lamula-2025/lamulaprograma.mp4",
+      "alt": "Dirección de arte Set La Mula 2025- Streaming - video 2"
+    },
+    {
+      "type": "video",
       "src": "/images/direccion-de-arte/lamula-2025/Lamula2.mp4",
       "alt": "Dirección de arte Set La Mula 2025- Streaming - video 1"
     },
@@ -13,11 +18,7 @@
       "src": "/images/direccion-de-arte/lamula-2025/27_resultado.webp",
       "alt": "Dirección de arte Set La Mula 2025- Streaming - imagen 1"
     },
-     {
-      "type": "video",
-      "src": "/images/direccion-de-arte/lamula-2025/lamulaprograma.mp4",
-      "alt": "Dirección de arte Set La Mula 2025- Streaming - video 2"
-    },
+     
     {
       "type": "image",
       "src": "/images/direccion-de-arte/lamula-2025/28_resultado.webp",
