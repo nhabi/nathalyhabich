@@ -3,6 +3,11 @@
   "excerpt": "Dirección de arte de torneo: espacialidad, composición y continuidad estética en múltiples tomas.",
   "href": "/esb-eliteleague-s1/",
   "media": [
+     {
+      "type": "video",
+      "src": "/images/direccion-de-arte/eliteleague-s1/Elite.mp4",
+      "alt": "Elite"
+    },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/eliteleague-s1/direccion-de-arte-portafolio-nathaly-habich-e-1.png",
@@ -93,11 +98,7 @@
       "src": "/images/direccion-de-arte/eliteleague-s1/elite-s1-1.mp4",
       "alt": "elite-s1-1"
     },
-    {
-      "type": "video",
-      "src": "/images/direccion-de-arte/eliteleague-s1/Elite.mp4",
-      "alt": "Elite"
-    },
+   
     {
       "type": "video",
       "src": "/images/direccion-de-arte/eliteleague-s1/gx010280-a.mp4",
