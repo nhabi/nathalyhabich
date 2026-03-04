@@ -476,6 +476,57 @@
       padding: clamp(52px, 7vw, 82px) 16px;
       background: #fff;
     }
+    .brand-logos-section {
+      padding: clamp(52px, 7vw, 82px) 16px;
+      background: #f8f7fb;
+    }
+    .brand-logos-content {
+      max-width: 1180px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .brand-logos-section .section-title-unified {
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.05;
+      margin-bottom: 0;
+    }
+    .brand-logos-grid {
+      margin-top: clamp(24px, 3vw, 42px);
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(2px, 0.45vw, 8px);
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      padding: 2px 6px 8px;
+      scrollbar-width: thin;
+    }
+    .brand-logo-item {
+      flex: 0 0 clamp(140px, 13.5vw, 190px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      background: transparent;
+    }
+    .brand-logo-item img {
+      width: 100%;
+      height: clamp(82px, 7vw, 102px);
+      object-fit: contain;
+      display: block;
+      background: transparent;
+      mix-blend-mode: normal;
+    }
+    @media (max-width: 575.98px) {
+      .brand-logo-item {
+        flex-basis: 150px;
+      }
+      .brand-logo-item img {
+        height: 70px;
+      }
+    }
     .workflow-content {
       max-width: 1180px;
       margin: 0 auto;
@@ -805,6 +856,32 @@
       </div>
     </section>
 
+    <section class="brand-logos-section" aria-label="Marcas que han confiado en mí">
+      <div class="brand-logos-content" data-aos="fade-up">
+        <h2 class="section-title-unified">Marcas que han confiado en mí</h2>
+        <div class="brand-logos-grid">
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/america.png" alt="América Televisión">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/canalya.png" alt="Canal Ya">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/catorceyseis.png" alt="Catorce y Seis">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/esb.png" alt="ESB">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/lamula.png" alt="La Mula">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/todogood.png" alt="Todo Good">
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="positioning-section" aria-label="Valor estratégico del espacio visual">
       <div class="positioning-card" data-aos="fade-up">
         <h2 class="positioning-title"><span class="positioning-title-main">Un fondo funciona.</span><span class="positioning-title-main">Un mundo visual</span><span class="positioning-title-accent impact-word">POSICIONA.</span></h2>
@@ -855,6 +932,7 @@
         </div>
       </div>
     </section>
+
 
     <section class="workflow-section" aria-label="Cómo trabajo">
       <div class="workflow-content" data-aos="fade-up">
