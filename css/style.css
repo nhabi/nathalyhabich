@@ -1515,22 +1515,14 @@ img, video {
     max-width: 780px;
   }
 
-  .project-video-hero-copy__title {
+  .project-video-hero-copy__title,
+  .project-video-hero-copy__line {
     margin: 0;
     max-width: 100%;
     font-family: var(--body-font);
     font-size: clamp(16px, 1.2vw, 22px);
     line-height: 1.35;
     text-transform: none;
-    color: #1f1f23;
-    font-weight: 400;
-  }
-
-  .project-video-hero-copy__line {
-    margin: 0;
-    max-width: 100%;
-    font-size: clamp(16px, 1.2vw, 22px);
-    line-height: 1.35;
     color: #1f1f23;
     font-weight: 400;
   }
