@@ -116,6 +116,7 @@
     }
     .hero-about-section {
       padding: 104px 16px 24px;
+      background: #fff;
     }
     .hero__content {
       max-width: 980px;
@@ -312,7 +313,7 @@
     }
     .positioning-section {
       padding: clamp(46px, 7vw, 86px) 16px;
-      background: #fff;
+      background: #f8f7fb;
     }
     .positioning-card {
       max-width: 920px;
@@ -485,35 +486,46 @@
       margin: 0 auto;
       text-align: center;
     }
+    .brand-logos-section .section-title-unified {
+      font-size: clamp(28px, 3vw, 40px);
+      line-height: 1.05;
+      margin-bottom: 0;
+    }
     .brand-logos-grid {
       margin-top: clamp(24px, 3vw, 42px);
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: clamp(14px, 2vw, 30px);
+      display: flex;
+      flex-wrap: nowrap;
       align-items: center;
+      justify-content: center;
+      gap: clamp(2px, 0.45vw, 8px);
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      padding: 2px 6px 8px;
+      scrollbar-width: thin;
     }
     .brand-logo-item {
+      flex: 0 0 clamp(140px, 13.5vw, 190px);
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 72px;
-      padding: 6px;
+      min-width: 0;
+      background: transparent;
     }
     .brand-logo-item img {
       width: 100%;
-      max-width: 160px;
-      height: 52px;
+      height: clamp(82px, 7vw, 102px);
       object-fit: contain;
       display: block;
-    }
-    @media (max-width: 991.98px) {
-      .brand-logos-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
+      background: transparent;
+      mix-blend-mode: normal;
     }
     @media (max-width: 575.98px) {
-      .brand-logos-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+      .brand-logo-item {
+        flex-basis: 150px;
+      }
+      .brand-logo-item img {
+        height: 70px;
       }
     }
     .workflow-content {
@@ -605,7 +617,7 @@
     }
     .projects-section {
       padding: 52px 0 40px;
-      background: #fff;
+      background: #f8f7fb;
     }
     .projects-title {
       font-family: var(--title-font);
@@ -775,8 +787,8 @@
           <h2 class="reel-hero__title">Construye el universo visual que tu proyecto merece.</h2>
           <p class="reel-hero__subtitle">Direcci&oacute;n de arte y dise&ntilde;o espacial narrativo aplicado a producción, escena e instalaciones.</p>
           <div class="reel-hero__actions">
-            <a href="/online/" class="btn btn-outline-white py-2 px-4">&rarr; Iniciar proyecto</a>
-            <a href="#proyectos" class="btn btn-outline-white btn-hero-outline py-2 px-4">&rarr; Ver proyectos</a>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4">Iniciar proyecto</a>
+            <a href="#proyectos" class="btn btn-outline-white btn-hero-outline py-2 px-4">Ver proyectos</a>
           </div>
         </div>
       </div>
@@ -800,6 +812,32 @@
       </div>
     </section>
 
+    <section class="brand-logos-section" aria-label="Marcas que han confiado en mí">
+      <div class="brand-logos-content" data-aos="fade-up">
+        <h2 class="section-title-unified">Marcas que han confiado en mí</h2>
+        <div class="brand-logos-grid">
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/america.png" alt="América Televisión">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/canalya.png" alt="Canal Ya">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/catorceyseis.png" alt="Catorce y Seis">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/esb.png" alt="ESB">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/lamula.png" alt="La Mula">
+          </div>
+          <div class="brand-logo-item">
+            <img src="images/logos-marcas/todogood.png" alt="Todo Good">
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="positioning-section" aria-label="Valor estratégico del espacio visual">
       <div class="positioning-card" data-aos="fade-up">
         <h2 class="positioning-title"><span class="positioning-title-main">Un fondo funciona.</span><span class="positioning-title-main">Un mundo visual</span><span class="positioning-title-accent impact-word">POSICIONA.</span></h2>
@@ -811,7 +849,7 @@
           <p>Ahí es donde <strong>el espacio deja de ser fondo o escenografía y empieza a comunicar, posicionar y contar.</strong></p>
         </div>
         <div class="positioning-action">
-          <a href="/servicios/" class="btn btn-outline-white py-2 px-4">&rarr; Descubre c&oacute;mo trabajo</a>
+          <a href="/servicios/" class="btn btn-outline-white py-2 px-4">Descubre c&oacute;mo trabajo</a>
         </div>
       </div>
     </section>
@@ -827,7 +865,7 @@
               <p>Define con claridad qué cambiar para que tu proyecto deje de verse improvisado.</p>
               <p>Decisiones concretas para ordenar y estructurar desde el inicio.</p>
             </div>
-            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">&rarr; Quiero claridad para mi espacio</a>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">Quiero claridad para mi espacio</a>
           </article>
 
           <article class="service-item">
@@ -836,7 +874,7 @@
               <p>Convierte tu idea en un sistema visual con coherencia, identidad y nivel.</p>
               <p>Aquí se construye el lenguaje visual del proyecto.</p>
             </div>
-            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">&rarr; Quiero diseñar mi proyecto</a>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">Quiero diseñar mi proyecto</a>
           </article>
 
           <article class="service-item">
@@ -845,37 +883,12 @@
               <p>Asegura que lo diseñado se sostenga en la realidad, no solo en concepto.</p>
               <p>Supervisión y criterio para mantener el nivel en ejecución.</p>
             </div>
-            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">&rarr; Quiero llevarlo a la realidad</a>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">Quiero llevarlo a la realidad</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="brand-logos-section" aria-label="Marcas que han confiado en mí">
-      <div class="brand-logos-content" data-aos="fade-up">
-        <h2 class="section-title-unified">Marcas que han confiado en mí</h2>
-        <div class="brand-logos-grid">
-          <div class="brand-logo-item">
-            <img src="/images/logos-marcas/america.png" alt="América Televisión">
-          </div>
-          <div class="brand-logo-item">
-            <img src="/images/logos-marcas/canalya.png" alt="Canal Ya">
-          </div>
-          <div class="brand-logo-item">
-            <img src="/images/logos-marcas/catorceyseis.png" alt="Catorce y Seis">
-          </div>
-          <div class="brand-logo-item">
-            <img src="/images/logos-marcas/esb.png" alt="ESB">
-          </div>
-          <div class="brand-logo-item">
-            <img src="/images/logos-marcas/lamula.png" alt="La Mula">
-          </div>
-          <div class="brand-logo-item">
-            <img src="/images/logos-marcas/todogood.png" alt="Todo Good">
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="workflow-section" aria-label="Cómo trabajo">
       <div class="workflow-content" data-aos="fade-up">
@@ -929,7 +942,7 @@
           <p>Mundos ejecutados. Producciones reales.</p>
           <p>Cada proyecto responde a una necesidad distinta, pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución real.</p>
           <div class="projects-action">
-            <a href="/proyectos/" class="btn btn-outline-white py-2 px-4">&rarr; Ver todos los proyectos</a>
+            <a href="/proyectos/" class="btn btn-outline-white py-2 px-4">Ver todos los proyectos</a>
           </div>
         </div>
       </div>
