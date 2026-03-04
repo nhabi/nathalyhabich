@@ -116,6 +116,7 @@
     }
     .hero-about-section {
       padding: 104px 16px 24px;
+      background: #fff;
     }
     .hero__content {
       max-width: 980px;
@@ -312,7 +313,7 @@
     }
     .positioning-section {
       padding: clamp(46px, 7vw, 86px) 16px;
-      background: #fff;
+      background: #f8f7fb;
     }
     .positioning-card {
       max-width: 920px;
@@ -616,7 +617,7 @@
     }
     .projects-section {
       padding: 52px 0 40px;
-      background: #fff;
+      background: #f8f7fb;
     }
     .projects-title {
       font-family: var(--title-font);
@@ -639,97 +640,6 @@
       padding: 0;
       display: grid;
       gap: 30px;
-    }
-    .projects-action {
-      margin-top: 28px;
-    }
-    .project-card {
-      margin: 0;
-      background: #fff;
-      min-width: 0;
-      overflow: hidden;
-    }
-    .embla {
-      position: relative;
-      width: 100%;
-      max-width: 100%;
-      min-width: 0;
-    }
-    .embla__viewport {
-      width: 100%;
-      overflow: hidden;
-      min-width: 0;
-    }
-    .embla__container {
-      display: flex;
-      gap: 20px;
-    }
-    .embla__slide {
-      flex: 0 0 70%;
-      aspect-ratio: 16 / 9;
-      display: block;
-    }
-    .embla__slide img,
-    .embla__slide video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .embla__prev,
-    .embla__next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 48px;
-      height: 48px;
-      border-radius: 999px;
-      border: none;
-      cursor: pointer;
-      z-index: 2;
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      font-size: 34px;
-      line-height: 1;
-      display: grid;
-      place-items: center;
-      padding: 0;
-    }
-    .embla__prev {
-      left: 16px;
-    }
-    .embla__next {
-      right: 16px;
-    }
-    .project-card__content {
-      margin-top: 14px;
-      text-align: left;
-      padding: 0 8px;
-    }
-    .project-title {
-      margin: 0;
-      font-size: clamp(22px, 2vw, 32px);
-      line-height: 1.2;
-      color: #1f1f23;
-    }
-    .project-title-link {
-      color: inherit;
-      text-decoration: none;
-    }
-    .project-title-link:hover,
-    .project-title-link:focus {
-      text-decoration: underline;
-    }
-    .project-excerpt {
-      margin: 6px 0 0;
-      color: #7d7d80;
-      font-size: clamp(16px, 1.2vw, 20px);
-      line-height: 1.4;
-    }
-    @media (max-width: 767.98px) {
-      .embla__slide {
-        flex: 0 0 85%;
-      }
     }
     .marquee {
       overflow: hidden;
@@ -754,6 +664,52 @@
     @keyframes marquee {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
+    }
+
+
+    .portfolio-card {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      min-height: 320px;
+      margin-bottom: 24px;
+      background: #000;
+    }
+
+    .portfolio-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .portfolio-card:hover video {
+      transform: scale(1.03);
+    }
+
+    .portfolio-card__overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .portfolio-card__button {
+      pointer-events: none;
+    }
+
+    #portfolio-grid .col-lg-4 {
+      display: flex;
+    }
+
+    .portfolio-card,
+    .portfolio-card video {
+      border-radius: 2px;
     }
   </style>
 
@@ -785,7 +741,7 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li class="active"><a href="/">INICIO</a></li>
                
-                <li><a href="/portafolio/">PORTAFOLIO</a></li>              </ul>
+                <li><a href="#proyectos">PROYECTOS</a></li>              </ul>
             </nav>
           </div>
 
@@ -831,8 +787,8 @@
           <h2 class="reel-hero__title">Construye el universo visual que tu proyecto merece.</h2>
           <p class="reel-hero__subtitle">Direcci&oacute;n de arte y dise&ntilde;o espacial narrativo aplicado a producción, escena e instalaciones.</p>
           <div class="reel-hero__actions">
-            <a href="/online/" class="btn btn-outline-white py-2 px-4">&rarr; Iniciar proyecto</a>
-            <a href="#proyectos" class="btn btn-outline-white btn-hero-outline py-2 px-4">&rarr; Ver proyectos</a>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4">Iniciar proyecto</a>
+            <a href="#proyectos" class="btn btn-outline-white btn-hero-outline py-2 px-4">Ver proyectos</a>
           </div>
         </div>
       </div>
@@ -893,7 +849,7 @@
           <p>Ahí es donde <strong>el espacio deja de ser fondo o escenografía y empieza a comunicar, posicionar y contar.</strong></p>
         </div>
         <div class="positioning-action">
-          <a href="/servicios/" class="btn btn-outline-white py-2 px-4">&rarr; Descubre c&oacute;mo trabajo</a>
+          <a href="/servicios/" class="btn btn-outline-white py-2 px-4">Descubre c&oacute;mo trabajo</a>
         </div>
       </div>
     </section>
@@ -909,7 +865,7 @@
               <p>Define con claridad qué cambiar para que tu proyecto deje de verse improvisado.</p>
               <p>Decisiones concretas para ordenar y estructurar desde el inicio.</p>
             </div>
-            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">&rarr; Quiero claridad para mi espacio</a>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">Quiero claridad para mi espacio</a>
           </article>
 
           <article class="service-item">
@@ -918,7 +874,7 @@
               <p>Convierte tu idea en un sistema visual con coherencia, identidad y nivel.</p>
               <p>Aquí se construye el lenguaje visual del proyecto.</p>
             </div>
-            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">&rarr; Quiero diseñar mi proyecto</a>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">Quiero diseñar mi proyecto</a>
           </article>
 
           <article class="service-item">
@@ -927,7 +883,7 @@
               <p>Asegura que lo diseñado se sostenga en la realidad, no solo en concepto.</p>
               <p>Supervisión y criterio para mantener el nivel en ejecución.</p>
             </div>
-            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">&rarr; Quiero llevarlo a la realidad</a>
+            <a href="/online/" class="btn btn-outline-white py-2 px-4 service-item__cta">Quiero llevarlo a la realidad</a>
           </article>
         </div>
       </div>
@@ -981,70 +937,18 @@
 
     <section id="proyectos" class="projects-section" aria-label="Proyectos">
       <div class="container-fluid text-center">
-        <h2 class="section-title-unified">Proyectos Destacados</h2>
+        <h2 class="section-title-unified">Proyectos</h2>
         <div class="positioning-text">
-         <p>Mundos ejecutados. Producciones reales.</p>
-          <p>Cada proyecto responde a una necesidad distinta,
-pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución real.</p>
+          <p>Mundos ejecutados. Producciones reales.</p>
+          <p>Cada proyecto responde a una necesidad distinta, pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución real.</p>
           <div class="projects-action">
-            <a href="/portafolio/" class="btn btn-outline-white py-2 px-4">&rarr; Ver todo el Portafolio</a>
+            <a href="/proyectos/" class="btn btn-outline-white py-2 px-4">Ver todos los proyectos</a>
           </div>
+        </div>
       </div>
 
-      <div class="projects-showcase" data-aos="fade" data-aos-delay="500">
-        <article class="project-card js-project-carousel-card" data-project="/evidenciaoculta-2025/media.json">
-          <div class="embla" aria-label="Project media carousel">
-            <div class="embla__viewport">
-              <div class="embla__container"></div>
-            </div>
-            <button class="embla__prev" type="button" aria-label="Anterior">‹</button>
-            <button class="embla__next" type="button" aria-label="Siguiente">›</button>
-          </div>
-          <div class="project-card__content">
-            <h3 class="project-title"></h3>
-            <p class="project-excerpt"></p>
-          </div>
-        </article>
-        <article class="project-card js-project-carousel-card" data-project="/todogood-2025/media.json">
-          <div class="embla" aria-label="Project media carousel">
-            <div class="embla__viewport">
-              <div class="embla__container"></div>
-            </div>
-            <button class="embla__prev" type="button" aria-label="Anterior">‹</button>
-            <button class="embla__next" type="button" aria-label="Siguiente">›</button>
-          </div>
-          <div class="project-card__content">
-            <h3 class="project-title"></h3>
-            <p class="project-excerpt"></p>
-          </div>
-        </article>
-        <article class="project-card js-project-carousel-card" data-project="/lamula-2025/media.json">
-          <div class="embla" aria-label="Project media carousel">
-            <div class="embla__viewport">
-              <div class="embla__container"></div>
-            </div>
-            <button class="embla__prev" type="button" aria-label="Anterior">‹</button>
-            <button class="embla__next" type="button" aria-label="Siguiente">›</button>
-          </div>
-          <div class="project-card__content">
-            <h3 class="project-title"></h3>
-            <p class="project-excerpt"></p>
-          </div>
-        </article>
-        <article class="project-card js-project-carousel-card" data-project="/projects/esl-one-birmingham-2024/media.json">
-          <div class="embla" aria-label="Project media carousel">
-            <div class="embla__viewport">
-              <div class="embla__container"></div>
-            </div>
-            <button class="embla__prev" type="button" aria-label="Anterior">‹</button>
-            <button class="embla__next" type="button" aria-label="Siguiente">›</button>
-          </div>
-          <div class="project-card__content">
-            <h3 class="project-title"></h3>
-            <p class="project-excerpt"></p>
-          </div>
-        </article>
-      </div>
+      <div class="container-fluid" data-aos="fade" data-aos-delay="500">
+        <div class="row" id="portfolio-grid"></div>
       </div>
     </section>
 
@@ -1090,136 +994,69 @@ pero todos comparten lo mismo: dirección clara, coherencia visual y ejecución 
     });
   </script>
 
-  <script type="module">
-    import EmblaCarousel from 'https://esm.sh/embla-carousel@8.5.2';
-    import Autoplay from 'https://esm.sh/embla-carousel-autoplay@8.5.2';
 
-    const createSlide = function(item) {
-      const slide = document.createElement('div');
-      slide.className = 'embla__slide';
 
-      if (item.type === 'video') {
-        const video = document.createElement('video');
 
-        video.src = item.src;
-        video.muted = true;
-        video.autoplay = true;
-        video.loop = true;
-        video.playsInline = true;
+  <script>
+    const projects = [
+      '/evidenciaoculta-2025/media.json',
+      '/todogood-2025/media.json',
+      '/lamula-2025/media.json'
+    ];
 
-        video.setAttribute('muted', '');
-        video.setAttribute('playsinline', '');
-        video.preload = 'auto';
+    function createCard(projectData) {
+      const firstVideo = (projectData.media || []).find((item) => item.type === 'video');
 
-        video.style.width = '100%';
-        video.style.height = '100%';
-        video.style.objectFit = 'cover';
-
-        slide.appendChild(video);
-      } else {
-        slide.innerHTML = `<img src="${item.src}" alt="${item.alt ?? ''}" loading="lazy" />`;
+      if (!firstVideo || !projectData.href || !projectData.title) {
+        return null;
       }
 
-      return slide;
-    };
+      const col = document.createElement('div');
+      col.className = 'col-lg-4';
 
-    const initProjectCarousel = async function(cardEl) {
-      const url = cardEl.dataset.project;
-      const emblaRoot = cardEl.querySelector('.embla');
-      const viewport = emblaRoot?.querySelector('.embla__viewport');
-      const container = emblaRoot?.querySelector('.embla__container');
-      const prevBtn = emblaRoot?.querySelector('.embla__prev');
-      const nextBtn = emblaRoot?.querySelector('.embla__next');
+      col.innerHTML = `
+        <a class="portfolio-card" href="${projectData.href}" aria-label="${projectData.title}">
+          <video src="${firstVideo.src}" class="img-fluid" autoplay muted loop playsinline preload="metadata"></video>
+          <span class="portfolio-card__overlay">
+            <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">${projectData.title}</span>
+          </span>
+        </a>
+      `;
 
-      if (!url || !viewport || !container || !prevBtn || !nextBtn) {
-        return;
-      }
+      return col;
+    }
 
-      try {
-        const response = await fetch(url + '?v=' + Date.now(), { cache: 'no-store' });
-        if (!response.ok) {
-          throw new Error('No se pudo cargar ' + url);
-        }
+    async function renderPortfolio() {
+      const grid = document.getElementById('portfolio-grid');
+      if (!grid) return;
 
-        const data = await response.json();
-        const titleEl = cardEl.querySelector('.project-title');
-        const excerptEl = cardEl.querySelector('.project-excerpt');
-        const mediaItems = Array.isArray(data.media)
-          ? data.media.filter((item) => item && item.src && (item.type === 'image' || item.type === 'video'))
-          : [];
+      const loaded = await Promise.all(
+        projects.map(async (path) => {
+          try {
+            const response = await fetch(path);
+            if (!response.ok) {
+              return null;
+            }
+            return await response.json();
+          } catch (error) {
+            return null;
+          }
+        })
+      );
 
-        if (titleEl) {
-          const projectHref = data.href || '#';
-          titleEl.innerHTML = `<a class="project-title-link" href="${projectHref}">${data.title ?? ''}</a>`;
-        }
-        if (excerptEl) excerptEl.textContent = data.excerpt ?? '';
-
-        // Limpiar y reconstruir slides desde cero para evitar residuos de render previo.
-        container.innerHTML = '';
-        mediaItems.forEach((item) => container.appendChild(createSlide(item)));
-
-        if (!mediaItems.length) {
+      loaded.forEach((projectData) => {
+        if (!projectData) {
           return;
         }
 
-        if (!cardEl._embla) {
-          const autoplay = Autoplay(
-            { delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true },
-            (root) => root.parentElement
-          );
-
-          cardEl._embla = EmblaCarousel(viewport, { loop: true, align: 'center' }, [autoplay]);
-
-          prevBtn.addEventListener('click', () => {
-            cardEl._embla.scrollPrev();
-            cardEl._embla.plugins().autoplay?.stop();
-            window.clearTimeout(cardEl._autoplayResumeTimer);
-            cardEl._autoplayResumeTimer = window.setTimeout(() => {
-              cardEl._embla.plugins().autoplay?.play();
-            }, 8000);
-          });
-
-          nextBtn.addEventListener('click', () => {
-            cardEl._embla.scrollNext();
-            cardEl._embla.plugins().autoplay?.stop();
-            window.clearTimeout(cardEl._autoplayResumeTimer);
-            cardEl._autoplayResumeTimer = window.setTimeout(() => {
-              cardEl._embla.plugins().autoplay?.play();
-            }, 8000);
-          });
+        const card = createCard(projectData);
+        if (card) {
+          grid.appendChild(card);
         }
+      });
+    }
 
-        const embla = cardEl._embla;
-
-        function syncVideos() {
-          const slidesInView = embla.slidesInView();
-
-          embla.slideNodes().forEach((slide, index) => {
-            const video = slide.querySelector('video');
-            if (!video) return;
-
-            if (slidesInView.includes(index)) {
-              video.play().catch(() => {});
-            } else {
-              video.pause();
-            }
-          });
-        }
-
-        if (!cardEl._syncVideosBound) {
-          embla.on('init', syncVideos);
-          embla.on('select', syncVideos);
-          cardEl._syncVideosBound = true;
-        }
-
-        embla.reInit();
-        syncVideos();
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    document.querySelectorAll('.project-card[data-project]').forEach(initProjectCarousel);
+    renderPortfolio();
   </script>
 
 </body>

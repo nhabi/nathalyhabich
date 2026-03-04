@@ -1,47 +1,52 @@
 {
-  "title": "Billy Elliot- Gimnasio",
-  "excerpt": "",
+  "title": "Billy Elliot",
+  "excerpt": "Proyecto de dirección de arte para set y propuesta de ambientación.",
   "href": "/billy-elliot/",
   "media": [
     {
       "type": "image",
+      "src": "/images/direccion-de-arte/billyelliot/billyelliot-recorrido-a.mp4",
+      "alt": "Set principal de Billy Elliot - imagen 1"
+    },
+     {
+      "type": "video",
+      "src": "/images/direccion-de-arte/billyelliot/billyelliot-recorrido-a.mp4",
+      "alt": "Set principal de Billy Elliot - video 1"
+    },
+    {
+      "type": "image",
       "src": "/images/direccion-de-arte/billyelliot/billy-elliot-gimnasio.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/billyelliot/2.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/billyelliot/3.png",
-      "alt": ""
+      "alt": "Set principal de Billy Elliot - imagen 2"
     },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/billyelliot/billy-elliot-gimnasio3d2.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/billyelliot/4.png",
-      "alt": ""
-    },
-    {
-      "type": "image",
-      "src": "/images/direccion-de-arte/billyelliot/5.png",
-      "alt": ""
+      "alt": "Set principal de Billy Elliot - imagen 3"
     },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/billyelliot/elevacion.png",
-      "alt": ""
+      "alt": "Set principal de Billy Elliot - imagen 4"
     },
     {
       "type": "image",
-      "src": "/images/direccion-de-arte/billyelliot/set-billy-elliot.png",
-      "alt": ""
+      "src": "/images/direccion-de-arte/billyelliot/2.png",
+      "alt": "Set principal de Billy Elliot - imagen 5"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/billyelliot/3.png",
+      "alt": "Set principal de Billy Elliot - imagen 6"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/billyelliot/4.png",
+      "alt": "Set principal de Billy Elliot - imagen 7"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/billyelliot/5.png",
+      "alt": "Set principal de Billy Elliot - imagen 8"
     }
   ]
 }
