@@ -1,0 +1,397 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Diseño de Dirección de Arte &mdash; Nathaly Habich</title>
+  <link rel="shortcut icon" href="/images/favicon1.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Paytone+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/magnific-popup.css">
+  <link rel="stylesheet" href="/css/jquery-ui.css">
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/css/lightgallery.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="/css/swiper.css">
+  <link rel="stylesheet" href="/css/aos.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    .direccion-page { background: #fafafa; color: var(--text-dark); }
+    .dir-section { padding: 92px 0; }
+    .dir-section--white { background: #fff; }
+    .dir-section--gray { background: #eeedf5; }
+
+    .dir-content { max-width: 980px; margin: 0 auto; }
+
+    .dir-display {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 7vw, 72px);
+      line-height: .95;
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--brand-blue);
+      text-transform: uppercase;
+    }
+
+    .dir-heading {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 44px);
+      line-height: 1.08;
+      margin-bottom: 18px;
+      color: var(--brand-blue);
+    }
+
+    .dir-heading--center { text-align: center; }
+
+    .dir-text,
+    .dir-list li,
+    .dir-checklist li,
+    .dir-step p,
+    .dir-compare-item,
+    .dir-step-title {
+      font-family: var(--body-font);
+      font-size: 18px;
+      line-height: 1.6;
+      color: #5f5f76;
+      font-weight: 400;
+    }
+
+    .dir-text--center { text-align: center; }
+    .dir-text--strong { color: var(--brand-blue); font-weight: 700; }
+    .dir-text--lead { max-width: 780px; margin: 0 auto 10px; }
+    .dir-section--hero .dir-content { text-align: center; }
+
+    .dir-cta-wrap { text-align: center; margin-top: 28px; }
+
+    .dir-grid { display: grid; gap: 34px; align-items: center; }
+    .dir-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .dir-media {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      background: #ddd;
+      border-radius: 2px;
+    }
+
+    .dir-media--portrait { aspect-ratio: 3 / 4; }
+    .dir-media--wide { aspect-ratio: 16 / 8; }
+
+    .dir-list { margin: 0; padding-left: 16px; }
+    .dir-list li { margin-bottom: 8px; }
+
+    .dir-compare { margin-top: 18px; display: grid; gap: 12px; max-width: 760px; margin-left: auto; margin-right: auto; }
+    .dir-compare-head {
+      display: grid;
+      grid-template-columns: 1fr 66px 1fr;
+      gap: 12px;
+      text-align: center;
+      font-family: var(--body-font);
+      color: #5f5f76;
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .dir-compare-item {
+      display: grid;
+      grid-template-columns: 1fr 66px 1fr;
+      gap: 12px;
+      align-items: center;
+      font-size: 16px;
+    }
+
+    .dir-before,
+    .dir-after {
+      padding: 10px 14px;
+      text-align: center;
+      border-radius: 2px;
+    }
+
+    .dir-before {
+      background: transparent;
+      border: 2px solid #d5d2e5;
+    }
+
+    .dir-after {
+      background: #322b84;
+      border: 2px solid #322b84;
+      color: #fff;
+    }
+    .dir-arrow { color: var(--brand-magenta); text-align: center; font-weight: 700; }
+
+    .dir-checklist { list-style: none; margin: 0; padding: 0; }
+    .dir-checklist li { position: relative; padding-left: 24px; margin-bottom: 8px; }
+    .dir-checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      color: var(--brand-magenta);
+      font-weight: 700;
+    }
+
+    .dir-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .dir-step-number {
+      font-family: var(--font-display);
+      color: var(--brand-blue);
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .dir-step p {
+      border-top: 2px solid #d5d2e5;
+      padding-top: 10px;
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .dir-step-title { color: #ca4a83; font-weight: 700; font-size: 16px; display: block; margin-bottom: 6px; }
+
+
+    .dir-section--noes .dir-content {
+      text-align: center;
+    }
+
+    .dir-section--noes .dir-text {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .dir-final-hero {
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #fff;
+      border-top: 1px solid #e5e2ef;
+    }
+
+    @media (max-width: 991px) {
+      .dir-section { padding: 68px 0; }
+      .dir-grid--2,
+      .dir-steps,
+      .dir-compare-head,
+      .dir-compare-item { grid-template-columns: 1fr; }
+      .dir-arrow { transform: rotate(90deg); }
+      .dir-display { font-size: clamp(38px, 11vw, 56px); }
+      .dir-heading { font-size: clamp(28px, 8vw, 38px); }
+      .dir-final-hero { min-height: 360px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-wrap direccion-page">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-3" role="banner">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-6 col-xl-2" data-aos="fade-down">
+            <h1 class="mb-0"><a href="/"><img src="/images/logo-png-blanco.png" alt="Nathaly Habich" style="height:45px;object-fit:cover;object-position:50% 50%"></a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li><a href="/">INICIO</a></li>
+                <li class="active"><a href="/servicios/">SERVICIOS</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+            <div class="d-none d-xl-inline-block">
+              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+                <li><a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20vengo%20de%20tu%20web%20y%20quer%C3%ADa%20preguntarte%20sobre%20" class="pl-3 pr-3"><span class="icon-whatsapp"></span></a></li>
+                <li><a href="https://www.instagram.com/nathalyhabich/" class="pl-3 pr-3"><span class="icon-instagram"></span></a></li>
+                <li><a href="mailto:nath.habich@gmail.com" class="pl-3 pr-3"><span class="icon-mail_outline"></span></a></li>
+              </ul>
+            </div>
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="dir-section dir-section--white dir-section--hero">
+      <div class="container dir-content" data-aos="fade-up">
+        <h2 class="dir-display">Diseño de<br>Dirección de Arte</h2>
+        <p class="dir-text dir-text--center dir-text--lead">Convierte tu idea en un sistema visual con coherencia, identidad y nivel.</p>
+        <p class="dir-text dir-text--center dir-text--lead">Cuando un proyecto tiene una buena idea pero no tiene un lenguaje visual definido, todo se fragmenta: el espacio no sostiene la intención, el color se vuelve decorativo y la ejecución pierde coherencia.</p>
+        <p class="dir-text dir-text--center dir-text--lead dir-text--strong">Aquí se construye el sistema visual del proyecto: lo que lo hace reconocible, consistente y ejecutable.</p>
+        <div class="dir-cta-wrap">
+          <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Dise%C3%B1o%20de%20Direcci%C3%B3n%20de%20Arte%20para%20mi%20proyecto." class="btn btn-outline-white py-2 px-4">Iniciar proyecto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dir-section dir-section--gray">
+      <div class="container dir-content" data-aos="fade-up">
+        <div class="dir-grid dir-grid--2">
+          <img src="/images/direccion-de-arte/viejamoralidad/1-moodboard-nathaly-vieja-moralidad.png" class="dir-media dir-media--portrait" alt="Moodboard del proyecto">
+          <div>
+            <h3 class="dir-heading">¿Para quién es este servicio?</h3>
+            <ul class="dir-list">
+              <li>Producciones que necesitan una dirección visual clara antes de diseñar o montar.</li>
+              <li>Marcas o proyectos de contenido que quieren un espacio que posicione, no solo que “se vea bonito”.</li>
+              <li>Equipos creativos que necesitan aterrizar la visión en decisiones que se puedan ejecutar.</li>
+              <li>Proyectos que requieren coherencia entre narrativa, espacio, materialidad y color.</li>
+            </ul>
+            <p class="dir-text dir-text--strong" style="margin-top:16px;">Si tu proyecto necesita identidad visual consistente y decisiones que se sostengan en producción, este servicio es el núcleo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dir-section dir-section--white">
+      <div class="container dir-content" data-aos="fade-up">
+        <h3 class="dir-heading dir-heading--center">¿Qué se resuelve realmente?</h3>
+        <div class="dir-compare">
+          <div class="dir-compare-head">
+            <div>Antes</div>
+            <div></div>
+            <div>Después</div>
+          </div>
+          <div class="dir-compare-item">
+            <div class="dir-before">tenemos una idea</div>
+            <div class="dir-arrow">⟶</div>
+            <div class="dir-after">lenguaje visual claro</div>
+          </div>
+          <div class="dir-compare-item">
+            <div class="dir-before">referencias sueltas</div>
+            <div class="dir-arrow">⟶</div>
+            <div class="dir-after">sistema coherente</div>
+          </div>
+          <div class="dir-compare-item">
+            <div class="dir-before">color por gusto</div>
+            <div class="dir-arrow">⟶</div>
+            <div class="dir-after">dirección cromática con intención</div>
+          </div>
+          <div class="dir-compare-item">
+            <div class="dir-before">se ve bien en teoría</div>
+            <div class="dir-arrow">⟶</div>
+            <div class="dir-after">diseño ejecutable en producción real</div>
+          </div>
+        </div>
+        <p class="dir-text dir-text--center dir-text--strong" style="max-width:700px;margin:20px auto 0;">No se trata de decorar un espacio. Se trata de dirigir lo visual para que el proyecto se vea sólido, intencional y profesional.</p>
+      </div>
+    </section>
+
+    <section class="dir-section dir-section--gray">
+      <div class="container dir-content" data-aos="fade-up">
+        <div class="dir-grid dir-grid--2" style="margin-bottom:30px;">
+          <img src="/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-11.png" class="dir-media dir-media--wide" alt="Proyecto Dreamleague">
+          <img src="/images/direccion-de-arte/betboom-dacha/betboom-final-nathaly-habich.png" class="dir-media dir-media--wide" alt="Proyecto BetBoom Dacha">
+        </div>
+        <div class="dir-grid dir-grid--2">
+          <div>
+            <h3 class="dir-heading">Qué incluye</h3>
+            <p class="dir-text">(Los entregables finales varían según el alcance, pero el objetivo es el mismo: coherencia + ejecución real).</p>
+          </div>
+          <ul class="dir-checklist">
+            <li>Definición de concepto visual y atmósfera.</li>
+            <li>Statement del mundo (qué es ese universo y cómo se percibe).</li>
+            <li>Dirección cromática (lógica de color aplicada).</li>
+            <li>Lineamientos de espacio, forma y materialidad.</li>
+            <li>Moodboards estructurados (referencias con criterio, no collage).</li>
+            <li>Propuesta espacial base (según tipo de proyecto, set, escena o espacio de marca).</li>
+            <li>Guía de ejecución visual: qué es prioritario, qué no se negocia y qué se adapta.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="dir-section dir-section--white">
+      <div class="container dir-content" data-aos="fade-up">
+        <h3 class="dir-heading dir-heading--center">Cómo se trabaja</h3>
+        <div class="dir-steps">
+          <div class="dir-step">
+            <div class="dir-step-number">1</div>
+            <p><span class="dir-step-title">Brief y contexto</span>Recibo información del proyecto, objetivos, tono, restricciones, tiempos y equipo.</p>
+          </div>
+          <div class="dir-step">
+            <div class="dir-step-number">2</div>
+            <p><span class="dir-step-title">Construcción del lenguaje visual</span>Desarrollo concepto, atmósfera y sistema visual (espacio + color + materialidad).</p>
+          </div>
+          <div class="dir-step">
+            <div class="dir-step-number">3</div>
+            <p><span class="dir-step-title">Aterrizaje y entrega</span>Entrego el sistema en un formato claro para que se pueda ejecutar en producción.</p>
+          </div>
+        </div>
+        <div class="dir-cta-wrap">
+          <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Dise%C3%B1o%20de%20Direcci%C3%B3n%20de%20Arte%20para%20mi%20proyecto." class="btn btn-outline-white py-2 px-4">Iniciar proyecto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dir-section dir-section--gray dir-section--noes">
+      <div class="container dir-content" data-aos="fade-up">
+        <h3 class="dir-heading dir-heading--center">Lo que este servicio NO es</h3>
+        <p class="dir-text dir-text--center">No es solo “hacer moodboards”.<br>No es elegir colores superficialmente.<br>No es ejecución completa (eso es el servicio 3).<br>No es resolver cambios de guion o set de último minuto sin replanteo de alcance.</p>
+        <p class="dir-text dir-text--center dir-text--strong" style="margin-top:18px;">Este servicio define y estructura.<br>La ejecución es otra etapa.</p>
+      </div>
+    </section>
+
+    <section class="dir-final-hero">
+      <div class="container dir-content" data-aos="fade-up">
+        <h2 class="dir-heading dir-heading--center" style="max-width:760px;margin-left:auto;margin-right:auto;">Si tu proyecto necesita dirección visual real, aquí se construye.</h2>
+        <div class="dir-cta-wrap">
+          <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Dise%C3%B1o%20de%20Direcci%C3%B3n%20de%20Arte%20para%20mi%20proyecto." class="btn btn-outline-white py-2 px-4">Iniciar proyecto</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer py-3">
+      <div class="container-fluid text-center">
+        <p style="color:#fff">© <script>document.write(new Date().getFullYear());</script> NATHALY HABICH | Todos los derechos reservados.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.stellar.min.js"></script>
+  <script src="/js/jquery.countdown.min.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/bootstrap-datepicker.min.js"></script>
+  <script src="/js/swiper.min.js"></script>
+  <script src="/js/aos.js"></script>
+  <script src="/js/picturefill.min.js"></script>
+  <script src="/js/lightgallery-all.min.js"></script>
+  <script src="/js/jquery.mousewheel.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
