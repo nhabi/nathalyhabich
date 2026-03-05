@@ -10,7 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Paytone+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Paytone+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/fonts/icomoon/style.css">
 
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -26,76 +26,111 @@
   <link rel="stylesheet" href="/css/style.css">
 
   <style>
-    body {
-      background: #f2f2f5;
-      color: #2e2a59;
+    .online-page {
+      background: #fafafa;
+      color: var(--text-dark);
     }
 
     .project-intro {
-      background: #fff;
-      padding: 120px 20px 90px;
+      background: #ffffff;
+      padding: 84px 20px;
       text-align: center;
     }
 
+    .project-intro__content,
+    .project-form-wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
     .project-intro h1 {
-      color: #3d3183;
+      font-family: var(--font-display);
+      color: var(--brand-blue);
       font-weight: 700;
-      font-size: clamp(2rem, 5vw, 4.5rem);
-      line-height: 0.95;
-      margin-bottom: 36px;
+      font-size: clamp(44px, 7vw, 72px);
+      line-height: .95;
+      margin: 0 auto 24px;
+      max-width: 12ch;
+      text-align: center;
       text-transform: uppercase;
     }
 
     .project-intro p {
-      max-width: 980px;
+      font-family: var(--body-font);
+      max-width: 760px;
       margin: 0 auto 20px;
-      font-size: clamp(1.1rem, 2.3vw, 2rem);
-      line-height: 1.45;
-      color: #3b3762;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #5f5f76;
+      font-weight: 400;
     }
 
     .project-intro .lead-strong {
-      font-weight: 600;
+      font-weight: 400;
+      color: #5f5f76;
     }
 
     .project-form-section {
-      padding: 85px 20px;
-      background: #efeff3;
-    }
-
-    .project-form-wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
+      padding: 84px 20px;
+      background: #eeedf5;
     }
 
     .project-form-section h2 {
-      color: #3d3183;
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 700;
+      font-family: var(--title-font);
+      color: var(--brand-blue);
+      font-size: clamp(32px, 4.8vw, 62px);
+      line-height: 1.1;
       text-align: center;
-      margin-bottom: 46px;
-      text-transform: uppercase;
+      margin: 0 0 14px;
+      text-transform: none;
+    }
+
+    .project-form-hero {
+      max-width: 760px;
+      margin: 0 auto 38px;
+      text-align: center;
+    }
+
+    .project-form-hero__subtitle,
+    .project-form-hero__copy {
+      font-family: var(--body-font);
+      font-size: clamp(16px, 2vw, 28px);
+      line-height: 1.35;
+      color: #5f5f76;
+      margin: 0 auto 12px;
+      max-width: 54ch;
+      text-align: center;
+    }
+
+    .project-form-hero__copy {
+      margin-bottom: 0;
     }
 
     .project-form label {
+      font-family: var(--body-font);
       display: block;
-      font-size: 2.2rem;
-      line-height: 1.2;
-      margin-bottom: 10px;
-      color: #2f2b52;
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+      color: #5f5f76;
+      font-weight: 400;
     }
 
     .project-form .form-control,
     .project-form select,
     .project-form textarea {
+      font-family: var(--body-font);
       width: 100%;
-      border: 0;
+      border: 1px solid transparent;
       border-radius: 0;
-      background: #3d3183;
+      background: var(--brand-blue);
       color: #fff;
-      font-size: 1.8rem;
-      min-height: 58px;
-      padding: 14px 16px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.4;
+      min-height: 52px;
+      padding: 12px 16px;
+      transition: background .2s ease, border-color .2s ease, color .2s ease;
     }
 
     .project-form .form-control::placeholder,
@@ -104,8 +139,43 @@
     }
 
     .project-form textarea {
-      min-height: 160px;
+      min-height: 140px;
       resize: vertical;
+    }
+
+    .project-form input:focus,
+    .project-form textarea:focus,
+    .project-form select:focus,
+    .project-form input:not(:placeholder-shown),
+    .project-form textarea:not(:placeholder-shown),
+    .project-form select:valid {
+      background: transparent;
+      border: 1px solid var(--brand-blue);
+      color: #000 !important;
+      -webkit-text-fill-color: #000;
+      outline: none;
+      box-shadow: none;
+    }
+
+    .project-form select:invalid {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .phone-group {
+      display: grid;
+      grid-template-columns: 1.1fr .8fr 1.5fr;
+      gap: 10px;
+    }
+
+    .phone-group__country,
+    .phone-group__code,
+    .phone-group__number {
+      min-height: 52px;
+    }
+
+    .phone-group__code {
+      text-align: center;
+      pointer-events: none;
     }
 
     .project-form .form-group {
@@ -113,16 +183,17 @@
     }
 
     .project-form .btn-submit {
-      background: #ea3f83;
+      font-family: var(--body-font);
+      background: var(--brand-magenta);
       border: 0;
       color: #fff;
       border-radius: 30px;
-      min-width: 330px;
-      height: 60px;
-      font-size: 1.8rem;
-      font-weight: 600;
+      min-width: 290px;
+      height: 54px;
+      font-size: 15px;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.03em;
       transition: background .2s ease;
     }
 
@@ -131,12 +202,12 @@
     }
 
     .project-form .submit-wrap {
-      text-align: right;
+      text-align: center;
     }
 
     .form-status {
       margin-top: 16px;
-      font-size: 1.6rem;
+      font-size: 16px;
       display: none;
     }
 
@@ -157,6 +228,26 @@
 
       .project-form .btn-submit {
         min-width: 100%;
+      }
+
+      .phone-group {
+        grid-template-columns: 1fr;
+      }
+
+      .project-intro {
+        padding: 66px 20px;
+      }
+
+      .project-form-section {
+        padding: 66px 20px;
+      }
+
+      .project-intro h1 {
+        font-size: clamp(38px, 11vw, 56px);
+      }
+
+      .project-form-section h2 {
+        font-size: clamp(28px, 8vw, 38px);
       }
     }
   </style>
@@ -215,15 +306,21 @@
     </header>
 
     <section class="project-intro">
-      <h1>¿Listo para iniciar<br>tu proyecto?</h1>
-      <p class="lead-strong">Si tu proyecto necesita dirección visual, cuéntame un poco más sobre lo que estás desarrollando.</p>
-      <p class="lead-strong">Trabajo con producciones, marcas y equipos que buscan elevar el estándar visual de sus proyectos a través del diseño espacial y la dirección de arte.</p>
-      <p>Antes de empezar, cuéntame un poco sobre tu proyecto.<br>Esta información me ayuda a entender lo que necesitas y ver cuál es la mejor forma de trabajar juntos.</p>
+      <div class="project-intro__content">
+        <h1>¿Listo para iniciar<br>tu proyecto?</h1>
+        <p class="lead-strong">Si tu proyecto necesita dirección visual, cuéntame un poco más sobre lo que estás desarrollando.</p>
+        <p class="lead-strong">Trabajo con producciones, marcas y equipos que buscan elevar el estándar visual de sus proyectos a través del diseño espacial y la dirección de arte.</p>
+        <p>Antes de empezar, cuéntame un poco sobre tu proyecto.<br>Esta información me ayuda a entender lo que necesitas y ver cuál es la mejor forma de trabajar juntos.</p>
+      </div>
     </section>
 
     <section class="project-form-section">
       <div class="project-form-wrapper">
-        <h2>Déjame tus datos y me pondré en contacto contigo</h2>
+        <div class="project-form-hero">
+          <h2>¿Listo para darle dirección real a tu proyecto?</h2>
+          <p class="project-form-hero__subtitle">Cuéntame qué estás creando o visionando y diseñamos el plan ejecutable juntos.</p>
+          <p class="project-form-hero__copy">Dejame tus datos y hoy mismo verás mi nombre en tus mensajes.</p>
+        </div>
 
         <form id="project-form" class="project-form" novalidate>
           <input type="hidden" name="_subject" value="Nuevo proyecto desde nathalyhabich.me">
@@ -238,6 +335,23 @@
             <div class="col-md-6 form-group">
               <label for="email">Email</label>
               <input type="email" id="email" name="Email" class="form-control" placeholder="Tu email de contacto" required>
+            </div>
+
+            <div class="col-md-6 form-group">
+              <label for="celular">Celular</label>
+              <input type="hidden" id="celular-completo" name="Celular">
+              <div class="phone-group">
+                <select id="celular-pais" class="form-control phone-group__country" aria-label="País del número" required>
+                  <option value="PE" data-code="+51" selected>Perú</option>
+                </select>
+                <input type="text" id="celular-codigo" class="form-control phone-group__code" value="+51" aria-label="Código de área" readonly>
+                <input type="tel" id="celular" class="form-control phone-group__number" placeholder="Tu número de contacto" required>
+              </div>
+            </div>
+
+            <div class="col-md-6 form-group">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="Empresa" class="form-control" placeholder="Nombre de tu empresa" required>
             </div>
 
             <div class="col-md-6 form-group">
@@ -265,16 +379,11 @@
 
             <div class="col-md-6 form-group">
               <label for="fecha">¿Tienen una fecha estimada para el proyecto?</label>
-              <input type="text" id="fecha" name="Fecha estimada" class="form-control" placeholder="Dime la fecha o en cuanto tiempo lo tienes previsto." required>
+              <input type="text" id="fecha" name="Fecha estimada" class="form-control" placeholder="Dime una fecha o un rango de tiempo" required>
             </div>
 
-            <div class="col-12 form-group">
-              <label for="necesidad">Necesidad principal</label>
-              <textarea id="necesidad" name="Necesidad principal" class="form-control" placeholder="Cuéntame brevemente qué estás buscando o qué necesitas resolver." required></textarea>
-            </div>
-
-            <div class="col-md-8 form-group">
-              <label for="inversion">¿Tienen un rango de inversión pensado para este proyecto?</label>
+            <div class="col-md-6 form-group">
+              <label for="inversion">¿Tienes un rango de inversion pensado?</label>
               <select id="inversion" name="Rango de inversión" class="form-control" required>
                 <option value="" selected disabled>Seleccionar</option>
                 <option>Aún no lo tenemos claro</option>
@@ -285,7 +394,12 @@
               </select>
             </div>
 
-            <div class="col-md-4 form-group submit-wrap d-flex align-items-end">
+            <div class="col-12 form-group">
+              <label for="necesidad">¿En qué te gustaría que te ayude exactamente?</label>
+              <textarea id="necesidad" name="¿En qué te gustaría que te ayude exactamente?" class="form-control" placeholder="Cuéntame brevemente qué estás buscando o qué necesitas resolver." required></textarea>
+            </div>
+
+            <div class="col-12 form-group submit-wrap">
               <button type="submit" class="btn-submit">Enviar proyecto</button>
             </div>
           </div>
@@ -317,8 +431,77 @@
     const form = document.getElementById('project-form');
     const statusMessage = document.getElementById('form-status');
 
+    const celularPais = document.getElementById('celular-pais');
+    const celularCodigo = document.getElementById('celular-codigo');
+    const celularNumero = document.getElementById('celular');
+    const celularCompleto = document.getElementById('celular-completo');
+
+    const fallbackCountries = [
+      { name: 'Perú', code: 'PE', dial: '+51' },
+      { name: 'México', code: 'MX', dial: '+52' },
+      { name: 'Colombia', code: 'CO', dial: '+57' },
+      { name: 'Chile', code: 'CL', dial: '+56' },
+      { name: 'Argentina', code: 'AR', dial: '+54' },
+      { name: 'España', code: 'ES', dial: '+34' },
+      { name: 'Estados Unidos', code: 'US', dial: '+1' }
+    ];
+
+    const renderCountryOptions = (countries) => {
+      celularPais.innerHTML = countries
+        .map((country) => `<option value="${country.code}" data-code="${country.dial}" ${country.code === 'PE' ? 'selected' : ''}>${country.name}</option>`)
+        .join('');
+    };
+
+    const loadAllCountries = async () => {
+      try {
+        const response = await fetch('https://restcountries.com/v3.1/all?fields=name,translations,cca2,idd');
+        if (!response.ok) throw new Error('No se pudieron cargar los países.');
+
+        const data = await response.json();
+        const countries = data
+          .map((country) => {
+            const suffix = country?.idd?.suffixes?.[0];
+            const root = country?.idd?.root;
+            if (!country?.cca2 || !root || !suffix) return null;
+            return {
+              code: country.cca2,
+              dial: `${root}${suffix}`,
+              name: country?.translations?.spa?.common || country?.name?.common || country.cca2
+            };
+          })
+          .filter(Boolean)
+          .sort((a, b) => a.name.localeCompare(b.name, 'es'));
+
+        const peruIndex = countries.findIndex((country) => country.code === 'PE');
+        if (peruIndex > -1) {
+          const [peru] = countries.splice(peruIndex, 1);
+          countries.unshift(peru);
+        }
+
+        renderCountryOptions(countries);
+      } catch (error) {
+        renderCountryOptions(fallbackCountries);
+      }
+
+      updatePhoneCode();
+    };
+
+    const updatePhoneCode = () => {
+      const selected = celularPais.options[celularPais.selectedIndex];
+      const code = selected?.dataset?.code || '+51';
+      celularCodigo.value = code;
+      const numero = celularNumero.value.trim();
+      celularCompleto.value = numero ? `${code} ${numero}` : '';
+    };
+
+    celularPais.addEventListener('change', updatePhoneCode);
+    celularNumero.addEventListener('input', updatePhoneCode);
+    loadAllCountries();
+
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
+
+      updatePhoneCode();
 
       if (!form.checkValidity()) {
         statusMessage.className = 'form-status is-error';
