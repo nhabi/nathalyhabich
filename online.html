@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <title>Paquetes Online &mdash; Nathaly Habich</title>
+  <title>Iniciar proyecto &mdash; Nathaly Habich</title>
   <link rel="shortcut icon" href="/images/favicon1.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Paytone+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Paytone+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/fonts/icomoon/style.css">
 
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -18,23 +18,172 @@
   <link rel="stylesheet" href="/css/jquery-ui.css">
   <link rel="stylesheet" href="/css/owl.carousel.min.css">
   <link rel="stylesheet" href="/css/owl.theme.default.min.css">
-
-  <link rel="stylesheet" href="/css/lightgallery.min.css">    
-
+  <link rel="stylesheet" href="/css/lightgallery.min.css">
   <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
-
   <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
-
   <link rel="stylesheet" href="/css/swiper.css">
-
   <link rel="stylesheet" href="/css/aos.css">
-
   <link rel="stylesheet" href="/css/style.css">
 
+  <style>
+    .online-page {
+      background: #fafafa;
+      color: var(--text-dark);
+    }
+
+    .project-intro,
+    .project-form-section {
+      padding: 84px 0;
+    }
+
+    .project-intro {
+      background: #ffffff;
+    }
+
+    .project-form-section {
+      background: #eeedf5;
+    }
+
+    .project-content {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .project-intro h1 {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 7vw, 72px);
+      line-height: .95;
+      text-align: center;
+      margin: 0 auto 24px;
+      max-width: none;
+      color: var(--brand-blue);
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .project-intro p {
+      font-family: var(--body-font);
+      font-size: 18px;
+      line-height: 1.6;
+      color: #5f5f76;
+      font-weight: 400;
+      text-align: center;
+      margin: 0 auto 12px;
+      max-width: 52ch;
+    }
+
+    .project-intro .lead-strong {
+      font-weight: 700;
+      color: var(--brand-blue);
+    }
+
+    .project-form-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 3.2vw, 40px);
+      line-height: 1.08;
+      margin: 0 auto 28px;
+      max-width: 24ch;
+      color: var(--brand-blue);
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .project-form label {
+      display: block;
+      font-family: var(--body-font);
+      font-size: 18px;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      color: #3f3c5d;
+      font-weight: 400;
+    }
+
+    .project-form .form-control,
+    .project-form select,
+    .project-form textarea {
+      width: 100%;
+      border: 1px solid #b6b3c8;
+      border-radius: 0;
+      background: transparent;
+      color: #2f2d45;
+      font-family: var(--body-font);
+      font-size: 18px;
+      min-height: 52px;
+      padding: 10px 12px;
+      box-shadow: none;
+    }
+
+    .project-form .form-control::placeholder,
+    .project-form textarea::placeholder {
+      color: #4c4968;
+      opacity: 1;
+    }
+
+    .project-form textarea {
+      min-height: 128px;
+      resize: vertical;
+    }
+
+    .project-form .form-group {
+      margin-bottom: 20px;
+    }
+
+    .project-form .btn-submit {
+      background: #ea3f83;
+      border: 0;
+      color: #fff;
+      border-radius: 30px;
+      min-width: 330px;
+      height: 56px;
+      font-size: 18px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: background .2s ease;
+      cursor: pointer;
+    }
+
+    .project-form .btn-submit:hover {
+      background: #cf2f70;
+    }
+
+    .project-form .submit-wrap {
+      text-align: center;
+    }
+
+    .form-note {
+      margin-top: 14px;
+      font-family: var(--body-font);
+      font-size: 14px;
+      color: #5e5a7b;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    @media (max-width: 991px) {
+      .project-intro,
+      .project-form-section {
+        padding: 66px 0;
+      }
+
+      .project-intro h1 {
+        font-size: clamp(38px, 11vw, 56px);
+      }
+
+      .project-form-section h2 {
+        font-size: clamp(28px, 7.2vw, 34px);
+      }
+
+      .project-form .btn-submit {
+        min-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <div class="site-wrap">
+  <div class="site-wrap online-page">
 
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
@@ -44,12 +193,8 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
-    
-
-
 
     <header class="site-navbar py-3" role="banner">
-
       <div class="container-fluid">
         <div class="row align-items-center">
 
@@ -58,7 +203,6 @@
           </div>
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
-
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li><a href="/">INICIO</a></li>
                 <li><a href="/#hola-nathaly">SOBRE MÍ</a></li>
@@ -78,89 +222,104 @@
                   <a href="https://www.instagram.com/nathalyhabich/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                 </li>
                 <li>
-                  <a href="mailto:nath.habich@gmail.com" class="pl-3 pr-3"><span class="icon-mail_outline"></span></a>
-                </li>            
+                  <a href="mailto:hola@nathalyhabich.me" class="pl-3 pr-3"><span class="icon-mail_outline"></span></a>
+                </li>
               </ul>
             </div>
 
             <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
           </div>
 
         </div>
       </div>
-      
     </header>
 
+    <section class="project-intro">
+      <div class="container project-content" data-aos="fade-up">
+        <h1>¿Listo para iniciar<br>tu proyecto?</h1>
+        <p class="lead-strong">Si tu proyecto necesita dirección visual, cuéntame un poco más sobre lo que estás desarrollando.</p>
+        <p class="lead-strong">Trabajo con producciones, marcas y equipos que buscan elevar el estándar visual de sus proyectos a través del diseño espacial y la dirección de arte.</p>
+        <p>Antes de empezar, cuéntame un poco sobre tu proyecto. Esta información me ayuda a entender lo que necesitas y ver cuál es la mejor forma de trabajar juntos.</p>
+      </div>
+    </section>
 
+    <section class="project-form-section">
+      <div class="container project-content" data-aos="fade-up">
+        <h2>Déjame tus datos y me pondré en contacto contigo</h2>
 
+        <form class="project-form" action="https://formsubmit.co/hola@nathalyhabich.me" method="POST">
+          <input type="hidden" name="_subject" value="Nuevo proyecto desde nathalyhabich.me">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://nathalyhabich.me/online/?enviado=1">
 
-    <div class="container-fluid" data-aos="fade" data-aos-delay="500">
-      <div class="row">
-        <div class="col-lg-0">
-
-          <div class="image-wrap-2" >
-            <div class="image-info" style="top: 50vh" >
-              <h2 class="mb-3" style="color:#fff ; font-size: calc((3.1 - 1) * 1.2vw + 1rem);">DISEÑO DE ESPACIOS, DIRECCIÓN DE ARTE Y ESCENOGRAFÍA</h2>
-              <h2 class="mb-3" style="color:#fff ; font-size: calc((1.1 - 1) * 1.2vw + 1rem);"></h2>
-              <a href="https://calendar.app.google/SrqgveNYNKLVh3aV6" class="btn btn-outline-white py-2 px-4">Reserva una reunión GRATIS</a>
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="Nombre" class="form-control" placeholder="Tu nombre" required>
             </div>
-            <img src="/images/banner-fade.png" alt="Image" class="image-fluid" style="object-fit:cover; height: 100vh; width:100%;">  
+            <div class="col-md-4 form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="Email" class="form-control" placeholder="Tu email de contacto" required>
+            </div>
+            <div class="col-md-4 form-group">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="Empresa" class="form-control" placeholder="Empresa">
+            </div>
+
+            <div class="col-md-4 form-group">
+              <label for="tipo-proyecto">¿Qué tipo de proyecto estás desarrollando?</label>
+              <select id="tipo-proyecto" name="Tipo de proyecto" class="form-control" required>
+                <option value="" selected disabled>Seleccionar</option>
+                <option>Producción audiovisual</option>
+                <option>Set para contenido / streaming</option>
+                <option>Espacio para marca o negocio</option>
+                <option>Evento o experiencia</option>
+                <option>Otro</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 form-group">
+              <label for="etapa">¿En qué etapa se encuentra el proyecto ahora mismo?</label>
+              <select id="etapa" name="Etapa del proyecto" class="form-control" required>
+                <option value="" selected disabled>Seleccionar</option>
+                <option>Apenas es una idea</option>
+                <option>Estamos desarrollándolo</option>
+                <option>Está en preproducción</option>
+                <option>Ya está en producción</option>
+              </select>
+            </div>
+
+            <div class="col-md-4 form-group">
+              <label for="fecha">¿Tienen una fecha estimada para el proyecto?</label>
+              <input type="text" id="fecha" name="Fecha estimada" class="form-control" placeholder="Dime la fecha o en cuanto tiempo lo tienes previsto." required>
+            </div>
+
+            <div class="col-md-6 form-group">
+              <label for="necesidad">¿En qué te gustaría que te ayude exactamente?</label>
+              <textarea id="necesidad" name="Necesidad principal" class="form-control" placeholder="Cuéntame brevemente qué estás buscando o qué necesitas resolver." required></textarea>
+            </div>
+
+            <div class="col-md-6 form-group">
+              <label for="inversion">¿Tienen un rango de inversión pensado para este proyecto?</label>
+              <select id="inversion" name="Rango de inversión" class="form-control" required>
+                <option value="" selected disabled>Seleccionar</option>
+                <option>Aún no lo tenemos claro</option>
+                <option>Menos de S/.2,000</option>
+                <option>S/.2,000 – S/.5,000</option>
+                <option>S/.5,000 – S/.10,000</option>
+                <option>S/.10,000+</option>
+              </select>
+              <div class="submit-wrap mt-4">
+                <button type="submit" class="btn-submit">Enviar proyecto</button>
+              </div>
+            </div>
           </div>
-    </div>
-    </div>
 
-    <p>&nbsp;</p>
-              <h2 class="mb-3" style="color:#3d3183 ; font-size: calc((1.8 - 1) * 1.2vw + 1rem);text-align: center; line-height: 100%; font-weight:700;">DISEÑANDO PARA CONTAR HISTORIAS</h2>
-              <h2 class="h-70 p-1 p-lg-5 site-block-feature-7" style=" color:#5e5e5e; font-size: calc((1.2 - 1) * 1.2vw + 1rem); text-align: justify; line-height: 120%; padding-left: 10vh !important ; padding-right: 10vh !important; border:none; font-weight: 100;">Cada espacio es una página en blanco, lista para escribir historias únicas. Diseñar para contar historias es crear ambientes que no solo sean visualmente impactantes, sino que también capturen la esencia de quien los habita. Ya sea a través de un hogar acogedor, una tienda vibrante o un set de película, mi objetivo es transformar ideas en realidades tangibles que hablen por sí mismas. Puedo dar vida a tus visiones y convertir cada rincón en un capítulo inolvidable de tu historia.</h2>
-              <p>&nbsp;</p>
-    
-    <div class="row">
-      <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
-        <div class="h-70 p-4 p-lg-5 site-block-feature-7">
-          <span class="text-white position: relative h4"><strong class="font-weight-bold text-primary">DISEÑO DE ESPACIOS</strong></span>
-          <p>&nbsp;</p>
-          <img src="/images/interiores/lb/2e.png" alt="Image" class="image-fluid" style="object-fit:cover; height: 50vh; width:100%;">
-          <p style="text-align: justify; color:#5e5e5e;">Transforma tus espacios en lugares que cuentan historias únicas. Desde hogares acogedores hasta oficinas funcionales, diseño cada rincón para reflejar tu estilo y satisfacer tus necesidades, creando ambientes que inspiren y emocionen.</p>
-          
-        </div>
+          <p class="form-note">Este formulario se enviará directamente a <strong>hola@nathalyhabich.me</strong>.</p>
+        </form>
       </div>
-      
-      <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
-        <div class="h-70 p-4 p-lg-5 site-block-feature-7">
-          <span class="text-white position: relative h4"><strong class="font-weight-bold text-primary">DIRECCIÓN DE ARTE AUDIOVISUAL</strong></span>
-          <p>&nbsp;</p>
-          <img src="/images/direccion-de-arte/love-simon/diapositiva35.png" alt="Image" class="image-fluid" style="object-fit:cover; height: 50vh; width:100%;">
-          <p style="text-align: justify; color:#5e5e5e;">Dale vida a tus proyectos cinematográficos y audiovisuales con un diseño que enriquezca la narrativa visual. Desde la conceptualización hasta la ejecución, creo escenarios y ambientes que potencian la historia y capturan la esencia de cada escena. </p>
-         
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5 mb-lg-5">
-        <div class="h-70 p-4 p-lg-5 site-block-feature-7">
-          <span class="text-white position: relative h4"><strong class="font-weight-bold text-primary">DISEÑO ESCEONOGRÁFICO</strong></span>
-          <p>&nbsp;</p>
-          <img src="/images/try.png" alt="Image" class="image-fluid" style="object-fit:cover; height: 50vh; width:100%;">
-          <p style="text-align: justify; color:#5e5e5e;">Crea escenarios impresionantes que elevan la producción a otro nivel. Mi enfoque en el diseño escenográfico transforma ideas en espacios dinámicos y visualmente impactantes, perfectos para teatro, cine y eventos especiales.</p>
-                    
-        </div>
-      </div>
-
-    </div>
-
-    <div class="image-wrap-2" >
-      <div class="image-info" style="top: 10vh" >
-        <h2 class="mb-3" style="color:#fff ; font-size: calc((4.1 - 1) * 1.2vw + 1rem);"></h2>
-        <h2 class="mb-3" style="color:#fff ; font-size: calc((2.1 - 1) * 1.2vw + 1rem);"></h2>
-
-      </div>
-      <img src="/images/interiores/lb/2a.png" alt="Image" class="image-fluid" style="object-fit:cover; height: 50vh; width:32%;"> 
-      <img src="/images/interiores/limonada/r6.png" alt="Image" class="image-fluid" style="object-fit:cover; height: 50vh; width:32%;">  
-      <img src="/images/interiores/limonada/r8.png" alt="Image" class="image-fluid" style="object-fit:cover; height: 50vh; width:32%;"> 
-    </div>
-    
-  
-    
-    
+    </section>
   </div>
 
   <script src="/js/jquery-3.3.1.min.js"></script>
@@ -175,18 +334,12 @@
   <script src="/js/bootstrap-datepicker.min.js"></script>
   <script src="/js/swiper.min.js"></script>
   <script src="/js/aos.js"></script>
-
   <script src="/js/picturefill.min.js"></script>
   <script src="/js/lightgallery-all.min.js"></script>
   <script src="/js/jquery.mousewheel.min.js"></script>
-
   <script src="/js/main.js"></script>
-  
-  <script>
-    $(document).ready(function(){
-      $('#lightgallery').lightGallery();
-    });
-  </script>
+
+
 
 </body>
 </html>
