@@ -1,0 +1,428 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Diagnóstico Estratégico &mdash; Nathaly Habich</title>
+  <link rel="shortcut icon" href="/images/favicon1.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Paytone+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/magnific-popup.css">
+  <link rel="stylesheet" href="/css/jquery-ui.css">
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/css/lightgallery.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="/css/swiper.css">
+  <link rel="stylesheet" href="/css/aos.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    .diagnostico-page {
+      background: #fafafa;
+      color: var(--text-dark);
+    }
+
+    .diag-section {
+      padding: 84px 0;
+    }
+
+    .diag-section--a {
+      background: #ffffff;
+    }
+
+    .diag-section--b {
+      background: #eeedf5;
+    }
+
+    .diag-section--final {
+      background: #ffffff;
+      border-top: 1px solid #e5e2ef;
+    }
+
+    .diag-content {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .diag-display {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 7vw, 72px);
+      line-height: .95;
+      text-align: center;
+      margin-bottom: 24px;
+      color: var(--brand-blue);
+      text-transform: uppercase;
+    }
+
+    .diag-heading {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 44px);
+      line-height: 1.08;
+      margin-bottom: 20px;
+      color: var(--brand-blue);
+      text-transform: none;
+    }
+
+    .diag-heading--center {
+      text-align: center;
+    }
+
+    .diag-text,
+    .diag-list li,
+    .diag-checklist li,
+    .diag-step p,
+    .diag-time {
+      font-family: var(--body-font);
+      font-size: 18px;
+      line-height: 1.6;
+      color: #5f5f76;
+      font-weight: 400;
+    }
+
+    .diag-text--emphasis {
+      font-weight: 400;
+      color: #5f5f76;
+    }
+
+    .diag-text--strong {
+      font-weight: 700;
+      color: var(--brand-blue);
+    }
+
+    .diag-subtitle,
+    .diag-paragraph,
+    .diag-note,
+    .diag-time {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .diag-subtitle {
+      color: #5f5f76;
+      margin-bottom: 12px;
+    }
+
+    .diag-subtitle--dark {
+      color: #5f5f76;
+      margin-bottom: 0;
+    }
+
+    .diag-paragraph {
+      margin-bottom: 12px;
+    }
+
+    .diag-note {
+      color: #5f5f76;
+      font-weight: 400;
+      margin-top: 30px;
+      margin-bottom: 0;
+      max-width: 40ch;
+    }
+
+    .diag-cta-wrap {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .diag-grid {
+      display: grid;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .diag-grid--2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .diag-grid--3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin-bottom: 30px;
+    }
+
+    .diag-list {
+      text-align: left;
+      padding-left: 16px;
+      margin-bottom: 10px;
+    }
+
+    .diag-list li,
+    .diag-checklist li {
+      margin-bottom: 8px;
+    }
+
+    .diag-media {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 3 / 4;
+      background: #ddd;
+    }
+
+    .diag-media--wide {
+      aspect-ratio: 16 / 9;
+    }
+
+    .diag-checklist {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .diag-checklist li {
+      position: relative;
+      padding-left: 26px;
+    }
+
+    .diag-checklist li:before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 1px;
+      color: var(--brand-magenta);
+      font-weight: 700;
+    }
+
+    .diag-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .diag-step-number {
+      font-family: var(--font-display);
+      color: var(--brand-blue);
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .diag-step p {
+      border-top: 2px solid #d5d2e5;
+      padding-top: 12px;
+      margin: 0;
+    }
+
+    .diag-time {
+      margin-top: 30px;
+      color: #5f5f76;
+      font-weight: 400;
+      width: 100%;
+      max-width: none;
+      display: block;
+    }
+
+    @media (max-width: 991px) {
+      .diag-grid--2,
+      .diag-grid--3,
+      .diag-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .diag-section {
+        padding: 66px 0;
+      }
+
+      .diag-display {
+        font-size: clamp(38px, 11vw, 56px);
+      }
+
+      .diag-heading {
+        font-size: clamp(28px, 8vw, 38px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="site-wrap diagnostico-page">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-3" role="banner">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-6 col-xl-2" data-aos="fade-down">
+            <h1 class="mb-0"><a href="/"><img src="/images/logo-png-blanco.png" alt="Nathaly Habich" style="height:45px;object-fit:cover;object-position:50% 50%"></a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li><a href="/">INICIO</a></li>
+                <li class="active"><a href="/servicios/">SERVICIOS</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+            <div class="d-none d-xl-inline-block">
+              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+                <li><a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20vengo%20de%20tu%20web%20y%20quer%C3%ADa%20preguntarte%20sobre%20" class="pl-3 pr-3"><span class="icon-whatsapp"></span></a></li>
+                <li><a href="https://www.instagram.com/nathalyhabich/" class="pl-3 pr-3"><span class="icon-instagram"></span></a></li>
+                <li><a href="mailto:nath.habich@gmail.com" class="pl-3 pr-3"><span class="icon-mail_outline"></span></a></li>
+              </ul>
+            </div>
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="diag-section diag-section--a">
+      <div class="container diag-content" data-aos="fade-up">
+        <h2 class="diag-display">Diagnóstico<br>Estratégico</h2>
+        <p class="diag-text diag-subtitle">Antes de diseñar, hay que entender qué debe funcionar.</p>
+        <p class="diag-text diag-paragraph">Cuando un proyecto empieza sin dirección clara, las decisiones se vuelven reactivas, el presupuesto se dispersa y el resultado pierde coherencia.</p>
+        <p class="diag-text diag-paragraph diag-text--strong">Este servicio define el punto de partida correcto.</p>
+        <div class="diag-cta-wrap">
+          <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20Diagn%C3%B3stico%20Estrat%C3%A9gico%20de%20mi%20proyecto." class="btn btn-outline-white py-2 px-4">Iniciar proyecto</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="diag-section diag-section--b">
+      <div class="container diag-content" data-aos="fade-up">
+        <div class="diag-grid diag-grid--2">
+          <div>
+            <video src="/images/direccion-de-arte/esl-one-birmingham-2024/Vid 20240416 181358.mp4" class="diag-media" autoplay muted loop playsinline></video>
+          </div>
+          <div>
+            <h3 class="diag-heading">¿Para quién es este servicio?</h3>
+            <ul class="diag-list">
+              <li>Producciones que están por montar un set o espacio y necesitan claridad antes de invertir.</li>
+              <li>Marcas que sienten que su espacio no comunica lo que debería.</li>
+              <li>Proyectos que han avanzado sin estructura y necesitan reordenar decisiones.</li>
+              <li>Equipos que quieren evitar improvisación en etapas posteriores.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="diag-text diag-paragraph diag-text--strong">Si el espacio ya existe pero no está funcionando como debería, este es el primer paso.</p>
+      </div>
+    </section>
+
+    <section class="diag-section diag-section--a">
+      <div class="container diag-content" data-aos="fade-up">
+        <div class="diag-grid diag-grid--2">
+          <div>
+            <h3 class="diag-heading">No es una opinión estética.<br>Es una evaluación estratégica.</h3>
+            <p class="diag-text diag-text--emphasis">Este servicio ayuda a:</p>
+            <ul class="diag-list">
+              <li>Detectar incoherencias visuales.</li>
+              <li>Identificar decisiones mal priorizadas.</li>
+              <li>Definir qué debe cambiar y qué debe mantenerse.</li>
+              <li>Establecer una lógica visual antes de diseñar o ejecutar.</li>
+              <li>Evitar gastos innecesarios por falta de dirección.</li>
+            </ul>
+          </div>
+          <div>
+            <img src="/images/direccion-de-arte/lamula-2025/IMG_20250104_113054.jpg" class="diag-media"></img>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="diag-section diag-section--b">
+      <div class="container diag-content" data-aos="fade-up">
+        <div class="diag-grid diag-grid--3">
+          <img src="/images/direccion-de-arte/love-simon/1-love-simon-dormitorio-simon.png" class="diag-media diag-media--wide" autoplay muted loop playsinline></img>
+          <img src="/images/direccion-de-arte/viejamoralidad/2-set.png" class="diag-media diag-media--wide" autoplay muted loop playsinline></img>
+          <img src="/images/direccion-de-arte/viejamoralidad/diapositiva6.png" class="diag-media diag-media--wide" autoplay muted loop playsinline></img>
+        </div>
+        <div class="diag-grid diag-grid--2">
+          <div>
+            <h3 class="diag-heading">Qué incluye</h3>
+            <p class="diag-text diag-paragraph diag-text--strong">No es teoría.<br>Es una hoja de ruta concreta.</p>
+          </div>
+          <ul class="diag-checklist">
+            <li>Revisión del contexto y objetivo del proyecto.</li>
+            <li>Análisis del espacio físico o planteamiento inicial.</li>
+            <li>Identificación de restricciones técnicas y narrativas.</li>
+            <li>Definición de prioridades visuales.</li>
+            <li>Lineamientos claros sobre espacio, atmósfera y dirección cromática.</li>
+            <li>Documento guía accionable con decisiones estratégicas.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="diag-section diag-section--a">
+      <div class="container diag-content" data-aos="fade-up">
+        <h3 class="diag-heading diag-heading--center">Cómo funciona</h3>
+        <div class="diag-steps">
+          <div class="diag-step">
+            <div class="diag-step-number">1</div>
+            <p>Recibo la información base del proyecto.</p>
+          </div>
+          <div class="diag-step">
+            <div class="diag-step-number">2</div>
+            <p>Analizo contexto, espacio y objetivos reales.</p>
+          </div>
+          <div class="diag-step">
+            <div class="diag-step-number">3</div>
+            <p>Entrego una lectura estratégica con recomendaciones claras y aplicables.</p>
+          </div>
+        </div>
+        <p class="diag-text diag-paragraph diag-text--strong">Tiempo estimado: 3 días</p>
+      </div>
+    </section>
+
+    <section class="diag-section diag-section--b">
+      <div class="container diag-content" data-aos="fade-up">
+        <h3 class="diag-heading diag-heading--center">Lo que este servicio NO es</h3>
+        <p class="diag-text diag-subtitle diag-subtitle--dark">No es decoración.<br>No es selección superficial de colores.<br>No es un diseño completo de set.<br>No es ejecución.</p>
+        <p class="diag-text diag-paragraph diag-text--strong">Es la base estratégica sobre la cual se construye todo lo demás.</p>
+      </div>
+    </section>
+
+    <section class="diag-section diag-section--final">
+      <div class="container diag-content" data-aos="fade-up">
+        <h2 class="diag-heading diag-heading--center">Si tu proyecto necesita claridad antes de avanzar, aquí empieza.</h2>
+        <div class="diag-cta-wrap">
+          <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20Diagn%C3%B3stico%20Estrat%C3%A9gico%20de%20mi%20proyecto." class="btn btn-outline-white py-2 px-4">Iniciar proyecto</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer py-3">
+      <div class="container-fluid text-center">
+        <p style="color:#fff">© <script>document.write(new Date().getFullYear());</script> NATHALY HABICH | Todos los derechos reservados.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.stellar.min.js"></script>
+  <script src="/js/jquery.countdown.min.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/bootstrap-datepicker.min.js"></script>
+  <script src="/js/swiper.min.js"></script>
+  <script src="/js/aos.js"></script>
+  <script src="/js/picturefill.min.js"></script>
+  <script src="/js/lightgallery-all.min.js"></script>
+  <script src="/js/jquery.mousewheel.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
