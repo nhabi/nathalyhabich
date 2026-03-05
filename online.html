@@ -317,7 +317,7 @@
             </div>
 
             <div class="col-md-4 form-group submit-wrap d-flex align-items-end">
-              <button type="submit" class="btn-submit">Enviar proyecto</button>
+              <button type="submit" class="btn-submit" disabled aria-disabled="true" title="Completa todos los campos obligatorios para habilitar el envío">Completa todos los campos *</button>
             </div>
           </div>
 
@@ -347,30 +347,84 @@
   <script>
     const form = document.getElementById('project-form');
     const statusMessage = document.getElementById('form-status');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const emailInput = form.querySelector('#email');
+    const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    function updateSubmitState() {
+      const isValid = form.checkValidity();
+      submitButton.disabled = !isValid;
+      submitButton.setAttribute('aria-disabled', String(!isValid));
+      submitButton.textContent = isValid ? 'Enviar proyecto' : 'Completa todos los campos *';
+      submitButton.title = isValid
+        ? 'Formulario listo para enviar'
+        : 'Completa todos los campos obligatorios para habilitar el envío';
+    }
+
+    function validateEmail() {
+      const email = emailInput.value.trim();
+
+      if (!email) {
+        emailInput.setCustomValidity('El email es obligatorio.');
+        return;
+      }
+
+      if (!EMAIL_REGEX.test(email)) {
+        emailInput.setCustomValidity('Ingresa un email válido. Ejemplo: nombre@dominio.com');
+        return;
+      }
+
+      emailInput.setCustomValidity('');
+    }
+
+    form.addEventListener('input', () => {
+      validateEmail();
+      updateSubmitState();
+    });
+
+    form.addEventListener('change', () => {
+      validateEmail();
+      updateSubmitState();
+    });
+
+    validateEmail();
+    updateSubmitState();
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
+      validateEmail();
+      updateSubmitState();
+
       if (!form.checkValidity()) {
         statusMessage.className = 'form-status is-error';
-        statusMessage.textContent = 'Por favor, completa todos los campos del formulario.';
+        statusMessage.textContent = 'Por favor, completa todos los campos obligatorios con información válida para poder enviar el proyecto.';
         form.reportValidity();
         return;
       }
 
-      const button = form.querySelector('button[type="submit"]');
+      const formData = new FormData(form);
+      const nombre = (formData.get('Nombre') || '').toString().trim();
+      const tipoProyecto = (formData.get('Tipo de proyecto') || '').toString().trim();
+      const dynamicSubject = `NUEVO PROYECTO- ${tipoProyecto}- ${nombre}`;
+
+      formData.set('_subject', dynamicSubject);
+      formData.set('_template', 'table');
+      formData.set('_captcha', 'false');
+
+      const button = submitButton;
       const originalLabel = button.textContent;
       button.disabled = true;
       button.textContent = 'Enviando...';
 
       try {
-        const response = await fetch('https://formsubmit.co/ajax/hola@nathalyhabich.me', {
+        const response = await fetch('https://formsubmit.co/ajax/nath.habich@gmail.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
           },
-          body: JSON.stringify(Object.fromEntries(new FormData(form).entries()))
+          body: JSON.stringify(Object.fromEntries(formData.entries()))
         });
 
         if (!response.ok) {
@@ -384,8 +438,10 @@
         statusMessage.className = 'form-status is-error';
         statusMessage.textContent = 'Hubo un problema al enviar el formulario. Inténtalo nuevamente en unos minutos.';
       } finally {
-        button.disabled = false;
-        button.textContent = originalLabel;
+        updateSubmitState();
+        if (!button.disabled) {
+          button.textContent = originalLabel;
+        }
       }
     });
   </script>
