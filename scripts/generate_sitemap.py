@@ -12,7 +12,7 @@ from xml.etree.ElementTree import Element, SubElement, tostring
 from xml.dom import minidom
 
 
-DEFAULT_BASE_URL = "https://nathalyhabich.com"
+DEFAULT_BASE_URL = "https://nathalyhabich.me"
 
 
 def normalize_path(path: str) -> str:
