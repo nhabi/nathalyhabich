@@ -68,15 +68,52 @@
       position: absolute;
       inset: 0;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      text-align: center;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 18px;
+      text-align: left;
       z-index: 2;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.06) 22%, rgba(0, 0, 0, 0.78) 100%);
+    }
+
+    .portfolio-card__content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      max-width: 100%;
     }
 
     .portfolio-card__button {
       pointer-events: none;
+      margin: 0;
+    }
+
+    .portfolio-card__excerpt {
+      margin: 0;
+      color: #ffffff;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      max-width: 34ch;
+      text-wrap: balance;
+    }
+
+    @media (max-width: 767.98px) {
+      .portfolio-card {
+        min-height: 280px;
+      }
+
+      .portfolio-card__overlay {
+        padding: 14px;
+      }
+
+      .portfolio-card__button {
+        padding: 0.35rem 0.85rem !important;
+      }
+
+      .portfolio-card__excerpt {
+        font-size: 0.88rem;
+      }
     }
 
     #portfolio-grid .col-lg-4 {
@@ -231,6 +268,8 @@
         return null;
       }
 
+      const excerpt = projectData.excerpt || '';
+
       const col = document.createElement('div');
       col.className = 'col-lg-4';
 
@@ -242,7 +281,10 @@
         <a class="portfolio-card" href="${projectData.href}" aria-label="${projectData.title}">
           ${previewMarkup}
           <span class="portfolio-card__overlay">
-            <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">${projectData.title}</span>
+            <span class="portfolio-card__content">
+              <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">${projectData.title}</span>
+              ${excerpt ? `<p class="portfolio-card__excerpt">${excerpt}</p>` : ''}
+            </span>
           </span>
         </a>
       `;
