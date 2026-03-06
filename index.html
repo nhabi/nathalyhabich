@@ -118,7 +118,8 @@
       }
     }
     @media (max-width: 767.98px) {
-      .reel-hero__actions .btn {
+      .reel-hero__actions .btn,
+      .btn-start-project {
         width: 100%;
         min-width: 0;
       }
@@ -396,7 +397,7 @@
     }
     .services-section {
       padding: clamp(52px, 7vw, 82px) 0;
-      scroll-margin-top: calc(var(--navbar-height) + 24px);
+      scroll-margin-top: calc(var(--navbar-height) + 72px);
     }
     .services-content {
       max-width: 1240px;
@@ -627,11 +628,11 @@
     }
     .hero-about-section,
     .services-section,
-    .workflow-section {
+    .workflow-section,
+    .brand-logos-section {
       background: #fff;
     }
     .positioning-section,
-    .brand-logos-section,
     .projects-section {
       background: #f8f7fb;
     }
@@ -659,6 +660,20 @@
     }
     .projects-action {
       margin: 0 0 28px;
+    }
+    .btn-start-project {
+      min-width: 210px;
+      text-align: center;
+      padding-top: 14px !important;
+      padding-bottom: 14px !important;
+    }
+    .workflow-action {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .projects-action .btn {
+      padding-top: 14px !important;
+      padding-bottom: 14px !important;
     }
     .marquee {
       overflow: hidden;
@@ -845,7 +860,7 @@
           <h2 class="reel-hero__title">Construye el universo visual que tu proyecto merece.</h2>
           <p class="reel-hero__subtitle">Direcci&oacute;n de arte y dise&ntilde;o espacial narrativo aplicado a producción, escena e instalaciones.</p>
           <div class="reel-hero__actions">
-            <a href="/iniciar-proyecto/" class="btn btn-outline-white py-2 px-4">Iniciar proyecto</a>
+            <a href="/iniciar-proyecto/" class="btn btn-outline-white py-2 px-4 btn-start-project">Iniciar proyecto</a>
             <a href="#proyectos" class="btn btn-outline-white btn-hero-outline py-2 px-4">Ver proyectos</a>
           </div>
         </div>
@@ -907,7 +922,7 @@
           <p>Ahí es donde <strong>el espacio deja de ser fondo o escenografía y empieza a comunicar, posicionar y contar.</strong></p>
         </div>
         <div class="positioning-action">
-          <a href="/servicios/" class="btn btn-outline-white py-2 px-4">Descubre c&oacute;mo trabajo</a>
+          <a href="#como-trabajo" class="btn btn-outline-white py-2 px-4">Descubre c&oacute;mo trabajo</a>
         </div>
       </div>
     </section>
@@ -948,7 +963,7 @@
     </section>
 
 
-    <section class="workflow-section" aria-label="Cómo trabajo">
+    <section id="como-trabajo" class="workflow-section" aria-label="Cómo trabajo">
       <div class="workflow-content" data-aos="fade-up">
         <h2 class="section-title-unified">¿Cómo trabajo?</h2>
         <div class="workflow-intro">
@@ -978,6 +993,9 @@
             <h3 class="workflow-item__title">Implementación supervisada</h3>
             <p class="workflow-item__text">Control en montaje y producción para mantener el nivel definido.</p>
           </article>
+        </div>
+        <div class="workflow-action">
+          <a href="/iniciar-proyecto/" class="btn btn-outline-white py-2 px-4 btn-start-project">Iniciar proyecto</a>
         </div>
       </div>
     </section>

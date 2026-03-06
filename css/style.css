@@ -1366,6 +1366,12 @@ nav a {
     background: #fdba4d;
     color: #000; }
 
+.btn-start-project {
+  min-width: 210px;
+  text-align: center;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important; }
+
 .image-wrap-2 {
   display: block;
   overflow: hidden;
