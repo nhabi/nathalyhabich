@@ -224,6 +224,35 @@
       background: #cf2f70;
     }
 
+    .project-form .privacy-consent {
+      text-align: center;
+      margin-top: -4px;
+      margin-bottom: 22px;
+    }
+
+    .project-form .privacy-consent label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 0;
+      font-size: 16px;
+      color: #5f5f76;
+      cursor: pointer;
+    }
+
+    .project-form .privacy-consent input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--brand-blue);
+    }
+
+    .project-form .privacy-consent a {
+      color: var(--brand-blue);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
     .project-form .submit-wrap {
       text-align: center;
     }
@@ -420,6 +449,13 @@
             <div class="col-12 form-group">
               <label for="necesidad">¿En qué te gustaría que te ayude exactamente?</label>
               <textarea id="necesidad" name="¿En qué te gustaría que te ayude exactamente?" class="form-control" placeholder="Cuéntame brevemente qué estás buscando o qué necesitas resolver." required></textarea>
+            </div>
+
+            <div class="col-12 form-group privacy-consent">
+              <label for="privacy-check">
+                <input type="checkbox" id="privacy-check" name="Acepta Política de Privacidad" required>
+                <span>He leído y acepto la <a href="/index.html">Política de Privacidad</a>.</span>
+              </label>
             </div>
 
             <div class="col-12 form-group submit-wrap">
@@ -659,10 +695,134 @@
     celularNumero.addEventListener('input', updatePhoneCode);
     loadAllCountries();
 
+    const celularPais = document.getElementById('celular-pais');
+    const celularCodigo = document.getElementById('celular-codigo');
+    const celularNumero = document.getElementById('celular');
+    const celularCompleto = document.getElementById('celular-completo');
+    const emailInput = document.getElementById('email');
+    const privacyCheck = document.getElementById('privacy-check');
+
+    const dialCodeMap = {
+      PE: '+51', MX: '+52', CO: '+57', CL: '+56', AR: '+54', ES: '+34', US: '+1', CA: '+1',
+      BR: '+55', UY: '+598', PY: '+595', BO: '+591', EC: '+593', VE: '+58', PA: '+507', CR: '+506',
+      GT: '+502', HN: '+504', SV: '+503', NI: '+505', DO: '+1', CU: '+53', PR: '+1',
+      GB: '+44', IE: '+353', PT: '+351', FR: '+33', DE: '+49', IT: '+39', NL: '+31', BE: '+32',
+      CH: '+41', AT: '+43', SE: '+46', NO: '+47', DK: '+45', FI: '+358', IS: '+354', PL: '+48',
+      CZ: '+420', SK: '+421', HU: '+36', RO: '+40', BG: '+359', GR: '+30', TR: '+90',
+      UA: '+380', RU: '+7', IN: '+91', CN: '+86', JP: '+81', KR: '+82', AU: '+61', NZ: '+64',
+      ZA: '+27', EG: '+20', MA: '+212', DZ: '+213', TN: '+216', IL: '+972', SA: '+966',
+      AE: '+971', QA: '+974', KW: '+965', BH: '+973', OM: '+968', JO: '+962', LB: '+961',
+      PK: '+92', BD: '+880', LK: '+94', NP: '+977', TH: '+66', VN: '+84', MY: '+60', SG: '+65',
+      ID: '+62', PH: '+63', HK: '+852', TW: '+886'
+    };
+
+    const getAllCountries = () => {
+      const fallback = [
+        { code: 'PE', name: 'Perú', dial: '+51' },
+        { code: 'MX', name: 'México', dial: '+52' },
+        { code: 'CO', name: 'Colombia', dial: '+57' },
+        { code: 'CL', name: 'Chile', dial: '+56' },
+        { code: 'AR', name: 'Argentina', dial: '+54' },
+        { code: 'ES', name: 'España', dial: '+34' },
+        { code: 'US', name: 'Estados Unidos', dial: '+1' }
+      ];
+
+      try {
+        const display = new Intl.DisplayNames(['es'], { type: 'region' });
+        const countries = [];
+
+        for (let i = 65; i <= 90; i += 1) {
+          for (let j = 65; j <= 90; j += 1) {
+            const code = String.fromCharCode(i) + String.fromCharCode(j);
+            const name = display.of(code);
+            if (!name || name === code || /desconocid/i.test(name)) continue;
+            countries.push({
+              code,
+              name,
+              dial: dialCodeMap[code] || '+00'
+            });
+          }
+        }
+
+        const uniqueCountries = Array.from(new Map(countries.map((country) => [country.code, country])).values())
+          .sort((a, b) => a.name.localeCompare(b.name, 'es'));
+
+        const peruIndex = uniqueCountries.findIndex((country) => country.code === 'PE');
+        if (peruIndex > -1) {
+          const [peru] = uniqueCountries.splice(peruIndex, 1);
+          uniqueCountries.unshift(peru);
+        }
+
+        return uniqueCountries.length ? uniqueCountries : fallback;
+      } catch (error) {
+        return fallback;
+      }
+    };
+
+    const renderCountryOptions = (countries) => {
+      celularPais.innerHTML = countries
+        .map((country) => `<option value="${country.code}" data-code="${country.dial}" ${country.code === 'PE' ? 'selected' : ''}>${country.name}</option>`)
+        .join('');
+    };
+
+    const updatePhoneCode = () => {
+      const selected = celularPais.options[celularPais.selectedIndex];
+      const code = selected?.dataset?.code || '+51';
+      celularCodigo.value = code;
+      const numero = celularNumero.value.trim();
+      celularCompleto.value = numero ? `${code} ${numero}` : '';
+    };
+
+    const syncFilledState = (field) => {
+      const value = (field.value || '').trim();
+      field.classList.toggle('is-filled', value !== '');
+    };
+
+    const isValidEmail = (value) => {
+      const email = value.trim();
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email) && !email.includes('..');
+    };
+
+    const validateEmailField = () => {
+      if (!emailInput.value.trim()) {
+        emailInput.setCustomValidity('');
+        return;
+      }
+      emailInput.setCustomValidity(isValidEmail(emailInput.value) ? '' : 'Ingresa un correo válido.');
+    };
+
+    renderCountryOptions(getAllCountries());
+
+    const trackedFields = form.querySelectorAll('input:not([type="hidden"]), textarea, select');
+    trackedFields.forEach((field) => {
+      field.addEventListener('input', () => syncFilledState(field));
+      field.addEventListener('change', () => syncFilledState(field));
+      syncFilledState(field);
+    });
+
+    emailInput.addEventListener('input', validateEmailField);
+    emailInput.addEventListener('change', validateEmailField);
+
+    privacyCheck.addEventListener('change', () => {
+      if (privacyCheck.checked) {
+        privacyCheck.setCustomValidity('');
+      }
+    });
+
+    celularPais.addEventListener('change', updatePhoneCode);
+    celularNumero.addEventListener('input', updatePhoneCode);
+    updatePhoneCode();
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
       updatePhoneCode();
+      validateEmailField();
+
+      if (!privacyCheck.checked) {
+        privacyCheck.setCustomValidity('Debes aceptar la Política de Privacidad para continuar.');
+      } else {
+        privacyCheck.setCustomValidity('');
+      }
 
       if (!form.checkValidity()) {
         statusMessage.className = 'form-status is-error';
