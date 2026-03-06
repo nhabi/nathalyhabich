@@ -120,8 +120,8 @@
     .project-form select:focus,
     .project-form .form-control.is-filled,
     .project-form select.is-filled {
-      background: #fff;
-      color: #000;
+      background: #fff !important;
+      color: #000 !important;
       border-color: var(--brand-blue);
       box-shadow: none;
       outline: none;
@@ -320,13 +320,7 @@
             <label for="celular">Celular *</label>
             <div class="phone-group">
               <select id="celular-pais" class="form-control" aria-label="País del número" required>
-                <option value="PE" data-code="+51" selected>Perú</option>
-                <option value="MX" data-code="+52">México</option>
-                <option value="CO" data-code="+57">Colombia</option>
-                <option value="CL" data-code="+56">Chile</option>
-                <option value="AR" data-code="+54">Argentina</option>
-                <option value="ES" data-code="+34">España</option>
-                <option value="US" data-code="+1">Estados Unidos</option>
+                <option value="" data-code="">Cargando países...</option>
               </select>
               <input type="text" id="celular-codigo" class="form-control phone-group__code" value="+51" readonly>
               <input type="tel" id="celular" class="form-control" placeholder="Tu número de contacto" required>
@@ -445,6 +439,22 @@
     const celularCompleto = document.getElementById('celular-completo');
     const trackedFields = form.querySelectorAll('input:not([type="hidden"]), textarea, select');
 
+    const fallbackCountries = [
+      { code: 'PE', dial: '+51', name: 'Perú' },
+      { code: 'AR', dial: '+54', name: 'Argentina' },
+      { code: 'BO', dial: '+591', name: 'Bolivia' },
+      { code: 'BR', dial: '+55', name: 'Brasil' },
+      { code: 'CL', dial: '+56', name: 'Chile' },
+      { code: 'CO', dial: '+57', name: 'Colombia' },
+      { code: 'EC', dial: '+593', name: 'Ecuador' },
+      { code: 'ES', dial: '+34', name: 'España' },
+      { code: 'MX', dial: '+52', name: 'México' },
+      { code: 'PY', dial: '+595', name: 'Paraguay' },
+      { code: 'US', dial: '+1', name: 'Estados Unidos' },
+      { code: 'UY', dial: '+598', name: 'Uruguay' },
+      { code: 'VE', dial: '+58', name: 'Venezuela' }
+    ];
+
     const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim()) && !value.includes('..');
 
     const updatePhoneCode = () => {
@@ -453,6 +463,70 @@
       celularCodigo.value = code;
       const number = celularNumero.value.trim();
       celularCompleto.value = number ? `${code} ${number}` : '';
+    };
+
+    const getCountryDisplayName = (country, formatter) => {
+      if (country?.translations?.spa?.common) {
+        return country.translations.spa.common;
+      }
+      if (country?.name?.common) {
+        return country.name.common;
+      }
+      return formatter?.of(country.cca2) || country.cca2;
+    };
+
+    const toDialCode = (idd) => {
+      const root = idd?.root || '';
+      const suffix = idd?.suffixes?.[0] || '';
+      const code = `${root}${suffix}`;
+      return code.startsWith('+') ? code : '';
+    };
+
+    const renderCountryOptions = (countries) => {
+      celularPais.innerHTML = '';
+      countries.forEach((country) => {
+        const option = document.createElement('option');
+        option.value = country.code;
+        option.dataset.code = country.dial;
+        option.textContent = country.name;
+        celularPais.appendChild(option);
+      });
+
+      const defaultIndex = countries.findIndex((country) => country.code === 'PE');
+      celularPais.selectedIndex = defaultIndex >= 0 ? defaultIndex : 0;
+      syncFilledState(celularPais);
+      updatePhoneCode();
+    };
+
+    const populateCountries = async () => {
+      try {
+        const response = await fetch('https://restcountries.com/v3.1/all?fields=cca2,name,translations,idd');
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
+        const countries = await response.json();
+        const formatter = typeof Intl.DisplayNames === 'function'
+          ? new Intl.DisplayNames(['es'], { type: 'region' })
+          : null;
+
+        const normalized = countries
+          .map((country) => ({
+            code: country.cca2,
+            dial: toDialCode(country.idd),
+            name: getCountryDisplayName(country, formatter)
+          }))
+          .filter((country) => country.code && country.dial)
+          .sort((a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base' }));
+
+        if (!normalized.length) {
+          throw new Error('Sin datos de países');
+        }
+
+        renderCountryOptions(normalized);
+      } catch (error) {
+        renderCountryOptions(fallbackCountries);
+      }
     };
 
     const validateEmailField = () => {
@@ -502,6 +576,8 @@
       });
       syncFilledState(field);
     });
+
+    populateCountries();
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
