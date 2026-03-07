@@ -3,8 +3,11 @@
   if (!gallery) return;
 
   // Cache-bust para que siempre cargue lo nuevo
-  const url = "./media.json?v=" + Date.now();
-  const data = await fetch(url, { cache: "no-store" }).then(r => r.json());
+  const currentScript = document.currentScript;
+  const mediaBase = currentScript ? new URL(".", currentScript.src) : new URL("./", window.location.href);
+  const url = new URL("media.json", mediaBase);
+  url.searchParams.set("v", Date.now().toString());
+  const data = await fetch(url.toString(), { cache: "no-store" }).then(r => r.json());
 
   gallery.innerHTML = "";
 
