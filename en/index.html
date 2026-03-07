@@ -404,7 +404,7 @@
       scroll-margin-top: calc(var(--navbar-height) + 72px);
     }
     .services-content {
-      max-width: 1240px;
+      max-width: 1320px;
       margin: 0 auto;
     }
     .services-content h2 {
@@ -418,46 +418,109 @@
     }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: clamp(16px, 1.7vw, 26px);
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.35fr) minmax(0, 0.9fr);
+      gap: clamp(14px, 1.5vw, 22px);
+      align-items: stretch;
     }
     .service-item {
       display: grid;
       grid-template-rows: 1fr auto;
       height: 100%;
     }
+    .service-item--start {
+      order: 1;
+    }
+    .service-item--featured {
+      order: 2;
+    }
+    .service-item--end {
+      order: 3;
+    }
     .service-item__card {
       border: 1px solid #ee3f75;
-      padding: clamp(24px, 2.1vw, 34px) clamp(18px, 2vw, 28px);
-      min-height: clamp(248px, 26vw, 296px);
+      padding: clamp(22px, 1.9vw, 30px) clamp(18px, 1.6vw, 24px);
+      min-height: clamp(278px, 27vw, 332px);
       background: transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     .service-item__title {
       color: #e63372;
-      text-align: center;
+      text-align: left;
       text-transform: none;
-      font-size: clamp(24px, 2.2vw, 42px);
+      font-size: clamp(24px, 2vw, 34px);
       line-height: 0.95;
-      margin: 0 0 clamp(24px, 2.1vw, 30px);
+      margin: 0;
       letter-spacing: 0;
       text-wrap: balance;
     }
-    .service-item__card p {
-      margin: 0 0 6px;
+    .service-item__lead {
+      margin: 0;
       color: #121317;
-      font-size: clamp(15px, 1.2vw, 32px);
+      font-size: clamp(16px, 1.08vw, 19px);
       line-height: 1.3;
+      font-weight: 700;
+    }
+    .service-item__card p {
+      margin: 0;
+      color: #121317;
+      font-size: clamp(15px, 1vw, 17px);
+      line-height: 1.32;
       letter-spacing: 0;
     }
-    .service-item__card p:last-child {
-      margin-bottom: 0;
+    .service-item__meta {
+      display: grid;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 12px;
+      border-top: 1px solid rgba(230, 51, 114, 0.2);
     }
     .service-item__cta {
       margin-top: 18px;
       display: block;
       text-align: center;
       padding-top: 14px !important;
-    padding-bottom: 14px !important;
+      padding-bottom: 14px !important;
+    }
+    .service-item--featured .service-item__card {
+      border-color: rgba(230, 51, 114, 0.4);
+      background: rgba(244, 240, 252, 0.78);
+      min-height: clamp(340px, 32vw, 430px);
+      padding: clamp(26px, 2.6vw, 42px) clamp(22px, 2.4vw, 36px);
+      gap: clamp(10px, 1.1vw, 14px);
+    }
+    .service-item--featured .service-item__title {
+      font-size: clamp(30px, 2.6vw, 45px);
+    }
+    .service-item__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #3d3183;
+      padding: 5px 9px;
+      border: 1px solid rgba(61, 49, 131, 0.22);
+      border-radius: 999px;
+      margin: 0 0 2px;
+    }
+    .service-item--featured .service-item__lead {
+      font-size: clamp(18px, 1.2vw, 24px);
+      line-height: 1.28;
+    }
+    .service-item--featured .service-item__card p {
+      font-size: clamp(16px, 1.05vw, 19px);
+      line-height: 1.35;
+    }
+    .service-item--featured .service-item__meta {
+      gap: 12px;
+      padding-top: clamp(16px, 1.6vw, 22px);
+    }
+    .service-item--featured .service-item__cta {
+      margin-top: 24px;
     }
     @media (max-width: 767.98px) {
       .positioning-text p {
@@ -477,11 +540,22 @@
       }
       .services-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .service-item {
+        order: initial;
+      }
+      .service-item--featured {
+        order: 1;
+      }
+      .service-item--start {
+        order: 2;
+      }
+      .service-item--end {
+        order: 3;
       }
       .service-item__title {
-        max-width: 11ch;
-        margin-left: auto;
-        margin-right: auto;
+        max-width: 16ch;
       }
       .service-item__card {
         min-height: 0;
@@ -948,36 +1022,52 @@
       </div>
     </section>
 
-    <section id="servicios" class="services-section" aria-label="Servicios de dirección visual">
+    <section id="servicios" class="services-section" aria-label="Visual direction services">
       <div class="services-content" data-aos="fade-up">
-        <h2 class="section-title-unified">Services for projects that need real visual direction.</h2>
+        <h2 class="section-title-unified">Services designed around the real stage of your project</h2>
+        <div class="positioning-text">
+          <p>From early clarity to on-site execution, each service responds to a different phase of the production process.</p>
+        </div>
 
         <div class="services-grid">
-          <article class="service-item">
+          <article class="service-item service-item--start">
             <div class="service-item__card">
-              <h3 class="service-item__title">Visual <br>Strategy</h3>
-              <p>Define what needs to change so your project stops looking improvised.</p>
-              <p>Strategic clarity before design decisions — aligning narrative, space and visual identity from the start.</p>
+              <h3 class="service-item__title">Strategic Visual Diagnosis</h3>
+              <p class="service-item__lead">For projects that need clarity before moving into design or production.</p>
+              <p>This service identifies what needs to change so the project stops feeling improvised and can move forward with a clear visual direction.</p>
+              <div class="service-item__meta">
+                <p><strong>Ideal for:</strong> projects in pre-production, early concepts that need structure, or sets that are not yet clearly defined.</p>
+                <p><strong>Result:</strong> a clear strategic diagnosis that helps the team make informed decisions before investing in design or execution.</p>
+              </div>
             </div>
-            <a href="/en/diagnosticoestrategico/" class="btn btn-outline-white py-2 px-4 service-item__cta">CLARIFY MY PROJECT</a>
+            <a href="/en/diagnosticoestrategico/" class="btn btn-outline-white py-2 px-4 service-item__cta">View service</a>
           </article>
 
-          <article class="service-item">
+          <article class="service-item service-item--featured">
             <div class="service-item__card">
-              <h3 class="service-item__title">Art Direction &amp; <br>Production Design</h3>
-              <p>Turn your idea into a coherent visual system with identity and direction.</p>
-              <p>This is where the project's visual language is built through spatial design, color direction and narrative intention.</p>
+              <p class="service-item__eyebrow">Core service</p>
+              <h3 class="service-item__title">Art Direction &amp; Production Design</h3>
+              <p class="service-item__lead">For projects that need a complete visual system ready to be executed.</p>
+              <p>This stage transforms the initial idea into a structured and production-ready proposal, defining visual direction, spatial design and clear guidelines for execution.</p>
+              <div class="service-item__meta">
+                <p><strong>Ideal for:</strong> series, streaming studios, broadcast sets, medium-scale events and productions that need to move from concept to real implementation.</p>
+                <p><strong>Result:</strong> a fully designed project with visual coherence, identity and a solid foundation for production.</p>
+              </div>
             </div>
-            <a href="/en/disenodirecciondearte/" class="btn btn-outline-white py-2 px-4 service-item__cta">DESIGN MY VISUAL SYSTEM</a>
+            <a href="/en/disenodirecciondearte/" class="btn btn-outline-white py-2 px-4 service-item__cta">View service</a>
           </article>
 
-          <article class="service-item">
+          <article class="service-item service-item--end">
             <div class="service-item__card">
-              <h3 class="service-item__title">Art Direction <br>in Production</h3>
-              <p>Ensure the concept holds up in real production, not only in theory.</p>
-              <p>Creative supervision and visual decision-making to maintain the project's standard during execution.</p>
+              <h3 class="service-item__title">Art Direction in Production</h3>
+              <p class="service-item__lead">For projects that need visual direction throughout execution.</p>
+              <p>This service ensures that the design does not get lost when the project moves into production, installation or filming, maintaining visual consistency in every key decision.</p>
+              <div class="service-item__meta">
+                <p><strong>Ideal for:</strong> medium-scale productions, series, concerts and projects where execution also requires creative direction.</p>
+                <p><strong>Result:</strong> a visual world executed with coherence, control and continuity.</p>
+              </div>
             </div>
-            <a href="/en/direccionenproduccion/" class="btn btn-outline-white py-2 px-4 service-item__cta">TAKE IT TO PRODUCTION</a>
+            <a href="/en/direccionenproduccion/" class="btn btn-outline-white py-2 px-4 service-item__cta">View service</a>
           </article>
         </div>
       </div>
