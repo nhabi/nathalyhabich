@@ -36,9 +36,21 @@
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
     heroCopy.innerHTML = `
-      <h3 class="project-video-hero-copy__title">Dirección de arte, diseño de set e implementación para transmisión global del primer torneo europeo online de Dota 2 organizado por ESB y FISSURE.</h3>
-      <p class="project-video-hero-copy__line">ESB - Electronic Sports Broadcasting</p>
-      <p class="project-video-hero-copy__line">Producción y transmisión internacional de esports</p>
+      <h3 class="project-video-hero-copy__title">The International Pubstomp</h3>
+      <table class="project-video-hero-table">
+      <tbody>
+      <tr><th scope="row">Cliente</th><td>ESB</td></tr>
+      <tr><th scope="row">Tipo de producción</th><td>Experiencia en vivo para esports / Evento para transmisión del campeonato The International</td></tr>
+      <tr><th scope="row">Descripción</th><td><p>Dirección de arte y diseño espacial para The International Pubstomp, un evento en vivo organizado por ESB donde los fanáticos de Dota 2 se reunieron para seguir las partidas del campeonato mundial The International.</p><p>El proyecto consistió en transformar un bar terraza de dos niveles en un espacio temático dedicado al universo de Dota, combinando ambientación para público presencial con escenografía diseñada para transmisión en streaming.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concepto y dirección de arte</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Investigación de la identidad visual de The International correspondiente a esa edición</li><li>Desarrollo del concepto escenográfico del evento inspirado en el universo del campeonato</li><li>Diseño de ambientación temática para crear una experiencia inmersiva para la comunidad</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Diseño del espacio</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Diseño del escenario principal para comentaristas y presentaciones en vivo</li><li>Ambientación completa del local de dos niveles con elementos gráficos y escenográficos</li><li>Integración de banderines y piezas visuales de gran formato para reforzar la identidad del evento</li><li>Diseño de módulos y elementos funcionales para operación del evento</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Producción e implementación</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordinación con proveedores para fabricación de escenografía y elementos gráficos</li><li>Compras y sourcing de utilería, mobiliario y materiales de ambientación</li><li>Supervisión de montaje y transformación del espacio para el evento</li><li>Dirección de arte durante el desarrollo de las jornadas del Pubstomp</li></ul></td></tr>
+      <tr><th scope="row">Resultado</th><td>Creación de una experiencia en vivo que permitió a la comunidad de Dota 2 vivir el campeonato mundial en un entorno temático, combinando evento presencial y transmisión digital durante tres días de competencia.</td></tr>
+      </tbody>
+      </table>
     `;
 
     hero.appendChild(heroCopy);

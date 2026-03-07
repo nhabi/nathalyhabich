@@ -1,6 +1,6 @@
 {
   "title": "TI Pubstomp",
-  "excerpt": "Dirección de arte para experiencia inmersiva de viewing party.",
+  "excerpt": "Dirección de arte y diseño de experiencia en vivo para esports: ambientación y escenario para The International Pubstomp de Dota.",
   "href": "/ti-pubstomp/",
   "media": [
     {
@@ -23,7 +23,7 @@
       "type": "video",
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 3"
     },
-     {
+    {
       "src": "/images/direccion-de-arte/ti-pubstomp/ti-im5.mp4",
       "type": "video",
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 4"
@@ -178,7 +178,7 @@
       "type": "image",
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - imagen 31"
     },
-      {
+    {
       "src": "/images/direccion-de-arte/ti-pubstomp/ISO BACKING.jpg",
       "type": "image",
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - imagen 33"
@@ -223,9 +223,6 @@
       "type": "video",
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 1"
     },
-    
-    
-   
     {
       "src": "/images/direccion-de-arte/ti-pubstomp/ti-im7.mp4",
       "type": "video",
@@ -236,6 +233,5 @@
       "type": "video",
       "alt": "Stage Design- Diseño de Set Dota- the international- Streaming - video 6"
     }
-    
   ]
 }

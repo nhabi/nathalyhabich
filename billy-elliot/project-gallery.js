@@ -36,9 +36,17 @@
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
     heroCopy.innerHTML = `
-      <h3 class="project-video-hero-copy__title">Dirección de arte, diseño de set e implementación para transmisión global del primer torneo europeo online de Dota 2 organizado por ESB y FISSURE.</h3>
-      <p class="project-video-hero-copy__line">ESB - Electronic Sports Broadcasting</p>
-      <p class="project-video-hero-copy__line">Producción y transmisión internacional de esports</p>
+      <h3 class="project-video-hero-copy__title">Billy Elliot – Gym Set Study</h3>
+      <table class="project-video-hero-table">
+      <tbody>
+      <tr><th scope="row">Cliente</th><td>Proyecto académico / estudio escenográfico</td></tr>
+      <tr><th scope="row">Tipo de producción</th><td>Modelado y análisis de set cinematográfico</td></tr>
+      <tr><th scope="row">Descripción</th><td><p>Modelado tridimensional y reconstrucción escenográfica del set del gimnasio utilizado en la película Billy Elliot.</p><p>El proyecto consistió en analizar la configuración espacial del set y desarrollar planos y un modelo 3D que permitiera entender la construcción escenográfica y su funcionamiento dentro de la narrativa cinematográfica.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Desarrollo del proyecto</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Análisis del diseño escenográfico del gimnasio presente en la película</li><li>Desarrollo de planos del set y su configuración espacial</li><li>Modelado tridimensional del espacio y elementos escenográficos</li><li>Reconstrucción digital del set para estudio y documentación visual</li></ul></td></tr>
+      <tr><th scope="row">Resultado</th><td>El proyecto permitió reconstruir digitalmente el set utilizado en la película, generando una referencia visual y técnica del espacio escenográfico y su organización dentro de la producción.</td></tr>
+      </tbody>
+      </table>
     `;
 
     hero.appendChild(heroCopy);

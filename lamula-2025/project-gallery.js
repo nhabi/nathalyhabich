@@ -36,9 +36,21 @@
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
     heroCopy.innerHTML = `
-      <h3 class="project-video-hero-copy__title">Dirección de arte, diseño de set e implementación para transmisión global del primer torneo europeo online de Dota 2 organizado por ESB y FISSURE.</h3>
-      <p class="project-video-hero-copy__line">ESB - Electronic Sports Broadcasting</p>
-      <p class="project-video-hero-copy__line">Producción y transmisión internacional de esports</p>
+      <h3 class="project-video-hero-copy__title">La Mula</h3>
+      <table class="project-video-hero-table">
+      <tbody>
+      <tr><th scope="row">Cliente</th><td>La Mula</td></tr>
+      <tr><th scope="row">Tipo de producción</th><td>Estudio de streaming para medio periodístico</td></tr>
+      <tr><th scope="row">Descripción</th><td><p>Dirección de arte y diseño espacial para el desarrollo del set de streaming de La Mula, un medio digital especializado en periodismo político y de investigación que buscaba expandirse al formato audiovisual en vivo.</p><p>El proyecto consistió en crear un entorno visual que permitiera trasladar la identidad editorial del medio a un formato de transmisión en streaming, adaptando el diseño del set al espacio disponible dentro de sus oficinas.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concepto y dirección de arte</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Desarrollo del concepto visual del set para transmitir una identidad periodística sólida</li><li>Diseño de sistema escenográfico con backings iluminados mediante acentos LED</li><li>Construcción de una atmósfera visual que funcionara correctamente en cámara para formatos de streaming</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Diseño del set</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Diseño de mesa modular para conducción de programas con diferentes formatos</li><li>Sistema flexible que permite configurar el set para entrevistas o conversaciones sentadas</li><li>Adaptación del diseño a las condiciones espaciales de la locación</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Producción e implementación</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Scouting y evaluación de la locación dentro de las oficinas del medio</li><li>Coordinación con proveedores para construcción e implementación del set</li><li>Supervisión de montaje y ambientación final</li></ul></td></tr>
+      <tr><th scope="row">Resultado</th><td>El proyecto permitió transformar un espacio de oficina en un entorno preparado para transmisión en vivo, facilitando el lanzamiento del canal de streaming del medio con una identidad visual clara y funcional para producción audiovisual.</td></tr>
+      </tbody>
+      </table>
     `;
 
     hero.appendChild(heroCopy);

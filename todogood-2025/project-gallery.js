@@ -36,9 +36,21 @@
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
     heroCopy.innerHTML = `
-      <h3 class="project-video-hero-copy__title">Dirección de arte, diseño de set e implementación para transmisión global del primer torneo europeo online de Dota 2 organizado por ESB y FISSURE.</h3>
-      <p class="project-video-hero-copy__line">ESB - Electronic Sports Broadcasting</p>
-      <p class="project-video-hero-copy__line">Producción y transmisión internacional de esports</p>
+      <h3 class="project-video-hero-copy__title">Todo Good</h3>
+      <table class="project-video-hero-table">
+      <tbody>
+      <tr><th scope="row">Cliente</th><td>Todo Good</td></tr>
+      <tr><th scope="row">Tipo de producción</th><td>Estudio de streaming / Producción de contenido digital</td></tr>
+      <tr><th scope="row">Descripción</th><td><p>Diseño espacial y dirección de arte para la creación del nuevo estudio de streaming del canal Todo Good, desarrollado dentro de una casa de tres niveles adaptada para producción audiovisual.</p><p>El proyecto incluyó el diseño de distribución del primer piso del estudio, así como el desarrollo conceptual y ejecución de los sets principales utilizados para transmisión.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Diseño espacial del estudio</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Desarrollo del layout del primer piso para funcionamiento de estudio audiovisual</li><li>Definición de áreas de producción: switcher, sets, camerinos, recepción y zona de público</li><li>Planificación de distribución de espacios para operación de streaming</li><li>Diseño de puntos eléctricos y tomas necesarias para sets y operación técnica</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Diseño de sets</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Desarrollo conceptual del sistema visual del estudio</li><li>Diseño del set principal para conducción del programa</li><li>Diseño del set secundario con tarima para invitados y presentaciones musicales</li><li>Diseño de mesas, backings y elementos escenográficos</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Producción e implementación</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordinación con escenógrafos y proveedores para construcción de sets</li><li>Supervisión de fabricación en talleres</li><li>Scouting técnico y seguimiento de implementación en locación</li><li>Supervisión de montaje y ambientación final del estudio</li></ul></td></tr>
+      <tr><th scope="row">Resultado</th><td>El proyecto permitió transformar la locación en un estudio de streaming completamente funcional, elevando el estándar visual del canal y consolidando un entorno profesional para producción de contenido en vivo.</td></tr>
+      </tbody>
+      </table>
     `;
 
     hero.appendChild(heroCopy);
