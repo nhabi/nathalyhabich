@@ -36,9 +36,21 @@
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
     heroCopy.innerHTML = `
-      <h3 class="project-video-hero-copy__title">Dirección de arte, diseño de set e implementación para transmisión global del primer torneo europeo online de Dota 2 organizado por ESB y FISSURE.</h3>
-      <p class="project-video-hero-copy__line">ESB - Electronic Sports Broadcasting</p>
-      <p class="project-video-hero-copy__line">Producción y transmisión internacional de esports</p>
+      <h3 class="project-video-hero-copy__title">PGL Major Copenhagen 2024</h3>
+      <table class="project-video-hero-table">
+      <tbody>
+      <tr><th scope="row">Cliente</th><td>ESB</td></tr>
+      <tr><th scope="row">Tipo de producción</th><td>Broadcast de esports / Set para transmisión y análisis de torneo de Counter-Strike</td></tr>
+      <tr><th scope="row">Descripción</th><td><p>Dirección de arte y diseño de set para la transmisión del PGL Major Copenhagen 2024, uno de los torneos más importantes del circuito competitivo de Counter-Strike.</p><p>El proyecto consistió en desarrollar una escenografía compacta para comentaristas, diseñada para una toma frontal centrada en el análisis del torneo durante la transmisión.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concepto y dirección de arte</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Desarrollo de identidad visual del set alineada al branding del campeonato</li><li>Diseño de escenografía minimalista enfocada en la conversación entre comentaristas</li><li>Creación de un entorno visual limpio y funcional para transmisión en cámara</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Diseño del set</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Diseño de backings escenográficos para el fondo del set</li><li>Creación de pattern gráfico para papel tapiz del fondo</li><li>Diseño de gráfica para el branding de la mesa de comentaristas</li><li>Integración de iluminación para reforzar la presencia visual del espacio</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Producción e implementación</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordinación con proveedores para impresión de gráfica escenográfica</li><li>Compras y sourcing de elementos necesarios para la ambientación</li><li>Scouting y adaptación del espacio para el set</li><li>Supervisión de implementación y montaje final</li></ul></td></tr>
+      <tr><th scope="row">Resultado</th><td>Creación de un set compacto y visualmente claro que permitió centrar la transmisión en la conversación y análisis del torneo, manteniendo coherencia con la identidad visual del campeonato.</td></tr>
+      </tbody>
+      </table>
     `;
 
     hero.appendChild(heroCopy);

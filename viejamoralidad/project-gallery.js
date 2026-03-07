@@ -36,9 +36,23 @@
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
     heroCopy.innerHTML = `
-      <h3 class="project-video-hero-copy__title">Dirección de arte, diseño de set e implementación para transmisión global del primer torneo europeo online de Dota 2 organizado por ESB y FISSURE.</h3>
-      <p class="project-video-hero-copy__line">ESB - Electronic Sports Broadcasting</p>
-      <p class="project-video-hero-copy__line">Producción y transmisión internacional de esports</p>
+      <h3 class="project-video-hero-copy__title">Vieja Moralidad – Production Design Study</h3>
+      <table class="project-video-hero-table">
+      <tbody>
+      <tr><th scope="row">Cliente</th><td>Proyecto académico — Especialización en Dirección de Arte<br>Universidad Nacional Autónoma de México (UNAM)</td></tr>
+      <tr><th scope="row">Tipo de producción</th><td>Diseño de producción basado en guion</td></tr>
+      <tr><th scope="row">Descripción</th><td><p>Ejercicio de diseño de producción desarrollado durante la especialización en Dirección de Arte en la UNAM, enfocado en construir la propuesta visual de la película Vieja Moralidad a partir del análisis del guion.</p><p>El proyecto consistió en desarrollar el concepto estético del film y diseñar los espacios escenográficos principales sin referencia visual de la película final.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concepto y dirección de arte</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Desarrollo del concepto visual de la película</li><li>Investigación estética y referencias de época</li><li>Definición del tono visual y narrativa cromática del proyecto</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Diseño escenográfico</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Diseño de sets a partir de escenas clave del guion</li><li>Desarrollo de ambientación y elementos escenográficos</li><li>Definición de objetos y utilería presentes en cada espacio</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Desarrollo visual</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Propuesta de vestuario acorde al contexto narrativo</li><li>Definición de estilo de iluminación y atmósfera visual</li><li>Desarrollo de propuestas de encuadre y composición escénica</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Desarrollo técnico</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Modelado 3D de sets principales</li><li>Diseño de planos escenográficos</li><li>Desarrollo de maquetas digitales de los espacios</li></ul></td></tr>
+      <tr><th scope="row">Resultado</th><td>El proyecto permitió desarrollar una propuesta integral de diseño de producción, integrando concepto visual, escenografía y planificación espacial para las escenas principales de la historia.</td></tr>
+      </tbody>
+      </table>
     `;
 
     hero.appendChild(heroCopy);

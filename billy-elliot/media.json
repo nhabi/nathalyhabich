@@ -1,6 +1,6 @@
 {
   "title": "Billy Elliot",
-  "excerpt": "Proyecto de dirección de arte para set y propuesta de ambientación.",
+  "excerpt": "Modelado y reconstrucción escenográfica en 3D del set del gimnasio de la película Billy Elliot.",
   "href": "/billy-elliot/",
   "media": [
     {
@@ -8,7 +8,7 @@
       "src": "/images/direccion-de-arte/billyelliot/billyelliot-recorrido-a.mp4",
       "alt": "Set principal de Billy Elliot - imagen 1"
     },
-     {
+    {
       "type": "video",
       "src": "/images/direccion-de-arte/billyelliot/billyelliot-recorrido-a.mp4",
       "alt": "Set principal de Billy Elliot - video 1"

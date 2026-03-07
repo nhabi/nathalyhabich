@@ -36,9 +36,21 @@
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
     heroCopy.innerHTML = `
-      <h3 class="project-video-hero-copy__title">Dirección de arte, diseño de set e implementación para transmisión global del primer torneo europeo online de Dota 2 organizado por ESB y FISSURE.</h3>
-      <p class="project-video-hero-copy__line">ESB - Electronic Sports Broadcasting</p>
-      <p class="project-video-hero-copy__line">Producción y transmisión internacional de esports</p>
+      <h3 class="project-video-hero-copy__title">ESL One Birmingham 2024</h3>
+      <table class="project-video-hero-table">
+      <tbody>
+      <tr><th scope="row">Cliente</th><td>ESB</td></tr>
+      <tr><th scope="row">Tipo de producción</th><td>Broadcast de esports / Set para transmisión y análisis de liga competitiva</td></tr>
+      <tr><th scope="row">Descripción</th><td><p>Dirección de arte y diseño de set para la transmisión del campeonato internacional ESL One Birmingham 2024, producido por ESB para su cobertura en Latinoamérica.</p><p>El proyecto consistió en desarrollar un espacio para comentaristas donde se realizara el análisis y narración en vivo de los partidos del torneo, alineando el diseño del set con la identidad visual del campeonato.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concepto y dirección de arte</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Investigación de la identidad visual y lineamientos gráficos del campeonato ESL One</li><li>Desarrollo del concepto escenográfico del set de comentaristas</li><li>Diseño de un sistema visual coherente con el branding de la liga</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Diseño del set</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Diseño de escenografía y backings para el espacio de transmisión</li><li>Desarrollo y fabricación de mesa central para comentaristas</li><li>Selección de mobiliario, incluyendo sofás y sillas para el set</li><li>Integración de elementos escenográficos e iluminación ambiental</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Producción e implementación</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordinación con proveedores para fabricación de elementos escenográficos</li><li>Gestión de compras y administración del presupuesto del área de arte</li><li>Supervisión de fabricación y seguimiento de producción</li><li>Implementación y montaje final del set para transmisión</li></ul></td></tr>
+      <tr><th scope="row">Resultado</th><td>Creación de un entorno escenográfico alineado con la identidad visual del campeonato, proporcionando un espacio funcional para comentaristas y transmisión en vivo de la liga para la audiencia de Latinoamérica.</td></tr>
+      </tbody>
+      </table>
     `;
 
     hero.appendChild(heroCopy);

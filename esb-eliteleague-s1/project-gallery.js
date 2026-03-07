@@ -36,9 +36,21 @@
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
     heroCopy.innerHTML = `
-      <h3 class="project-video-hero-copy__title">Dirección de arte, diseño de set e implementación para transmisión global del primer torneo europeo online de Dota 2 organizado por ESB y FISSURE.</h3>
-      <p class="project-video-hero-copy__line">ESB - Electronic Sports Broadcasting</p>
-      <p class="project-video-hero-copy__line">Producción y transmisión internacional de esports</p>
+      <h3 class="project-video-hero-copy__title">Elite League</h3>
+      <table class="project-video-hero-table">
+      <tbody>
+      <tr><th scope="row">Cliente</th><td>ESB</td></tr>
+      <tr><th scope="row">Tipo de producción</th><td>Broadcast de esports / Set para transmisión de liga competitiva</td></tr>
+      <tr><th scope="row">Descripción</th><td><p>Dirección de arte y diseño de set para la transmisión de Elite League, la primera liga de esports organizada por ESB para el mercado peruano.</p><p>El proyecto consistió en desarrollar una escenografía temática inspirada en el universo visual de Dota 2, construyendo un entorno que transportara a los espectadores al mundo del juego y reforzara la identidad de la liga durante la transmisión.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concepto y dirección de arte</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Desarrollo de un concepto escenográfico inspirado en la estética del universo de Dota 2</li><li>Diseño de identidad visual del set alineada al branding de la liga</li><li>Creación de elementos escenográficos que evocan el mundo del juego</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Diseño del set</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Diseño de escenografía con ventanales tipo vitrales inspirados en el universo de Dota</li><li>Integración de elemento central escultórico inspirado en una criatura icónica del juego</li><li>Diseño de mesa principal para comentaristas y análisis del torneo</li><li>Desarrollo de gráfica escenográfica y diseño del piso del set</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Producción e implementación</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordinación con proveedores para fabricación de elementos escenográficos</li><li>Selección y adaptación de mobiliario para el set</li><li>Integración de iluminación ambiental y detalles escenográficos</li><li>Supervisión de producción, montaje e implementación del espacio</li></ul></td></tr>
+      <tr><th scope="row">Resultado</th><td>Creación de un entorno escenográfico inmersivo alineado al universo visual de Dota 2, aportando una identidad temática clara a la primera edición de Elite League durante su transmisión.</td></tr>
+      </tbody>
+      </table>
     `;
 
     hero.appendChild(heroCopy);
