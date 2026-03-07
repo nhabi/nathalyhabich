@@ -39,9 +39,9 @@
       <h3 class="project-video-hero-copy__title">CanalYa</h3>
       <table class="project-video-hero-table">
       <tbody>
-      <tr><th scope="row">Cliente</th><td>CanalYa / Marcos y Fuentes</td></tr>
+      <tr><th scope="row">Cliente</th><td>CanalYa / Marco Siuentes</td></tr>
       <tr><th scope="row">Tipo de producción</th><td>Canal de streaming periodístico</td></tr>
-      <tr><th scope="row">Descripción</th><td><p>Diseño conceptual y dirección de arte para el set del canal de streaming CanalYa, un proyecto periodístico liderado por el periodista Marcos y Fuentes orientado a la producción de contenido digital en vivo.</p><p>El proyecto consistió en desarrollar el concepto visual del estudio desde cero, creando un entorno escenográfico adaptable a distintos formatos de conversación y análisis periodístico.</p></td></tr>
+      <tr><th scope="row">Descripción</th><td><p>Diseño conceptual y dirección de arte para el set del canal de streaming CanalYa, un proyecto periodístico liderado por el periodista Marco Sifuentes orientado a la producción de contenido digital en vivo.</p><p>El proyecto consistió en desarrollar el concepto visual del estudio desde cero, creando un entorno escenográfico adaptable a distintos formatos de conversación y análisis periodístico.</p></td></tr>
       <tr><th colspan="2" class="project-video-hero-table__section">Concepto y dirección de arte</th></tr>
       <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Desarrollo del concepto visual del estudio de streaming</li><li>Diseño de propuestas escenográficas para el espacio de transmisión</li><li>Construcción de un sistema visual coherente con la identidad editorial del canal</li></ul></td></tr>
       <tr><th colspan="2" class="project-video-hero-table__section">Diseño del set</th></tr>
