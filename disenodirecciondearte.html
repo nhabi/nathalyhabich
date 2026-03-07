@@ -12,18 +12,17 @@
     gtag('config', 'G-QZHTB8VP90');
   </script>
 
-<title>Diseño de Dirección de Arte &mdash; Nathaly Habich</title>
+<title>Dirección de Arte y Diseño de Producción &mdash; Nathaly Habich</title>
   <link rel="shortcut icon" href="/images/favicon1.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  
   <link rel="canonical" href="https://nathalyhabich.me/disenodirecciondearte/">
   <link rel="alternate" hreflang="es" href="https://nathalyhabich.me/disenodirecciondearte/">
   <link rel="alternate" hreflang="en" href="https://nathalyhabich.me/en/disenodirecciondearte/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Paytone+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Paytone+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/fonts/icomoon/style.css">
 
   <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -39,184 +38,338 @@
   <link rel="stylesheet" href="/css/style.css">
 
   <style>
-    .direccion-page { background: #fafafa; color: var(--text-dark); }
-    .dir-section { padding: 92px 0; }
-    .dir-section--white { background: #fff; }
-    .dir-section--gray { background: #eeedf5; }
+    :root {
+      --index-title-color: #1f1f23;
+      --index-subtitle-color: #7d7d80;
+    }
 
-    .dir-content { max-width: 980px; margin: 0 auto; }
+    .dda-page { background: #f3f2f8; color: var(--text-dark); }
+    .dda-section { padding: clamp(66px, 8vw, 104px) 0; }
+    .dda-section--white { background: #fff; }
+    .dda-section--tint { background: #f3f2f8; }
+    .dda-section--dark { background: #eeedf5; }
 
-    .dir-display {
-      font-family: var(--font-display);
-      font-size: clamp(44px, 7vw, 72px);
-      line-height: .95;
-      text-align: center;
-      margin-bottom: 20px;
-      color: var(--brand-blue);
+    .dda-container { max-width: 1140px; }
+    .dda-narrow { max-width: 780px; margin: 0 auto; }
+
+    .dda-eyebrow,
+    .dda-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-family: var(--nav-font);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: .11em;
       text-transform: uppercase;
+      color: #5f5a86;
     }
 
-    .dir-heading {
-      font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 44px);
+    .dda-hero-title,
+    .dda-section-title,
+    .dda-card-title,
+    .dda-cta-title {
+      font-family: var(--title-font);
+      color: var(--index-title-color);
+      letter-spacing: -0.01em;
+    }
+
+    .dda-hero-title {
+      font-size: clamp(36px, 5.2vw, 62px);
       line-height: 1.08;
-      margin-bottom: 18px;
-      color: var(--brand-blue);
+      margin: 0 0 14px;
     }
 
-    .dir-heading--center { text-align: center; }
+    .dda-subhead {
+      font-size: clamp(20px, 2.2vw, 32px);
+      line-height: 1.3;
+      margin: 0 0 18px;
+      color: var(--index-subtitle-color);
+      max-width: 22ch;
+    }
 
-    .dir-text,
-    .dir-list li,
-    .dir-checklist li,
-    .dir-step p,
-    .dir-compare-item,
-    .dir-step-title {
+    .dda-intro,
+    .dda-text,
+    .dda-list li,
+    .dda-check li,
+    .dda-spec,
+    .dda-card p,
+    .dda-feature li,
+    .dda-phase p {
       font-family: var(--body-font);
-      font-size: 18px;
+      font-size: clamp(16px, 1.25vw, 22px);
       line-height: 1.6;
-      color: #5f5f76;
+      color: #1f1f23;
+      margin: 0;
       font-weight: 400;
     }
 
-    .dir-text--center { text-align: center; }
-    .dir-text--strong { color: var(--brand-blue); font-weight: 700; }
-    .dir-text--lead { max-width: 780px; margin: 0 auto 10px; }
-    .dir-section--hero .dir-content { text-align: center; }
+    .dda-intro { max-width: 38ch; }
+    .dda-text + .dda-text { margin-top: 14px; }
 
-    .dir-cta-wrap { text-align: center; margin-top: 28px; }
-
-    .dir-grid { display: grid; gap: 34px; align-items: center; }
-    .dir-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-    .dir-media {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      background: #ddd;
-      border-radius: 2px;
+    .dda-section-title {
+      font-size: clamp(30px, 2.6vw, 40px);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      text-transform: none;
     }
 
-    .dir-media--portrait { aspect-ratio: 3 / 4; }
-    .dir-media--wide { aspect-ratio: 16 / 8; }
-
-    .dir-list { margin: 0; padding-left: 16px; }
-    .dir-list li { margin-bottom: 8px; }
-
-    .dir-compare { margin-top: 18px; display: grid; gap: 12px; max-width: 760px; margin-left: auto; margin-right: auto; }
-    .dir-compare-head {
+    .dda-hero-grid,
+    .dda-grid-2 {
       display: grid;
-      grid-template-columns: 1fr 66px 1fr;
-      gap: 12px;
-      text-align: center;
-      font-family: var(--body-font);
-      color: #5f5f76;
-      font-weight: 500;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
-
-    .dir-compare-item {
-      display: grid;
-      grid-template-columns: 1fr 66px 1fr;
-      gap: 12px;
+      gap: clamp(28px, 4vw, 48px);
       align-items: center;
-      font-size: 16px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .dir-before,
-    .dir-after {
-      padding: 10px 14px;
-      text-align: center;
-      border-radius: 2px;
+    .dda-hero-collage {
+      background: #fff;
+      border: 1px solid #dad7ea;
+      border-radius: 6px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 12px;
+      min-height: 470px;
     }
 
-    .dir-before {
-      background: transparent;
-      border: 2px solid #d5d2e5;
+    .dda-hero-main,
+    .dda-hero-stack img,
+    .dda-image,
+    .dda-deliverable-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
     }
 
-    .dir-after {
-      background: #322b84;
-      border: 2px solid #322b84;
-      color: #fff;
+    .dda-hero-stack {
+      display: grid;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 12px;
     }
-    .dir-arrow { color: var(--brand-magenta); text-align: center; font-weight: 700; }
 
-    .dir-checklist { list-style: none; margin: 0; padding: 0; }
-    .dir-checklist li { position: relative; padding-left: 24px; margin-bottom: 8px; }
-    .dir-checklist li::before {
-      content: "✓";
+    .dda-btn-wrap { margin-top: 28px; }
+
+    .dda-callout {
+      margin-top: 24px;
+      padding: 24px;
+      border-left: 3px solid var(--brand-magenta);
+      background: #f4f2fb;
+      font-family: var(--body-font);
+      font-size: clamp(17px, 1.3vw, 20px);
+      line-height: 1.55;
+      color: var(--index-title-color);
+    }
+
+    .dda-cards,
+    .dda-check-grid,
+    .dda-spec-grid,
+    .dda-compare-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dda-card,
+    .dda-compare,
+    .dda-spec-card,
+    .dda-phase,
+    .dda-deliverable,
+    .dda-check-card {
+      background: #fff;
+      border: 1px solid #ddd8ed;
+      border-radius: 6px;
+      padding: 18px;
+    }
+
+    .dda-card {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      min-height: 96px;
+    }
+
+    .dda-bullet {
+      font-family: var(--title-font);
+      color: var(--brand-magenta);
+      font-size: 18px;
+      line-height: 1;
+      margin-top: 2px;
+    }
+
+    .dda-list,
+    .dda-check,
+    .dda-feature {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .dda-list li,
+    .dda-check li,
+    .dda-feature li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 12px;
+    }
+
+    .dda-list li::before,
+    .dda-check li::before,
+    .dda-feature li::before {
       position: absolute;
       left: 0;
-      top: 1px;
-      color: var(--brand-magenta);
+      top: 0;
       font-weight: 700;
+      color: var(--brand-magenta);
     }
 
-    .dir-steps {
+    .dda-list li::before { content: "•"; font-size: 22px; line-height: 1; }
+    .dda-check li::before { content: "✓"; font-size: 16px; top: 2px; }
+    .dda-feature li::before { content: "→"; font-size: 16px; top: 2px; }
+
+    .dda-timeline {
+      margin-top: 26px;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
-      margin-top: 30px;
-      text-align: center;
     }
 
-    .dir-step-number {
-      font-family: var(--font-display);
-      color: var(--brand-blue);
-      font-size: clamp(34px, 5vw, 54px);
-      line-height: 1;
-      margin-bottom: 8px;
+    .dda-phase {
+      border-left: 4px solid var(--brand-blue);
+      padding: 20px 22px;
     }
 
-    .dir-step p {
-      border-top: 2px solid #d5d2e5;
-      padding-top: 10px;
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.5;
+    .dda-label { margin-bottom: 8px; letter-spacing: .08em; color: #655da2; }
+
+    .dda-card-title {
+      font-size: clamp(22px, 2.3vw, 30px);
+      line-height: 1.1;
+      margin: 0 0 10px;
     }
 
-    .dir-step-title { color: #ca4a83; font-weight: 700; font-size: 16px; display: block; margin-bottom: 6px; }
+    .dda-check-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
-
-    .dir-section--noes .dir-content {
-      text-align: center;
-    }
-
-    .dir-section--noes .dir-text {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .dir-final-hero {
-      min-height: 430px;
+    .dda-check-card {
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: #fff;
-      border-top: 1px solid #e5e2ef;
+      min-height: 96px;
+      font-family: var(--body-font);
+      font-size: 16px;
+      line-height: 1.45;
+      color: #3f3d52;
     }
 
-    @media (max-width: 991px) {
-      .dir-section { padding: 68px 0; }
-      .dir-grid--2,
-      .dir-steps,
-      .dir-compare-head,
-      .dir-compare-item { grid-template-columns: 1fr; }
-      .dir-arrow { transform: rotate(90deg); }
-      .dir-display { font-size: clamp(38px, 11vw, 56px); }
-      .dir-heading { font-size: clamp(28px, 8vw, 38px); }
-      .dir-final-hero { min-height: 360px; }
+    .dda-deliverable {
+      background: #fff;
+      border-color: #dad7ea;
+    }
+
+    .dda-deliverable-list { margin-top: 18px; }
+
+    .dda-mockup {
+      background: #f5f4fa;
+      border: 1px solid #dad7ea;
+      border-radius: 5px;
+      padding: 14px;
+      box-shadow: 0 14px 36px rgba(45, 36, 95, .12);
+    }
+
+    .dda-mockup-bar {
+      height: 7px;
+      width: 78px;
+      border-radius: 99px;
+      background: #d6d0ec;
+      margin-bottom: 10px;
+    }
+
+    .dda-deliverable-image { aspect-ratio: 3 / 4; margin-bottom: 12px; }
+
+    .dda-spec-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .dda-spec-card {
+      text-align: center;
+      background: #f8f7fc;
+      border-color: #e1def0;
+    }
+
+    .dda-spec {
+      font-size: 16px;
+      line-height: 1.45;
+      color: #403f56;
+    }
+
+    .dda-result {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 36px;
+      background: #fff;
+      border: 1px solid #dad7ea;
+      border-radius: 6px;
+    }
+
+    .dda-compare h3 {
+      font-family: var(--title-font);
+      font-size: clamp(24px, 2.3vw, 34px);
+      line-height: 1.08;
+      margin: 0 0 12px;
+      color: var(--index-title-color);
+    }
+
+    .dda-note {
+      margin-top: 22px;
+      background: #f4f2fb;
+      border: 1px solid #ddd8ed;
+      border-left: 4px solid var(--brand-magenta);
+      border-radius: 6px;
+      padding: 24px;
+    }
+
+    .dda-note .dda-text { color: var(--index-title-color); }
+
+    .dda-cta {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 991.98px) {
+      .dda-hero-grid,
+      .dda-grid-2,
+      .dda-cards,
+      .dda-check-grid,
+      .dda-spec-grid,
+      .dda-compare-grid { grid-template-columns: 1fr; }
+
+      .dda-hero-collage {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .dda-hero-stack { grid-template-rows: none; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .dda-btn-wrap .btn { width: 100%; }
+      .dda-subhead,
+      .dda-intro { max-width: none; }
+    }
+
+    @media (max-width: 575.98px) {
+      .dda-section { padding: 62px 0; }
+      .dda-result,
+      .dda-note,
+      .dda-phase,
+      .dda-card,
+      .dda-deliverable,
+      .dda-spec-card,
+      .dda-compare,
+      .dda-check-card { padding: 16px; }
     }
   </style>
-
 </head>
 <body>
 
-  <div class="site-wrap direccion-page">
+  <div class="site-wrap dda-page">
 
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
@@ -240,7 +393,7 @@
                 <li><a href="/#hola-nathaly">SOBRE MÍ</a></li>
                 <li><a href="/#servicios">SERVICIOS</a></li>
                 <li><a href="/proyectos/">PROYECTOS</a></li>
-</ul>
+              </ul>
             </nav>
           </div>
           <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
@@ -249,7 +402,6 @@
                 <li><a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20vengo%20de%20tu%20web%20y%20quer%C3%ADa%20preguntarte%20sobre%20" class="pl-3 pr-3"><span class="icon-whatsapp"></span></a></li>
                 <li><a href="https://www.instagram.com/nathalyhabich/" class="pl-3 pr-3"><span class="icon-instagram"></span></a></li>
                 <li><a href="mailto:nath.habich@gmail.com" class="pl-3 pr-3"><span class="icon-mail_outline"></span></a></li>
-              
                 <li class="lang-switch-inline" style="display:flex; align-items:center; color:#fff; font-size:12px;"><a href="/disenodirecciondearte/" style="padding:0 4px;">ES</a><span>|</span><a href="/en/disenodirecciondearte/" style="padding:0 4px;">EN</a></li>
               </ul>
             </div>
@@ -259,133 +411,228 @@
       </div>
     </header>
 
-    <section class="dir-section dir-section--white dir-section--hero">
-      <div class="container dir-content" data-aos="fade-up">
-        <h2 class="dir-display">Dirección de Arte y <br>Diseño de Producción</h2>
-        <p class="dir-text dir-text--center dir-text--lead">Convierte tu idea en un sistema visual con coherencia, identidad y nivel.</p>
-        <p class="dir-text dir-text--center dir-text--lead">Cuando un proyecto tiene una buena idea pero no tiene un lenguaje visual definido, todo se fragmenta: el espacio no sostiene la intención, el color se vuelve decorativo y la ejecución pierde coherencia.</p>
-        <p class="dir-text dir-text--center dir-text--lead dir-text--strong">Aquí se construye el sistema visual del proyecto: lo que lo hace reconocible, consistente y ejecutable.</p>
-        <div class="dir-cta-wrap">
-          <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Dise%C3%B1o%20de%20Direcci%C3%B3n%20de%20Arte%20para%20mi%20proyecto." class="btn btn-outline-white py-2 px-4 btn-start-project">Iniciar proyecto</a>
+    <section class="dda-section dda-section--white">
+      <div class="container dda-container" data-aos="fade-up">
+        <div class="dda-hero-grid">
+          <div>
+            <span class="dda-eyebrow">Servicio 02</span>
+            <h1 class="dda-hero-title">Dirección de Arte y Diseño de Producción</h1>
+            <p class="dda-subhead">El proyecto queda diseñado, estructurado y listo para ejecutarse.</p>
+            <p class="dda-intro">Este servicio transforma una idea en un sistema visual completo, con dirección clara, diseño espacial y una base real para producción.</p>
+            <div class="dda-btn-wrap">
+              <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Direcci%C3%B3n%20de%20Arte%20y%20Dise%C3%B1o%20de%20Producci%C3%B3n%20para%20mi%20proyecto." class="btn btn-outline-white py-2 px-4 btn-start-project">Iniciar proyecto</a>
+            </div>
+          </div>
+          <div class="dda-hero-collage">
+            <img src="/images/direccion-de-arte/esl-one-birmingham-2024/esl-one-birmingham-final-nathaly-habich-6.png" alt="Diseño de set principal" class="dda-hero-main">
+            <div class="dda-hero-stack">
+              <img src="/images/direccion-de-arte/pgl-major-copenhagen-2024/1.png" alt="Visuales y layout en producción">
+              <img src="/images/direccion-de-arte/betboom-dacha/betboom-final-nathaly-habich.png" alt="Aplicación de diseño espacial">
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="dir-section dir-section--gray">
-      <div class="container dir-content" data-aos="fade-up">
-        <div class="dir-grid dir-grid--2">
-          <img src="/images/direccion-de-arte/viejamoralidad/1-moodboard-nathaly-vieja-moralidad.png" class="dir-media dir-media--portrait" alt="Moodboard del proyecto">
-          <div>
-            <h3 class="dir-heading">¿Para quién es este servicio?</h3>
-            <ul class="dir-list">
-              <li>Producciones que necesitan una dirección visual clara antes de diseñar o montar.</li>
-              <li>Marcas o proyectos de contenido que quieren un espacio que posicione, no solo que “se vea bonito”.</li>
-              <li>Equipos creativos que necesitan aterrizar la visión en decisiones que se puedan ejecutar.</li>
-              <li>Proyectos que requieren coherencia entre narrativa, espacio, materialidad y color.</li>
+    <section class="dda-section dda-section--tint">
+      <div class="container dda-container" data-aos="fade-up">
+        <div class="dda-narrow">
+          <h2 class="dda-section-title">Qué es y qué permite construir</h2>
+          <p class="dda-text">Un servicio de diseño estructural completo para desarrollar el mundo visual del proyecto con coherencia, criterio y orden.</p>
+          <p class="dda-text">Aquí no se define solo una estética. Se construye una propuesta visual integral que organiza cómo se ve, cómo se sostiene y cómo debe ejecutarse el proyecto.</p>
+          <div class="dda-callout">Convierte una idea en un sistema visual completo, claro y ejecutable, para que el proyecto pueda avanzar con estructura y sin improvisación.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--white">
+      <div class="container dda-container" data-aos="fade-up">
+        <h2 class="dda-section-title">Ideal para</h2>
+        <div class="dda-cards">
+          <article class="dda-card"><span class="dda-bullet">•</span><p>Series</p></article>
+          <article class="dda-card"><span class="dda-bullet">•</span><p>Streaming</p></article>
+          <article class="dda-card"><span class="dda-bullet">•</span><p>Sets de estudio</p></article>
+          <article class="dda-card"><span class="dda-bullet">•</span><p>Eventos medianos</p></article>
+          <article class="dda-card"><span class="dda-bullet">•</span><p>Proyectos que ya necesitan desarrollo visual real</p></article>
+          <article class="dda-card"><span class="dda-bullet">•</span><p>Equipos que necesitan una dirección clara antes de pasar a producción</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--dark">
+      <div class="container dda-container" data-aos="fade-up">
+        <h2 class="dda-section-title">Qué resuelve</h2>
+        <ul class="dda-feature">
+          <li>aterrizar visualmente el proyecto con una dirección clara</li>
+          <li>construir un lenguaje visual coherente entre concepto, espacio y narrativa</li>
+          <li>ordenar decisiones antes de entrar a compras, montaje o ejecución</li>
+          <li>traducir la intención creativa en un sistema usable por producción</li>
+          <li>reducir errores, contradicciones y vacíos antes de pasar a la siguiente etapa</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--white">
+      <div class="container dda-container" data-aos="fade-up">
+        <h2 class="dda-section-title">Fases incluidas</h2>
+        <div class="dda-timeline">
+          <article class="dda-phase">
+            <span class="dda-label">Fase 0</span>
+            <h3 class="dda-card-title">Lectura estratégica del proyecto</h3>
+            <p>Diagnóstico inicial de objetivos, contexto, restricciones y nivel de desarrollo visual requerido.</p>
+          </article>
+          <article class="dda-phase">
+            <span class="dda-label">Fase 1</span>
+            <h3 class="dda-card-title">Dirección visual base</h3>
+            <p>Definición del eje visual que ordena decisiones y establece criterios para todo el diseño.</p>
+          </article>
+          <article class="dda-phase">
+            <span class="dda-label">Fase 2</span>
+            <h3 class="dda-card-title">Desarrollo conceptual</h3>
+            <p>Construcción de narrativa visual, referentes estructurados y decisiones clave de atmósfera.</p>
+          </article>
+          <article class="dda-phase">
+            <span class="dda-label">Fase 3</span>
+            <h3 class="dda-card-title">Diseño aplicado al espacio / set</h3>
+            <p>Traducción del concepto al espacio: layout, composición, circulación y lógica de uso.</p>
+          </article>
+          <article class="dda-phase">
+            <span class="dda-label">Fase 4</span>
+            <h3 class="dda-card-title">Sistema visual y materialidad</h3>
+            <p>Consolidación de color, materiales, props y criterios de unidad visual entre piezas.</p>
+          </article>
+          <article class="dda-phase">
+            <span class="dda-label">Fase 5</span>
+            <h3 class="dda-card-title">Preparación para ejecución</h3>
+            <p>Entrega del paquete técnico y visual para que producción pueda ejecutar con claridad operativa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--tint">
+      <div class="container dda-container" data-aos="fade-up">
+        <h2 class="dda-section-title">Qué incluye</h2>
+        <div class="dda-check-grid">
+          <div class="dda-check-card">Statement del mundo</div>
+          <div class="dda-check-card">Set Bible</div>
+          <div class="dda-check-card">Layout aprobado</div>
+          <div class="dda-check-card">Sistema cromático completo</div>
+          <div class="dda-check-card">Materialidad</div>
+          <div class="dda-check-card">Lista de props A / B / C</div>
+          <div class="dda-check-card">Build Pack</div>
+          <div class="dda-check-card">Cronograma base</div>
+          <div class="dda-check-card">Matriz de responsabilidades</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--white">
+      <div class="container dda-container" data-aos="fade-up">
+        <div class="dda-grid-2">
+          <div class="dda-deliverable">
+            <h2 class="dda-section-title">Entregables</h2>
+            <p class="dda-text">Recibirás un paquete estructurado con la información visual y técnica necesaria para que el proyecto pueda pasar a ejecución con orden.</p>
+            <div class="dda-deliverable-list">
+              <span class="dda-label">Incluye:</span>
+              <ul class="dda-check">
+                <li>PDF estructurado</li>
+                <li>Planos</li>
+                <li>Lista de compras</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dda-mockup">
+            <div class="dda-mockup-bar"></div>
+            <img src="/images/direccion-de-arte/viejamoralidad/1-moodboard-nathaly-vieja-moralidad.png" class="dda-deliverable-image" alt="Mockup de paquete de entregables">
+            <p class="dda-spec">Vista referencial de estructura de entrega para diseño, layout y documentación técnica.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--dark">
+      <div class="container dda-container" data-aos="fade-up">
+        <h2 class="dda-section-title">Qué no incluye</h2>
+        <ul class="dda-list">
+          <li>Compras</li>
+          <li>Montaje</li>
+          <li>Rodaje</li>
+          <li>Supervisión de ejecución en campo</li>
+          <li>Dirección del equipo durante producción</li>
+        </ul>
+        <p class="dda-text" style="margin-top:16px;">Este servicio deja el proyecto diseñado y preparado para ejecutarse, pero no incluye acompañamiento durante la ejecución. Si el proyecto también necesita dirección en montaje, compras o rodaje, corresponde el servicio de Dirección de Arte en Producción.</p>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--white">
+      <div class="container dda-container" data-aos="fade-up">
+        <h2 class="dda-section-title">Límites y revisiones</h2>
+        <div class="dda-spec-grid">
+          <div class="dda-spec-card"><p class="dda-spec">Hasta 3 sets principales</p></div>
+          <div class="dda-spec-card"><p class="dda-spec">2 rondas de revisión por fase</p></div>
+          <div class="dda-spec-card"><p class="dda-spec">Cambios fuera de fase o después de aprobación pueden requerir ajuste de alcance, tiempo o costo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--tint">
+      <div class="container dda-container" data-aos="fade-up">
+        <div class="dda-result">
+          <h2 class="dda-section-title">Resultado</h2>
+          <p class="dda-text">Un proyecto visualmente diseñado, estructurado y listo para ejecutarse con mayor claridad, coherencia y orden operativo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--white">
+      <div class="container dda-container" data-aos="fade-up">
+        <h2 class="dda-section-title">Este servicio encaja si...</h2>
+        <div class="dda-compare-grid">
+          <article class="dda-compare">
+            <h3>Sí es para ti si</h3>
+            <ul class="dda-check">
+              <li>el proyecto ya necesita desarrollo visual completo</li>
+              <li>no basta con una idea general y hace falta bajarla a sistema</li>
+              <li>necesitas estructura antes de pasar a ejecución</li>
+              <li>quieres que diseño, narrativa y producción estén alineados</li>
+              <li>todavía no necesitas dirección en campo, pero sí un proyecto bien resuelto antes de llegar ahí</li>
             </ul>
-            <p class="dir-text dir-text--strong" style="margin-top:16px;">Si tu proyecto necesita identidad visual consistente y decisiones que se sostengan en producción, este servicio es el núcleo.</p>
+          </article>
+          <article class="dda-compare">
+            <h3>No es para ti si</h3>
+            <ul class="dda-check">
+              <li>todavía estás en una etapa demasiado temprana y lo que necesitas primero es claridad estratégica</li>
+              <li>ya estás en producción y necesitas dirección activa durante compras, montaje o rodaje</li>
+              <li>estás buscando solo ejecución sin una fase seria de diseño</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--dark">
+      <div class="container dda-container" data-aos="fade-up">
+        <div class="dda-note">
+          <h2 class="dda-section-title">Qué diferencia este servicio del acompañamiento en producción</h2>
+          <p class="dda-text">Aquí el proyecto se diseña y se estructura. No se dirige la ejecución en campo.</p>
+          <p class="dda-text">Eso significa que recibes una propuesta completa y preparada para pasar a producción, pero la supervisión de compras, montaje, prelight y continuidad visual pertenece al siguiente nivel de servicio.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dda-section dda-section--white">
+      <div class="container dda-container" data-aos="fade-up">
+        <div class="dda-cta">
+          <h2 class="dda-cta-title dda-section-title">Cuando el proyecto ya no necesita solo ideas, sino una estructura visual real, este es el servicio correcto.</h2>
+          <p class="dda-text">Si necesitas aterrizar el concepto, diseñar el sistema visual completo y dejar el proyecto listo para ejecutarse, aquí es donde se construye esa base.</p>
+          <div class="dda-btn-wrap">
+            <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Direcci%C3%B3n%20de%20Arte%20y%20Dise%C3%B1o%20de%20Producci%C3%B3n%20para%20mi%20proyecto." class="btn btn-outline-white py-2 px-4 btn-start-project">Iniciar proyecto</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="dir-section dir-section--white">
-      <div class="container dir-content" data-aos="fade-up">
-        <h3 class="dir-heading dir-heading--center">¿Qué se resuelve realmente?</h3>
-        <div class="dir-compare">
-          <div class="dir-compare-head">
-            <div>Antes</div>
-            <div></div>
-            <div>Después</div>
-          </div>
-          <div class="dir-compare-item">
-            <div class="dir-before">tenemos una idea</div>
-            <div class="dir-arrow">⟶</div>
-            <div class="dir-after">lenguaje visual claro</div>
-          </div>
-          <div class="dir-compare-item">
-            <div class="dir-before">referencias sueltas</div>
-            <div class="dir-arrow">⟶</div>
-            <div class="dir-after">sistema coherente</div>
-          </div>
-          <div class="dir-compare-item">
-            <div class="dir-before">color por gusto</div>
-            <div class="dir-arrow">⟶</div>
-            <div class="dir-after">dirección cromática con intención</div>
-          </div>
-          <div class="dir-compare-item">
-            <div class="dir-before">se ve bien en teoría</div>
-            <div class="dir-arrow">⟶</div>
-            <div class="dir-after">diseño ejecutable en producción real</div>
-          </div>
-        </div>
-        <p class="dir-text dir-text--center dir-text--strong" style="max-width:700px;margin:20px auto 0;">No se trata de decorar un espacio. Se trata de dirigir lo visual para que el proyecto se vea sólido, intencional y profesional.</p>
-      </div>
-    </section>
-
-    <section class="dir-section dir-section--gray">
-      <div class="container dir-content" data-aos="fade-up">
-        <div class="dir-grid dir-grid--2" style="margin-bottom:30px;">
-          <img src="/images/direccion-de-arte/dreamleague-season-22/dreamleague-14-05-nathaly-habich-11.png" class="dir-media dir-media--wide" alt="Proyecto Dreamleague">
-          <img src="/images/direccion-de-arte/betboom-dacha/betboom-final-nathaly-habich.png" class="dir-media dir-media--wide" alt="Proyecto BetBoom Dacha">
-        </div>
-        <div class="dir-grid dir-grid--2">
-          <div>
-            <h3 class="dir-heading">Qué incluye</h3>
-            <p class="dir-text">(Los entregables finales varían según el alcance, pero el objetivo es el mismo: coherencia + ejecución real).</p>
-          </div>
-          <ul class="dir-checklist">
-            <li>Definición de concepto visual y atmósfera.</li>
-            <li>Statement del mundo (qué es ese universo y cómo se percibe).</li>
-            <li>Dirección cromática (lógica de color aplicada).</li>
-            <li>Lineamientos de espacio, forma y materialidad.</li>
-            <li>Moodboards estructurados (referencias con criterio, no collage).</li>
-            <li>Propuesta espacial base (según tipo de proyecto, set, escena o espacio de marca).</li>
-            <li>Guía de ejecución visual: qué es prioritario, qué no se negocia y qué se adapta.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="dir-section dir-section--white">
-      <div class="container dir-content" data-aos="fade-up">
-        <h3 class="dir-heading dir-heading--center">Cómo se trabaja</h3>
-        <div class="dir-steps">
-          <div class="dir-step">
-            <div class="dir-step-number">1</div>
-            <p><span class="dir-step-title">Brief y contexto</span>Recibo información del proyecto, objetivos, tono, restricciones, tiempos y equipo.</p>
-          </div>
-          <div class="dir-step">
-            <div class="dir-step-number">2</div>
-            <p><span class="dir-step-title">Construcción del lenguaje visual</span>Desarrollo concepto, atmósfera y sistema visual (espacio + color + materialidad).</p>
-          </div>
-          <div class="dir-step">
-            <div class="dir-step-number">3</div>
-            <p><span class="dir-step-title">Aterrizaje y entrega</span>Entrego el sistema en un formato claro para que se pueda ejecutar en producción.</p>
-          </div>
-        </div>
-        <div class="dir-cta-wrap">
-          <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Dise%C3%B1o%20de%20Direcci%C3%B3n%20de%20Arte%20para%20mi%20proyecto." class="btn btn-outline-white py-2 px-4 btn-start-project">Iniciar proyecto</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="dir-section dir-section--gray dir-section--noes">
-      <div class="container dir-content" data-aos="fade-up">
-        <h3 class="dir-heading dir-heading--center">Lo que este servicio NO es</h3>
-        <p class="dir-text dir-text--center">No es solo “hacer moodboards”.<br>No es elegir colores superficialmente.<br>No es ejecución completa (eso es el servicio 3).<br>No es resolver cambios de guion o set de último minuto sin replanteo de alcance.</p>
-        <p class="dir-text dir-text--center dir-text--strong" style="margin-top:18px;">Este servicio define y estructura.<br>La ejecución es otra etapa.</p>
-      </div>
-    </section>
-
-    <section class="dir-final-hero">
-      <div class="container dir-content" data-aos="fade-up">
-        <h2 class="dir-heading dir-heading--center" style="max-width:760px;margin-left:auto;margin-right:auto;">Si tu proyecto necesita dirección visual real, aquí se construye.</h2>
-        <div class="dir-cta-wrap">
-          <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Dise%C3%B1o%20de%20Direcci%C3%B3n%20de%20Arte%20para%20mi%20proyecto." class="btn btn-outline-white py-2 px-4 btn-start-project">Iniciar proyecto</a>
-        </div>
-      </div>
-    </section>
     <div class="footer py-4">
       <div class="container-fluid">
         <div class="footer-main">
