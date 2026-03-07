@@ -35,7 +35,22 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">Evidencia Oculta</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>América Televisión / 14y6</td></tr>
+      <tr><th scope="row">Production Type</th><td>Investigative television series with dramatized reconstructions of real criminal cases.</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Art direction for Evidencia Oculta, an investigative television series focused on the reconstruction of real homicide cases in Peru.</p><p>The project required adapting existing locations and designing temporary sets to support the dramatization of each case while maintaining visual coherence and production efficiency across multiple episodes.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Design and adaptation of sets for crime reenactments</li><li>Set dressing and environmental storytelling for each case</li><li>Selection and management of props to build narrative spaces</li><li>Costume coordination for actors involved in dramatizations</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Art Department Production</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Management of wardrobe and prop inventory from production storage</li><li>Sourcing and purchasing additional props and wardrobe pieces</li><li>Coordination with suppliers and production departments</li><li>Budget management and optimization of art department resources</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">On-Set Supervision</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Supervision of set preparation and installation before filming</li><li>Art direction presence during shooting</li><li>Real-time problem solving during production</li><li>Maintaining visual continuity across different dramatizations</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>The project delivered believable environments that allowed each case to be visually reconstructed while maintaining aesthetic consistency and practical functionality for television production.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">Evidencia Oculta</h3>
       <table class="project-video-hero-table">
       <tbody>
