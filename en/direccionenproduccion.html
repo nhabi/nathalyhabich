@@ -1,0 +1,429 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QZHTB8VP90"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QZHTB8VP90');
+  </script>
+
+<title>Production Direction &mdash; Nathaly Habich</title>
+  <link rel="shortcut icon" href="/images/favicon1.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Paytone+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/magnific-popup.css">
+  <link rel="stylesheet" href="/css/jquery-ui.css">
+  <link rel="stylesheet" href="/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/css/lightgallery.min.css">
+  <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="/css/swiper.css">
+  <link rel="stylesheet" href="/css/aos.css">
+  <link rel="stylesheet" href="/css/style.css">
+
+  <style>
+    .produccion-page { background: #efeff4; color: #2f2a67; }
+    .prod-section { padding: 82px 0; }
+    .prod-section--white { background: #fff; }
+    .prod-section--tint { background: #efeff4; }
+
+    .prod-content { max-width: 860px; margin: 0 auto; text-align: center; }
+
+    .prod-title,
+    .prod-heading,
+    .prod-final {
+      font-family: var(--font-display);
+      color: var(--brand-blue);
+      letter-spacing: .01em;
+    }
+
+    .prod-title { font-size: clamp(42px, 8vw, 84px); line-height: .92; text-transform: uppercase; margin-bottom: 18px; }
+    .prod-heading { font-size: clamp(30px, 4vw, 46px); line-height: 1.08; margin-bottom: 18px; }
+    .prod-final { font-size: clamp(30px, 5vw, 56px); line-height: .98; text-transform: uppercase; margin-bottom: 24px; }
+
+    .prod-text,
+    .prod-list li,
+    .prod-mini {
+      font-family: var(--body-font);
+      font-size: 18px;
+      line-height: 1.55;
+      color: #302d5f;
+      margin-bottom: 10px;
+    }
+
+    .prod-text--strong { font-weight: 700; margin-top: 16px; margin-bottom: 0; }
+
+    .prod-grid-2 {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 28px;
+      align-items: start;
+      text-align: left;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .prod-grid-2--reverse { grid-template-columns: 1fr 1.05fr; }
+    .prod-grid-2--center { align-items: center; }
+
+    .prod-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 980px;
+      margin: 32px auto 0;
+    }
+
+    .prod-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .prod-list { margin: 0; padding-left: 18px; }
+
+    .prod-check { list-style: none; margin: 0; padding: 0; }
+    .prod-check li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 7px;
+      font-family: var(--body-font);
+      font-size: 16px;
+      color: #302d5f;
+    }
+
+    .prod-check li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #d74b82;
+      font-weight: 700;
+    }
+
+    .prod-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 2px;
+      display: block;
+      background: #ddd;
+    }
+
+    .prod-image--stack + .prod-image--stack { margin-top: 16px; }
+
+    .prod-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #3a2f88;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-family: var(--font-display);
+      font-size: 33px;
+      line-height: 1;
+    }
+
+    .prod-check-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 3px solid #3a2f88;
+      color: #3a2f88;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 10px;
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 700;
+    }
+
+    .prod-mini { font-size: 15px; line-height: 1.45; text-align: center; margin: 0; }
+
+    .prod-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 30px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #f05f99 0%, #da3d7a 100%);
+      color: #fff;
+      font-family: var(--font-display);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .prod-btn:hover { color: #fff; opacity: .95; }
+
+    @media (max-width: 991px) {
+      .prod-section { padding: 62px 0; }
+      .prod-grid-2,
+      .prod-grid-2--reverse,
+      .prod-4,
+      .prod-2 { grid-template-columns: 1fr; }
+      .prod-content { padding: 0 12px; }
+    }
+  </style>
+  <link rel="canonical" href="https://nathalyhabich.me/en/direccionenproduccion.html">
+  <link rel="alternate" hreflang="en" href="https://nathalyhabich.me/en/direccionenproduccion.html">
+  <link rel="alternate" hreflang="es" href="https://nathalyhabich.me/direccionenproduccion.html">
+</head>
+<body>
+
+  <div class="site-wrap produccion-page">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar py-3" role="banner">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-6 col-xl-2" data-aos="fade-down">
+            <h1 class="mb-0"><a href="/en/"><img src="/images/logo-png-blanco.png" alt="Nathaly Habich" style="height:45px;object-fit:cover;object-position:50% 50%"></a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+                <li><a href="/en/">HOME</a></li>
+                <li><a href="/en/index.html#hola-nathaly">ABOUT ME</a></li>
+                <li><a href="/en/index.html#servicios">SERVICES</a></li>
+                <li><a href="/en/proyectos/">PROJECTS</a></li>
+</ul>
+            </nav>
+          </div>
+          <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
+            <div class="d-none d-xl-inline-block">
+              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+                <li><a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20vengo%20de%20tu%20web%20y%20quer%C3%ADa%20preguntarte%20sobre%20" class="pl-3 pr-3"><span class="icon-whatsapp"></span></a></li>
+                <li><a href="https://www.instagram.com/nathalyhabich/" class="pl-3 pr-3"><span class="icon-instagram"></span></a></li>
+                <li><a href="mailto:nath.habich@gmail.com" class="pl-3 pr-3"><span class="icon-mail_outline"></span></a></li>
+              
+                <li class="lang-switch-inline" style="display:flex; align-items:center; color:#fff; font-size:12px;"><a href="/direccionenproduccion.html" style="padding:0 4px;">ES</a><span>|</span><a href="/en/direccionenproduccion.html" style="padding:0 4px;">EN</a></li>
+              </ul>
+            </div>
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="prod-section prod-section--white">
+      <div class="container prod-content" data-aos="fade-up">
+        <h2 class="prod-title">Dirección en<br>Producción</h2>
+        <p class="prod-text">Asegura que lo diseñado se sostenga en la realidad, no solo en concepto.<br>Un proyecto puede tener una gran idea y un gran diseño.</p>
+        <p class="prod-text">Pero cuando llega el momento de ejecutarlo, montaje, proveedores, tiempos, ajustes,<br>muchas decisiones empiezan a diluir la intención original.</p>
+        <p class="prod-text">Aquí es donde entra la dirección visual en producción.</p>
+        <p class="prod-text prod-text--strong">Este servicio asegura que el proyecto mantenga su nivel visual cuando pasa del diseño a la realidad.</p>
+        <a class="btn btn-outline-white py-2 px-4 btn-start-project" href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Direcci%C3%B3n%20en%20Producci%C3%B3n%20para%20mi%20proyecto.">Start project</a>
+      </div>
+    </section>
+
+    <section class="prod-section prod-section--tint">
+      <div class="container prod-content" data-aos="fade-up" style="margin-bottom:44px;">
+        <p class="prod-text prod-text--strong">En producción todo se mueve rápido.<br>Cambios de último minuto.<br>Ajustes de presupuesto.<br>Decisiones técnicas que afectan lo visual.</p>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="prod-grid-2 prod-grid-2--center">
+          <img src="/images/dreamleague-14-05-nathaly-habich-3.png" class="prod-image" alt="Proyecto de dirección de arte">
+          <div>
+            <p class="prod-text" style="text-align:left;">Y sin alguien que sostenga el criterio visual del proyecto, empiezan a pasar cosas como:</p>
+            <ul class="prod-list">
+              <li>Materiales que cambian sin criterio</li>
+              <li>Colores que pierden coherencia</li>
+              <li>Decisiones de montaje que rompen la composición</li>
+              <li>Elementos que terminan resolviéndose “como se pueda”</li>
+            </ul>
+            <p class="prod-text" style="text-align:left;">El resultado:<br>La idea original pierde fuerza.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container prod-content" data-aos="fade-up">
+        <p class="prod-text prod-text--strong">Este servicio existe para proteger el estándar visual durante la ejecución.</p>
+      </div>
+    </section>
+
+    <section class="prod-section prod-section--white">
+      <div class="container" data-aos="fade-up">
+        <div class="prod-grid-2 prod-grid-2--reverse">
+          <div>
+            <h3 class="prod-heading">¿Qué se resuelve realmente?</h3>
+            <p class="prod-text" style="text-align:left;">No se trata de “estar presente en el montaje”.<br>Se trata de dirigir decisiones visuales en tiempo real.</p>
+            <p class="prod-text" style="text-align:left; margin-top:18px;">Durante la ejecución del proyecto:</p>
+            <ul class="prod-list">
+              <li>Se revisan materiales y acabados</li>
+              <li>Se ajustan proporciones y composición</li>
+              <li>Se corrigen desviaciones visuales</li>
+              <li>Se alinean decisiones de producción con la intención del diseño</li>
+            </ul>
+          </div>
+          <div>
+            <img src="/images/dreamleague-14-05-nathaly-habich-7.png" class="prod-image prod-image--stack" alt="Proyecto visual 1">
+            <img src="/images/dreamleague-14-05-nathaly-habich-5.png" class="prod-image prod-image--stack" alt="Proyecto visual 2">
+          </div>
+        </div>
+      </div>
+      <div class="container prod-content" data-aos="fade-up">
+        <p class="prod-text prod-text--strong" style="max-width:720px; margin:26px auto 0;">El objetivo es simple:<br>Que el proyecto final se vea tan sólido como fue pensado.</p>
+      </div>
+    </section>
+
+    <section class="prod-section prod-section--tint">
+      <div class="container" data-aos="fade-up">
+        <div class="prod-2" style="margin-top:0; margin-bottom:26px;">
+          <img src="/images/dreamleague-14-05-nathaly-habich-1.png" class="prod-image" alt="Proyecto aleatorio 1">
+          <img src="/images/dreamleague-14-05-nathaly-habich-9.png" class="prod-image" alt="Proyecto aleatorio 2">
+        </div>
+        <div class="prod-grid-2">
+          <div>
+            <h3 class="prod-heading">Qué incluye</h3>
+            <p class="prod-text" style="text-align:left;">Puede variar dependiendo los requerimientos del proyecto</p>
+          </div>
+          <ul class="prod-check">
+            <li>Revisión previa de planos o diseño antes de producción</li>
+            <li>Alineación con producción, montaje y equipo técnico</li>
+            <li>Supervisión de decisiones visuales durante montaje</li>
+            <li>Ajustes visuales necesarios en tiempo real</li>
+            <li>Validación final del espacio antes de grabación, apertura o entrega</li>
+          </ul>
+        </div>
+      </div>
+      <div class="container prod-content" data-aos="fade-up">
+        <p class="prod-text prod-text--strong">Este servicio funciona como puente entre diseño y ejecución.</p>
+      </div>
+    </section>
+
+    <section class="prod-section prod-section--white">
+      <div class="container prod-content" data-aos="fade-up">
+        <h3 class="prod-heading">Te va ha ser realmente útil sí...</h3>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="prod-4">
+          <div>
+            <div class="prod-icon">?</div>
+            <p class="prod-mini">el proyecto tiene set<br>diseño o intervención<br>espacial compleja</p>
+          </div>
+          <div>
+            <div class="prod-icon">?</div>
+            <p class="prod-mini">el espacio es parte<br>clave de la narrativa<br>visual</p>
+          </div>
+          <div>
+            <div class="prod-icon">?</div>
+            <p class="prod-mini">participan varios<br>proveedores en el<br>montaje</p>
+          </div>
+          <div>
+            <div class="prod-icon">?</div>
+            <p class="prod-mini">el nivel visual del<br>proyecto es importante<br>para la marca o<br>producción</p>
+          </div>
+        </div>
+      </div>
+      <div class="container prod-content" data-aos="fade-up">
+        <p class="prod-text prod-text--strong">En estos casos, tener dirección visual en ejecución evita perder coherencia en el resultado final.</p>
+      </div>
+    </section>
+
+    <section class="prod-section prod-section--tint">
+      <div class="container prod-content" data-aos="fade-up">
+        <h3 class="prod-heading">Lo que este servicio NO es</h3>
+        <p class="prod-text">No reemplaza al equipo de producción o montaje.<br>No es diseño desde cero (eso corresponde al servicio de Diseño de Art Direction).<br>No es supervisión técnica de obra.</p>
+        <p class="prod-text prod-text--strong">Este servicio se enfoca exclusivamente en criterio visual y coherencia estética durante la ejecución.</p>
+      </div>
+    </section>
+
+    <section class="prod-section prod-section--white">
+      <div class="container prod-content" data-aos="fade-up">
+        <h3 class="prod-heading">Cuando este servicio está presente</h3>
+      </div>
+      <div class="container" data-aos="fade-up">
+        <div class="prod-4">
+          <div>
+            <div class="prod-check-icon">✓</div>
+            <p class="prod-mini">El proyecto mantiene su nivel visual real, no solo en render o concepto.</p>
+          </div>
+          <div>
+            <div class="prod-check-icon">✓</div>
+            <p class="prod-mini">Las decisiones de producción responden a criterio visual, no a improvisación.</p>
+          </div>
+          <div>
+            <div class="prod-check-icon">✓</div>
+            <p class="prod-mini">Cada elemento del espacio se sostiene dentro de una dirección clara y coherente.</p>
+          </div>
+          <div>
+            <div class="prod-check-icon">✓</div>
+            <p class="prod-mini">El resultado final refleja la intención creativa original del proyecto.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container prod-content" data-aos="fade-up">
+        <p class="prod-text prod-text--strong">El diseño no se pierde en el camino.</p>
+      </div>
+    </section>
+
+    <section class="prod-section prod-section--tint" style="padding-top:60px;padding-bottom:120px;">
+      <div class="container prod-content" data-aos="fade-up">
+        <h3 class="prod-final">Si tu proyecto necesita<br>que el diseño se sostenga<br>en producción, este es el<br>momento de dirigirlo.</h3>
+        <a class="btn btn-outline-white py-2 px-4 btn-start-project" href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Direcci%C3%B3n%20en%20Producci%C3%B3n%20para%20mi%20proyecto.">Start project</a>
+      </div>
+    </section>
+    <div class="footer py-4">
+      <div class="container-fluid">
+        <div class="footer-main">
+          <nav class="footer-policies" aria-label="Políticas y términos">
+            <a href="/en/politica-de-privacidad.html">PRIVACY POLICY</a>
+            <a href="/en/terminos-de-uso.html">TERMS OF USE</a>
+            <a href="/en/politica-de-cookies.html">COOKIE POLICY</a>
+          </nav>
+        </div>
+        <hr class="footer-divider">
+
+        <p class="footer-legal">© <script>document.write(new Date().getFullYear());</script> NATHALY HABICH | All rights reserved.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/js/jquery-ui.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/owl.carousel.min.js"></script>
+  <script src="/js/jquery.stellar.min.js"></script>
+  <script src="/js/jquery.countdown.min.js"></script>
+  <script src="/js/jquery.magnific-popup.min.js"></script>
+  <script src="/js/bootstrap-datepicker.min.js"></script>
+  <script src="/js/swiper.min.js"></script>
+  <script src="/js/aos.js"></script>
+  <script src="/js/picturefill.min.js"></script>
+  <script src="/js/lightgallery-all.min.js"></script>
+  <script src="/js/jquery.mousewheel.min.js"></script>
+  <script src="/js/main.js"></script>
+
+</body>
+</html>
