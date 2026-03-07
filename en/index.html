@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="/css/aos.css">
 
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="preload" href="/en/reel3.mp4" as="video" type="video/mp4" fetchpriority="high">
+  <link rel="preload" href="/reel3.mp4" as="video" type="video/mp4" fetchpriority="high">
 
   <style>
     .reel-hero {
@@ -864,7 +864,7 @@
           <h2 class="reel-hero__title">Build the visual world your project deserves.</h2>
           <p class="reel-hero__subtitle">Art direction and narrative spatial design for productions, stage environments and immersive installations.</p>
           <div class="reel-hero__actions">
-            <a href="/en/iniciar-proyecto/" class="btn btn-outline-white py-2 px-4 btn-start-project">Start project</a>
+            <a href="/en/iniciar-proyecto.html" class="btn btn-outline-white py-2 px-4 btn-start-project">Start project</a>
             <a href="#proyectos" class="btn btn-outline-white btn-hero-outline py-2 px-4">See projects</a>
           </div>
         </div>
@@ -943,7 +943,7 @@
               <p>Define what needs to change so your project stops looking improvised.</p>
               <p>Clear decisions to structure the project from the start and align space, narrative and visual identity.</p>
             </div>
-            <a href="/en/diagnosticoestrategico/" class="btn btn-outline-white py-2 px-4 service-item__cta">CLARIFY MY PROJECT</a>
+            <a href="/en/diagnosticoestrategico.html" class="btn btn-outline-white py-2 px-4 service-item__cta">CLARIFY MY PROJECT</a>
           </article>
 
           <article class="service-item">
@@ -952,7 +952,7 @@
               <p>Turn your idea into a coherent visual system with identity and direction.</p>
               <p>This is where the project's visual language is built through spatial design, color direction and narrative intention.</p>
             </div>
-            <a href="/en/disenodirecciondearte/" class="btn btn-outline-white py-2 px-4 service-item__cta">DESIGN MY VISUAL SYSTEM</a>
+            <a href="/en/disenodirecciondearte.html" class="btn btn-outline-white py-2 px-4 service-item__cta">DESIGN MY VISUAL SYSTEM</a>
           </article>
 
           <article class="service-item">
@@ -961,7 +961,7 @@
               <p>Ensure the concept holds up in real production, not only in theory.</p>
               <p>Creative supervision and decision-making to maintain visual quality during execution.</p>
             </div>
-            <a href="/en/direccionenproduccion/" class="btn btn-outline-white py-2 px-4 service-item__cta">TAKE IT TO PRODUCTION</a>
+            <a href="/en/direccionenproduccion.html" class="btn btn-outline-white py-2 px-4 service-item__cta">TAKE IT TO PRODUCTION</a>
           </article>
         </div>
       </div>
@@ -1000,7 +1000,7 @@
           </article>
         </div>
         <div class="workflow-action">
-          <a href="/en/iniciar-proyecto/" class="btn btn-outline-white py-2 px-4 btn-start-project">Start project</a>
+          <a href="/en/iniciar-proyecto.html" class="btn btn-outline-white py-2 px-4 btn-start-project">Start project</a>
         </div>
       </div>
     </section>
@@ -1093,8 +1093,12 @@
       const col = document.createElement('div');
       col.className = 'col-lg-4';
 
+      const localizedHref = projectData.href_en || (projectData.href && projectData.href.startsWith('/')
+        ? `/en${projectData.href}`
+        : projectData.href);
+
       col.innerHTML = `
-        <a class="portfolio-card" href="${projectData.href}" aria-label="${projectData.title}">
+        <a class="portfolio-card" href="${localizedHref}" aria-label="${projectData.title}">
           <video src="${firstVideo.src}" class="img-fluid" autoplay muted loop playsinline preload="metadata"></video>
           <span class="portfolio-card__overlay">
             <span class="portfolio-card__content">
