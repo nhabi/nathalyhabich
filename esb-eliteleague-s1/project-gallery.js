@@ -35,7 +35,22 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">Elite League</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>ESB</td></tr>
+      <tr><th scope="row">Production Type</th><td>Esports broadcast / tournament studio</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Art direction and scenic design for Elite League, the first esports league produced by ESB for the Peruvian market.</p><p>The set was designed as an immersive environment inspired by the fantasy universe of Dota 2, reinforcing the narrative identity of the tournament.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Development of a visual concept inspired by the world of Dota 2</li><li>Scenic identity aligned with tournament branding</li><li>Integration of fantasy-inspired elements into the set design</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Set Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Scenic backings inspired by stained-glass windows</li><li>Central sculptural element referencing an iconic Dota character</li><li>Custom desk design for commentators</li><li>Graphic floor design aligned with the tournament visual identity</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Production & Implementation</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordination with scenic fabricators</li><li>Furniture sourcing and customization</li><li>Integration of atmospheric lighting and scenic elements</li><li>Supervision of installation and set dressing</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>The project created an immersive esports broadcast set that visually transported the audience into the narrative universe of the game.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">Elite League</h3>
       <table class="project-video-hero-table">
       <tbody>

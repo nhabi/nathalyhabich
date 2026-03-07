@@ -35,7 +35,22 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">PGL Wallachia 2024</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>ESB</td></tr>
+      <tr><th scope="row">Production Type</th><td>Esports broadcast / commentary set design</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Art direction and set design for the broadcast coverage of PGL Wallachia 2024, produced by ESB for the Latin American audience.</p><p>The project focused on creating a thematic environment for commentators aligned with the visual identity of the tournament.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Research of the tournament branding and visual direction</li><li>Development of a medieval-inspired scenic concept</li><li>Integration of the tournament’s visual language into the set design</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Set Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Scenic backings and architectural elements inspired by medieval aesthetics</li><li>Custom central desk design for commentators</li><li>Selection of furniture, props and decorative elements</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Production & Implementation</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Art department budget management</li><li>Procurement of furniture and scenic props</li><li>Production coordination and set installation</li><li>Final set dressing and styling</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>A thematic broadcast set aligned with the tournament’s identity, providing a visually cohesive environment for live commentary and analysis.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">PGL Wallachia 2024</h3>
       <table class="project-video-hero-table">
       <tbody>

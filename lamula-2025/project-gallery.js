@@ -35,7 +35,22 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">La Mula</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>La Mula</td></tr>
+      <tr><th scope="row">Production Type</th><td>Journalistic streaming studio</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Art direction and spatial design for the streaming set of La Mula, a digital media platform focused on political journalism and investigative reporting.</p><p>The project translated the editorial identity of the platform into a visual environment designed for live streaming.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Development of the studio’s visual identity</li><li>Scenic system with illuminated LED backings</li><li>Creation of a visual environment optimized for camera and live broadcast</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Set Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Design of a modular desk system for multiple show formats</li><li>Flexible configuration allowing seated discussions or interview setups</li><li>Adaptation of the design to the spatial limitations of the office</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Production & Implementation</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Location scouting and spatial evaluation</li><li>Coordination with suppliers and scenic builders</li><li>Supervision of installation and final styling</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>The project transformed an office space into a streaming studio environment, enabling the launch of La Mula’s audiovisual content platform.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">La Mula</h3>
       <table class="project-video-hero-table">
       <tbody>

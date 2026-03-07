@@ -35,7 +35,24 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">Vieja Moralidad – Production Design Study</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>UNAM — Art Direction Specialization</td></tr>
+      <tr><th scope="row">Production Type</th><td>Production design based on screenplay</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Production design exercise developed during the Art Direction specialization at UNAM, focused on creating the visual proposal for the film Vieja Moralidad through screenplay analysis.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Development of the film’s visual concept</li><li>Research of period aesthetics and visual references</li><li>Definition of the project’s color narrative</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Scenic Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Set design based on key scenes from the screenplay</li><li>Environmental storytelling through props and decor</li><li>Definition of objects and scenic elements within each space</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Visual Development</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Costume proposals aligned with the narrative context</li><li>Lighting style and atmosphere definition</li><li>Composition and framing proposals for scenes</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Technical Development</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>3D modeling of key sets</li><li>Scenic floor plans</li><li>Digital set maquettes</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>A comprehensive production design proposal integrating visual concept, scenic design and spatial planning.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">Vieja Moralidad – Production Design Study</h3>
       <table class="project-video-hero-table">
       <tbody>
