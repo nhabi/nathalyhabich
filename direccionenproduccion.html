@@ -12,16 +12,15 @@
     gtag('config', 'G-QZHTB8VP90');
   </script>
 
-<title>Dirección en Producción &mdash; Nathaly Habich</title>
+<title>Dirección de Arte en Producción &mdash; Nathaly Habich</title>
   <link rel="shortcut icon" href="/images/favicon1.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  
   <link rel="canonical" href="https://nathalyhabich.me/direccionenproduccion/">
   <link rel="alternate" hreflang="es" href="https://nathalyhabich.me/direccionenproduccion/">
   <link rel="alternate" hreflang="en" href="https://nathalyhabich.me/en/direccionenproduccion/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=Paytone+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/fonts/icomoon/style.css">
@@ -39,161 +38,307 @@
   <link rel="stylesheet" href="/css/style.css">
 
   <style>
-    .produccion-page { background: #efeff4; color: #2f2a67; }
-    .prod-section { padding: 82px 0; }
-    .prod-section--white { background: #fff; }
-    .prod-section--tint { background: #efeff4; }
+    .dap-page { background: #f3f2f8; color: var(--text-dark); }
+    .dap-section { padding: clamp(66px, 8vw, 104px) 0; }
+    .dap-section--white { background: #fff; }
+    .dap-section--tint { background: #f3f2f8; }
+    .dap-section--dark { background: #eeedf5; }
 
-    .prod-content { max-width: 860px; margin: 0 auto; text-align: center; }
+    .dap-container { max-width: 1140px; }
+    .dap-narrow { max-width: 780px; margin: 0 auto; }
 
-    .prod-title,
-    .prod-heading,
-    .prod-final {
-      font-family: var(--font-display);
+    .dap-eyebrow,
+    .dap-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      font-family: var(--nav-font);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1;
+      letter-spacing: .11em;
+      text-transform: uppercase;
       color: var(--brand-blue);
-      letter-spacing: .01em;
     }
 
-    .prod-title { font-size: clamp(42px, 8vw, 84px); line-height: .92; text-transform: uppercase; margin-bottom: 18px; }
-    .prod-heading { font-size: clamp(30px, 4vw, 46px); line-height: 1.08; margin-bottom: 18px; }
-    .prod-final { font-size: clamp(30px, 5vw, 56px); line-height: .98; text-transform: uppercase; margin-bottom: 24px; }
+    .dap-hero-title,
+    .dap-section-title,
+    .dap-card-title,
+    .dap-cta-title {
+      font-family: var(--title-font);
+      color: var(--brand-blue);
+      letter-spacing: -0.01em;
+    }
 
-    .prod-text,
-    .prod-list li,
-    .prod-mini {
+    .dap-hero-title {
+      font-size: clamp(36px, 5.2vw, 62px);
+      line-height: 1.08;
+      margin: 0 0 14px;
+    }
+
+    .dap-subhead {
+      font-size: clamp(20px, 2.2vw, 32px);
+      line-height: 1.3;
+      margin: 0 0 18px;
+      color: var(--text-dark);
+      max-width: 22ch;
+    }
+
+    .dap-intro,
+    .dap-text,
+    .dap-list li,
+    .dap-check li,
+    .dap-spec,
+    .dap-card p,
+    .dap-phase p {
       font-family: var(--body-font);
-      font-size: 18px;
-      line-height: 1.55;
-      color: #302d5f;
-      margin-bottom: 10px;
+      font-size: clamp(16px, 1.25vw, 22px);
+      line-height: 1.6;
+      color: var(--text-dark);
+      margin: 0;
+      font-weight: 400;
     }
 
-    .prod-text--strong { font-weight: 700; margin-top: 16px; margin-bottom: 0; }
+    .dap-intro { max-width: 38ch; }
+    .dap-text + .dap-text { margin-top: 14px; }
 
-    .prod-grid-2 {
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 28px;
-      align-items: start;
-      text-align: left;
-      max-width: 980px;
-      margin: 0 auto;
+    .dap-section-title {
+      font-size: clamp(30px, 2.6vw, 40px);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      text-transform: none;
     }
 
-    .prod-grid-2--reverse { grid-template-columns: 1fr 1.05fr; }
-    .prod-grid-2--center { align-items: center; }
-
-    .prod-4 {
+    .dap-hero-grid,
+    .dap-grid-2 {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
-      max-width: 980px;
-      margin: 32px auto 0;
-    }
-
-    .prod-2 {
-      display: grid;
+      gap: clamp(28px, 4vw, 48px);
+      align-items: center;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+    }
+
+    .dap-hero-collage {
+      background: #fff;
+      border: 1px solid #dad7ea;
+      border-radius: 6px;
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      min-height: 470px;
+    }
+
+    .dap-hero-main,
+    .dap-hero-stack img,
+    .dap-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .dap-hero-stack {
+      display: grid;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .dap-btn-wrap { margin-top: 28px; }
+
+    .dap-callout,
+    .dap-note {
       margin-top: 24px;
-      max-width: 980px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .prod-list { margin: 0; padding-left: 18px; }
-
-    .prod-check { list-style: none; margin: 0; padding: 0; }
-    .prod-check li {
-      position: relative;
-      padding-left: 24px;
-      margin-bottom: 7px;
+      padding: 24px;
+      border-left: 3px solid var(--brand-magenta);
+      background: #f5f4fa;
       font-family: var(--body-font);
-      font-size: 16px;
-      color: #302d5f;
+      font-size: clamp(17px, 1.3vw, 20px);
+      line-height: 1.55;
+      color: var(--text-dark);
     }
 
-    .prod-check li::before {
-      content: "✓";
+    .dap-cards,
+    .dap-check-grid,
+    .dap-spec-grid,
+    .dap-compare-grid,
+    .dap-economy-grid {
+      display: grid;
+      gap: 16px;
+      margin-top: 24px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dap-economy-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .dap-card,
+    .dap-compare,
+    .dap-spec-card,
+    .dap-phase,
+    .dap-check-card,
+    .dap-economy-card {
+      background: #fff;
+      border: 1px solid #ddd8ed;
+      border-radius: 6px;
+      padding: 18px;
+    }
+
+    .dap-card,
+    .dap-check-card {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      min-height: 96px;
+    }
+
+    .dap-bullet {
+      font-family: var(--title-font);
+      color: var(--brand-magenta);
+      font-size: 18px;
+      line-height: 1;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .dap-list,
+    .dap-check {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .dap-list li,
+    .dap-check li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 12px;
+    }
+
+    .dap-list li::before,
+    .dap-check li::before {
       position: absolute;
       left: 0;
       top: 0;
-      color: #d74b82;
       font-weight: 700;
+      color: var(--brand-magenta);
     }
 
-    .prod-image {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      border-radius: 2px;
-      display: block;
-      background: #ddd;
+    .dap-list li::before { content: "•"; font-size: 22px; line-height: 1; }
+    .dap-check li::before { content: "✓"; font-size: 16px; top: 2px; }
+
+    .dap-timeline {
+      margin-top: 26px;
+      display: grid;
+      gap: 16px;
     }
 
-    .prod-image--stack + .prod-image--stack { margin-top: 16px; }
+    .dap-phase {
+      border-left: 4px solid var(--brand-blue);
+      padding: 20px 22px;
+    }
 
-    .prod-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: #3a2f88;
-      color: #fff;
-      display: flex;
+    .dap-label { margin-bottom: 8px; letter-spacing: .08em; color: var(--brand-blue); }
+
+    .dap-card-title {
+      font-size: clamp(22px, 2.3vw, 30px);
+      line-height: 1.1;
+      margin: 0 0 10px;
+    }
+
+    .dap-check-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .dap-check-card {
       align-items: center;
-      justify-content: center;
-      margin: 0 auto 10px;
-      font-family: var(--font-display);
-      font-size: 33px;
-      line-height: 1;
+      font-family: var(--body-font);
+      font-size: 16px;
+      line-height: 1.45;
+      color: var(--text-dark);
     }
 
-    .prod-check-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      border: 3px solid #3a2f88;
-      color: #3a2f88;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 10px;
-      font-size: 30px;
-      line-height: 1;
-      font-weight: 700;
+    .dap-economy-card {
+      background: #f8f7fc;
+      border-color: #e1def0;
     }
 
-    .prod-mini { font-size: 15px; line-height: 1.45; text-align: center; margin: 0; }
-
-    .prod-btn {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 10px 30px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #f05f99 0%, #da3d7a 100%);
-      color: #fff;
-      font-family: var(--font-display);
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      font-size: 14px;
+    .dap-result {
+      max-width: 840px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 36px;
+      background: #fff;
+      border: 1px solid #dad7ea;
+      border-radius: 6px;
     }
 
-    .prod-btn:hover { color: #fff; opacity: .95; }
+    .dap-compare h3 {
+      font-family: var(--title-font);
+      font-size: clamp(24px, 2.3vw, 34px);
+      line-height: 1.08;
+      margin: 0 0 12px;
+      color: var(--brand-blue);
+    }
 
-    @media (max-width: 991px) {
-      .prod-section { padding: 62px 0; }
-      .prod-grid-2,
-      .prod-grid-2--reverse,
-      .prod-4,
-      .prod-2 { grid-template-columns: 1fr; }
-      .prod-content { padding: 0 12px; }
+    .dap-note {
+      border: 1px solid #ddd8ed;
+      border-left-width: 4px;
+      border-radius: 6px;
+    }
+
+    .dap-spec-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .dap-spec-card {
+      text-align: left;
+      background: #f8f7fc;
+      border-color: #e1def0;
+    }
+
+    .dap-spec {
+      font-size: 16px;
+      line-height: 1.45;
+      color: var(--text-dark);
+    }
+
+    .dap-cta {
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 991.98px) {
+      .dap-hero-grid,
+      .dap-grid-2,
+      .dap-cards,
+      .dap-check-grid,
+      .dap-spec-grid,
+      .dap-compare-grid,
+      .dap-economy-grid { grid-template-columns: 1fr; }
+
+      .dap-hero-collage {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .dap-hero-stack { grid-template-rows: none; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .dap-btn-wrap .btn { width: 100%; }
+      .dap-subhead,
+      .dap-intro { max-width: none; }
+    }
+
+    @media (max-width: 575.98px) {
+      .dap-section { padding: 62px 0; }
+      .dap-result,
+      .dap-note,
+      .dap-phase,
+      .dap-card,
+      .dap-check-card,
+      .dap-economy-card,
+      .dap-spec-card,
+      .dap-compare { padding: 16px; }
     }
   </style>
-
 </head>
 <body>
 
-  <div class="site-wrap produccion-page">
+  <div class="site-wrap dap-page">
 
     <div class="site-mobile-menu">
       <div class="site-mobile-menu-header">
@@ -217,7 +362,7 @@
                 <li><a href="/#hola-nathaly">SOBRE MÍ</a></li>
                 <li><a href="/#servicios">SERVICIOS</a></li>
                 <li><a href="/proyectos/">PROYECTOS</a></li>
-</ul>
+              </ul>
             </nav>
           </div>
           <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
@@ -226,7 +371,6 @@
                 <li><a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20vengo%20de%20tu%20web%20y%20quer%C3%ADa%20preguntarte%20sobre%20" class="pl-3 pr-3"><span class="icon-whatsapp"></span></a></li>
                 <li><a href="https://www.instagram.com/nathalyhabich/" class="pl-3 pr-3"><span class="icon-instagram"></span></a></li>
                 <li><a href="mailto:nath.habich@gmail.com" class="pl-3 pr-3"><span class="icon-mail_outline"></span></a></li>
-              
                 <li class="lang-switch-inline" style="display:flex; align-items:center; color:#fff; font-size:12px;"><a href="/direccionenproduccion/" style="padding:0 4px;">ES</a><span>|</span><a href="/en/direccionenproduccion/" style="padding:0 4px;">EN</a></li>
               </ul>
             </div>
@@ -236,163 +380,221 @@
       </div>
     </header>
 
-    <section class="prod-section prod-section--white">
-      <div class="container prod-content" data-aos="fade-up">
-        <h2 class="prod-title">Dirección de Art<br> en Producción</h2>
-        <p class="prod-text">Asegura que lo diseñado se sostenga en la realidad, no solo en concepto.<br>Un proyecto puede tener una gran idea y un gran diseño.</p>
-        <p class="prod-text">Pero cuando llega el momento de ejecutarlo, montaje, proveedores, tiempos, ajustes,<br>muchas decisiones empiezan a diluir la intención original.</p>
-        <p class="prod-text">Aquí es donde entra la dirección visual en producción.</p>
-        <p class="prod-text prod-text--strong">Este servicio asegura que el proyecto mantenga su nivel visual cuando pasa del diseño a la realidad.</p>
-        <a class="btn btn-outline-white py-2 px-4 btn-start-project" href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Direcci%C3%B3n%20en%20Producci%C3%B3n%20para%20mi%20proyecto.">Iniciar proyecto</a>
-      </div>
-    </section>
-
-    <section class="prod-section prod-section--tint">
-      <div class="container prod-content" data-aos="fade-up" style="margin-bottom:44px;">
-        <p class="prod-text prod-text--strong">En producción todo se mueve rápido.<br>Cambios de último minuto.<br>Ajustes de presupuesto.<br>Decisiones técnicas que afectan lo visual.</p>
-      </div>
-      <div class="container" data-aos="fade-up">
-        <div class="prod-grid-2 prod-grid-2--center">
-          <img src="/images/dreamleague-14-05-nathaly-habich-3.png" class="prod-image" alt="Proyecto de dirección de arte">
+    <section class="dap-section dap-section--white">
+      <div class="container dap-container" data-aos="fade-up">
+        <div class="dap-hero-grid">
           <div>
-            <p class="prod-text" style="text-align:left;">Y sin alguien que sostenga el criterio visual del proyecto, empiezan a pasar cosas como:</p>
-            <ul class="prod-list">
-              <li>Materiales que cambian sin criterio</li>
-              <li>Colores que pierden coherencia</li>
-              <li>Decisiones de montaje que rompen la composición</li>
-              <li>Elementos que terminan resolviéndose “como se pueda”</li>
-            </ul>
-            <p class="prod-text" style="text-align:left;">El resultado:<br>La idea original pierde fuerza.</p>
+            <span class="dap-eyebrow">Servicio 03</span>
+            <h1 class="dap-hero-title">Dirección de Arte en Producción</h1>
+            <p class="dap-subhead">El proyecto no solo se diseña. Se dirige en ejecución.</p>
+            <p class="dap-intro">Este servicio integra diseño, dirección visual y acompañamiento en producción para asegurar que el mundo planteado se sostenga con coherencia hasta el montaje, el prelight y el rodaje.</p>
+            <div class="dap-btn-wrap">
+              <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Direcci%C3%B3n%20de%20Arte%20en%20Producci%C3%B3n%20para%20mi%20proyecto." class="btn btn-outline-white py-2 px-4 btn-start-project">Iniciar proyecto</a>
+            </div>
+          </div>
+          <div class="dap-hero-collage">
+            <img src="/images/dreamleague-14-05-nathaly-habich-3.png" alt="Dirección de arte durante montaje en ejecución" class="dap-hero-main">
+            <div class="dap-hero-stack">
+              <img src="/images/dreamleague-14-05-nathaly-habich-7.png" alt="Control visual en campo durante producción">
+              <img src="/images/dreamleague-14-05-nathaly-habich-5.png" alt="Validación de set antes del rodaje">
+            </div>
           </div>
         </div>
       </div>
-      <div class="container prod-content" data-aos="fade-up">
-        <p class="prod-text prod-text--strong">Este servicio existe para proteger el estándar visual durante la ejecución.</p>
+    </section>
+
+    <section class="dap-section dap-section--tint">
+      <div class="container dap-container" data-aos="fade-up">
+        <div class="dap-narrow">
+          <h2 class="dap-section-title">Qué es y qué asegura en ejecución</h2>
+          <p class="dap-text">Un servicio integral para proyectos que necesitan dirección de arte durante la ejecución, no solo en la etapa de diseño.</p>
+          <p class="dap-text">Aquí la dirección visual no se queda en un documento. Se sostiene en decisiones reales de producción, compras, montaje, ajustes en campo y validación final.</p>
+          <div class="dap-callout">Asegura que el proyecto mantenga coherencia visual desde la definición hasta la ejecución, evitando que el diseño se diluya al pasar a producción.</div>
+        </div>
       </div>
     </section>
 
-    <section class="prod-section prod-section--white">
-      <div class="container" data-aos="fade-up">
-        <div class="prod-grid-2 prod-grid-2--reverse">
-          <div>
-            <h3 class="prod-heading">¿Qué se resuelve realmente?</h3>
-            <p class="prod-text" style="text-align:left;">No se trata de “estar presente en el montaje”.<br>Se trata de dirigir decisiones visuales en tiempo real.</p>
-            <p class="prod-text" style="text-align:left; margin-top:18px;">Durante la ejecución del proyecto:</p>
-            <ul class="prod-list">
-              <li>Se revisan materiales y acabados</li>
-              <li>Se ajustan proporciones y composición</li>
-              <li>Se corrigen desviaciones visuales</li>
-              <li>Se alinean decisiones de producción con la intención del diseño</li>
-            </ul>
-          </div>
-          <div>
-            <img src="/images/dreamleague-14-05-nathaly-habich-7.png" class="prod-image prod-image--stack" alt="Proyecto visual 1">
-            <img src="/images/dreamleague-14-05-nathaly-habich-5.png" class="prod-image prod-image--stack" alt="Proyecto visual 2">
-          </div>
+    <section class="dap-section dap-section--white">
+      <div class="container dap-container" data-aos="fade-up">
+        <h2 class="dap-section-title">Ideal para</h2>
+        <div class="dap-cards">
+          <article class="dap-card"><span class="dap-bullet">•</span><p>Producciones medianas</p></article>
+          <article class="dap-card"><span class="dap-bullet">•</span><p>Series</p></article>
+          <article class="dap-card"><span class="dap-bullet">•</span><p>Conciertos</p></article>
+          <article class="dap-card"><span class="dap-bullet">•</span><p>Proyectos audiovisuales con varios frentes de ejecución</p></article>
+          <article class="dap-card"><span class="dap-bullet">•</span><p>Proyectos donde el diseño necesita sostenerse activamente en producción</p></article>
+          <article class="dap-card"><span class="dap-bullet">•</span><p>Equipos que no solo necesitan una propuesta visual, sino dirección real en campo</p></article>
         </div>
-      </div>
-      <div class="container prod-content" data-aos="fade-up">
-        <p class="prod-text prod-text--strong" style="max-width:720px; margin:26px auto 0;">El objetivo es simple:<br>Que el proyecto final se vea tan sólido como fue pensado.</p>
       </div>
     </section>
 
-    <section class="prod-section prod-section--tint">
-      <div class="container" data-aos="fade-up">
-        <div class="prod-2" style="margin-top:0; margin-bottom:26px;">
-          <img src="/images/dreamleague-14-05-nathaly-habich-1.png" class="prod-image" alt="Proyecto aleatorio 1">
-          <img src="/images/dreamleague-14-05-nathaly-habich-9.png" class="prod-image" alt="Proyecto aleatorio 2">
-        </div>
-        <div class="prod-grid-2">
-          <div>
-            <h3 class="prod-heading">Qué incluye</h3>
-            <p class="prod-text" style="text-align:left;">Puede variar dependiendo los requerimientos del proyecto</p>
-          </div>
-          <ul class="prod-check">
-            <li>Revisión previa de planos o diseño antes de producción</li>
-            <li>Alineación con producción, montaje y equipo técnico</li>
-            <li>Supervisión de decisiones visuales durante montaje</li>
-            <li>Ajustes visuales necesarios en tiempo real</li>
-            <li>Validación final del espacio antes de grabación, apertura o entrega</li>
+    <section class="dap-section dap-section--tint">
+      <div class="container dap-container" data-aos="fade-up">
+        <h2 class="dap-section-title">Qué resuelve</h2>
+        <div class="dap-grid-2">
+          <ul class="dap-check">
+            <li>sostener el criterio visual durante compras, montaje y rodaje</li>
+            <li>tomar decisiones de arte en tiempo real sin perder coherencia</li>
+            <li>alinear diseño, producción y ejecución bajo una misma dirección</li>
+            <li>corregir desvíos antes de que afecten el resultado final</li>
+            <li>evitar que el proyecto termine ejecutado por inercia, sin control visual real</li>
           </ul>
+          <img src="/images/dreamleague-14-05-nathaly-habich-9.png" alt="Acompañamiento de dirección de arte durante ejecución" class="dap-image">
         </div>
       </div>
-      <div class="container prod-content" data-aos="fade-up">
-        <p class="prod-text prod-text--strong">Este servicio funciona como puente entre diseño y ejecución.</p>
+    </section>
+
+    <section class="dap-section dap-section--white">
+      <div class="container dap-container" data-aos="fade-up">
+        <h2 class="dap-section-title">Fases incluidas</h2>
+        <div class="dap-timeline">
+          <article class="dap-phase"><span class="dap-label">Fase 0</span><h3 class="dap-card-title">Lectura estratégica del proyecto</h3><p>Se alinea el objetivo visual con el alcance real de producción, tiempos y prioridades de ejecución.</p></article>
+          <article class="dap-phase"><span class="dap-label">Fase 1</span><h3 class="dap-card-title">Dirección visual base</h3><p>Se define el criterio rector que guiará decisiones de arte, materialidad y puesta en escena durante todo el proceso.</p></article>
+          <article class="dap-phase"><span class="dap-label">Fase 2</span><h3 class="dap-card-title">Desarrollo conceptual</h3><p>Se traduce la narrativa del proyecto en lenguaje visual aplicable para cada frente operativo.</p></article>
+          <article class="dap-phase"><span class="dap-label">Fase 3</span><h3 class="dap-card-title">Diseño aplicado al espacio / set</h3><p>Se ajusta el diseño a condiciones físicas, técnicas y de uso real para evitar brechas en montaje y rodaje.</p></article>
+          <article class="dap-phase"><span class="dap-label">Fase 4</span><h3 class="dap-card-title">Sistema visual y materialidad</h3><p>Se definen paletas, acabados, texturas y especificaciones para sostener coherencia en proveedores y compras.</p></article>
+          <article class="dap-phase"><span class="dap-label">Fase 5</span><h3 class="dap-card-title">Preparación para ejecución</h3><p>Se ordenan decisiones previas al montaje para que el equipo pueda ejecutar con claridad y sin improvisación.</p></article>
+          <article class="dap-phase"><span class="dap-label">Fase 6</span><h3 class="dap-card-title">Supervisión de compras</h3><p>Se valida que materiales y recursos adquiridos mantengan el estándar visual definido.</p></article>
+          <article class="dap-phase"><span class="dap-label">Fase 7</span><h3 class="dap-card-title">Dirección de montaje</h3><p>Se dirige en campo la implementación del diseño y se corrigen desvíos en tiempo real.</p></article>
+          <article class="dap-phase"><span class="dap-label">Fase 8</span><h3 class="dap-card-title">Prelight y validación visual</h3><p>Se revisa composición, lectura y continuidad antes de iniciar rodaje o apertura.</p></article>
+          <article class="dap-phase"><span class="dap-label">Fase 9</span><h3 class="dap-card-title">Continuidad y control final en ejecución</h3><p>Se asegura que la ejecución final conserve coherencia con lo planteado en todo el recorrido de producción.</p></article>
+        </div>
       </div>
     </section>
 
-    <section class="prod-section prod-section--white">
-      <div class="container prod-content" data-aos="fade-up">
-        <h3 class="prod-heading">Te va ha ser realmente útil sí...</h3>
+    <section class="dap-section dap-section--tint">
+      <div class="container dap-container" data-aos="fade-up">
+        <h2 class="dap-section-title">Qué incluye</h2>
+        <div class="dap-check-grid">
+          <article class="dap-check-card">Todo lo incluido en Dirección de Arte y Diseño de Producción</article>
+          <article class="dap-check-card">Supervisión de compras</article>
+          <article class="dap-check-card">Dirección del equipo de arte</article>
+          <article class="dap-check-card">Acompañamiento en montaje</article>
+          <article class="dap-check-card">Prelight</article>
+          <article class="dap-check-card">Continuidad visual</article>
+          <article class="dap-check-card">Validación visual final</article>
+        </div>
       </div>
-      <div class="container" data-aos="fade-up">
-        <div class="prod-4">
-          <div>
-            <div class="prod-icon">?</div>
-            <p class="prod-mini">el proyecto tiene set<br>diseño o intervención<br>espacial compleja</p>
-          </div>
-          <div>
-            <div class="prod-icon">?</div>
-            <p class="prod-mini">el espacio es parte<br>clave de la narrativa<br>visual</p>
-          </div>
-          <div>
-            <div class="prod-icon">?</div>
-            <p class="prod-mini">participan varios<br>proveedores en el<br>montaje</p>
-          </div>
-          <div>
-            <div class="prod-icon">?</div>
-            <p class="prod-mini">el nivel visual del<br>proyecto es importante<br>para la marca o<br>producción</p>
+    </section>
+
+    <section class="dap-section dap-section--white">
+      <div class="container dap-container" data-aos="fade-up">
+        <h2 class="dap-section-title">Estructura económica</h2>
+        <p class="dap-text">Este servicio se divide en tres partes:</p>
+        <div class="dap-economy-grid">
+          <article class="dap-economy-card">
+            <h3 class="dap-card-title">Honorarios de dirección</h3>
+            <p class="dap-text">Mi trabajo de dirección de arte y toma de decisiones durante el proceso.</p>
+          </article>
+          <article class="dap-economy-card">
+            <h3 class="dap-card-title">Honorarios del equipo</h3>
+            <p class="dap-text">Asistente de arte, supervisor o apoyo operativo, según el alcance del proyecto.</p>
+          </article>
+          <article class="dap-economy-card">
+            <h3 class="dap-card-title">Presupuesto de producción</h3>
+            <p class="dap-text">Compras, materiales, proveedores, alquileres y ejecución, pagados directamente por el cliente.</p>
+          </article>
+        </div>
+        <div class="dap-callout">No se trabaja por porcentaje.</div>
+      </div>
+    </section>
+
+    <section class="dap-section dap-section--tint">
+      <div class="container dap-container" data-aos="fade-up">
+        <h2 class="dap-section-title">Qué no incluye</h2>
+        <ul class="dap-list">
+          <li>Presupuesto de producción</li>
+          <li>Pago a proveedores</li>
+          <li>Honorarios del equipo adicional</li>
+          <li>Recursos de montaje no contemplados por cliente</li>
+          <li>Cambios de alcance fuera de lo aprobado</li>
+        </ul>
+        <p class="dap-text" style="margin-top:16px;">Este servicio dirige la ejecución, pero no absorbe costos de producción ni reemplaza la estructura operativa que el proyecto necesita para realizarse bien.</p>
+      </div>
+    </section>
+
+    <section class="dap-section dap-section--white">
+      <div class="container dap-container" data-aos="fade-up">
+        <h2 class="dap-section-title">Requiere</h2>
+        <div class="dap-spec-grid">
+          <div class="dap-spec-card"><p class="dap-spec">Asistente de arte o apoyo operativo</p></div>
+          <div class="dap-spec-card"><p class="dap-spec">Equipo mínimo de montaje según el proyecto</p></div>
+          <div class="dap-spec-card"><p class="dap-spec">Presupuesto de producción definido o viable</p></div>
+          <div class="dap-spec-card"><p class="dap-spec">Cronograma aprobado antes de ejecución</p></div>
+        </div>
+        <div class="dap-note">Este servicio no funciona bien si se espera dirección de arte completa sin equipo, sin estructura o sin capacidad real de ejecución.</div>
+      </div>
+    </section>
+
+    <section class="dap-section dap-section--tint">
+      <div class="container dap-container" data-aos="fade-up">
+        <h2 class="dap-section-title">Límites y revisiones</h2>
+        <div class="dap-spec-grid">
+          <div class="dap-spec-card"><p class="dap-spec">Alcance definido según presupuesto y complejidad del proyecto</p></div>
+          <div class="dap-spec-card"><p class="dap-spec">Cambios fuera de fase afectan tiempo y costo</p></div>
+          <div class="dap-spec-card"><p class="dap-spec">Ajustes después de aprobación requieren reevaluación</p></div>
+          <div class="dap-spec-card"><p class="dap-spec">El servicio se estructura en función del cronograma real de producción</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dap-section dap-section--white">
+      <div class="container dap-container" data-aos="fade-up">
+        <div class="dap-result">
+          <h2 class="dap-section-title">Resultado</h2>
+          <p class="dap-text">Un proyecto diseñado y ejecutado bajo una dirección visual coherente, con control real sobre las decisiones que afectan el resultado final.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dap-section dap-section--tint">
+      <div class="container dap-container" data-aos="fade-up">
+        <h2 class="dap-section-title">Este servicio encaja si...</h2>
+        <div class="dap-compare-grid">
+          <article class="dap-compare">
+            <h3>Sí es para ti si</h3>
+            <ul class="dap-check">
+              <li>el proyecto ya pasó o está por pasar a ejecución</li>
+              <li>no basta con tener diseño: hace falta sostenerlo en producción</li>
+              <li>necesitas dirección de arte real durante compras, montaje y rodaje</li>
+              <li>quieres evitar que el resultado final pierda fuerza frente a lo planteado</li>
+            </ul>
+          </article>
+          <article class="dap-compare">
+            <h3>No es para ti si</h3>
+            <ul class="dap-check">
+              <li>todavía necesitas solo claridad estratégica</li>
+              <li>aún no estás en etapa de producción</li>
+              <li>buscas únicamente una propuesta visual, sin acompañamiento en ejecución</li>
+              <li>no existe equipo mínimo ni condiciones reales para sostener el proceso</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dap-section dap-section--dark">
+      <div class="container dap-container" data-aos="fade-up">
+        <div class="dap-note">
+          <h2 class="dap-section-title">Qué diferencia este servicio de Dirección de Arte y Diseño de Producción</h2>
+          <p class="dap-text">En el servicio anterior el proyecto queda diseñado y preparado para ejecutarse. Aquí, además de diseñarse, se dirige la ejecución.</p>
+          <p class="dap-text">Eso implica acompañar decisiones reales de producción, sostener el criterio visual en campo y validar que lo construido conserve coherencia con lo planteado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="dap-section dap-section--white">
+      <div class="container dap-container" data-aos="fade-up">
+        <div class="dap-cta">
+          <h2 class="dap-cta-title dap-section-title">Cuando el proyecto necesita dirección visual real durante la ejecución, este es el nivel correcto.</h2>
+          <p class="dap-text">Si no basta con diseñar y hace falta dirigir compras, montaje, equipo y continuidad visual, este servicio es el que sostiene el proyecto hasta su materialización.</p>
+          <div class="dap-btn-wrap">
+            <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Direcci%C3%B3n%20de%20Arte%20en%20Producci%C3%B3n%20para%20mi%20proyecto." class="btn btn-outline-white py-2 px-4 btn-start-project">Iniciar proyecto</a>
           </div>
         </div>
       </div>
-      <div class="container prod-content" data-aos="fade-up">
-        <p class="prod-text prod-text--strong">En estos casos, tener dirección visual en ejecución evita perder coherencia en el resultado final.</p>
-      </div>
     </section>
 
-    <section class="prod-section prod-section--tint">
-      <div class="container prod-content" data-aos="fade-up">
-        <h3 class="prod-heading">Lo que este servicio NO es</h3>
-        <p class="prod-text">No reemplaza al equipo de producción o montaje.<br>No es diseño desde cero (eso corresponde al servicio de Diseño de Dirección de Arte).<br>No es supervisión técnica de obra.</p>
-        <p class="prod-text prod-text--strong">Este servicio se enfoca exclusivamente en criterio visual y coherencia estética durante la ejecución.</p>
-      </div>
-    </section>
-
-    <section class="prod-section prod-section--white">
-      <div class="container prod-content" data-aos="fade-up">
-        <h3 class="prod-heading">Cuando este servicio está presente</h3>
-      </div>
-      <div class="container" data-aos="fade-up">
-        <div class="prod-4">
-          <div>
-            <div class="prod-check-icon">✓</div>
-            <p class="prod-mini">El proyecto mantiene su nivel visual real, no solo en render o concepto.</p>
-          </div>
-          <div>
-            <div class="prod-check-icon">✓</div>
-            <p class="prod-mini">Las decisiones de producción responden a criterio visual, no a improvisación.</p>
-          </div>
-          <div>
-            <div class="prod-check-icon">✓</div>
-            <p class="prod-mini">Cada elemento del espacio se sostiene dentro de una dirección clara y coherente.</p>
-          </div>
-          <div>
-            <div class="prod-check-icon">✓</div>
-            <p class="prod-mini">El resultado final refleja la intención creativa original del proyecto.</p>
-          </div>
-        </div>
-      </div>
-      <div class="container prod-content" data-aos="fade-up">
-        <p class="prod-text prod-text--strong">El diseño no se pierde en el camino.</p>
-      </div>
-    </section>
-
-    <section class="prod-section prod-section--tint" style="padding-top:60px;padding-bottom:120px;">
-      <div class="container prod-content" data-aos="fade-up">
-        <h3 class="prod-final">Si tu proyecto necesita<br>que el diseño se sostenga<br>en producción, este es el<br>momento de dirigirlo.</h3>
-        <a class="btn btn-outline-white py-2 px-4 btn-start-project" href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20quiero%20iniciar%20el%20servicio%20de%20Direcci%C3%B3n%20en%20Producci%C3%B3n%20para%20mi%20proyecto.">Iniciar proyecto</a>
-      </div>
-    </section>
     <div class="footer py-4">
       <div class="container-fluid">
         <div class="footer-main">
@@ -426,6 +628,5 @@
   <script src="/js/lightgallery-all.min.js"></script>
   <script src="/js/jquery.mousewheel.min.js"></script>
   <script src="/js/main.js"></script>
-
 </body>
 </html>
