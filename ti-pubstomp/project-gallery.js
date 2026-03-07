@@ -35,7 +35,22 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">The International Pubstomp</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>ESB</td></tr>
+      <tr><th scope="row">Production Type</th><td>Live esports event / fan experience</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Art direction and spatial design for The International Pubstomp, a live fan event where the Dota 2 community gathered to watch the championship tournament together.</p><p>The project involved transforming a two-level terrace bar into an immersive esports viewing environment.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Research of the visual identity of The International championship</li><li>Development of thematic event design inspired by the tournament</li><li>Creation of a community-focused immersive experience</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Spatial Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Stage design for hosts and commentators</li><li>Full venue decoration across two floors</li><li>Large-format banners and graphic installations</li><li>Functional modules including ticketing structures</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Production & Implementation</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordination with scenic fabricators and suppliers</li><li>Procurement of props, banners and scenic elements</li><li>Supervision of installation and event preparation</li><li>Art direction during the live event</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>A large-scale live event experience that combined esports broadcast with a physical fan environment, bringing the championship atmosphere to a live audience.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">The International Pubstomp</h3>
       <table class="project-video-hero-table">
       <tbody>

@@ -35,7 +35,21 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">CanalYa</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>CanalYa / Marcos y Fuentes</td></tr>
+      <tr><th scope="row">Production Type</th><td>Journalistic streaming channel</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Concept design and art direction for the streaming studio of CanalYa, a digital journalism project led by journalist Marcos y Fuentes.</p><p>The project focused on creating the visual concept for a flexible studio environment designed for live streaming discussions and interviews.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Development of the studio’s visual concept</li><li>Scenic proposals for the broadcast environment</li><li>Design of a visual system aligned with the editorial identity of the channel</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Set Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Scenic layout for host-led conversations</li><li>Development of environmental elements for the set</li><li>Visual solutions optimized for streaming production</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Project Evolution</th></tr>
+      <tr><td colspan="2"><p>The design was later adapted to be integrated into the streaming studio developed for La Mula, allowing the space to function for both platforms.</p></td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">CanalYa</h3>
       <table class="project-video-hero-table">
       <tbody>

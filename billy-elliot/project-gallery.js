@@ -35,7 +35,18 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">Billy Elliot – Gym Set Study</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>Academic project</td></tr>
+      <tr><th scope="row">Production Type</th><td>Scenic reconstruction and 3D modeling</td></tr>
+      <tr><th scope="row">Overview</th><td><p>3D reconstruction and spatial analysis of the gym set used in the film Billy Elliot.</p><p>The project focused on studying the spatial composition and scenic design of the original set through digital modeling and technical drawings.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Project Development</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Analysis of the original set design used in the film</li><li>Development of technical floor plans</li><li>3D modeling of the gym environment</li><li>Digital reconstruction of scenic elements</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>The project produced a digital reconstruction of the set, providing insight into its spatial organization and scenic composition within the film.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">Billy Elliot – Gym Set Study</h3>
       <table class="project-video-hero-table">
       <tbody>

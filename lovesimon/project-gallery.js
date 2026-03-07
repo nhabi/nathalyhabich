@@ -35,7 +35,24 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">Love, Simon – Production Design Study</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>Academic project</td></tr>
+      <tr><th scope="row">Production Type</th><td>Production design based on screenplay analysis</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Complete production design development for the film Love, Simon, created from screenplay analysis without reference to the original film.</p><p>The project involved building the full visual world of the story, including sets, color palette, costume concepts and scenic design.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Development of the film’s visual concept</li><li>Creation of a color script to guide visual storytelling</li><li>Research and visual references for the narrative universe</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Scenic Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Set design for each location described in the script</li><li>Environmental storytelling through set dressing and props</li><li>Development of scenic elements supporting the narrative</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Visual Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Color palette development for environments and characters</li><li>Costume concepts aligned with the story’s visual tone</li><li>Atmosphere design for each location</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Technical Development</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Scenic floor plans</li><li>3D modeling of sets</li><li>Physical and digital set maquettes</li><li>Development of a complete art department bible</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>A fully developed production design proposal integrating narrative, color, set design and visual storytelling.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">Love, Simon – Production Design Study</h3>
       <table class="project-video-hero-table">
       <tbody>

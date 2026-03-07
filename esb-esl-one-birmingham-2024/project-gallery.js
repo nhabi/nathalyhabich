@@ -35,7 +35,22 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">ESL One Birmingham 2024</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>ESB</td></tr>
+      <tr><th scope="row">Production Type</th><td>Esports broadcast / commentary set design</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Art direction and scenic design for the broadcast coverage of ESL One Birmingham 2024, produced by ESB for the Latin American esports audience.</p><p>The project involved designing and implementing a broadcast set for commentators responsible for live match analysis and tournament coverage.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Research and analysis of the ESL One tournament branding</li><li>Development of the visual concept for the commentary set</li><li>Alignment of scenic design with the tournament’s visual identity</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Set Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Scenic background structures and broadcast backings</li><li>Custom desk design for commentators</li><li>Selection and integration of furniture including sofas and seating</li><li>Scenic lighting to reinforce the visual identity of the set</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Production & Implementation</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordination with scenic fabricators and technical suppliers</li><li>Budget management for the art department</li><li>Procurement of props and furniture</li><li>Supervision of set fabrication and installation</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>A broadcast environment designed to support professional esports coverage, aligning the visual narrative of the set with the tournament branding while ensuring functionality for live analysis.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">ESL One Birmingham 2024</h3>
       <table class="project-video-hero-table">
       <tbody>

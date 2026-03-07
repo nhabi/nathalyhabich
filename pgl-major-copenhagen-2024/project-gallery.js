@@ -35,7 +35,22 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">PGL Major Copenhagen 2024</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>ESB</td></tr>
+      <tr><th scope="row">Production Type</th><td>Esports broadcast / Counter-Strike tournament coverage</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Art direction and scenic design for the broadcast coverage of PGL Major Copenhagen 2024, one of the most prestigious Counter-Strike tournaments.</p><p>The set was designed as a compact commentary environment focused on frontal camera coverage and analysis segments.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Visual identity aligned with the tournament branding</li><li>Minimal scenic concept designed for conversation-based broadcast</li><li>Clean visual composition optimized for camera framing</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Set Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Scenic backings and wall structures</li><li>Custom graphic wallpaper pattern design</li><li>Branding graphics for the commentators’ desk</li><li>Integrated lighting to enhance visual presence</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Production & Implementation</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordination with graphic and scenic suppliers</li><li>Sourcing of materials and props</li><li>Location scouting and spatial adaptation</li><li>Supervision of installation and set styling</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>A compact yet visually clear set designed to prioritize on-camera dialogue while maintaining strong alignment with tournament branding.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">PGL Major Copenhagen 2024</h3>
       <table class="project-video-hero-table">
       <tbody>

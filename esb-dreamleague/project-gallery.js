@@ -35,7 +35,22 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">DreamLeague Season 22 & 23</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>ESB</td></tr>
+      <tr><th scope="row">Production Type</th><td>Esports broadcast studio / tournament commentary set</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Art direction and set design for the broadcast coverage of DreamLeague Seasons 22 and 23, one of the most important international Dota 2 tournaments.</p><p>The project required the creation of a larger-scale broadcast environment inspired by the visual language of late-night talk shows, adapted to the esports broadcast format.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Development of a late-night show inspired broadcast aesthetic</li><li>Visual concept tailored for esports analysis and discussion</li><li>Integration of narrative lighting and scenic elements</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Set Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Scenic structures including shelves, decorative elements and background lighting</li><li>Custom desk design for host and commentators</li><li>Furniture selection and upholstery adaptation</li><li>Integration of decorative elements to reinforce the late-night show atmosphere</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Production & Implementation</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordination with suppliers and scenic builders</li><li>Procurement of furniture, props and scenic elements</li><li>Art department budget management</li><li>Supervision of fabrication, installation and set dressing</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>The final design created a distinctive broadcast environment merging traditional talk-show aesthetics with the visual language of esports commentary.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">DreamLeague Season 22 &amp; 23</h3>
       <table class="project-video-hero-table">
       <tbody>

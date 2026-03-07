@@ -46,7 +46,7 @@
       <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Development of the first-floor production layout</li><li>Definition of production areas including switcher, sets, dressing rooms and audience space</li><li>Spatial planning for efficient streaming operation</li><li>Technical planning of power outlets and electrical infrastructure for sets</li></ul></td></tr>
       <tr><th colspan="2" class="project-video-hero-table__section">Set Design</th></tr>
       <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Development of the studio’s visual concept</li><li>Design of the main host set</li><li>Design of the secondary stage set for guests and live performances</li><li>Design of tables, scenic backings and visual elements</li></ul></td></tr>
-      <tr><th colspan="2" class="project-video-hero-table__section">Production &amp; Implementation</th></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Production & Implementation</th></tr>
       <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Coordination with scenic builders and technical suppliers</li><li>Workshop supervision during fabrication</li><li>Technical scouting and on-site supervision</li><li>Final installation and styling of the studio</li></ul></td></tr>
       <tr><th scope="row">Outcome</th><td>The project transformed the location into a fully functional streaming studio, elevating the channel’s visual standard and enabling professional live content production.</td></tr>
       </tbody></table>

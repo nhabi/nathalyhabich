@@ -35,7 +35,22 @@
 
     const heroCopy = document.createElement("div");
     heroCopy.className = "project-video-hero-copy";
-    heroCopy.innerHTML = `
+    const isEnglish = window.location.pathname.startsWith("/en/");
+    heroCopy.innerHTML = isEnglish ? `
+      <h3 class="project-video-hero-copy__title">BetBoom Dacha Dubai 2024</h3>
+      <table class="project-video-hero-table"><tbody>
+      <tr><th scope="row">Client</th><td>ESB</td></tr>
+      <tr><th scope="row">Production Type</th><td>Esports broadcast studio</td></tr>
+      <tr><th scope="row">Overview</th><td><p>Art direction and scenic design for the broadcast coverage of BetBoom Dacha Dubai 2024, a major international tournament within the Dota 2 competitive circuit.</p><p>The set was designed as a narrative environment inspired by a fictional university aesthetic intersected by supernatural elements.</p></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Development of a visual narrative combining academic and fantasy aesthetics</li><li>Scenic concept aligned with the tournament’s creative direction</li><li>Creation of a distinctive broadcast atmosphere</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Set Design</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Two scenic environments designed for live broadcast conversations</li><li>Scenic walls with special effects simulating broken structures and growing roots</li><li>Vintage-inspired dormitory environment for thematic storytelling</li><li>Graphic elements developed specifically for the set</li></ul></td></tr>
+      <tr><th colspan="2" class="project-video-hero-table__section">Production & Implementation</th></tr>
+      <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Sourcing of vintage furniture and decorative objects</li><li>Coordination with scenic fabricators and suppliers</li><li>Supervision of installation and scenic finishing</li><li>Integration of atmospheric lighting and scenic textures</li></ul></td></tr>
+      <tr><th scope="row">Outcome</th><td>A visually immersive broadcast set reinforcing the thematic narrative of the tournament while supporting live analysis and commentary.</td></tr>
+      </tbody></table>
+` : `
       <h3 class="project-video-hero-copy__title">BetBoom Dacha Dubai 2024</h3>
       <table class="project-video-hero-table">
       <tbody>
