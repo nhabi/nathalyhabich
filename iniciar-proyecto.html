@@ -44,15 +44,15 @@
     }
 
     .online-page {
-      background: #fafafa;
+      background: #ffffff;
       color: var(--text-dark);
       min-height: 100vh;
     }
 
     .project-section {
-      max-width: 980px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 72px 20px;
+      padding: 56px 20px 72px;
     }
 
     .site-navbar {
@@ -62,48 +62,111 @@
     }
 
     .project-hero {
-      text-align: center;
-      margin-bottom: 34px;
+      max-width: 860px;
+      margin: 0 auto 32px;
+    }
+
+    .project-hero__eyebrow {
+      display: block;
+      margin: 0 0 14px;
+      font-family: var(--nav-font);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--brand-magenta);
     }
 
     .project-hero h1 {
-      font-family: var(--font-display);
+      font-family: var(--title-font);
       color: var(--brand-blue);
-      font-weight: 700;
-      font-size: clamp(34px, 6vw, 68px);
-      line-height: 1;
-      margin-bottom: 20px;
+      font-size: clamp(36px, 5.2vw, 62px);
+      line-height: 1.08;
+      margin: 0 0 18px;
       text-transform: uppercase;
     }
 
     .project-hero__subtitle,
     .project-hero__copy {
       font-family: var(--body-font);
-      color: #5f5f76;
-      max-width: 760px;
-      margin: 0 auto;
-      line-height: 1.5;
+      color: #4f4f67;
+      line-height: 1.45;
     }
 
     .project-hero__subtitle {
-      margin-bottom: 12px;
-      font-size: clamp(17px, 2.1vw, 28px);
+      max-width: 760px;
+      margin: 0 0 10px;
+      font-size: clamp(20px, 2.2vw, 32px);
     }
 
     .project-hero__copy {
-      font-size: clamp(16px, 1.8vw, 22px);
+      margin: 0;
+      font-size: 17px;
+      max-width: 62ch;
+    }
+
+    .project-form-shell {
+      background: #fff;
+      border: 1px solid transparent;
+      box-shadow: 0 18px 45px rgba(31, 31, 35, .08);
+      padding: 32px 34px 28px;
+    }
+
+    .form-section {
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid transparent;
+    }
+
+    .form-section:last-of-type {
+      margin-bottom: 22px;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .form-section__kicker {
+      font-family: var(--nav-font);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--brand-magenta);
+      margin: 0 0 10px;
+    }
+
+    .form-section__title {
+      font-family: var(--title-font);
+      font-size: clamp(28px, 2.7vw, 40px);
+      line-height: 1.05;
+      margin: 0 0 8px;
+      color: var(--brand-blue);
+      text-transform: uppercase;
+    }
+
+    .form-section__intro {
+      margin: 0 0 24px;
+      font-size: 17px;
+      color: #5f5f76;
     }
 
     .project-form .form-group {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .project-form label {
       font-family: var(--body-font);
-      font-size: 16px;
-      color: #5f5f76;
-      margin-bottom: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.35;
+      color: #4f4f67;
+      margin-bottom: 9px;
       display: block;
+    }
+
+    .label-required {
+      color: var(--brand-magenta);
     }
 
     .project-form .form-control,
@@ -111,11 +174,12 @@
     .project-form select {
       background: var(--brand-blue);
       color: #fff;
-      border: 1px solid transparent;
+      border: 1px solid var(--brand-blue);
       border-radius: 0;
       font-size: 17px;
       min-height: 50px;
       padding: 11px 15px;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
     }
 
     .project-form .form-control::placeholder,
@@ -135,6 +199,49 @@
       outline: none;
     }
 
+    .project-form .form-control:disabled,
+    .project-form select:disabled,
+    .project-form textarea:disabled {
+      opacity: .72;
+      cursor: not-allowed;
+    }
+
+    .project-form .form-control.is-invalid,
+    .project-form select.is-invalid,
+    .project-form textarea.is-invalid {
+      background: #fff !important;
+      color: #000 !important;
+      border-color: #ab1e45;
+    }
+
+    .project-form .form-control.is-valid,
+    .project-form select.is-valid,
+    .project-form textarea.is-valid {
+      background: #fff !important;
+      color: #000 !important;
+      border-color: #2c8f4a;
+    }
+
+    .field-helper,
+    .field-error {
+      margin: 7px 0 0;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .field-helper {
+      color: #6e6e86;
+    }
+
+    .field-error {
+      color: #ab1e45;
+      display: none;
+    }
+
+    .form-group.has-error .field-error {
+      display: block;
+    }
+
     .phone-group {
       display: grid;
       grid-template-columns: 1fr .9fr 1.4fr;
@@ -152,8 +259,7 @@
     }
 
     .project-form .privacy-consent {
-      text-align: center;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .project-form .privacy-consent label {
@@ -162,6 +268,8 @@
       align-items: center;
       margin: 0;
       cursor: pointer;
+      font-size: 14px;
+      line-height: 1.45;
     }
 
     .project-form .privacy-consent input[type="checkbox"] {
@@ -176,10 +284,11 @@
     }
 
     .submit-wrap {
-      text-align: center;
+      text-align: left;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      gap: 12px;
     }
 
     .btn-submit {
@@ -187,7 +296,7 @@
       color: #fff;
       border: 0;
       border-radius: 30px;
-      min-width: 290px;
+      min-width: 280px;
       height: 52px;
       text-transform: uppercase;
       font-size: 15px;
@@ -206,8 +315,7 @@
 
     .validation-note,
     .form-status {
-      text-align: center;
-      margin-top: 14px;
+      margin-top: 0;
       font-size: 15px;
       line-height: 1.4;
     }
@@ -220,6 +328,125 @@
 
     .validation-note.is-visible {
       display: block;
+    }
+
+    .project-next-step {
+      margin-top: 28px;
+      padding: 20px 22px;
+      border: 1px solid transparent;
+      background: #f4f2fb;
+    }
+
+    .project-next-step h3 {
+      margin: 0 0 8px;
+      font-family: var(--title-font);
+      font-size: 24px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      color: var(--brand-blue);
+    }
+
+    .project-next-step p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.55;
+      color: #54546e;
+      max-width: none;
+    }
+
+    .project-next-step__list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .project-next-step__list li {
+      font-size: 15px;
+      line-height: 1.35;
+      color: #3e3e55;
+    }
+
+    .project-next-step__list strong {
+      display: block;
+      font-size: 13px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--brand-magenta);
+      margin-bottom: 4px;
+    }
+
+
+    .project-success-state {
+      display: none;
+      margin-top: 24px;
+      padding: 26px 24px;
+      background: #f4f2fb;
+      border: 1px solid transparent;
+    }
+
+    .project-success-state.is-visible {
+      display: block;
+    }
+
+    .project-success-state__eyebrow {
+      margin: 0 0 10px;
+      font-family: var(--nav-font);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--brand-magenta);
+    }
+
+    .project-success-state h3 {
+      margin: 0 0 10px;
+      font-family: var(--title-font);
+      font-size: clamp(28px, 2.7vw, 40px);
+      line-height: 1.05;
+      color: var(--brand-blue);
+      text-transform: uppercase;
+    }
+
+    .project-success-state p {
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.55;
+      color: #4f4f67;
+      max-width: 66ch;
+    }
+
+    .project-success-state__list {
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .project-success-state__list li {
+      font-size: 15px;
+      line-height: 1.4;
+      color: #3f3f58;
+      background: #fff;
+      padding: 12px;
+      border: 1px solid transparent;
+    }
+
+    .project-success-state .btn {
+      margin-top: 16px;
+      min-width: 230px;
+      text-align: center;
+    }
+
+    .footer .footer-policies,
+    .footer .footer-legal {
+      opacity: .82;
     }
 
     .form-status {
@@ -241,8 +468,18 @@
         padding: 56px 20px;
       }
 
+      .project-form-shell {
+        padding: 28px 22px 24px;
+      }
+
       .phone-group {
         grid-template-columns: 1fr;
+      }
+
+      .project-next-step__list,
+      .project-success-state__list {
+        grid-template-columns: 1fr;
+        gap: 10px;
       }
 
       .btn-submit {
@@ -305,46 +542,71 @@
 
     <section class="project-section">
       <div class="project-hero">
+        <span class="project-hero__eyebrow">Iniciar proyecto</span>
         <h1>¿LISTO PARA ELEVAR VISUALMENTE TU PROYECTO?</h1>
-        <p class="project-hero__subtitle">Antes de empezar, cuéntame un poco sobre tu proyecto.<br>Esta información me ayuda a entender lo que necesitas y ver cuál es la mejor forma de trabajar juntos.</p>
-        <p class="project-hero__copy">Te prometo que hoy mismo verás mi nombre en tus mensajes.</p>
+        <p class="project-hero__subtitle">Antes de empezar, cuéntame un poco sobre tu proyecto. Esta información me ayuda a entender lo que necesitas y ver cuál es la mejor forma de trabajar juntos.</p>
+        <p class="project-hero__copy">Respuesta inicial en menos de 24 horas hábiles.</p>
       </div>
 
-      <form id="project-form" class="project-form" novalidate>
+      <form id="project-form" class="project-form project-form-shell" novalidate>
         <input type="hidden" name="_subject" value="Nuevo proyecto desde nathalyhabich.me">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" id="celular-completo" name="Celular">
 
-        <div class="row">
-          <div class="col-md-6 form-group">
-            <label for="nombre">Nombre *</label>
+        <div class="form-section">
+          <p class="form-section__kicker">Bloque 1</p>
+          <h2 class="form-section__title">Datos de contacto</h2>
+          <p class="form-section__intro">Información base para poder responderte y continuar la conversación.</p>
+
+          <div class="row">
+          <div class="col-md-6 form-group" data-field="nombre">
+            <label for="nombre">Nombre <span class="label-required">*</span></label>
             <input type="text" id="nombre" name="Nombre" class="form-control" placeholder="Tu nombre" required>
+            <p class="field-error">Este campo es obligatorio.</p>
           </div>
 
-          <div class="col-md-6 form-group">
-            <label for="email">Email *</label>
+          <div class="col-md-6 form-group" data-field="email">
+            <label for="email">Email <span class="label-required">*</span></label>
             <input type="email" id="email" name="Email" class="form-control" placeholder="Tu email de contacto" required>
+            <p class="field-error">Ingresa un email válido.</p>
           </div>
 
-          <div class="col-md-6 form-group">
-            <label for="celular">Celular *</label>
+          <div class="col-md-6 form-group" data-field="celular">
+            <label for="celular">Celular <span class="label-required">*</span></label>
             <div class="phone-group">
               <select id="celular-pais" class="form-control" aria-label="País del número" required>
-                <option value="" data-code="">Cargando países...</option>
+                <option value="PE" data-code="+51">Perú</option>
+                <option value="AR" data-code="+54">Argentina</option>
+                <option value="CL" data-code="+56">Chile</option>
+                <option value="CO" data-code="+57">Colombia</option>
+                <option value="MX" data-code="+52">México</option>
+                <option value="US" data-code="+1">Estados Unidos</option>
               </select>
               <input type="text" id="celular-codigo" class="form-control phone-group__code" value="+51" readonly>
               <input type="tel" id="celular" class="form-control" placeholder="Tu número de contacto" required>
             </div>
+            <p class="field-helper">Incluye solo números, sin espacios ni guiones.</p>
+            <p class="field-error">Completa correctamente tu número de celular.</p>
           </div>
 
-          <div class="col-md-6 form-group">
-            <label for="empresa">Empresa *</label>
+          <div class="col-md-6 form-group" data-field="empresa">
+            <label for="empresa">Empresa <span class="label-required">*</span></label>
             <input type="text" id="empresa" name="Empresa" class="form-control" placeholder="Nombre de tu empresa" required>
+            <p class="field-error">Este campo es obligatorio.</p>
           </div>
+          </div>
+        </div>
 
-          <div class="col-md-6 form-group">
-            <label for="tipo-proyecto">¿Qué tipo de proyecto estás desarrollando? *</label>
+        <div class="form-section">
+          <p class="form-section__kicker">Bloque 2</p>
+          <h2 class="form-section__title">Información del proyecto</h2>
+          <p class="form-section__intro">Cuanto más claro sea este bloque, más precisa será mi evaluación inicial.</p>
+
+          <div class="row">
+
+          <div class="col-md-6 form-group" data-field="tipo-proyecto">
+            <label for="tipo-proyecto">¿Qué tipo de proyecto estás desarrollando? <span class="label-required">*</span></label>
             <select id="tipo-proyecto" name="Tipo de proyecto" class="form-control" required>
               <option value="" selected disabled>Seleccionar</option>
               <option>Producción audiovisual</option>
@@ -353,10 +615,23 @@
               <option>Evento o experiencia</option>
               <option>Otro</option>
             </select>
+            <p class="field-error">Selecciona una opción.</p>
           </div>
 
-          <div class="col-md-6 form-group">
-            <label for="etapa">¿En qué etapa se encuentra el proyecto ahora mismo? *</label>
+          <div class="col-md-6 form-group" data-field="tipo-apoyo">
+            <label for="tipo-apoyo">¿Qué tipo de apoyo crees que necesita tu proyecto? <span class="label-required">*</span></label>
+            <select id="tipo-apoyo" name="Tipo de apoyo" class="form-control" required>
+              <option value="" selected disabled>Seleccionar</option>
+              <option>Diagnóstico Visual Estratégico</option>
+              <option>Dirección de Arte y Diseño de Producción</option>
+              <option>Dirección de Arte en Producción</option>
+              <option>Aún no estoy segura / necesito orientación</option>
+            </select>
+            <p class="field-error">Selecciona una opción de apoyo.</p>
+          </div>
+
+          <div class="col-md-6 form-group" data-field="etapa">
+            <label for="etapa">¿En qué etapa se encuentra el proyecto ahora mismo? <span class="label-required">*</span></label>
             <select id="etapa" name="Etapa del proyecto" class="form-control" required>
               <option value="" selected disabled>Seleccionar</option>
               <option>Apenas es una idea</option>
@@ -364,15 +639,17 @@
               <option>Está en preproducción</option>
               <option>Ya está en producción</option>
             </select>
+            <p class="field-error">Selecciona una etapa.</p>
           </div>
 
-          <div class="col-md-6 form-group">
-            <label for="fecha">¿Tienen una fecha estimada para el proyecto? *</label>
+          <div class="col-md-6 form-group" data-field="fecha">
+            <label for="fecha">¿Tienen una fecha estimada para el proyecto? <span class="label-required">*</span></label>
             <input type="text" id="fecha" name="Fecha estimada" class="form-control" placeholder="Dime una fecha o un rango de tiempo" required>
+            <p class="field-error">Este campo es obligatorio.</p>
           </div>
 
-          <div class="col-md-6 form-group">
-            <label for="inversion">¿Tienes un rango de inversión pensado? *</label>
+          <div class="col-md-6 form-group" data-field="inversion">
+            <label for="inversion">¿Tienes un rango de inversión pensado? <span class="label-required">*</span></label>
             <select id="inversion" name="Rango de inversión" class="form-control" required>
               <option value="" selected disabled>Seleccionar</option>
               <option>Aún no lo tenemos claro</option>
@@ -381,28 +658,55 @@
               <option>S/.5,000 – S/.10,000</option>
               <option>S/.10,000+</option>
             </select>
+            <p class="field-error">Selecciona un rango.</p>
           </div>
 
-          <div class="col-12 form-group">
-            <label for="necesidad">¿En qué te gustaría que te ayude exactamente? *</label>
+          <div class="col-12 form-group" data-field="necesidad">
+            <label for="necesidad">¿En qué te gustaría que te ayude exactamente? <span class="label-required">*</span></label>
             <textarea id="necesidad" name="¿En qué te gustaría que te ayude exactamente?" class="form-control" placeholder="Cuéntame brevemente qué estás buscando o qué necesitas resolver." required></textarea>
+            <p class="field-error">Cuéntame brevemente lo que necesitas resolver.</p>
           </div>
+          </div>
+        </div>
 
-          <div class="col-12 form-group privacy-consent">
+        <div class="row">
+          <div class="col-12 form-group privacy-consent" data-field="privacy">
             <label for="privacy-check">
               <input type="checkbox" id="privacy-check" name="Acepta Política de Privacidad" required>
               <span>He leído y acepto la <a href="/politica-de-privacidad/">Política de Privacidad</a>. *</span>
             </label>
+            <p class="field-error">Debes aceptar la política de privacidad para continuar.</p>
           </div>
 
           <div class="col-12 form-group submit-wrap">
             <button type="submit" class="btn-submit">Enviar proyecto</button>
             <p id="validation-note" class="validation-note" aria-live="polite">Completa todos los campos obligatorios y acepta la política para habilitar el envío.</p>
+            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
           </div>
         </div>
-
-        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
+
+      <div id="project-success-state" class="project-success-state" role="status" aria-live="polite">
+        <p class="project-success-state__eyebrow">Proyecto recibido</p>
+        <h3>¡Todo listo! Ya tengo tu solicitud.</h3>
+        <p>Acabo de recibir tu formulario y haré una revisión inicial para definir el mejor enfoque. Recibirás mi respuesta por correo o WhatsApp con los siguientes pasos para avanzar.</p>
+        <ul class="project-success-state__list">
+          <li>Confirmación de recepción de tu solicitud.</li>
+          <li>Revisión estratégica del contexto y objetivos.</li>
+          <li>Siguiente paso recomendado para iniciar.</li>
+        </ul>
+        <a href="/" class="btn py-3 px-4">Volver al inicio</a>
+      </div>
+
+      <div class="project-next-step" aria-labelledby="next-step-title">
+        <h3 id="next-step-title">Qué pasa después</h3>
+        <p>Reviso personalmente tu formulario para entender contexto, alcance y prioridad real del proyecto.</p>
+        <ul class="project-next-step__list">
+          <li><strong>Paso 1</strong>Confirmo recepción y primeros comentarios.</li>
+          <li><strong>Paso 2</strong>Evalúo enfoque visual, tiempos y nivel de soporte.</li>
+          <li><strong>Paso 3</strong>Te propongo siguiente paso para avanzar con claridad.</li>
+        </ul>
+      </div>
     </section>
     <div class="footer py-4">
       <div class="container-fluid">
@@ -441,6 +745,8 @@
     const form = document.getElementById('project-form');
     const submitButton = form.querySelector('button[type="submit"]');
     const statusMessage = document.getElementById('form-status');
+    const successState = document.getElementById('project-success-state');
+    const nextStepBlock = document.querySelector('.project-next-step');
     const validationNote = document.getElementById('validation-note');
     const emailInput = document.getElementById('email');
     const privacyCheck = document.getElementById('privacy-check');
@@ -449,6 +755,7 @@
     const celularNumero = document.getElementById('celular');
     const celularCompleto = document.getElementById('celular-completo');
     const trackedFields = form.querySelectorAll('input:not([type="hidden"]), textarea, select');
+    const fieldGroups = form.querySelectorAll('.form-group[data-field]');
 
     const fallbackCountries = [
       { code: 'PE', dial: '+51', name: 'Perú' },
@@ -549,6 +856,38 @@
       emailInput.setCustomValidity(isValidEmail(email) ? '' : 'Ingresa un email válido.');
     };
 
+    const hasValue = (field) => {
+      if (field.type === 'checkbox') return field.checked;
+      return (field.value || '').trim() !== '';
+    };
+
+    const validateGroupState = (group, forceShow = false) => {
+      const controls = group.querySelectorAll('input, textarea, select');
+      let allValid = true;
+      let allFilled = true;
+
+      controls.forEach((control) => {
+        if (control.type === 'checkbox') {
+          allFilled = allFilled && control.checked;
+        } else {
+          allFilled = allFilled && hasValue(control);
+        }
+
+        if (!control.checkValidity()) {
+          allValid = false;
+        }
+      });
+
+      const showError = forceShow || group.dataset.touched === 'true';
+      group.classList.toggle('has-error', showError && !allValid);
+      group.classList.toggle('is-complete', allValid && allFilled);
+
+      controls.forEach((control) => {
+        control.classList.toggle('is-invalid', showError && !control.checkValidity());
+        control.classList.toggle('is-valid', allValid && hasValue(control));
+      });
+    };
+
     const syncFilledState = (field) => {
       const value = (field.value || '').trim();
       field.classList.toggle('is-filled', value !== '');
@@ -569,6 +908,8 @@
       submitButton.setAttribute('aria-disabled', String(!valid));
       validationNote.classList.toggle('is-visible', !valid);
 
+      fieldGroups.forEach((group) => validateGroupState(group));
+
       if (!valid) {
         submitButton.textContent = 'Completa todos los campos *';
       } else {
@@ -582,8 +923,17 @@
         updateSubmitState();
       });
       field.addEventListener('change', () => {
+        const group = field.closest('.form-group[data-field]');
+        if (group) group.dataset.touched = 'true';
         syncFilledState(field);
         updateSubmitState();
+      });
+      field.addEventListener('blur', () => {
+        const group = field.closest('.form-group[data-field]');
+        if (group) {
+          group.dataset.touched = 'true';
+          validateGroupState(group, true);
+        }
       });
       syncFilledState(field);
     });
@@ -595,9 +945,12 @@
       updateSubmitState();
 
       if (!form.checkValidity()) {
+        fieldGroups.forEach((group) => {
+          group.dataset.touched = 'true';
+          validateGroupState(group, true);
+        });
         statusMessage.className = 'form-status is-error';
         statusMessage.textContent = 'Por favor, completa todos los campos y acepta la política de privacidad antes de enviar.';
-        form.reportValidity();
         return;
       }
 
@@ -629,6 +982,12 @@
 
         statusMessage.className = 'form-status is-success';
         statusMessage.textContent = '¡Gracias! Tu proyecto fue enviado correctamente. Te responderé pronto.';
+        successState.classList.add('is-visible');
+        form.style.display = 'none';
+        if (nextStepBlock) {
+          nextStepBlock.style.display = 'none';
+        }
+        successState.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } catch (error) {
         statusMessage.className = 'form-status is-error';
         statusMessage.textContent = 'Hubo un problema al enviar el formulario. Inténtalo nuevamente en unos minutos.';
