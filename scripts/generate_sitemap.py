@@ -7,6 +7,7 @@ import argparse
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+import re
 from urllib.parse import quote
 from xml.etree.ElementTree import Element, SubElement, tostring
 from xml.dom import minidom
@@ -23,8 +24,6 @@ def normalize_path(path: str) -> str:
         clean = f"/{clean}"
     if clean.endswith("/index.html"):
         clean = clean[: -len("index.html")]
-    elif clean.endswith(".html"):
-        clean = clean[: -len(".html")]
 
     if clean == "/index":
         return "/"
@@ -33,13 +32,28 @@ def normalize_path(path: str) -> str:
     return clean
 
 
+def is_noindex_html(html_path: Path) -> bool:
+    try:
+        head = html_path.read_text(encoding="utf-8", errors="ignore")[:3000].lower()
+    except OSError:
+        return False
+    return bool(re.search(r"<meta[^>]+name=['\" ]?robots['\" ]?[^>]+content=['\" ][^'\"]*noindex", head))
+
+
 def discover_static_pages(repo_root: Path) -> set[str]:
     urls: set[str] = set()
 
     for html_file in repo_root.glob("*.html"):
-        urls.add(normalize_path(f"/{html_file.name}"))
+        if is_noindex_html(html_file):
+            continue
+        if html_file.name == "index.html":
+            urls.add("/")
+        else:
+            urls.add(f"/{html_file.name}")
 
     for index_file in repo_root.glob("*/index.html"):
+        if is_noindex_html(index_file):
+            continue
         urls.add(normalize_path(f"/{index_file.parent.name}/index.html"))
 
     return urls
