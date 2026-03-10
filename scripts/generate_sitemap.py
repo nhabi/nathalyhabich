@@ -43,18 +43,27 @@ def is_noindex_html(html_path: Path) -> bool:
 def discover_static_pages(repo_root: Path) -> set[str]:
     urls: set[str] = set()
 
+    directory_routes: set[str] = set()
+    for index_file in repo_root.glob("*/index.html"):
+        if is_noindex_html(index_file):
+            continue
+        route = normalize_path(f"/{index_file.parent.name}/index.html")
+        directory_routes.add(route)
+        urls.add(route)
+
     for html_file in repo_root.glob("*.html"):
         if is_noindex_html(html_file):
             continue
         if html_file.name == "index.html":
             urls.add("/")
-        else:
-            urls.add(f"/{html_file.name}")
-
-    for index_file in repo_root.glob("*/index.html"):
-        if is_noindex_html(index_file):
             continue
-        urls.add(normalize_path(f"/{index_file.parent.name}/index.html"))
+
+        # Evita duplicar /slug.html cuando ya existe /slug/
+        route_with_slash = normalize_path(f"/{html_file.stem}/index.html")
+        if route_with_slash in directory_routes:
+            continue
+
+        urls.add(f"/{html_file.name}")
 
     return urls
 
