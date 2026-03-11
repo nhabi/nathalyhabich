@@ -283,9 +283,7 @@
         ? `<video src="${preview.src}" class="img-fluid" autoplay muted loop playsinline preload="metadata"></video>`
         : `<img src="${preview.src}" class="img-fluid" alt="${projectData.title}" loading="lazy">`;
 
-      const localizedHref = projectData.href_en || (projectData.href && projectData.href.startsWith('/')
-        ? `/en${projectData.href}`
-        : projectData.href);
+      const localizedHref = projectData.href;
 
       col.innerHTML = `
         <a class="portfolio-card" href="${localizedHref}" aria-label="${projectData.title}">
