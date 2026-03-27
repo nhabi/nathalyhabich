@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuevo cliente — Nathaly Habich</title>
+<!-- ============================================================
+  CONFIGURACIÓN — cambiá la contraseña antes de subir
+  ============================================================ -->
+<script>
+  const CONFIG = {
+    password: 'nathaly2025' // <- cambiá esto
+  };
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple:   #3d3183;
+  --purple2:  #664EA6;
+  --lavender: #E9E1F3;
+  --lav2:     #d4c8ed;
+  --pink:     #ee3f75;
+  --orange:   #f47854;
+  --yellow:   #fdba4d;
+  --green:    #22a36d;
+  --salmon:   #fabbaf;
+  --dark:     #0D0D0D;
+  --gray:     #666;
+  --bg:       #f5f4f9;
+  --border:   #e0daf0;
+  --white:    #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--dark); padding-bottom: 80px; }
+
+.header { background: var(--purple); padding: 18px 28px; display: flex; align-items: center; justify-content: space-between; border-bottom: 3px solid var(--pink); }
+.header-left h1 { font-size: 17px; font-weight: 800; color: white; }
+.header-left p  { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; font-family: 'IBM Plex Mono', monospace; }
+.header-logo { font-size: 10px; color: rgba(255,255,255,0.35); font-family: 'IBM Plex Mono', monospace; letter-spacing: 1.5px; text-transform: uppercase; }
+
+.progress-bar { background: white; border-bottom: 1px solid var(--border); padding: 14px 28px; }
+.progress-steps { display: flex; align-items: center; max-width: 560px; margin: 0 auto; }
+.prog-step { display: flex; align-items: center; }
+.prog-dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border); background: white; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: var(--gray); flex-shrink: 0; transition: all 0.2s; font-family: 'IBM Plex Mono', monospace; }
+.prog-dot.active { border-color: var(--purple); background: var(--purple); color: white; }
+.prog-dot.done   { border-color: var(--green); background: var(--green); color: white; }
+.prog-label { font-size: 11px; color: var(--gray); margin-left: 6px; white-space: nowrap; font-weight: 600; }
+.prog-label.active { color: var(--purple); }
+.prog-line { flex: 1; height: 2px; background: var(--border); margin: 0 10px; transition: background 0.3s; }
+.prog-line.done { background: var(--green); }
+
+.main { max-width: 620px; margin: 0 auto; padding: 28px 20px; }
+.paso { display: none; }
+.paso.visible { display: block; }
+.paso-titulo { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 4px; letter-spacing: -0.3px; }
+.paso-sub { font-size: 13px; color: var(--gray); margin-bottom: 24px; }
+
+.form-group { margin-bottom: 18px; }
+.form-label { display: block; font-size: 11px; font-weight: 700; color: var(--dark); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; font-family: 'IBM Plex Mono', monospace; }
+.form-label span { font-weight: 400; color: var(--gray); font-size: 11px; margin-left: 4px; text-transform: none; letter-spacing: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+.form-input { width: 100%; padding: 10px 14px; border: 2px solid var(--border); border-radius: 10px; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; color: var(--dark); background: white; outline: none; transition: border-color 0.15s; }
+.form-input:focus { border-color: var(--purple); }
+.form-input::placeholder { color: #bbb; }
+textarea.form-input { resize: vertical; min-height: 88px; }
+
+.radio-group { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.radio-group.cols3 { grid-template-columns: 1fr 1fr 1fr; }
+.radio-option { border: 2px solid var(--border); border-radius: 10px; padding: 11px 13px; cursor: pointer; display: flex; align-items: center; gap: 10px; background: white; transition: all 0.15s; }
+.radio-option:hover { border-color: var(--purple2); background: var(--lavender); }
+.radio-option.selected { border-color: var(--purple); background: var(--lavender); }
+.radio-icon { font-size: 20px; flex-shrink: 0; }
+.radio-label { font-size: 13px; font-weight: 700; }
+.radio-hint  { font-size: 11px; color: var(--gray); margin-top: 1px; }
+
+.tipo-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-right: 4px; }
+
+.checks-grid { display: flex; flex-direction: column; gap: 8px; }
+.check-option { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: white; border: 2px solid var(--border); border-radius: 10px; cursor: pointer; transition: all 0.15s; }
+.check-option.checked { border-color: var(--purple); background: var(--lavender); }
+.check-option input[type=checkbox] { accent-color: var(--purple); width: 16px; height: 16px; flex-shrink: 0; }
+.check-label { font-size: 13px; font-weight: 500; flex: 1; }
+.days-input { width: 52px; padding: 4px 6px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; text-align: center; font-family: 'IBM Plex Mono', monospace; }
+.days-hint { font-size: 11px; color: var(--gray); white-space: nowrap; }
+
+.divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+.calc-box { background: white; border: 2px solid var(--border); border-radius: 14px; overflow: hidden; margin-top: 8px; }
+.calc-header { background: var(--purple); padding: 12px 18px; font-size: 11px; font-weight: 600; color: white; text-transform: uppercase; letter-spacing: 0.8px; font-family: 'IBM Plex Mono', monospace; }
+.calc-body { padding: 4px 0; }
+.calc-row { display: flex; align-items: center; justify-content: space-between; padding: 11px 18px; border-bottom: 1px solid var(--border); gap: 12px; }
+.calc-row:last-child { border-bottom: none; }
+.calc-row-label { font-size: 13px; color: var(--dark); }
+.calc-row-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.calc-row-val { font-size: 15px; font-weight: 700; font-family: 'IBM Plex Mono', monospace; }
+.calc-row-val.purple { color: var(--purple); }
+.calc-total { background: var(--purple); padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; }
+.calc-total-label { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.8px; font-family: 'IBM Plex Mono', monospace; }
+.calc-total-val { font-size: 26px; font-weight: 800; color: white; font-family: 'IBM Plex Mono', monospace; }
+
+.toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; background: white; border: 2px solid var(--border); border-radius: 10px; cursor: pointer; margin-bottom: 12px; }
+.toggle-row.on { border-color: var(--purple); background: var(--lavender); }
+.toggle-label { font-size: 13px; font-weight: 700; }
+.toggle-sub { font-size: 11px; color: var(--gray); margin-top: 2px; }
+.toggle-switch { width: 40px; height: 22px; background: #ccc; border-radius: 11px; position: relative; flex-shrink: 0; transition: background 0.2s; }
+.toggle-switch.on { background: var(--purple); }
+.toggle-knob { width: 18px; height: 18px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: left 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+.toggle-switch.on .toggle-knob { left: 20px; }
+
+.semaforo { padding: 12px 16px; border-radius: 10px; font-size: 13px; font-weight: 600; }
+.semaforo.verde   { background: #e8f5e9; color: #2e7d32; }
+.semaforo.naranja { background: #fff3e0; color: #e65100; }
+.semaforo.rojo    { background: #ffebee; color: #c62828; }
+
+
+.nav-btns { display: flex; justify-content: space-between; margin-top: 32px; }
+.btn-prev { background: white; border: 2px solid var(--border); color: var(--gray); padding: 11px 22px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.15s; font-family: 'Plus Jakarta Sans', sans-serif; }
+.btn-prev:hover { border-color: var(--purple); color: var(--purple); }
+.btn-next { background: var(--purple); color: white; border: none; padding: 11px 28px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; transition: background 0.15s; }
+.btn-next:hover { background: #2e2570; }
+
+.prop-screen { background: white; border: 2px solid var(--border); border-radius: 14px; overflow: hidden; }
+.prop-screen-hdr { background: var(--purple); padding: 16px 22px; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--pink); }
+.prop-screen-hdr h2 { font-size: 13px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 0.8px; font-family: 'IBM Plex Mono', monospace; }
+.btn-print { background: var(--yellow); color: var(--dark); border: none; padding: 9px 18px; border-radius: 8px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif; }
+.prop-body { padding: 24px; }
+
+.msg-box { background: white; border: 2px solid var(--border); border-radius: 12px; padding: 18px; margin-top: 20px; }
+.msg-label { font-size: 11px; font-weight: 700; color: var(--purple); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; font-family: 'IBM Plex Mono', monospace; }
+.msg-text { font-size: 14px; line-height: 1.65; white-space: pre-wrap; color: var(--dark); }
+.btn-copy { background: var(--purple); color: white; border: none; padding: 9px 18px; border-radius: 8px; font-size: 12px; font-weight: 700; cursor: pointer; margin-top: 12px; font-family: 'Plus Jakarta Sans', sans-serif; }
+.btn-copy.done { background: var(--green); }
+
+#propuesta-print { display: none; }
+@media print {
+  body > * { display: none !important; }
+  #propuesta-print { display: block !important; }
+}
+
+/* PANTALLA DE ACCESO */
+#lock-screen {
+  position: fixed; inset: 0; z-index: 9999;
+  background: #3d3183;
+  display: flex; align-items: center; justify-content: center;
+}
+#lock-box {
+  background: white; border-radius: 18px; padding: 40px 36px;
+  width: 100%; max-width: 360px; text-align: center;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+#lock-box h2 { font-size: 18px; font-weight: 800; color: var(--dark); margin-bottom: 4px; }
+#lock-box p  { font-size: 12px; color: var(--gray); margin-bottom: 24px; font-family: 'IBM Plex Mono', monospace; }
+#pwd-input {
+  width: 100%; padding: 12px 16px; border: 2px solid var(--border);
+  border-radius: 10px; font-size: 15px; outline: none;
+  font-family: 'Plus Jakarta Sans', sans-serif; margin-bottom: 12px;
+  text-align: center; letter-spacing: 3px;
+  transition: border-color 0.15s;
+}
+#pwd-input:focus { border-color: var(--purple); }
+#lock-btn {
+  width: 100%; padding: 13px; background: var(--purple); color: white;
+  border: none; border-radius: 10px; font-size: 15px; font-weight: 700;
+  cursor: pointer; font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background 0.15s;
+}
+#lock-btn:hover { background: #2e2570; }
+#lock-error {
+  display: none; margin-top: 12px; font-size: 12px;
+  color: var(--pink); font-weight: 600;
+}
+#lock-logo {
+  display: block; margin: 0 auto 24px;
+  font-size: 10px; color: var(--gray); letter-spacing: 2px;
+  text-transform: uppercase; font-family: 'IBM Plex Mono', monospace;
+}
+
+/* BOTÓN EMAIL */
+.btn-email {
+  background: var(--green); color: white; border: none;
+  padding: 9px 18px; border-radius: 8px; font-size: 12px;
+  font-weight: 700; cursor: pointer; margin-top: 12px; margin-left: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  transition: background 0.15s;
+}
+.btn-email:hover { background: #1a7d54; }
+.btn-email:disabled { background: #ccc; cursor: not-allowed; }
+</style>
+</head>
+<body>
+
+<!-- PANTALLA DE ACCESO -->
+<div id="lock-screen">
+  <div id="lock-box">
+    <span id="lock-logo">Nathaly Habich</span>
+    <h2>Acceso privado</h2>
+    <p>Herramienta interna · solo vos</p>
+    <input type="password" id="pwd-input" placeholder="••••••••"
+           onkeydown="if(event.key==='Enter') checkPwd()">
+    <button id="lock-btn" onclick="checkPwd()">Entrar</button>
+    <div id="lock-error">Contraseña incorrecta — intentá de nuevo</div>
+  </div>
+</div>
+
+<div class="header">
+  <div class="header-left">
+    <h1>Nuevo cliente</h1>
+    <p>Llenás los datos una vez — la propuesta se arma sola</p>
+  </div>
+  <span class="header-logo">NATHALY HABICH</span>
+</div>
+
+<div class="progress-bar">
+  <div class="progress-steps">
+    <div class="prog-step">
+      <div class="prog-dot active" id="dot1">1</div>
+      <span class="prog-label active" id="lbl1">Cliente</span>
+    </div>
+    <div class="prog-line" id="line1"></div>
+    <div class="prog-step">
+      <div class="prog-dot" id="dot2">2</div>
+      <span class="prog-label" id="lbl2">Proyecto</span>
+    </div>
+    <div class="prog-line" id="line2"></div>
+    <div class="prog-step">
+      <div class="prog-dot" id="dot3">3</div>
+      <span class="prog-label" id="lbl3">Precio</span>
+    </div>
+    <div class="prog-line" id="line3"></div>
+    <div class="prog-step">
+      <div class="prog-dot" id="dot4">4</div>
+      <span class="prog-label" id="lbl4">Propuesta</span>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- PASO 1 -->
+<div class="paso visible" id="paso1">
+  <div class="paso-titulo">¿Quién es el cliente?</div>
+  <div class="paso-sub">Lo básico — lo que ya sabés antes o después del primer contacto</div>
+
+  <div class="form-group">
+    <label class="form-label">Nombre completo <span>*</span></label>
+    <input type="text" id="f-nombre" class="form-input" placeholder="Ej: Sofía Vargas">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Empresa / Productora <span>si tiene</span></label>
+    <input type="text" id="f-empresa" class="form-input" placeholder="Ej: StreamPeru">
+  </div>
+  <div class="form-group">
+    <label class="form-label">¿Por dónde llegó? <span>*</span></label>
+    <div class="radio-group cols3">
+      <label class="radio-option" onclick="sel('canal','web',this)"><span class="radio-icon">🌐</span><div><div class="radio-label">Web</div></div></label>
+      <label class="radio-option" onclick="sel('canal','wa',this)"><span class="radio-icon">💬</span><div><div class="radio-label">WhatsApp</div></div></label>
+      <label class="radio-option" onclick="sel('canal','ig',this)"><span class="radio-icon">📸</span><div><div class="radio-label">Instagram</div></div></label>
+      <label class="radio-option" onclick="sel('canal','email',this)"><span class="radio-icon">📧</span><div><div class="radio-label">Email</div></div></label>
+      <label class="radio-option" onclick="sel('canal','referido',this)"><span class="radio-icon">🤝</span><div><div class="radio-label">Referido</div></div></label>
+      <label class="radio-option" onclick="sel('canal','outreach',this)"><span class="radio-icon">📤</span><div><div class="radio-label">Outreach</div></div></label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="form-label">WhatsApp <span>si tiene</span></label>
+    <input type="text" id="f-wa" class="form-input" placeholder="+51 9xx xxx xxx">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Email <span>si tiene</span></label>
+    <input type="text" id="f-email" class="form-input" placeholder="nombre@empresa.com">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Tipo de proyecto <span>*</span></label>
+    <div class="radio-group">
+      <label class="radio-option" onclick="sel('tipo','esports',this)">
+        <span class="tipo-dot" style="background:#3d3183"></span>
+        <div><div class="radio-label">Esports / Broadcast</div><div class="radio-hint">Sets para eventos, streaming</div></div>
+      </label>
+      <label class="radio-option" onclick="sel('tipo','publicidad',this)">
+        <span class="tipo-dot" style="background:#ee3f75"></span>
+        <div><div class="radio-label">Publicidad / Marca</div><div class="radio-hint">Rodaje, shooting, branded content</div></div>
+      </label>
+      <label class="radio-option" onclick="sel('tipo','agencia',this)">
+        <span class="tipo-dot" style="background:#fdba4d"></span>
+        <div><div class="radio-label">Agencia</div><div class="radio-hint">Campaña con doble aprobación</div></div>
+      </label>
+      <label class="radio-option" onclick="sel('tipo','tv',this)">
+        <span class="tipo-dot" style="background:#f47854"></span>
+        <div><div class="radio-label">TV / Serie / Ficción</div><div class="radio-hint">Sets narrativos, retainer</div></div>
+      </label>
+      <label class="radio-option" onclick="sel('tipo','evento',this)">
+        <span class="tipo-dot" style="background:#22a36d"></span>
+        <div><div class="radio-label">Evento / Feria</div><div class="radio-hint">Experiencia de marca</div></div>
+      </label>
+      <label class="radio-option" onclick="sel('tipo','podcast',this)">
+        <span class="tipo-dot" style="background:#fabbaf"></span>
+        <div><div class="radio-label">Podcast / Streaming</div><div class="radio-hint">Set de contenido, canal</div></div>
+      </label>
+    </div>
+  </div>
+  <div class="nav-btns">
+    <div></div>
+    <button class="btn-next" onclick="irPaso(2)">Siguiente →</button>
+  </div>
+</div>
+
+<!-- PASO 2 -->
+<div class="paso" id="paso2">
+  <div class="paso-titulo">El proyecto</div>
+  <div class="paso-sub">Lo que te contó — en la web, por mensaje o en la discovery call</div>
+
+  <div class="form-group">
+    <label class="form-label">Nombre del proyecto <span>si tiene</span></label>
+    <input type="text" id="f-proyecto" class="form-input" placeholder="Ej: Torneo regional abril, Shooting marca...">
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">¿Qué tipo de apoyo necesita? <span>del formulario o la discovery</span></label>
+    <div class="radio-group">
+      <label class="radio-option" onclick="sel('servicio','diagnostico',this)"><div><div class="radio-label">Diagnóstico Visual</div><div class="radio-hint">Claridad antes de diseñar</div></div></label>
+      <label class="radio-option" onclick="sel('servicio','diseno',this)"><div><div class="radio-label">DA y Diseño de Producción</div><div class="radio-hint">Proyecto completo</div></div></label>
+      <label class="radio-option" onclick="sel('servicio','produccion',this)"><div><div class="radio-label">DA en Producción</div><div class="radio-hint">Presencia en set / rodaje</div></div></label>
+      <label class="radio-option" onclick="sel('servicio','orientacion',this)"><div><div class="radio-label">Orientación / No sabe</div><div class="radio-hint">Necesita guía</div></div></label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Etapa del proyecto <span>del formulario o discovery</span></label>
+    <div class="radio-group">
+      <label class="radio-option" onclick="sel('etapa','idea',this)"><div><div class="radio-label">Solo una idea</div></div></label>
+      <label class="radio-option" onclick="sel('etapa','desarrollo',this)"><div><div class="radio-label">En desarrollo</div></div></label>
+      <label class="radio-option" onclick="sel('etapa','prepro',this)"><div><div class="radio-label">Preproducción</div></div></label>
+      <label class="radio-option" onclick="sel('etapa','produccion',this)"><div><div class="radio-label">Ya en producción</div></div></label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Rango de inversión mencionado <span>del formulario o discovery</span></label>
+    <div class="radio-group cols3">
+      <label class="radio-option" onclick="sel('rango','nodefinido',this)"><div><div class="radio-label">Sin definir</div></div></label>
+      <label class="radio-option" onclick="sel('rango','menos2k',this)"><div><div class="radio-label">Menos S/2,000</div></div></label>
+      <label class="radio-option" onclick="sel('rango','2a5k',this)"><div><div class="radio-label">S/2,000 – S/5,000</div></div></label>
+      <label class="radio-option" onclick="sel('rango','5a10k',this)"><div><div class="radio-label">S/5,000 – S/10,000</div></div></label>
+      <label class="radio-option" onclick="sel('rango','mas10k',this)"><div><div class="radio-label">S/10,000+</div></div></label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">¿Qué necesita? <span>anotá en crudo — la IA lo convierte en párrafo profesional</span></label>
+    <textarea id="f-descripcion" class="form-input" placeholder="Ej: 2 sets para torneo gaming, oscuro con luces LED, 80m2, renders antes del 15, tienen fecha fija el 20 de mayo..."></textarea>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Párrafo para la propuesta <span>redactalo acá — va en "Entendimiento del proyecto"</span></label>
+    <textarea id="f-parrafo-ia" class="form-input" style="min-height:120px;" placeholder="Ej: El cliente busca dos sets para un torneo de esports en mayo, con estética oscura y luces LED..."></textarea>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">¿Qué incluye el servicio? <span>marcá lo que aplica + días estimados</span></label>
+    <div class="checks-grid" id="fases-checks"></div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Modalidad <span>*</span></label>
+    <div class="radio-group">
+      <label class="radio-option" onclick="sel('modalidad','proyecto',this)"><span class="radio-icon">📋</span><div><div class="radio-label">Por proyecto</div><div class="radio-hint">Fee único — inicio y fin</div></div></label>
+      <label class="radio-option" onclick="sel('modalidad','mes',this)"><span class="radio-icon">📅</span><div><div class="radio-label">Por mes</div><div class="radio-hint">Retainer / TV / Serie</div></div></label>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Fecha de inicio estimada</label>
+    <input type="date" id="f-inicio" class="form-input">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Fecha de entrega / evento</label>
+    <input type="date" id="f-fin" class="form-input">
+  </div>
+  <div class="form-group">
+    <label class="form-label">Notas adicionales <span>restricciones, contexto, lo que no cabe arriba</span></label>
+    <textarea id="f-notas" class="form-input" placeholder="Ej: Cliente muy específico con la paleta. Tiene proveedor propio de iluminación..."></textarea>
+  </div>
+
+  <div class="nav-btns">
+    <button class="btn-prev" onclick="irPaso(1)">← Anterior</button>
+    <button class="btn-next" onclick="irPaso(3)">Siguiente →</button>
+  </div>
+</div>
+
+<!-- PASO 3 -->
+<div class="paso" id="paso3">
+  <div class="paso-titulo">¿Cuánto cobrás?</div>
+  <div class="paso-sub">Calculadora a S/ 350/día tuyo. Te avisa si el precio es saludable.</div>
+
+  <div class="calc-box">
+    <div class="calc-header">Tus días por fase</div>
+    <div class="calc-body" id="calc-dias"></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="toggle-row" id="toggle-gastos" onclick="toggleGastos()">
+    <div>
+      <div class="toggle-label">¿Incluís gastos de producción en el precio?</div>
+      <div class="toggle-sub">Materiales, proveedores, transporte, etc.</div>
+    </div>
+    <div class="toggle-switch" id="tsw"><div class="toggle-knob"></div></div>
+  </div>
+
+  <div id="gastos-panel" style="display:none; margin-bottom:16px;">
+    <div class="form-group">
+      <label class="form-label">Monto estimado de gastos <span>lo que pagarás a terceros</span></label>
+      <input type="number" id="f-gastos" class="form-input" placeholder="0" oninput="calcular()" min="0">
+    </div>
+    <p style="font-size:12px;color:var(--gray);margin-top:-12px;">Se suma + 12% de gestión por coordinar esos gastos.</p>
+  </div>
+
+  <div class="calc-box" style="margin-top:0;">
+    <div class="calc-header">Resumen</div>
+    <div class="calc-body">
+      <div class="calc-row">
+        <div class="calc-row-label">Días totales</div>
+        <div class="calc-row-val" id="res-dias">0 días</div>
+      </div>
+      <div class="calc-row">
+        <div class="calc-row-label">Honorario (días × S/ 350)</div>
+        <div class="calc-row-val purple" id="res-honorario">S/ 0</div>
+      </div>
+      <div class="calc-row" id="row-gastos" style="display:none;">
+        <div class="calc-row-label">Gastos + 12% gestión</div>
+        <div class="calc-row-val" id="res-gastos">S/ 0</div>
+      </div>
+    </div>
+    <div class="calc-total">
+      <div class="calc-total-label">Total propuesta</div>
+      <div class="calc-total-val" id="res-total">S/ 0</div>
+    </div>
+  </div>
+
+  <div id="semaforo-box" style="margin-top:12px;"></div>
+
+  <div class="divider"></div>
+  <div class="form-group">
+    <label class="form-label">Precio final a proponer <span>podés editarlo — este va en la propuesta</span></label>
+    <input type="number" id="f-precio-final" class="form-input" placeholder="Se llena automático, podés ajustarlo" oninput="this.dataset.manual='true'">
+  </div>
+
+  <div class="nav-btns">
+    <button class="btn-prev" onclick="irPaso(2)">← Anterior</button>
+    <button class="btn-next" onclick="irPaso(4)">Ver propuesta →</button>
+  </div>
+</div>
+
+<!-- PASO 4 -->
+<div class="paso" id="paso4">
+  <div class="paso-titulo">Propuesta lista</div>
+  <div class="paso-sub">Revisá abajo, luego Ctrl+P → Guardar como PDF</div>
+
+  <div class="prop-screen">
+    <div class="prop-screen-hdr">
+      <h2>Vista previa</h2>
+      <button class="btn-print" onclick="window.print()">🖨️ Guardar PDF</button>
+    </div>
+    <div class="prop-body" id="prop-preview"></div>
+  </div>
+
+  <div class="msg-box" style="margin-top:22px;">
+    <div class="msg-label">Mensaje de envío — copiá y mandá</div>
+    <div class="msg-text" id="msg-envio"></div>
+    <div style="display:flex;flex-wrap:wrap;gap:0;align-items:center;">
+      <button class="btn-copy" onclick="copiarMsg(this)">Copiar mensaje</button>
+      <button class="btn-email" id="btn-gmail" onclick="enviarEmail()" title="Abre Gmail con el mensaje listo para enviar">✉ Enviar por Gmail</button>
+    </div>
+    <div id="email-hint" style="font-size:11px;color:var(--gray);margin-top:8px;display:none;">
+      ⚠ No hay email cargado — ingresalo en el paso 1 para habilitar este botón.
+    </div>
+  </div>
+
+  <div class="nav-btns">
+    <button class="btn-prev" onclick="irPaso(3)">← Ajustar precio</button>
+    <div></div>
+  </div>
+</div>
+
+</div>
+
+<div id="propuesta-print"></div>
+
+<script>
+const D = {
+  nombre:'', empresa:'', canal:'', wa:'', email:'', tipo:'',
+  servicio:'', etapa:'', rango:'',
+  proyecto:'', descripcion:'', parrafoIA:'', notas:'', modalidad:'',
+  fechaInicio:'', fechaFin:'', fases:[],
+  totalDias:0, honorario:0, gastos:0, totalGastos:0, total:0,
+  precioFinal:0, incluirGastos:false
+};
+
+const TARIFA = 350;
+const PISOS = { esports:3500, publicidad:5000, agencia:5000, tv:6000, evento:4000, podcast:3000 };
+
+const FASES = {
+  esports:[
+    {id:'concepto', label:'Concepto visual y línea de arte', d:2},
+    {id:'diseno',   label:'Diseño de sets y renders',         d:3},
+    {id:'coord',    label:'Coordinación de proveedores',      d:2},
+    {id:'montaje',  label:'Supervisión de montaje',           d:1},
+    {id:'dir',      label:'Dirección de arte en evento',      d:2},
+    {id:'desmonte', label:'Desmontaje y cierre',              d:1},
+  ],
+  publicidad:[
+    {id:'concepto', label:'Concepto de producción y referencias', d:2},
+    {id:'diseno',   label:'Diseño, renders y pre-producción',      d:3},
+    {id:'coord',    label:'Coordinación de props y vestuario',     d:2},
+    {id:'rodaje',   label:'Dirección de arte en rodaje',           d:2},
+  ],
+  agencia:[
+    {id:'brief',    label:'Análisis del brief y concepto visual',      d:2},
+    {id:'arte',     label:'Propuesta de arte y moodboard',             d:2},
+    {id:'prepro',   label:'Preproducción y coordinación de arte',      d:3},
+    {id:'rodaje',   label:'Dirección de arte en rodaje',               d:2},
+  ],
+  tv:[
+    {id:'disenoprod', label:'Diseño de producción general',      d:3},
+    {id:'sets',       label:'Diseño de sets y locaciones',        d:4},
+    {id:'dir',        label:'Dirección de arte (por episodio)',   d:3},
+    {id:'props',      label:'Coordinación de props y vestuario',  d:2},
+    {id:'cont',       label:'Supervisión de continuidad',         d:1},
+  ],
+  evento:[
+    {id:'concepto', label:'Concepto e imagen del evento',    d:2},
+    {id:'diseno',   label:'Diseño espacial y renders',        d:3},
+    {id:'coord',    label:'Coordinación de proveedores',      d:2},
+    {id:'montaje',  label:'Supervisión de montaje',           d:2},
+  ],
+  podcast:[
+    {id:'diagnostico', label:'Diagnóstico del espacio actual',       d:1},
+    {id:'concepto',    label:'Concepto visual y línea de arte',       d:2},
+    {id:'diseno',      label:'Diseño del set y renders',              d:2},
+    {id:'coord',       label:'Coordinación de proveedores y montaje', d:2},
+    {id:'ajustes',     label:'Pruebas en cámara y ajustes finales',   d:1},
+  ]
+};
+
+const TEXTO = {
+  esports:{
+    servicio:'Dirección de Arte y Diseño de Producción — Esports / Broadcast',
+    sobre:'Soy arquitecta de interiores con especialización en Dirección de Arte para producción audiovisual. He trabajado en sets de esports para eventos internacionales — ESB, PGL, DreamLeague — y en espacios de streaming como Todo Good y Canal Ya. Esa combinación de mirada espacial y criterio visual me permite diseñar y dirigir espacios para cámara que no solo se ven bien, sino que funcionan en producción.'
+  },
+  publicidad:{
+    servicio:'Dirección de Arte para Publicidad y Contenido de Marca',
+    sobre:'Soy arquitecta de interiores con especialización en Dirección de Arte para producción audiovisual. He trabajado en producciones de contenido de marca con criterio visual claro desde el concepto hasta que queda en cámara, incluyendo proyectos con Evidencia Oculta (América TV) y sets de streaming para marcas locales.'
+  },
+  agencia:{
+    servicio:'Dirección de Arte para Publicidad — Agencia',
+    sobre:'Soy arquitecta de interiores con especialización en Dirección de Arte para producción audiovisual. He trabajado en series de ficción como Evidencia Oculta (América TV) y en sets de esports para eventos internacionales con ESB. Esa experiencia con procesos de doble aprobación — agencia y marca — me permite tomar decisiones visuales rápidas y precisas sin perder coherencia con el brief original.'
+  },
+  tv:{
+    servicio:'Diseño de Producción y Dirección de Arte — TV / Serie / Ficción',
+    sobre:'Soy arquitecta de interiores con especialización en Dirección de Arte para producción audiovisual. Dirigí arte en dos temporadas de Evidencia Oculta (América TV) — sets de comisaría, morgue, sala de interrogatorio y locaciones de alta complejidad narrativa. Esa experiencia en producción continua me permite entender el ritmo episodio a episodio, anticipar las necesidades del guión y mantener coherencia visual a lo largo de toda una temporada.'
+  },
+  evento:{
+    servicio:'Dirección de Arte y Diseño Espacial — Eventos / Ferias',
+    sobre:'Soy arquitecta de interiores con especialización en Dirección de Arte para producción audiovisual. Combino formación espacial con criterio visual audiovisual para diseñar espacios de marca que funcionan como experiencia y como imagen. Del concepto hasta el montaje, con coordinación completa de proveedores.'
+  },
+  podcast:{
+    servicio:'Dirección de Arte y Diseño de Set — Podcast / Streaming',
+    sobre:'Soy arquitecta de interiores con especialización en Dirección de Arte para producción audiovisual. He diseñado sets de streaming y espacios de contenido para canales como Todo Good, Canal Ya y La Mula. Entiendo cómo funciona un espacio en cámara — no solo que se vea bien, sino que sea funcional para producir episodio a episodio.'
+  }
+};
+
+const NO_INCLUYE_FIJO = [
+  'Compra de materiales, mobiliario o utilería (presupuesto de producción aparte)',
+  'Pago a proveedores — se coordina pero no se gestiona financieramente dentro del fee',
+  'Cambios estructurales al diseño luego de la aprobación de concepto',
+  'Supervisión presencial fuera de lo indicado en esta propuesta',
+  'Permisos de locación o trámites municipales',
+];
+
+const NO_INCLUYE_EXTRA = {
+  agencia: [
+    'Cambios de concepto solicitados por la marca después de aprobación de arte por agencia',
+    'Días de rodaje adicionales no contemplados en el brief original',
+  ],
+  tv: [
+    'Vestuario y maquillaje (especificar si está incluido)',
+    'Días de rodaje adicionales por encima del estimado mensual',
+  ]
+};
+
+let paso = 1;
+
+function irPaso(n) {
+  if (n > paso && !validar(paso)) return;
+  document.getElementById('paso'+paso).classList.remove('visible');
+  paso = n;
+  document.getElementById('paso'+paso).classList.add('visible');
+  actualizarProgress();
+  if (n===2) buildFases();
+  if (n===3) buildCalc();
+  if (n===4) buildPropuesta();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function validar(n) {
+  if (n===1) {
+    D.nombre = v('f-nombre'); D.empresa = v('f-empresa');
+    D.wa = v('f-wa'); D.email = v('f-email');
+    if (!D.nombre) { alert('Ingresá el nombre del cliente'); return false; }
+    if (!D.canal)  { alert('Seleccioná por dónde llegó');    return false; }
+    if (!D.tipo)   { alert('Seleccioná el tipo de proyecto'); return false; }
+  }
+  if (n===2) {
+    D.proyecto    = v('f-proyecto');
+    D.descripcion = v('f-descripcion');
+    D.parrafoIA   = v('f-parrafo-ia');
+    D.notas       = v('f-notas');
+    D.fechaInicio = fmtDate(document.getElementById('f-inicio').value);
+    D.fechaFin    = fmtDate(document.getElementById('f-fin').value);
+    if (!D.modalidad) { alert('Seleccioná la modalidad'); return false; }
+    recolectarFases();
+  }
+  if (n===3) {
+    recolectarDias(); calcular();
+    const pf = document.getElementById('f-precio-final');
+    D.precioFinal = parseInt(pf.value) || D.total;
+  }
+  return true;
+}
+
+function actualizarProgress() {
+  for (let i=1;i<=4;i++) {
+    const dot = document.getElementById('dot'+i);
+    const lbl = document.getElementById('lbl'+i);
+    dot.className = 'prog-dot';
+    lbl.className = 'prog-label';
+    if (i < paso) { dot.classList.add('done'); dot.textContent='✓'; }
+    else if (i===paso) { dot.classList.add('active'); dot.textContent=i; lbl.classList.add('active'); }
+    else { dot.textContent=i; }
+  }
+  for (let i=1;i<=3;i++) {
+    const line = document.getElementById('line'+i);
+    line.className = 'prog-line' + (i < paso ? ' done' : '');
+  }
+}
+
+function sel(campo, valor, el) {
+  D[campo] = valor;
+  el.closest('.radio-group').querySelectorAll('.radio-option').forEach(o=>o.classList.remove('selected'));
+  el.classList.add('selected');
+}
+
+function v(id) { const el = document.getElementById(id); return el ? el.value.trim() : ''; }
+
+
+/* FASES */
+function buildFases() {
+  const c = document.getElementById('fases-checks');
+  c.innerHTML = '';
+  (FASES[D.tipo]||[]).forEach(f => {
+    const div = document.createElement('div');
+    div.className = 'check-option checked';
+    div.id = 'co_'+f.id;
+    div.innerHTML = `
+      <input type="checkbox" id="chk_${f.id}" checked onchange="toggleChk(this,'${f.id}')">
+      <label class="check-label" for="chk_${f.id}">${f.label}</label>
+      <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+        <input type="number" class="days-input" id="dias2_${f.id}" value="${f.d}" min="0" max="60">
+        <span class="days-hint">días</span>
+      </div>`;
+    c.appendChild(div);
+  });
+}
+
+function toggleChk(chk,id) {
+  document.getElementById('co_'+id).classList.toggle('checked', chk.checked);
+}
+
+function recolectarFases() {
+  D.fases = [];
+  (FASES[D.tipo]||[]).forEach(f => {
+    const chk = document.getElementById('chk_'+f.id);
+    if (chk && chk.checked) D.fases.push(f.label);
+  });
+}
+
+/* CALCULADORA */
+function buildCalc() {
+  const c = document.getElementById('calc-dias');
+  c.innerHTML = '';
+  (FASES[D.tipo]||[]).forEach(f => {
+    const chk = document.getElementById('chk_'+f.id);
+    if (!chk || !chk.checked) return;
+    const dias = document.getElementById('dias2_'+f.id)?.value || f.d;
+    const row = document.createElement('div');
+    row.className = 'calc-row';
+    row.innerHTML = `
+      <div class="calc-row-label">${f.label}</div>
+      <div class="calc-row-right">
+        <input type="number" style="width:52px;padding:4px 6px;border:1px solid var(--border);border-radius:6px;font-size:13px;text-align:center;font-family:'IBM Plex Mono',monospace;" id="cd_${f.id}" value="${dias}" min="0" max="60" oninput="calcular()">
+        <span style="font-size:12px;color:var(--gray)">días</span>
+      </div>`;
+    c.appendChild(row);
+  });
+  calcular();
+}
+
+function recolectarDias() {
+  D.totalDias = 0;
+  (FASES[D.tipo]||[]).forEach(f => {
+    const inp = document.getElementById('cd_'+f.id);
+    if (inp) D.totalDias += parseInt(inp.value)||0;
+  });
+}
+
+function calcular() {
+  let tot = 0;
+  (FASES[D.tipo]||[]).forEach(f => {
+    const inp = document.getElementById('cd_'+f.id);
+    if (inp) tot += parseInt(inp.value)||0;
+  });
+  D.totalDias = tot;
+  D.honorario = tot * TARIFA;
+  const mG = D.incluirGastos ? (parseInt(document.getElementById('f-gastos')?.value)||0) : 0;
+  D.gastos = mG;
+  D.totalGastos = Math.round(mG * 1.12);
+  D.total = D.honorario + D.totalGastos;
+  document.getElementById('res-dias').textContent = tot + ' días';
+  document.getElementById('res-honorario').textContent = 'S/ ' + fmt(D.honorario);
+  document.getElementById('res-gastos').textContent = 'S/ ' + fmt(D.totalGastos);
+  document.getElementById('res-total').textContent = 'S/ ' + fmt(D.total);
+  document.getElementById('row-gastos').style.display = (D.incluirGastos && mG>0) ? 'flex' : 'none';
+  const piso = PISOS[D.tipo]||3500;
+  const tarDia = tot>0 ? D.honorario/tot : 0;
+  let cls, msg;
+  if (D.total < piso) { cls='rojo'; msg=`🚫 Por debajo del mínimo para este tipo (S/ ${fmt(piso)}). No conviene.`; }
+  else if (tarDia < 300) { cls='naranja'; msg='⚠️ Tarifa efectiva por debajo de S/ 300/día. Revisá el scope.'; }
+  else { cls='verde'; msg='✅ Precio saludable para este tipo de proyecto.'; }
+  document.getElementById('semaforo-box').innerHTML = `<div class="semaforo ${cls}">${msg}</div>`;
+  const pf = document.getElementById('f-precio-final');
+  if (pf && !pf.dataset.manual) pf.value = D.total;
+}
+
+function toggleGastos() {
+  D.incluirGastos = !D.incluirGastos;
+  document.getElementById('tsw').classList.toggle('on', D.incluirGastos);
+  document.getElementById('toggle-gastos').classList.toggle('on', D.incluirGastos);
+  document.getElementById('gastos-panel').style.display = D.incluirGastos ? 'block' : 'none';
+  calcular();
+}
+
+/* HELPERS */
+function fmt(n) { return n.toLocaleString('es-PE'); }
+function fmtDate(s) { if (!s) return ''; const [y,m,d] = s.split('-'); return `${d}/${m}/${y}`; }
+function hoy() { return fmtDate(new Date().toISOString().split('T')[0]); }
+function vigencia() { const d = new Date(); d.setDate(d.getDate()+15); return fmtDate(d.toISOString().split('T')[0]); }
+
+/* PROPUESTA */
+function buildPropuesta() {
+  D.proyecto    = v('f-proyecto');
+  D.descripcion = v('f-descripcion');
+  D.parrafoIA   = v('f-parrafo-ia');
+  D.notas       = v('f-notas');
+  D.precioFinal = parseInt(document.getElementById('f-precio-final').value)||D.total;
+
+  const txt   = TEXTO[D.tipo] || TEXTO.publicidad;
+  const precio   = D.precioFinal;
+  const anticipo = Math.round(precio * 0.5);
+  const saldo    = precio - anticipo;
+  const contacto = D.email || D.wa || '—';
+
+  // Párrafo de entendimiento — usa el generado por IA si existe, sino construye uno básico
+  const ctxParrafo = D.parrafoIA
+    ? D.parrafoIA
+    : (() => {
+        const base = D.descripcion
+          ? D.descripcion + (D.notas ? ' ' + D.notas : '')
+          : `${txt.servicio} para ${D.empresa || D.nombre}.`;
+        return base;
+      })();
+
+  // No incluye — fijo + extra por tipo
+  const noIncluyeItems = [...NO_INCLUYE_FIJO, ...(NO_INCLUYE_EXTRA[D.tipo]||[])];
+
+  const infoRows = [
+    ['CLIENTE',   D.nombre + (D.empresa ? ' — '+D.empresa : ''), false],
+    ['PROYECTO',  D.proyecto || txt.servicio, true],
+    ['FECHA',     hoy(), false],
+    ['MODALIDAD', D.modalidad==='mes' ? 'Por mes (retainer)' : 'Por proyecto', true],
+    ['CONTACTO',  contacto, false],
+  ].map(([l,val,alt])=>`
+    <tr style="background:${alt?'#E9E1F3':'white'}">
+      <td style="padding:8px 12px;border:1px solid #e0daf0;font-size:12px;font-weight:700;color:white;background:#3d3183;width:26%">${l}</td>
+      <td style="padding:8px 12px;border:1px solid #e0daf0;font-size:13px">${val}</td>
+    </tr>`).join('');
+
+  const fasesRows = D.fases.map(f=>`
+    <tr><td style="padding:8px 12px;border:1px solid #e0daf0;font-size:13px">• ${f}</td></tr>`).join('');
+
+  const noIncluyeRows = noIncluyeItems.map(i=>`<li>${i}</li>`).join('');
+
+  const timelines = [
+    ['Inicio del proyecto', D.fechaInicio ? D.fechaInicio + ' (desde confirmación del anticipo)' : 'A confirmar (desde confirmación del anticipo)'],
+    ['Entrega concepto y línea visual', 'A definir con el cliente'],
+    ['Aprobación de diseño final', 'A definir con el cliente'],
+    ['Entrega final', D.fechaFin || 'A confirmar'],
+  ].map(([h,val],i)=>`
+    <tr style="background:${i%2===1?'#E9E1F3':'white'}">
+      <td style="padding:8px 12px;border:1px solid #e0daf0;font-size:13px;font-weight:600;color:#3d3183">${h}</td>
+      <td style="padding:8px 12px;border:1px solid #e0daf0;font-size:13px">${val}</td>
+    </tr>`).join('');
+
+  const gastosRow = D.incluirGastos && D.gastos>0 ? `
+    <tr style="background:#E9E1F3">
+      <td style="padding:8px 12px;border:1px solid #e0daf0;font-size:13px">Gastos de producción + gestión (12%)</td>
+      <td style="padding:8px 12px;border:1px solid #e0daf0;font-size:13px">Materiales, proveedores y coordinación</td>
+      <td style="padding:8px 12px;border:1px solid #e0daf0;font-size:13px;font-weight:700">S/ ${fmt(D.totalGastos)}</td>
+    </tr>` : '';
+
+  const honorDesc = D.incluirGastos && D.gastos>0 ? fmt(D.honorario) : fmt(precio);
+  const honRow = `
+    <tr>
+      <td style="padding:8px 12px;border:1px solid #e0daf0;font-size:13px">Honorarios dirección de arte</td>
+      <td style="padding:8px 12px;border:1px solid #e0daf0;font-size:13px">${txt.servicio}</td>
+      <td style="padding:8px 12px;border:1px solid #e0daf0;font-size:13px;font-weight:700">S/ ${honorDesc}</td>
+    </tr>`;
+
+  // Extras para agencia
+  const dobleAprobacionNota = D.tipo === 'agencia' ? `
+    <div style="background:#fff8e1;border-left:4px solid #fdba4d;border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0;">
+      <p style="font-size:11px;font-weight:700;color:#e65100;margin-bottom:4px">PROCESO DE APROBACIÓN</p>
+      <p style="font-size:12px;color:#333;line-height:1.6;font-style:italic">Esta propuesta contempla dos instancias de aprobación — agencia y marca final. Todo avance queda condicionado a aprobación escrita en cada instancia. Cualquier cambio solicitado después de la aprobación de arte se cotiza por separado.</p>
+    </div>` : '';
+
+  // Extras para TV/retainer
+  const retainerNota = D.modalidad === 'mes' ? `
+    <div style="background:#e8f5e9;border-left:4px solid #22a36d;border-radius:0 8px 8px 0;padding:12px 16px;margin:14px 0;">
+      <p style="font-size:11px;font-weight:700;color:#2e7d32;margin-bottom:4px">CONDICIONES DEL RETAINER</p>
+      <p style="font-size:12px;color:#333;line-height:1.6;font-style:italic">Si la producción se pausa, el mes en curso se paga completo. Para terminar el acuerdo, cualquiera de las dos partes da 30 días de aviso mínimo. Si el volumen de trabajo cambia significativamente, el fee se renegocia de común acuerdo.</p>
+    </div>` : '';
+
+  const html = `
+<div style="font-family:Calibri,sans-serif;color:#0D0D0D;max-width:680px;margin:0 auto">
+
+  <div style="background:#3d3183;padding:20px 24px;border-bottom:4px solid #ee3f75;margin-bottom:24px;">
+    <p style="font-family:Georgia,serif;font-size:22px;color:white;font-weight:700;margin-bottom:4px">PROPUESTA DE DIRECCIÓN DE ARTE</p>
+    <p style="font-size:12px;color:rgba(255,255,255,0.6);font-style:italic">${txt.servicio}</p>
+  </div>
+
+  <table style="width:100%;border-collapse:collapse;margin-bottom:24px">${infoRows}</table>
+
+  <h2 style="font-family:Georgia,serif;font-size:14px;color:#3d3183;border-bottom:2px solid #3d3183;padding-bottom:6px;margin:0 0 10px;text-transform:uppercase;letter-spacing:0.5px">1. ENTENDIMIENTO DEL PROYECTO</h2>
+  <p style="font-size:13px;line-height:1.75;margin-bottom:22px">${ctxParrafo}</p>
+
+  <h2 style="font-family:Georgia,serif;font-size:14px;color:#3d3183;border-bottom:2px solid #3d3183;padding-bottom:6px;margin:0 0 10px;text-transform:uppercase;letter-spacing:0.5px">2. SOBRE NATHALY HABICH</h2>
+  <p style="font-size:13px;line-height:1.7;margin-bottom:22px">${txt.sobre}</p>
+
+  <h2 style="font-family:Georgia,serif;font-size:14px;color:#3d3183;border-bottom:2px solid #3d3183;padding-bottom:6px;margin:0 0 10px;text-transform:uppercase;letter-spacing:0.5px">3. ALCANCE DEL SERVICIO</h2>
+  <p style="font-size:11px;font-weight:700;color:#3d3183;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px">QUÉ INCLUYE:</p>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:14px">${fasesRows}</table>
+  <p style="font-size:11px;font-weight:700;color:#3d3183;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px">QUÉ NO INCLUYE:</p>
+  <ul style="font-size:13px;line-height:1.85;padding-left:20px;color:#444;margin-bottom:14px">${noIncluyeRows}</ul>
+  <div style="background:#E9E1F3;border-radius:8px;padding:13px 16px;margin-bottom:8px">
+    <p style="font-size:11px;font-weight:700;color:#3d3183;margin-bottom:4px">NOTA IMPORTANTE</p>
+    <p style="font-size:12px;font-style:italic;color:#333;line-height:1.6">Cualquier requerimiento fuera del alcance descrito será cotizado por separado antes de ejecutarse. Nada avanza sin aprobación escrita de la fase anterior.</p>
+  </div>
+  ${dobleAprobacionNota}
+
+  <h2 style="font-family:Georgia,serif;font-size:14px;color:#3d3183;border-bottom:2px solid #3d3183;padding-bottom:6px;margin:22px 0 10px;text-transform:uppercase;letter-spacing:0.5px">4. TIMELINE</h2>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:8px">
+    <tr style="background:#3d3183"><th style="padding:8px 12px;font-size:12px;color:white;text-align:left">HITO</th><th style="padding:8px 12px;font-size:12px;color:white;text-align:left">FECHA</th></tr>
+    ${timelines}
+  </table>
+  <p style="font-size:11px;color:#666;font-style:italic;margin-bottom:22px">Todos los plazos están en días hábiles y comienzan desde la confirmación del pago del anticipo.</p>
+
+  <h2 style="font-family:Georgia,serif;font-size:14px;color:#3d3183;border-bottom:2px solid #3d3183;padding-bottom:6px;margin:0 0 10px;text-transform:uppercase;letter-spacing:0.5px">5. INVERSIÓN</h2>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:12px">
+    <tr style="background:#3d3183"><th style="padding:8px 12px;font-size:12px;color:white;text-align:left">CONCEPTO</th><th style="padding:8px 12px;font-size:12px;color:white;text-align:left">DESCRIPCIÓN</th><th style="padding:8px 12px;font-size:12px;color:white;text-align:left;width:110px">MONTO</th></tr>
+    ${honRow}${gastosRow}
+    <tr style="background:#E9E1F3">
+      <td style="padding:10px 12px;border:1px solid #e0daf0;font-size:14px;font-weight:800;color:#3d3183" colspan="2">TOTAL</td>
+      <td style="padding:10px 12px;border:1px solid #e0daf0;font-size:16px;font-weight:800;color:#3d3183">S/ ${fmt(precio)}</td>
+    </tr>
+  </table>
+
+  <p style="font-size:11px;font-weight:700;color:#3d3183;text-transform:uppercase;letter-spacing:0.5px;margin:12px 0 6px">SERVICIOS ADICIONALES:</p>
+  <table style="width:100%;border-collapse:collapse;margin-bottom:16px">
+    <tr style="background:#3d3183"><th style="padding:6px 12px;font-size:12px;color:white;text-align:left">SERVICIO</th><th style="padding:6px 12px;font-size:12px;color:white;text-align:left;width:110px">TARIFA</th></tr>
+    <tr><td style="padding:7px 12px;border:1px solid #e0daf0;font-size:12px">Reunión presencial adicional</td><td style="padding:7px 12px;border:1px solid #e0daf0;font-size:12px">S/ 300</td></tr>
+    <tr style="background:#E9E1F3"><td style="padding:7px 12px;border:1px solid #e0daf0;font-size:12px">Bolsa de coordinación adicional (3h)</td><td style="padding:7px 12px;border:1px solid #e0daf0;font-size:12px">S/ 500</td></tr>
+    <tr><td style="padding:7px 12px;border:1px solid #e0daf0;font-size:12px">Jornada de supervisión adicional en campo</td><td style="padding:7px 12px;border:1px solid #e0daf0;font-size:12px">S/ 400</td></tr>
+    <tr style="background:#E9E1F3"><td style="padding:7px 12px;border:1px solid #e0daf0;font-size:12px">Semana adicional por extensión del cliente</td><td style="padding:7px 12px;border:1px solid #e0daf0;font-size:12px;font-weight:700;color:#3d3183">S/ 1,000</td></tr>
+  </table>
+
+  <p style="font-size:11px;font-weight:700;color:#3d3183;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px">CONDICIONES DE PAGO</p>
+  <ul style="font-size:13px;line-height:1.9;padding-left:20px;margin-bottom:8px">
+    <li>50% anticipo al inicio — S/ ${fmt(anticipo)} (reserva la fecha y activa el trabajo)</li>
+    <li>50% al finalizar y entregar — S/ ${fmt(saldo)}</li>
+    <li>Sin anticipo confirmado no hay inicio. Sin excepción.</li>
+    <li>Si el proyecto se detiene luego de una fase aprobada, esa fase se factura en su totalidad.</li>
+  </ul>
+  ${retainerNota}
+
+  <div style="border:1px solid #e0daf0;border-radius:6px;padding:12px 16px;margin-bottom:22px">
+    <p style="font-size:11px;font-weight:700;color:#3d3183;margin-bottom:4px">VIGENCIA</p>
+    <p style="font-size:12px;color:#333;line-height:1.6">Esta propuesta es válida hasta el <strong>${vigencia()}</strong>. Si el anticipo llega después de esa fecha, la fecha de inicio se reprogramará según disponibilidad.</p>
+  </div>
+
+  <h2 style="font-family:Georgia,serif;font-size:14px;color:#3d3183;border-bottom:2px solid #3d3183;padding-bottom:6px;margin:0 0 10px;text-transform:uppercase;letter-spacing:0.5px">6. PRÓXIMOS PASOS</h2>
+  <ol style="font-size:13px;line-height:2;padding-left:20px;margin-bottom:28px">
+    <li>Confirmar la propuesta respondiendo con aprobación</li>
+    <li>Recibir contrato de servicios para revisión y firma</li>
+    <li>Transferir anticipo para reservar fecha e iniciar el trabajo</li>
+    <li>Agendar kickoff y arrancar</li>
+  </ol>
+
+  <div style="padding-top:16px;border-top:3px solid #ee3f75;">
+    <p style="font-size:15px;font-weight:700;color:#3d3183;margin-bottom:2px">Nathaly Habich</p>
+    <p style="font-size:12px;color:#666;">Directora de Arte y Diseño de Producción</p>
+    <p style="font-size:12px;color:#666;">+51 990 548 694 · @nathalyhabich · nathalyhabich.me</p>
+    <p style="font-size:11px;color:#aaa;margin-top:10px;font-style:italic;">La respuesta aprobatoria vía mail de esta propuesta significa la aprobación de los honorarios y la aceptación de los términos.</p>
+  </div>
+
+</div>`;
+
+  document.getElementById('prop-preview').innerHTML = html;
+  document.getElementById('propuesta-print').innerHTML = html;
+
+  const btnGmail = document.getElementById('btn-gmail');
+  const emailHint = document.getElementById('email-hint');
+  if (D.email) {
+    btnGmail.disabled = false;
+    emailHint.style.display = 'none';
+  } else {
+    btnGmail.disabled = true;
+    emailHint.style.display = 'block';
+  }
+
+  const nombre1 = D.nombre.split(' ')[0];
+  const proy = D.proyecto || 'el proyecto';
+  const msg = D.canal === 'wa'
+    ? `Hola ${nombre1} 👋\n\nTe mando la propuesta para ${proy} como conversamos.\n\nQueda válida hasta el ${vigencia()} — cualquier duda me avisas.\n\nNathaly`
+    : `Hola ${nombre1},\n\nComo conversamos, te envío la propuesta para ${proy}.\n\nEstá válida hasta el ${vigencia()}. Si querés ajustar algo antes de confirmar, me avisas.\n\nSaludos,\nNathaly`;
+  document.getElementById('msg-envio').textContent = msg;
+}
+
+function copiarMsg(btn) {
+  navigator.clipboard.writeText(document.getElementById('msg-envio').textContent).then(()=>{
+    btn.textContent='✓ Copiado'; btn.classList.add('done');
+    setTimeout(()=>{ btn.textContent='Copiar mensaje'; btn.classList.remove('done'); }, 2000);
+  });
+}
+
+/* ENVIAR POR GMAIL */
+function enviarEmail() {
+  const to      = D.email || '';
+  const proy    = D.proyecto || 'el proyecto';
+  const asunto  = `Propuesta — ${proy} · Nathaly Habich`;
+  const cuerpo  = document.getElementById('msg-envio').textContent;
+  const url = `https://mail.google.com/mail/?view=cm`
+    + `&to=${encodeURIComponent(to)}`
+    + `&su=${encodeURIComponent(asunto)}`
+    + `&body=${encodeURIComponent(cuerpo)}`;
+  window.open(url, '_blank');
+}
+
+/* CONTRASEÑA */
+function checkPwd() {
+  const input = document.getElementById('pwd-input').value;
+  if (input === CONFIG.password) {
+    document.getElementById('lock-screen').style.display = 'none';
+    sessionStorage.setItem('nh_auth', '1');
+  } else {
+    document.getElementById('lock-error').style.display = 'block';
+    document.getElementById('pwd-input').value = '';
+    document.getElementById('pwd-input').focus();
+  }
+}
+
+/* Verificar sesión al cargar */
+(function() {
+  if (sessionStorage.getItem('nh_auth') === '1') {
+    document.getElementById('lock-screen').style.display = 'none';
+  }
+})();
+</script>
+</body>
+</html>
