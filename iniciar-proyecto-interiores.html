@@ -555,7 +555,7 @@
         <input type="hidden" name="_subject" value="Nuevo proyecto desde nathalyhabich.me">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_webhook" value="https://script.google.com/macros/s/AKfycbzAko8c31GFq1WRIJE5urAu87hN2zcw5ckce3RwZnO74JwWvNoKjOd9hejJnekH4eTqag/exec">
+       
         <input type="hidden" id="celular-completo" name="Celular">
 
         <div class="form-section">
@@ -994,15 +994,43 @@
       submitButton.disabled = true;
       submitButton.textContent = 'Enviando...';
 
-      try {
-        const response = await fetch('https://formsubmit.co/ajax/data.nathaly@gmail.com', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-          },
-          body: JSON.stringify(Object.fromEntries(formData.entries()))
-        });
+     try {
+  const payload = Object.fromEntries(formData.entries());
+
+  // 1. Enviar a FormSubmit (para que te llegue el correo a ti)
+  const response = await fetch('https://formsubmit.co/ajax/data.nathaly@gmail.com', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    throw new Error('No se pudo enviar el formulario.');
+  }
+
+  // 2. Enviar a Google Sheets (en paralelo, sin bloquear)
+  fetch('https://script.google.com/macros/s/AKfycbzAko8c31GFq1WRIJE5urAu87hN2zcw5ckce3RwZnO74JwWvNoKjOd9hejJnekH4eTqag/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+
+  form.reset();
+  trackedFields.forEach((field) => syncFilledState(field));
+  updatePhoneCode();
+
+  statusMessage.className = 'form-status is-success';
+  statusMessage.textContent = '¡Gracias! Tu proyecto fue enviado correctamente. Te responderé pronto.';
+  successState.classList.add('is-visible');
+  form.style.display = 'none';
+  if (nextStepBlock) {
+    nextStepBlock.style.display = 'none';
+  }
+  successState.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         if (!response.ok) {
           throw new Error('No se pudo enviar el formulario.');
