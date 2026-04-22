@@ -544,10 +544,10 @@
       <div class="project-hero">
         <span class="project-hero__eyebrow">Proyectos de Espacios Interiores</span>
         <h1>Diseñemos un espacio a tu medida.</h1>
-        <p class="project-hero__subtitle">Gracias por confiar en mi trabajo para transformar tu espacio.</p>
-        <p class="project-hero__subtitle">Para mí, diseñar no es solo elegir colores, es gestionar tu inversión con responsabilidad.</p>
-        <p class="project-hero__subtitle">Llenar este formulario con sinceridad es vital: me permite evaluar la viabilidad técnica de tu idea antes de nuestra primera reunión y garantiza que, cuando hablemos, lo hagamos con soluciones reales sobre la mesa.</p>
-        <p class="project-hero__subtitle">Tu tiempo es valioso, y esta es la mejor forma de protegerlo.</p>
+        <p class="form-section__intro">Gracias por confiar en mi trabajo para transformar tu espacio.</p>
+        <p class="form-section__intro">Para mí, diseñar no es solo elegir colores, es gestionar tu inversión con responsabilidad.</p>
+        <p class="form-section__intro">Llenar este formulario con sinceridad es vital: me permite evaluar la viabilidad técnica de tu idea antes de nuestra primera reunión y garantiza que, cuando hablemos, lo hagamos con soluciones reales sobre la mesa.</p>
+        <p class="form-section__intro">Tu tiempo es valioso, y esta es la mejor forma de protegerlo.</p>
         <p class="project-hero__copy">Respuesta inicial en menos de 24 horas.</p>
       </div>
 
@@ -555,6 +555,7 @@
         <input type="hidden" name="_subject" value="Nuevo proyecto desde nathalyhabich.me">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_webhook" value="https://script.google.com/macros/s/AKfycbxohxyNWzI-E1HUDFqo8iKkBLRyvD7nUMgriX4tMe9evef8gTMDbB1WzsxwNP2S_nuQkg/exec">
         <input type="hidden" id="celular-completo" name="Celular">
 
         <div class="form-section">
@@ -994,7 +995,7 @@
       submitButton.textContent = 'Enviando...';
 
       try {
-        const response = await fetch('https://formsubmit.co/ajax/nath.habich@gmail.com', {
+        const response = await fetch('https://formsubmit.co/ajax/data.nathaly@gmail.com', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
