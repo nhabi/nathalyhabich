@@ -37,7 +37,7 @@
     heroCopy.className = "project-video-hero-copy";
     const isEnglish = window.location.pathname.startsWith("/en/");
     heroCopy.innerHTML = isEnglish ? `
-      <h3 class="project-video-hero-copy__title">Evidencia Oculta</h3>
+      <h3 class="project-video-hero-copy__title">Me Caigo de Risa Peru</h3>
       <table class="project-video-hero-table"><tbody>
       <tr><th scope="row">Client</th><td>América Televisión / 14y6</td></tr>
       <tr><th scope="row">Production Type</th><td>Investigative television series with dramatized reconstructions of real criminal cases.</td></tr>
@@ -51,7 +51,7 @@
       <tr><th scope="row">Outcome</th><td>The project delivered believable environments that allowed each case to be visually reconstructed while maintaining aesthetic consistency and practical functionality for television production.</td></tr>
       </tbody></table>
 ` : `
-      <h3 class="project-video-hero-copy__title">Evidencia Oculta</h3>
+      <h3 class="project-video-hero-copy__title">Me Caigo de Risa Peru</h3>
       <table class="project-video-hero-table">
       <tbody>
       <tr><th scope="row">Cliente</th><td>América Televisión / 14 y 6</td></tr>
