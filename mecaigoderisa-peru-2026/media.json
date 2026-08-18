@@ -1,33 +1,97 @@
 {
   "title": "Me Caigo de Risa Perú 2026",
-  "excerpt": "Dirección de arte para serie televisiva de investigación criminal: diseño de sets, ambientación y supervisión visual para dramatizaciones de casos reales.",
+  "client": "Latina Network / Rayo en la Botella",
+  "productionType": "Formato de entretenimiento en vivo — comedia física, grabación diaria de lunes a viernes",
+  "overview": "<p>Dirección de arte del escenario inclinado para Me Caigo de Risa Perú, adaptación local del formato internacional. El proyecto requería diseñar una escenografía temática completamente distinta cada día, construida en foam y materiales livianos, con un plazo de fabricación y montaje de 24 a 48 horas por episodio. No existía un área de arte establecida al momento de incorporarse; el sistema de trabajo fue construido desde cero.</p>",
   "href": "/mecaigoderisa-peru-2026/",
-  "media": [
+  "sections": [
     {
-      "type": "image",
-      "src": "/images/direccion-de-arte/mecaigoderisa-peru-2026/IMG_20260518_093411.jpg",
-      "alt": "Dirección de arte Evidencia Oculta America Television - imagen 59"
+      "title": "Diseño de producción",
+      "title_en": "Production Design",
+      "items": [
+        "Conceptualización y diseño de 67 escenografías temáticas únicas para el escenario inclinado a lo largo del proyecto, cada una con concepto visual, paleta de color expresiva y dirección estética propia",
+        "Análisis e interpretación del guion de contenido por episodio para traducir cada historia en decisiones escenográficas funcionales incluyendo la deducción de elementos no listados explícitamente en el guion pero necesarios para el desarrollo de la acción",
+        "Generación de brief de diseño por episodio: concepto, paleta, desglose guion-set con semáforo de viabilidad, lista de elementos, mapeo de efectos y resumen ejecutivo para el día de grabación"
+      ],
+      "items_en": [
+        "Conceived and art directed 67 unique set designs for the inclined stage across the run of the show, each with its own visual concept, expressive color palette, and distinct aesthetic direction",
+        "Analyzed scripts and story briefs per episode to translate narrative action into scenographic decisions — including identifying set requirements implied by the story but not explicitly listed in the content brief",
+        "Developed visual concepts and color palettes with a camera-first approach: bold, saturated, high-impact sets that read immediately on screen and remain true to each episode's theme"
+      ]
     },
+    {
+      "title": "Sistema de trabajo",
+      "title_en": "Workflow & Systems",
+      "items": [
+        "Desarrollo de herramientas de gestión propias: tracker de episodios, ficha de diseño por episodio, lista de elementos para compras, y protocolo de operaciones y seguridad del escenario inclinado para el canal",
+        "Planificación anticipada de diseños con un mínimo de dos episodios de adelanto sobre la grabación, permitiendo que el equipo de montaje optimizara sus tiempos y redujera horas extra",
+        "Coordinación del timing de fabricación con utilería del canal, gestionando los plazos ajustados de Víctor y el equipo de foam para garantizar el montaje en dos momentos: el día anterior y la mañana de grabación de 8:30 a 10:00am"
+      ],
+      "items_en": [
+        "Built the art department workflow from the ground up for a production that had no established art direction prior to joining",
+        "Developed proprietary production tools: episode tracker, per-episode design brief, props and elements purchasing list, and a safety and operations protocol for the inclined stage submitted to the network",
+        "Maintained a minimum two-episode design lead ahead of recording, allowing the installation crew to optimize their schedule and significantly reduce overtime hours"
+      ]
+    },
+    {
+      "title": "Coordinación en set",
+      "title_en": "On-Set Direction",
+      "items": [
+        "Supervisión y dirección del montaje del escenario inclinado en cada episodio desde la colocación de estructuras hasta los detalles de utilería y props",
+        "Walk-through completo del set antes de cada grabación, verificando coherencia visual, funcionalidad de elementos e integridad del diseño",
+        "Presencia en piso o monitor durante la grabación del acto, con capacidad de respuesta ante imprevistos visuales en tiempo real",
+        "Gestión de props y elementos por personaje: mapeo de qué entra con cada participante, qué se le entrega en escena y qué hay que tener listo detrás del set durante la reunión de producción previa a cada grabación"
+      ],
+      "items_en": [
+        "Supervised and directed the full installation of the inclined stage for every episode — from structural elements through to props and final dressing",
+        "Conducted a complete set walk-through before each recording, verifying visual consistency, element functionality, and design integrity",
+        "Maintained a floor or monitor presence throughout each live recording, available to respond to visual issues in real time",
+        "Managed per-character props logistics: tracking what each performer enters with, what gets handed to them mid-scene, and what needs to be staged behind the set — confirmed during the pre-shoot production meeting"
+      ]
+    },
+    {
+      "title": "Gestión de equipos",
+      "title_en": "Team & Cross-Department Coordination",
+      "items": [
+        "Coordinación con utilería del canal (fabricación en foam), equipo de montaje, efectos especiales, iluminación, vestuario y equipo de contenido para garantizar la coherencia operativa y visual de cada episodio",
+        "Articulación del flujo entre el área de contenido y el equipo de ejecución, centralizando la información de diseño para que cada área recibiera exactamente lo que necesitaba",
+        "Coordinación con efectos especiales para mapear los efectos de cada episodio e identificar cuáles requerían elementos o mobiliario dentro del set para activarse"
+      ],
+      "items_en": [
+        "Coordinated with the network's scenic fabrication team, installation crew, special effects, lighting, costume, and content departments to ensure operational and visual alignment across every episode",
+        "Served as the central point between the content writing team (Paulo and Guille) and the execution crew (Johnny, Toño, Fernando), consolidating design information so each department received exactly what they needed",
+        "Coordinated with the special effects lead (Arnaldo) to map each episode's effects and identify which required specific set elements or furniture pieces to be integrated into the design for activation"
+      ]
+    }
+  ],
+  "outcome": "Elevación del nivel visual del escenario inclinado desde la resolución improvisada sin criterio de arte hacia un set con concepto, paleta y dirección definidos en cada episodio. El programa cerró con reconocimiento interno de la productora por la calidad y consistencia del trabajo entregado, alineando la producción peruana al estándar visual del formato internacional.",
+  "excerpt": "Dirección de arte para formato de entretenimiento en vivo: diseño de escenografía temática diaria para el escenario inclinado.",
+  "excerpt_en": "Art direction for live entertainment format: daily themed set design for the inclined stage.",
+  "media": [
     {
       "type": "video",
       "src": "/images/direccion-de-arte/mecaigoderisa-peru-2026/Mecaigoderisa.mp4",
-      "alt": "Dirección de arte Evidencia Oculta America Television - video 1" 
+      "alt": "Me Caigo de Risa Perú - video"
     },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/mecaigoderisa-peru-2026/IMG_20260518_093411.jpg",
-      "alt": "Dirección de arte Evidencia Oculta America Television - imagen 18"
+      "alt": "Me Caigo de Risa Perú - imagen 1"
     },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/mecaigoderisa-peru-2026/IMG_20260518_093411.jpg",
-      "alt": "Dirección de arte Evidencia Oculta America Television - imagen 19"
+      "alt": "Me Caigo de Risa Perú - imagen 2"
     },
     {
       "type": "image",
       "src": "/images/direccion-de-arte/mecaigoderisa-peru-2026/IMG_20260518_093411.jpg",
-      "alt": "Dirección de arte Evidencia Oculta America Television - imagen 20"
+      "alt": "Me Caigo de Risa Perú - imagen 3"
+    },
+    {
+      "type": "image",
+      "src": "/images/direccion-de-arte/mecaigoderisa-peru-2026/IMG_20260518_093411.jpg",
+      "alt": "Me Caigo de Risa Perú - imagen 4"
     }
-  ],
-  "excerpt_en": "Art direction for investigative television series: set design, dressing and on-set supervision for dramatized reconstructions of real criminal cases."
+  ]
 }
