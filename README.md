@@ -27,8 +27,9 @@ El script:
 
 1. Escribe el video principal, el cuadro resumen y la galería dentro de cada `/<proyecto>/index.html`
    y `/en/<proyecto>/index.html` (entre los comentarios `<!-- prerender:start … -->` y `<!-- prerender:end -->`).
-2. Escribe las tarjetas de proyectos dentro de `#portfolio-grid` en `index.html`, `en/index.html`,
-   `proyectos.html` y `en/proyectos.html`, siguiendo la lista `const projects = [...]` de cada página.
+2. Escribe las tarjetas de cada grilla `<div class="grilla" data-proyectos="..." data-lang="...">`
+   (home, `/tv/`, `/streaming/`, `/esports-y-eventos/` y `proyectos.html`, en ES y EN), en el orden
+   del atributo `data-proyectos`. Nombre y cliente salen de `data/proyectos.json`.
 3. Agrega a cada página de proyecto su bloque de datos estructurados JSON-LD (schema.org `CreativeWork`)
    con nombre, descripción (el `excerpt` / `excerpt_en`), imagen y autora.
 
@@ -40,7 +41,8 @@ Para un proyecto **nuevo**:
 1. Crea la carpeta con `index.html`, `media.json` y `project-gallery.js` copiando un proyecto existente.
    El `index.html` debe tener `<div class="row" id="lightgallery"></div>` (vacío) donde va la galería.
 2. Si tiene versión en inglés, crea `/en/<proyecto>/index.html` igual.
-3. Agrega `'/<proyecto>/media.json'` a la lista `const projects = [...]` de las páginas donde debe aparecer la tarjeta.
+3. Agrega el proyecto a `data/proyectos.json` (nombre, cliente y categoría) y su carpeta al atributo
+   `data-proyectos` de las grillas donde debe aparecer (home, su categoría y `proyectos.html`, ES y EN).
 4. Para cada video nuevo, genera su portada con el mismo nombre terminado en `-poster.webp`
    (ejemplo: `video.mp4` → `video-poster.webp`):
 
