@@ -1,5 +1,4 @@
-Place the licensed Fontshare files here:
-- GeneralSans-Bold.woff2
-- GeneralSans-Extrabold.woff2
+General Sans Bold (700) de Fontshare (https://www.fontshare.com/fonts/general-sans),
+licencia ITF Free Font License (uso comercial gratuito).
 
-These filenames are referenced by `css/style.css` @font-face rules.
+General Sans no tiene peso Extrabold (800); los textos en 800 usan el Bold.

@@ -5,13 +5,7 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face{
-  font-family: "General Sans";
-  src: url("/assets/fonts/GeneralSans/GeneralSans-Extrabold.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
+/* General Sans no tiene peso 800 (Extrabold): los textos en 800 usan el Bold (700). */
 
 /* Base */
 :root {

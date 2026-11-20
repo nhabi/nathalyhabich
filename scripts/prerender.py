@@ -86,6 +86,12 @@ def hero_copies(js: str) -> dict[str, str]:
     return {"en": m.group(1), "es": m.group(2)}
 
 
+def lightbox_video_html(src: str) -> str:
+    # Debe coincidir con lightboxVideoHtml() de project-gallery.js
+    return (f'<video class="lg-video-object lg-html5" controls muted loop playsinline preload="none">'
+            f'<source src="{attr(src)}" type="video/mp4"></video>')
+
+
 def localize_alt(alt: str, lang: str) -> str:
     if lang == "en":
         return alt.replace(" – dirección de arte – foto ", " – art direction – photo ")
@@ -118,10 +124,14 @@ def project_markup(data: dict, copy: str | None, indent: str, lang: str = "es") 
                 first_hidden = True
             inner = (f'<video src="{attr(src)}" poster="{attr(poster_for(src))}" class="img-fluid" '
                      f'muted loop playsinline preload="none" data-lazy-video></video>')
+            # lightGallery v1 abre los videos HTML5 desde data-html (no desde data-src)
+            lightbox = (f'data-html="{attr(lightbox_video_html(src))}" data-poster="{attr(poster_for(src))}" '
+                        f'data-thumb="{attr(poster_for(src))}"')
         else:
             inner = (f'<img src="{attr(src)}" alt="{attr(localize_alt(item.get("alt", ""), lang))}" class="img-fluid" '
                      f'loading="lazy" decoding="async">')
-        items.append(f'{indent}  <div class="{classes}" data-aos="fade" data-src="{attr(src)}">'
+            lightbox = f'data-src="{attr(src)}" data-thumb="{attr(src)}"'
+        items.append(f'{indent}  <div class="{classes}" data-aos="fade" {lightbox}>'
                      f'<a href="#">{inner}</a></div>')
     grid = "\n".join(items)
     return hero, grid

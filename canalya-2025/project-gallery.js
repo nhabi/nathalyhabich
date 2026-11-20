@@ -3,16 +3,21 @@
   if (!gallery) return;
 
   const posterFor = (src) => src.replace(/\.mp4$/i, "-poster.webp");
+  const escapeAttr = (s) => String(s).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  // Debe coincidir con lightbox_video_html() de scripts/prerender.py
+  const lightboxVideoHtml = (src) =>
+    '<video class="lg-video-object lg-html5" controls muted loop playsinline preload="none"><source src="' + escapeAttr(src) + '" type="video/mp4"></video>';
+  const initLightbox = () => {
+    if (window.jQuery && window.jQuery.fn.lightGallery) {
+      window.jQuery(gallery).lightGallery({ selector: ".item", download: false, exThumbImage: "data-thumb" });
+    }
+  };
 
   // Si el contenido ya viene en el HTML (scripts/prerender.py), no lo duplicamos:
   // solo activamos los videos diferidos y la galería/lightbox.
   if (gallery.dataset.prerendered === "true") {
     if (window.lazyVideos) window.lazyVideos.observe(gallery);
-    if (window.lightGallery) {
-      window.lightGallery(gallery, {
-        selector: ".item"
-      });
-    }
+    initLightbox();
     return;
   }
 
@@ -92,7 +97,14 @@
     const col = document.createElement("div");
     col.className = "col-sm-6 col-md-4 col-lg-4 col-xl-4 item";
     col.setAttribute("data-aos", "fade");
-    col.setAttribute("data-src", item.src);
+    if (item.type === "video") {
+      col.setAttribute("data-html", lightboxVideoHtml(item.src));
+      col.setAttribute("data-poster", posterFor(item.src));
+      col.setAttribute("data-thumb", posterFor(item.src));
+    } else {
+      col.setAttribute("data-src", item.src);
+      col.setAttribute("data-thumb", item.src);
+    }
 
     const a = document.createElement("a");
     a.href = "#";
@@ -134,9 +146,5 @@
   if (window.lazyVideos) window.lazyVideos.observe(gallery);
 
   // Re-inicializar lightGallery si existe (ajusta el selector si tu init es diferente)
-  if (window.lightGallery) {
-    window.lightGallery(gallery, {
-      selector: ".item"
-    });
-  }
+  initLightbox();
 })();
