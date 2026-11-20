@@ -201,13 +201,13 @@
           <div class="col-6 col-xl-2 text-right" data-aos="fade-down">
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
-                <li><a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20vengo%20de%20tu%20web%20y%20quer%C3%ADa%20preguntarte%20sobre%20" class="pl-3 pr-3"><span class="icon-whatsapp"></span></a></li>
+                <li><a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hi%20Nathaly%2C%20I%20saw%20your%20website%20and%20I%27d%20like%20a%20quote%20for%20a%20project." class="pl-3 pr-3"><span class="icon-whatsapp"></span></a></li>
                 <li><a href="https://www.instagram.com/nathalyhabich/" class="pl-3 pr-3"><span class="icon-instagram"></span></a></li>
                 <li><a href="mailto:nath.habich@gmail.com" class="pl-3 pr-3"><span class="icon-mail_outline"></span></a></li>
                 <li class="lang-switch-inline" style="display:flex; align-items:center; color:#fff; font-size:12px;"><a href="/iniciar-proyecto/" style="padding:0 4px;">ES</a><span>|</span><a href="/en/iniciar-proyecto/" style="padding:0 4px;">EN</a></li>
               </ul>
             </div>
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black" aria-label="Open menu"><span class="icon-menu h3"></span></a></div>
           </div>
         </div>
       </div>
@@ -225,6 +225,7 @@
         <input type="hidden" name="_subject" value="New project from nathalyhabich.me">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" id="celular-completo" name="Phone number">
 
         <div class="form-section">
@@ -246,9 +247,9 @@
             </div>
 
             <div class="col-md-6 form-group" data-field="celular">
-              <label for="celular">Phone number <span class="label-required">*</span></label>
+              <label for="celular">Phone number</label>
               <div class="phone-group">
-                <select id="celular-pais" class="form-control" aria-label="Phone country" required>
+                <select id="celular-pais" class="form-control" aria-label="Phone country">
                   <option value="PE" data-code="+51">Peru</option>
                   <option value="AR" data-code="+54">Argentina</option>
                   <option value="CL" data-code="+56">Chile</option>
@@ -257,15 +258,15 @@
                   <option value="US" data-code="+1">United States</option>
                 </select>
                 <input type="text" id="celular-codigo" class="form-control phone-group__code" value="+51" readonly>
-                <input type="tel" id="celular" class="form-control" placeholder="Your phone number" required>
+                <input type="tel" id="celular" class="form-control" placeholder="Your phone number">
               </div>
               <p class="field-helper">Use numbers only, without spaces or hyphens.</p>
               <p class="field-error">Please enter a valid phone number.</p>
             </div>
 
             <div class="col-md-6 form-group" data-field="empresa">
-              <label for="empresa">Company / brand / project name <span class="label-required">*</span></label>
-              <input type="text" id="empresa" name="Company" class="form-control" placeholder="Your company, brand or project" required>
+              <label for="empresa">Company / brand / project name</label>
+              <input type="text" id="empresa" name="Company" class="form-control" placeholder="Your company, brand or project">
               <p class="field-error">This field is required.</p>
             </div>
           </div>
@@ -291,8 +292,8 @@
             </div>
 
             <div class="col-md-6 form-group" data-field="tipo-apoyo">
-              <label for="tipo-apoyo">What kind of support do you think your project needs? <span class="label-required">*</span></label>
-              <select id="tipo-apoyo" name="Support type" class="form-control" required>
+              <label for="tipo-apoyo">What kind of support do you think your project needs?</label>
+              <select id="tipo-apoyo" name="Support type" class="form-control">
                 <option value="" selected disabled>Select</option>
                 <option>Strategic Visual Diagnosis</option>
                 <option>Art Direction &amp; Production Design</option>
@@ -303,8 +304,8 @@
             </div>
 
             <div class="col-md-6 form-group" data-field="etapa">
-              <label for="etapa">What stage is your project currently in? <span class="label-required">*</span></label>
-              <select id="etapa" name="Project stage" class="form-control" required>
+              <label for="etapa">What stage is your project currently in?</label>
+              <select id="etapa" name="Project stage" class="form-control">
                 <option value="" selected disabled>Select</option>
                 <option>Early concept</option>
                 <option>In development</option>
@@ -315,14 +316,14 @@
             </div>
 
             <div class="col-md-6 form-group" data-field="fecha">
-              <label for="fecha">Do you already have an estimated date or timeline? <span class="label-required">*</span></label>
-              <input type="text" id="fecha" name="Estimated timeline" class="form-control" placeholder="Share a date or time range" required>
+              <label for="fecha">Do you already have an estimated date or timeline?</label>
+              <input type="text" id="fecha" name="Estimated timeline" class="form-control" placeholder="Share a date or time range">
               <p class="field-error">This field is required.</p>
             </div>
 
             <div class="col-md-6 form-group" data-field="inversion">
-              <label for="inversion">Do you have an estimated investment range? <span class="label-required">*</span></label>
-              <select id="inversion" name="Investment range" class="form-control" required>
+              <label for="inversion">Do you have an estimated investment range?</label>
+              <select id="inversion" name="Investment range" class="form-control">
                 <option value="" selected disabled>Select</option>
                 <option>Not defined yet</option>
                 <option>Under USD 1,000</option>
@@ -628,7 +629,15 @@
         successState.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } catch (error) {
         statusMessage.className = 'form-status is-error';
-        statusMessage.textContent = 'There was a problem submitting your inquiry. Please try again in a few minutes.';
+        const waLines = ['Hi Nathaly, I saw your website and I\'d like a quote for a project.'];
+        const waName = (formData.get('Full name') || '').toString().trim();
+        const waType = (formData.get('Project type') || '').toString().trim();
+        const waNeed = (formData.get('Project need') || '').toString().trim();
+        if (waName) waLines.push('Name: ' + waName);
+        if (waType) waLines.push('Project type: ' + waType);
+        if (waNeed) waLines.push(waNeed);
+        const waUrl = 'https://api.whatsapp.com/send?phone=+51990548694&text=' + encodeURIComponent(waLines.join('\n'));
+        statusMessage.innerHTML = `There was a problem submitting your inquiry. Please try again in a few minutes or <a href="${waUrl}" target="_blank" rel="noopener">message me on WhatsApp</a> so your inquiry isn't lost.`;
       } finally {
         updateSubmitState();
       }

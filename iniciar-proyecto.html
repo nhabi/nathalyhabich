@@ -521,7 +521,7 @@
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                  <li>
-                  <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly,%20vengo%20de%20tu%20web%20y%20quer%C3%ADa%20preguntarte%20sobre%20" class="pl-3 pr-3"><span class="icon-whatsapp"></span></a>
+                  <a href="https://api.whatsapp.com/send?phone=+51990548694&text=Hola%20Nathaly%2C%20vi%20tu%20web%20y%20quiero%20cotizar%20un%20proyecto." class="pl-3 pr-3"><span class="icon-whatsapp"></span></a>
                 </li>
                  <li>
                   <a href="https://www.instagram.com/nathalyhabich/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
@@ -534,7 +534,7 @@
               </ul>
             </div>
 
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black" aria-label="Abrir menú"><span class="icon-menu h3"></span></a></div>
           </div>
         </div>
       </div>
@@ -552,6 +552,7 @@
         <input type="hidden" name="_subject" value="Nuevo proyecto desde nathalyhabich.me">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" id="celular-completo" name="Celular">
 
         <div class="form-section">
@@ -573,9 +574,9 @@
           </div>
 
           <div class="col-md-6 form-group" data-field="celular">
-            <label for="celular">Celular <span class="label-required">*</span></label>
+            <label for="celular">Celular</label>
             <div class="phone-group">
-              <select id="celular-pais" class="form-control" aria-label="País del número" required>
+              <select id="celular-pais" class="form-control" aria-label="País del número">
                 <option value="PE" data-code="+51">Perú</option>
                 <option value="AR" data-code="+54">Argentina</option>
                 <option value="CL" data-code="+56">Chile</option>
@@ -584,15 +585,15 @@
                 <option value="US" data-code="+1">Estados Unidos</option>
               </select>
               <input type="text" id="celular-codigo" class="form-control phone-group__code" value="+51" readonly>
-              <input type="tel" id="celular" class="form-control" placeholder="Tu número de contacto" required>
+              <input type="tel" id="celular" class="form-control" placeholder="Tu número de contacto">
             </div>
             <p class="field-helper">Incluye solo números, sin espacios ni guiones.</p>
             <p class="field-error">Completa correctamente tu número de celular.</p>
           </div>
 
           <div class="col-md-6 form-group" data-field="empresa">
-            <label for="empresa">Empresa <span class="label-required">*</span></label>
-            <input type="text" id="empresa" name="Empresa" class="form-control" placeholder="Nombre de tu empresa" required>
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="Empresa" class="form-control" placeholder="Nombre de tu empresa">
             <p class="field-error">Este campo es obligatorio.</p>
           </div>
           </div>
@@ -619,8 +620,8 @@
           </div>
 
           <div class="col-md-6 form-group" data-field="tipo-apoyo">
-            <label for="tipo-apoyo">¿Qué tipo de apoyo crees que necesita tu proyecto? <span class="label-required">*</span></label>
-            <select id="tipo-apoyo" name="Tipo de apoyo" class="form-control" required>
+            <label for="tipo-apoyo">¿Qué tipo de apoyo crees que necesita tu proyecto?</label>
+            <select id="tipo-apoyo" name="Tipo de apoyo" class="form-control">
               <option value="" selected disabled>Seleccionar</option>
               <option>Diagnóstico Visual Estratégico</option>
               <option>Dirección de Arte y Diseño de Producción</option>
@@ -631,8 +632,8 @@
           </div>
 
           <div class="col-md-6 form-group" data-field="etapa">
-            <label for="etapa">¿En qué etapa se encuentra el proyecto ahora mismo? <span class="label-required">*</span></label>
-            <select id="etapa" name="Etapa del proyecto" class="form-control" required>
+            <label for="etapa">¿En qué etapa se encuentra el proyecto ahora mismo?</label>
+            <select id="etapa" name="Etapa del proyecto" class="form-control">
               <option value="" selected disabled>Seleccionar</option>
               <option>Apenas es una idea</option>
               <option>Estamos desarrollándolo</option>
@@ -643,14 +644,14 @@
           </div>
 
           <div class="col-md-6 form-group" data-field="fecha">
-            <label for="fecha">¿Tienen una fecha estimada para el proyecto? <span class="label-required">*</span></label>
-            <input type="text" id="fecha" name="Fecha estimada" class="form-control" placeholder="Dime una fecha o un rango de tiempo" required>
+            <label for="fecha">¿Tienen una fecha estimada para el proyecto?</label>
+            <input type="text" id="fecha" name="Fecha estimada" class="form-control" placeholder="Dime una fecha o un rango de tiempo">
             <p class="field-error">Este campo es obligatorio.</p>
           </div>
 
           <div class="col-md-6 form-group" data-field="inversion">
-            <label for="inversion">¿Tienes un rango de inversión pensado? <span class="label-required">*</span></label>
-            <select id="inversion" name="Rango de inversión" class="form-control" required>
+            <label for="inversion">¿Tienes un rango de inversión pensado?</label>
+            <select id="inversion" name="Rango de inversión" class="form-control">
               <option value="" selected disabled>Seleccionar</option>
               <option>Aún no lo tenemos claro</option>
               <option>Menos de S/.2,000</option>
@@ -990,7 +991,15 @@
         successState.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } catch (error) {
         statusMessage.className = 'form-status is-error';
-        statusMessage.textContent = 'Hubo un problema al enviar el formulario. Inténtalo nuevamente en unos minutos.';
+        const waLines = ['Hola Nathaly, vi tu web y quiero cotizar un proyecto.'];
+        const waName = (formData.get('Nombre') || '').toString().trim();
+        const waType = (formData.get('Tipo de proyecto') || '').toString().trim();
+        const waNeed = (formData.get('¿En qué te gustaría que te ayude exactamente?') || '').toString().trim();
+        if (waName) waLines.push('Nombre: ' + waName);
+        if (waType) waLines.push('Tipo de proyecto: ' + waType);
+        if (waNeed) waLines.push(waNeed);
+        const waUrl = 'https://api.whatsapp.com/send?phone=+51990548694&text=' + encodeURIComponent(waLines.join('\n'));
+        statusMessage.innerHTML = `Hubo un problema al enviar el formulario. Inténtalo nuevamente en unos minutos o <a href="${waUrl}" target="_blank" rel="noopener">escríbeme por WhatsApp</a> para que no se pierda tu mensaje.`;
       } finally {
         updateSubmitState();
       }
