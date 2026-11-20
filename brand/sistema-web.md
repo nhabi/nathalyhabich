@@ -9,7 +9,7 @@ Página de prueba: `/brand/prueba.html`.
 > |---|---|
 > | v2 | Más personalidad con los elementos del brandbook; tarjetas con video; hover magenta. |
 > | v3 | Sin formas ni capas de color sobre fotos y videos; reel nítido; interacción con el cursor; dos momentos animados inspirados en los GIF del branding. |
-> | v4 | Encabezado morado como el pie. La franja recrea cuadro por cuadro el GIF 1 de Lucero; la sección de valores sale (sin palabras) y queda solo su forma animada junto a "El estudio". Fuentes Jost + Inter aprobadas. |
+> | v4 | Encabezado morado como el pie. Frase del reel centrada ("Dirección de arte, sets y experiencias de marca · Perú") y "Hablemos" debajo. La franja recrea cuadro por cuadro el GIF 1 de Lucero; la sección de valores sale (sin palabras) y queda solo su forma animada junto a "El estudio". Fuentes Jost + Inter aprobadas. |
 >
 > Queda 1 decisión abierta (❓ al final).
 
@@ -29,7 +29,7 @@ Página de prueba: `/brand/prueba.html`.
 
 | Variable CSS | HEX | Uso |
 |---|---|---|
-| `--color-morado` | `#3d3183` | Texto, títulos y su barra, encabezado, pie, etiqueta del reel, cuadro de ondas. |
+| `--color-morado` | `#3d3183` | Texto, títulos y su barra, encabezado, pie, sombra de la frase del reel, cuadro de ondas. |
 | `--color-blanco` | `#ffffff` | Fondo; botón "Hablemos" sobre el reel; texto sobre morado. |
 | `--color-magenta` | `#ee3f75` | Acento: hover de botones, subrayados, número de tarjeta, cursor "VER", WhatsApp, palabra destacada. |
 | `--color-amarillo` | `#fdba4d` | Fondos de cuadros de la franja; puntos de la forma viva. |
@@ -46,7 +46,7 @@ Página de prueba: `/brand/prueba.html`.
 | Combinación | Contraste | Resultado |
 |---|---:|---|
 | Morado sobre blanco / blanco sobre morado | 10,68 | ✅ |
-| Etiqueta del reel: texto blanco sobre fondo morado sólido | 10,68 | ✅ Se lee sobre cualquier fotograma, sin oscurecer el video |
+| Frase del reel: blanco sobre el video, con sombra suave | — | ✅ Texto grande (36 px) con sombra; se revisó sobre fotogramas claros y con mucho detalle |
 | "Hablemos" sobre el reel: morado sobre blanco | 10,68 | ✅ |
 | Hover de "Hablemos": blanco sobre magenta | 3,75 | ⚠️ Solo texto grande. Elegido por ti. |
 | Número de tarjeta en magenta sobre blanco | 3,75 | ⚠️ Decorativo, oculto para lectores de pantalla. |
@@ -64,7 +64,7 @@ Página de prueba: `/brand/prueba.html`.
 | Elemento | Móvil | Escritorio |
 |---|---:|---:|
 | Título con barra (negrita / normal) | 26 / 22 px | 40 / 34 px |
-| Etiqueta del reel | 13 px | 15 px |
+| Frase del reel | 22 px | 36 px |
 | Nombre del proyecto | 15 px | 17 px |
 | Frase destacada | 21 px | 26 px |
 | Cuerpo | 16 px | 17 px |
@@ -76,7 +76,8 @@ Página de prueba: `/brand/prueba.html`.
 ## 5. Reel
 
 - **Nítido en pantalla grande:** en pantallas de 1024 px o más se sirve un reel nuevo en **1920 × 1080, códec AV1** (`/reel3-av1.mp4`, 17 MB), con la calidad del original. En celulares, o en navegadores sin AV1, se usa el reel liviano actual (`/reel3.mp4`, 1280 px, 7,3 MB).
-- **Sin capa de color.** La frase va en una **etiqueta morada sólida** y al lado el botón **"Hablemos"** blanco (hover magenta).
+- **Sin capa de color.** Centrada en el reel, la frase **"Dirección de arte, sets y experiencias de marca · Perú"** en blanco, Jost 500 en mayúsculas (22 px móvil, 24 px tablet, 36 px escritorio), en dos renglones desde tablet. Debajo, en otra línea, el botón **"Hablemos"** blanco (hover magenta).
+- Para que el texto se lea sobre cualquier fotograma lleva solo una sombra suave en morado; el video no se oscurece.
 - El original del reel ya viene algo suave de fábrica; esta versión conserva toda la nitidez que tiene.
 
 ## 6. Tarjetas de proyecto
