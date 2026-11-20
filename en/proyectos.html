@@ -259,7 +259,10 @@
 
   <script src="/js/main.js"></script>
 
+  <script src="/js/lazy-videos.js"></script>
   <script>
+    const posterFor = (src) => src.replace(/\.mp4$/i, '-poster.webp');
+
     const projects = [
       '/mecaigoderisa-peru-2026/media.json',
       '/evidenciaoculta-2025/media.json',
@@ -293,7 +296,7 @@
       col.className = 'col-lg-4';
 
       const previewMarkup = preview.type === 'video'
-        ? `<video src="${preview.src}" class="img-fluid" autoplay muted loop playsinline preload="metadata"></video>`
+        ? `<video src="${preview.src}" poster="${posterFor(preview.src)}" class="img-fluid" muted loop playsinline preload="none" data-lazy-video></video>`
         : `<img src="${preview.src}" class="img-fluid" alt="${projectData.title}" loading="lazy">`;
 
       const localizedHref = projectData.href_en || (projectData.href && projectData.href.startsWith('/')
@@ -344,7 +347,9 @@
       });
     }
 
-    renderPortfolio();
+    renderPortfolio().then(() => {
+      if (window.lazyVideos) window.lazyVideos.observe(document.getElementById('portfolio-grid'));
+    });
   </script>
 
 </body>

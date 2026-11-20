@@ -2,6 +2,8 @@
   const gallery = document.getElementById("lightgallery");
   if (!gallery) return;
 
+  const posterFor = (src) => src.replace(/\.mp4$/i, "-poster.webp");
+
   // Cache-bust para que siempre cargue lo nuevo
   const currentScript = document.currentScript;
   const mediaBase = currentScript ? new URL(".", currentScript.src) : new URL("./", window.location.href);
@@ -29,6 +31,7 @@
     heroVideo.setAttribute("playsinline", "");
     heroVideo.setAttribute("muted", "");
     heroVideo.preload = "metadata";
+    heroVideo.poster = posterFor(firstVideo.src);
 
     heroVideoWrap.appendChild(heroVideo);
     hero.appendChild(heroVideoWrap);
@@ -90,14 +93,15 @@
     if (item.type === "video") {
       const video = document.createElement("video");
       video.src = item.src;
+      video.poster = posterFor(item.src);
       video.className = "img-fluid";
-      video.autoplay = true;
       video.muted = true;
       video.loop = true;
       video.playsInline = true;
       video.setAttribute("playsinline", "");
       video.setAttribute("muted", "");
-      video.preload = "metadata";
+      video.preload = "none";
+      video.setAttribute("data-lazy-video", "");
 
       a.appendChild(video);
 
@@ -111,6 +115,7 @@
       img.alt = item.alt || "";
       img.className = "img-fluid";
       img.loading = "lazy";
+      img.decoding = "async";
 
       a.appendChild(img);
     }
@@ -118,6 +123,8 @@
     col.appendChild(a);
     gallery.appendChild(col);
   }
+
+  if (window.lazyVideos) window.lazyVideos.observe(gallery);
 
   // Re-inicializar lightGallery si existe (ajusta el selector si tu init es diferente)
   if (window.lightGallery) {
