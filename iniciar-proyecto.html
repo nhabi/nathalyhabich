@@ -912,7 +912,7 @@
       fieldGroups.forEach((group) => validateGroupState(group));
 
       if (!valid) {
-        submitButton.textContent = 'Completa todos los campos *';
+        submitButton.textContent = 'Completa los campos obligatorios *';
       } else {
         submitButton.textContent = 'Enviar proyecto';
       }
@@ -951,7 +951,7 @@
           validateGroupState(group, true);
         });
         statusMessage.className = 'form-status is-error';
-        statusMessage.textContent = 'Por favor, completa todos los campos y acepta la política de privacidad antes de enviar.';
+        statusMessage.textContent = 'Por favor, completa los campos obligatorios y acepta la política de privacidad antes de enviar.';
         return;
       }
 

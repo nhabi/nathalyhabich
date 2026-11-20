@@ -54,9 +54,9 @@
     heroCopy.innerHTML = isEnglish ? `
       <h3 class="project-video-hero-copy__title">CanalYa</h3>
       <table class="project-video-hero-table"><tbody>
-      <tr><th scope="row">Client</th><td>CanalYa / Marcos y Fuentes</td></tr>
+      <tr><th scope="row">Client</th><td>CanalYa / Marco Sifuentes</td></tr>
       <tr><th scope="row">Production Type</th><td>Journalistic streaming channel</td></tr>
-      <tr><th scope="row">Overview</th><td><p>Concept design and art direction for the streaming studio of CanalYa, a digital journalism project led by journalist Marcos y Fuentes.</p><p>The project focused on creating the visual concept for a flexible studio environment designed for live streaming discussions and interviews.</p></td></tr>
+      <tr><th scope="row">Overview</th><td><p>Concept design and art direction for the streaming studio of CanalYa, a digital journalism project led by journalist Marco Sifuentes.</p><p>The project focused on creating the visual concept for a flexible studio environment designed for live streaming discussions and interviews.</p></td></tr>
       <tr><th colspan="2" class="project-video-hero-table__section">Concept & Art Direction</th></tr>
       <tr><td colspan="2"><ul class="project-video-hero-table__list"><li>Development of the studio’s visual concept</li><li>Scenic proposals for the broadcast environment</li><li>Design of a visual system aligned with the editorial identity of the channel</li></ul></td></tr>
       <tr><th colspan="2" class="project-video-hero-table__section">Set Design</th></tr>
@@ -68,7 +68,7 @@
       <h3 class="project-video-hero-copy__title">CanalYa</h3>
       <table class="project-video-hero-table">
       <tbody>
-      <tr><th scope="row">Cliente</th><td>CanalYa / Marco Siuentes</td></tr>
+      <tr><th scope="row">Cliente</th><td>CanalYa / Marco Sifuentes</td></tr>
       <tr><th scope="row">Tipo de producción</th><td>Canal de streaming periodístico</td></tr>
       <tr><th scope="row">Descripción</th><td><p>Diseño conceptual y dirección de arte para el set del canal de streaming CanalYa, un proyecto periodístico liderado por el periodista Marco Sifuentes orientado a la producción de contenido digital en vivo.</p><p>El proyecto consistió en desarrollar el concepto visual del estudio desde cero, creando un entorno escenográfico adaptable a distintos formatos de conversación y análisis periodístico.</p></td></tr>
       <tr><th colspan="2" class="project-video-hero-table__section">Concepto y dirección de arte</th></tr>
