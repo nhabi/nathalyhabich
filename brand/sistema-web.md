@@ -1,16 +1,17 @@
-# Sistema visual web — Nathaly Habich (v3)
+# Sistema visual web — Nathaly Habich (v4)
 
 Basado en el brandbook 2019 (`/brand/brandbook.pdf`), los archivos de `/brand/` y las animaciones de la publicación del branding en Behance (Lucero Pérez).
 Página de prueba: `/brand/prueba.html`.
 
-> **Estado: v3, pendiente de aprobación.**
+> **Estado: v4, pendiente de aprobación.**
 >
 > | Versión | Qué cambió |
 > |---|---|
 > | v2 | Más personalidad con los elementos del brandbook; tarjetas con video; hover magenta. |
 > | v3 | Sin formas ni capas de color sobre fotos y videos; reel nítido; interacción con el cursor; dos momentos animados inspirados en los GIF del branding. |
+> | v4 | La franja recrea cuadro por cuadro el GIF 1 de Lucero; la sección de valores sale (sin palabras) y queda solo su forma animada junto a "El estudio". Fuentes Jost + Inter aprobadas. |
 >
-> Quedan 2 decisiones abiertas (❓ al final).
+> Queda 1 decisión abierta (❓ al final).
 
 ---
 
@@ -19,10 +20,10 @@ Página de prueba: `/brand/prueba.html`.
 | Fuente | Elemento | Uso en la web |
 |---|---|---|
 | Brandbook, páginas 1–7 | Título con barra vertical, primera línea en negrita y segunda en peso normal | Todos los títulos ✅ *aprobado* |
-| Brandbook, portada | Manchas orgánicas, racimo de puntos, líneas onduladas | Franja de marca, sección de valores, pie, cursor |
+| Brandbook, portada | Manchas orgánicas, racimo de puntos, líneas onduladas | Franja de marca, forma viva, pie, cursor |
 | Brandbook, página 4 | Paleta de 7 colores | Ver sección 2 |
 | Behance, GIF 1 | Franja de 4 cuadros con patrones de la marca que se mueven y se transforman | **Franja de marca** animada |
-| Behance, GIF 3 | Los valores de la marca junto a una forma que pasa de triángulo a mancha, con puntos amarillos | **Sección de valores** animada |
+| Behance, GIF 3 | Forma que pasa de triángulo a mancha, con puntos amarillos | **Forma viva** junto a "El estudio" (sin las palabras de valores) |
 
 ## 2. Colores
 
@@ -31,14 +32,14 @@ Página de prueba: `/brand/prueba.html`.
 | `--color-morado` | `#3d3183` | Texto, títulos y su barra, logo, etiqueta del reel, pie, cuadro de ondas. |
 | `--color-blanco` | `#ffffff` | Fondo; botón "Hablemos" sobre el reel; texto sobre morado. |
 | `--color-magenta` | `#ee3f75` | Acento: hover de botones, subrayados, número de tarjeta, cursor "VER", WhatsApp, palabra destacada. |
-| `--color-amarillo` | `#fdba4d` | Fondos de cuadros de la franja; puntos de la sección de valores. |
+| `--color-amarillo` | `#fdba4d` | Fondos de cuadros de la franja; puntos de la forma viva. |
 | `--color-coral` | `#f47854` | Formas animadas. |
 | `--color-verde` | `#22a36d` | Formas animadas. |
 | `--color-rosa` | `#fabbaf` | Fondo de un cuadro de la franja. |
 
 **Reglas:**
 - Las fotos y los videos **se muestran tal cual**: sin capas, degradados ni formas encima.
-- Los colores secundarios aparecen solo en la franja de marca, los valores y el pie, nunca como fondo detrás de texto.
+- Los colores secundarios aparecen solo en la franja de marca, la forma viva y el pie, nunca como fondo detrás de texto.
 
 ### Contraste (WCAG AA)
 
@@ -50,15 +51,14 @@ Página de prueba: `/brand/prueba.html`.
 | Hover de "Hablemos": blanco sobre magenta | 3,75 | ⚠️ Solo texto grande. Elegido por ti. |
 | Número de tarjeta en magenta sobre blanco | 3,75 | ⚠️ Decorativo, oculto para lectores de pantalla. |
 | Cursor "VER": blanco sobre magenta, 14 px en negrita | 3,75 | ⚠️ Decorativo. |
-| Valores en morado sobre blanco | 10,68 | ✅ |
 
-## 3. Tipografías *(❓ pendiente: Jost e Inter)*
+## 3. Tipografías ✅ *aprobadas: Jost e Inter*
 
 | Rol | Fuente del brandbook | Web |
 |---|---|---|
 | Títulos (MAYÚSCULAS, espaciado amplio) | Futura Md BT | Jost 400 / 700 |
 | Nombres de proyecto, subtítulos | Futura Bold | Jost 700 |
-| Valores y frase destacada | Futura | Jost 400–500 |
+| Frase destacada | Futura | Jost 400 |
 | Cuerpo | Helvetica LT Light | Inter 300 |
 
 | Elemento | Móvil | Escritorio |
@@ -66,7 +66,6 @@ Página de prueba: `/brand/prueba.html`.
 | Título con barra (negrita / normal) | 26 / 22 px | 40 / 34 px |
 | Etiqueta del reel | 13 px | 15 px |
 | Nombre del proyecto | 15 px | 17 px |
-| Lista de valores | 34 px | 56 px |
 | Frase destacada | 21 px | 26 px |
 | Cuerpo | 16 px | 17 px |
 
@@ -93,10 +92,24 @@ Página de prueba: `/brand/prueba.html`.
 
 ## 7. Momentos animados (inspirados en los GIF del branding)
 
-| Momento | Qué se ve | Dónde iría |
+### Franja de marca — recreación del GIF 1 de Lucero
+
+Estudié el GIF original fotograma por fotograma (179 fotogramas, 5,4 s) y lo recreé en SVG + CSS, liviano y nítido en cualquier pantalla:
+
+| Cuadro | Fondo | Qué pasa (igual que en el GIF) |
 |---|---|---|
-| **Franja de marca** (GIF 1) | 4 cuadros a todo el ancho (2 × 2 en móvil): rosa con mancha magenta que se desplaza, morado con ondas blancas que ondulan, amarillo con capas verde, coral y magenta que suben y bajan, y amarillo con mancha morada y puntos blancos que laten. | Entre la grilla de proyectos y el pie del home; también como cierre de las páginas de categoría |
-| **Valores** (GIF 3) | "equilibrio, frescura, originalidad, pasión, fuerza, libertad, expresividad, creatividad" se encienden uno a uno; al lado, una forma que se transforma de triángulo coral a mancha verde y luego magenta, con puntos amarillos. | Página Studio |
+| 1 | Rosa | La mancha magenta tiembla en el centro; el magenta entra desde las esquinas, inunda el cuadro y aparecen puntos rosas. |
+| 2 | Morado | Líneas blancas diagonales y onduladas que fluyen sin parar. |
+| 3 | Amarillo | Entra una forma verde que termina arriba; suben el coral al centro y el magenta abajo. |
+| 4 | Amarillo con puntos blancos | La mancha morada se achica hacia el borde derecho, se llenan los puntos y sube el magenta. |
+
+- Se reproduce **cuando la franja entra en pantalla**, va y vuelve suavemente, con una pausa en cada extremo.
+- 4 cuadros en fila en escritorio; 2 × 2 en móvil.
+- Va entre la grilla de proyectos y el pie del home, y como cierre de las páginas de categoría.
+
+### Forma viva — del GIF 3, sin texto
+
+La forma que pasa de triángulo coral a mancha verde y magenta, con puntos amarillos, **sin las palabras de valores**. Va debajo del título "El estudio" (home y página Studio).
 
 Todas las animaciones se detienen si el visitante tiene activado "reducir movimiento" en su sistema.
 
@@ -120,7 +133,6 @@ Todas las animaciones se detienen si el visitante tiene activado "reducir movimi
 
 ---
 
-## ❓ Decisiones abiertas
+## ❓ Decisión abierta
 
-1. **Fuentes web:** ¿apruebas Jost (por Futura) e Inter (por Helvetica)?
-2. **"Siempre en minúsculas":** ¿lo aplico como *nunca en MAYÚSCULAS sostenidas* ("Latina Televisión")?
+1. **"Siempre en minúsculas":** ¿lo aplico como *nunca en MAYÚSCULAS sostenidas* ("Latina Televisión", como en la prueba) o todo en minúscula ("latina televisión")?
