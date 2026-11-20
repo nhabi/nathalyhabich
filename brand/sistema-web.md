@@ -9,7 +9,7 @@ Página de prueba: `/brand/prueba.html`.
 > |---|---|
 > | v2 | Más personalidad con los elementos del brandbook; tarjetas con video; hover magenta. |
 > | v3 | Sin formas ni capas de color sobre fotos y videos; reel nítido; interacción con el cursor; dos momentos animados inspirados en los GIF del branding. |
-> | v4 | La franja recrea cuadro por cuadro el GIF 1 de Lucero; la sección de valores sale (sin palabras) y queda solo su forma animada junto a "El estudio". Fuentes Jost + Inter aprobadas. |
+> | v4 | Encabezado morado como el pie. La franja recrea cuadro por cuadro el GIF 1 de Lucero; la sección de valores sale (sin palabras) y queda solo su forma animada junto a "El estudio". Fuentes Jost + Inter aprobadas. |
 >
 > Queda 1 decisión abierta (❓ al final).
 
@@ -29,7 +29,7 @@ Página de prueba: `/brand/prueba.html`.
 
 | Variable CSS | HEX | Uso |
 |---|---|---|
-| `--color-morado` | `#3d3183` | Texto, títulos y su barra, logo, etiqueta del reel, pie, cuadro de ondas. |
+| `--color-morado` | `#3d3183` | Texto, títulos y su barra, encabezado, pie, etiqueta del reel, cuadro de ondas. |
 | `--color-blanco` | `#ffffff` | Fondo; botón "Hablemos" sobre el reel; texto sobre morado. |
 | `--color-magenta` | `#ee3f75` | Acento: hover de botones, subrayados, número de tarjeta, cursor "VER", WhatsApp, palabra destacada. |
 | `--color-amarillo` | `#fdba4d` | Fondos de cuadros de la franja; puntos de la forma viva. |
@@ -71,7 +71,7 @@ Página de prueba: `/brand/prueba.html`.
 
 ## 4. Logo
 
-`/images/marca/logo-nathaly-habich.svg` (morado, encabezado) y `logo-nathaly-habich-blanco.svg` (blanco, pie).
+`/images/marca/logo-nathaly-habich-blanco.svg` (blanco) en el encabezado y el pie, ambos morados. `logo-nathaly-habich.svg` (morado) queda para fondos blancos (por ejemplo, documentos o la página de contacto si se necesita).
 
 ## 5. Reel
 
@@ -128,7 +128,7 @@ Todas las animaciones se detienen si el visitante tiene activado "reducir movimi
 - Escala: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128 px.
 - Márgenes laterales: 20 / 32 / 56 px. Encabezado: 64 / 72 / 84 px. Espacio entre secciones: 72 / 104 / 136 px.
 - Ancho máximo 1440 px; texto máximo 640 px.
-- **Encabezado:** blanco y fijo, logo morado; en móvil, CONTACTO visible + menú.
+- **Encabezado:** **morado, igual que el pie**, fijo al hacer scroll; logo blanco y menú en blanco con subrayado magenta; en móvil, CONTACTO visible + menú.
 - **Pie:** morado, ondas blancas en movimiento suave, logo blanco, datos y legales.
 
 ---

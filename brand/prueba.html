@@ -64,7 +64,8 @@
     @media (min-width: 1200px) { .titulo-barra strong { font-size: 40px; } .titulo-barra span { font-size: 34px; } }
 
     /* ===== Encabezado ===== */
-    .encabezado { position: sticky; top: 0; z-index: 20; height: var(--header-alto); background: var(--color-blanco); border-bottom: 1px solid var(--color-linea); }
+    /* Cabecera morada, igual que el pie: logo y menú blancos (contraste 10,68:1) */
+    .encabezado { position: sticky; top: 0; z-index: 20; height: var(--header-alto); background: var(--color-morado); color: var(--color-blanco); }
     .encabezado .contenedor { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); }
     .logo img { height: var(--logo-alto); width: auto; }
     .menu { display: flex; align-items: center; gap: var(--s-6); }
@@ -226,7 +227,7 @@
 
   <header class="encabezado">
     <div class="contenedor">
-      <a class="logo" href="/"><img src="/images/marca/logo-nathaly-habich.svg" alt="Nathaly Habich"></a>
+      <a class="logo" href="/"><img src="/images/marca/logo-nathaly-habich-blanco.svg" alt="Nathaly Habich"></a>
       <nav class="menu" aria-label="Menú principal">
         <ul>
           <li><a href="#">TV</a></li>
