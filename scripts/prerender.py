@@ -9,7 +9,8 @@ Qué hace:
      que genera project-gallery.js. El JS detecta data-prerendered="true" y solo activa galería y lightbox.
   2. Tarjetas de proyectos del home y de proyectos.html (ES y EN): escribe las tarjetas dentro de
      #portfolio-grid con el mismo HTML que genera el JS de cada página.
-  3. Agrega a cada página de proyecto su bloque de datos estructurados JSON-LD (schema.org CreativeWork).
+  3. Agrega a cada página de proyecto su meta description (el excerpt) y su bloque de datos
+     estructurados JSON-LD (schema.org CreativeWork). En las páginas en inglés traduce los alts.
 
 Es idempotente: se puede correr las veces que haga falta; reemplaza lo que generó la vez anterior.
 
@@ -85,7 +86,13 @@ def hero_copies(js: str) -> dict[str, str]:
     return {"en": m.group(1), "es": m.group(2)}
 
 
-def project_markup(data: dict, copy: str | None, indent: str) -> tuple[str, str]:
+def localize_alt(alt: str, lang: str) -> str:
+    if lang == "en":
+        return alt.replace(" – dirección de arte – foto ", " – art direction – photo ")
+    return alt
+
+
+def project_markup(data: dict, copy: str | None, indent: str, lang: str = "es") -> tuple[str, str]:
     media = data.get("media") or []
     first_video = next((m for m in media if m.get("type") == "video"), None)
 
@@ -112,7 +119,7 @@ def project_markup(data: dict, copy: str | None, indent: str) -> tuple[str, str]
             inner = (f'<video src="{attr(src)}" poster="{attr(poster_for(src))}" class="img-fluid" '
                      f'muted loop playsinline preload="none" data-lazy-video></video>')
         else:
-            inner = (f'<img src="{attr(src)}" alt="{attr(item.get("alt", ""))}" class="img-fluid" '
+            inner = (f'<img src="{attr(src)}" alt="{attr(localize_alt(item.get("alt", ""), lang))}" class="img-fluid" '
                      f'loading="lazy" decoding="async">')
         items.append(f'{indent}  <div class="{classes}" data-aos="fade" data-src="{attr(src)}">'
                      f'<a href="#">{inner}</a></div>')
@@ -150,7 +157,11 @@ def creative_work_jsonld(text: str, data: dict, lang: str, folder: str) -> str:
         work["image"] = image
     payload = json.dumps(work, ensure_ascii=False, indent=2).replace("</", "<\\/")
     payload = "\n".join("  " + line for line in payload.split("\n"))
-    return f'  {START}\n  <script type="application/ld+json">\n{payload}\n  </script>\n  {END}\n'
+    plain = re.sub(r"<[^>]+>", "", description).strip()
+    meta = ""
+    if plain and not re.search(r'<meta name="description"', text):
+        meta = f'  <meta name="description" content="{attr(plain)}">\n'
+    return f'  {START}\n{meta}  <script type="application/ld+json">\n{payload}\n  </script>\n  {END}\n'
 
 
 def prerender_project_page(page: Path, data: dict, copy: str | None, lang: str, folder: str) -> bool:
@@ -166,7 +177,7 @@ def prerender_project_page(page: Path, data: dict, copy: str | None, lang: str, 
         print(f"  ! {page.relative_to(ROOT)}: no encontré <div id=\"lightgallery\">, la salto")
         return False
     indent = m.group(1)
-    hero, grid = project_markup(data, copy, indent)
+    hero, grid = project_markup(data, copy, indent, lang)
     new = "\n"
     if hero:
         new += f"{indent}{START}\n{hero}{indent}{END}\n"
