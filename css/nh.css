@@ -1,0 +1,371 @@
+/* ==========================================================================
+   Nathaly Habich — sistema visual (brand/sistema-web.md)
+   Un solo archivo de estilos para todo el sitio.
+   - Las reglas base se aplican solo a <body class="nh"> (páginas nuevas).
+   - Encabezado, pie, WhatsApp y cursor (prefijo nh-) funcionan en cualquier página.
+   ========================================================================== */
+
+:root {
+  /* Paleta del brandbook */
+  --color-morado: #3d3183;
+  --color-blanco: #ffffff;
+  --color-magenta: #ee3f75;
+  --color-amarillo: #fdba4d;
+  --color-coral: #f47854;
+  --color-verde: #22a36d;
+  --color-rosa: #fabbaf;
+  /* Derivados (morado con transparencia) */
+  --color-texto-suave: rgba(61, 49, 131, 0.8);
+  --color-linea: rgba(61, 49, 131, 0.15);
+  --color-blanco-suave: rgba(255, 255, 255, 0.8);
+
+  /* Tipografías (aprobadas: Jost ≈ Futura, Inter ≈ Helvetica) */
+  --font-titulos: "Jost", "Futura", "Century Gothic", sans-serif;
+  --font-texto: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Espaciado */
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 128px;
+  --margen: 20px;
+  --header-alto: 64px;
+  --ancho-max: 1440px;
+  --ancho-texto: 640px;
+  --grilla-gap-x: 16px;
+  --grilla-gap-y: 40px;
+  --seccion: 72px;
+  --logo-alto: 34px;
+
+  --transicion: 0.25s ease;
+  --transicion-lenta: 0.7s cubic-bezier(.2, .7, .2, 1);
+}
+@media (min-width: 768px) {
+  :root { --margen: 32px; --header-alto: 72px; --grilla-gap-x: 20px; --grilla-gap-y: 56px; --seccion: 104px; }
+}
+@media (min-width: 1200px) {
+  :root { --margen: 56px; --header-alto: 84px; --grilla-gap-x: 28px; --grilla-gap-y: 72px; --seccion: 136px; --logo-alto: 42px; }
+}
+
+/* ===== Base (solo páginas nuevas) ===== */
+body.nh, body.nh *, body.nh *::before, body.nh *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body.nh {
+  margin: 0; background: var(--color-blanco); color: var(--color-morado);
+  font-family: var(--font-texto); font-weight: 300; font-size: 16px; line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+@media (min-width: 1200px) { body.nh { font-size: 17px; } }
+body.nh img, body.nh video { display: block; max-width: 100%; }
+body.nh a { color: inherit; }
+body.nh h1, body.nh h2, body.nh h3 { margin: 0; font-weight: inherit; }
+body.nh :focus-visible { outline: 2px solid var(--color-magenta); outline-offset: 3px; }
+.contenedor { width: 100%; max-width: var(--ancho-max); margin: 0 auto; padding: 0 var(--margen); }
+.solo-lectores { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.seccion { padding: var(--seccion) 0; position: relative; overflow-x: clip; }
+.seccion--sin-arriba { padding-top: 0; }
+
+/* ===== Título con barra (como las páginas del brandbook) ===== */
+.titulo-barra {
+  border-left: 3px solid var(--color-morado); padding-left: var(--s-5); margin: 0 0 var(--s-8);
+  font-family: var(--font-titulos); text-transform: uppercase; line-height: 1.15;
+}
+.titulo-barra strong { display: block; font-weight: 700; font-size: 26px; letter-spacing: 0.22em; }
+.titulo-barra span   { display: block; font-weight: 400; font-size: 22px; letter-spacing: 0.2em; }
+@media (min-width: 1200px) { .titulo-barra strong { font-size: 40px; } .titulo-barra span { font-size: 34px; } }
+
+/* ==========================================================================
+   Encabezado (nh-encabezado) — morado, como el pie
+   ========================================================================== */
+.nh-encabezado, .nh-encabezado * { box-sizing: border-box; }
+.nh-encabezado {
+  position: sticky; top: 0; z-index: 50; height: var(--header-alto);
+  background: var(--color-morado); color: var(--color-blanco);
+  font-family: var(--font-titulos); -webkit-font-smoothing: antialiased;
+}
+.nh-encabezado__barra { height: 100%; max-width: var(--ancho-max); margin: 0 auto; padding: 0 var(--margen); display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); }
+.nh-logo { display: block; line-height: 0; }
+.nh-logo img { height: var(--logo-alto); width: auto; display: block; }
+.nh-menu { display: flex; align-items: center; gap: var(--s-6); }
+.nh-menu ul { display: none; list-style: none; margin: 0; padding: 0; gap: var(--s-6); }
+.nh-menu a, .nh-idioma {
+  font-family: var(--font-titulos); font-weight: 500; text-transform: uppercase; font-size: 12px; letter-spacing: 0.12em;
+  color: var(--color-blanco); text-decoration: none; line-height: 1.2;
+}
+.nh-menu a { display: inline-block; padding: var(--s-2) 0; border-bottom: 2px solid transparent; transition: border-color var(--transicion); }
+.nh-menu a:hover, .nh-menu a:focus-visible, .nh-menu a[aria-current="page"] { color: var(--color-blanco); text-decoration: none; border-bottom-color: var(--color-magenta); }
+.nh-idioma { display: none; align-items: center; gap: 6px; }
+.nh-idioma a { padding: var(--s-2) 0; border-bottom: 2px solid transparent; }
+.nh-idioma a[aria-current] { border-bottom-color: var(--color-magenta); }
+.nh-menu-boton { background: none; border: 0; padding: var(--s-2); margin-right: calc(var(--s-2) * -1); color: var(--color-blanco); cursor: pointer; display: inline-flex; }
+.nh-menu-boton svg { display: block; }
+@media (min-width: 1024px) {
+  .nh-menu ul, .nh-idioma { display: flex; }
+  .nh-menu-boton { display: none; }
+  .nh-menu a, .nh-idioma { font-size: 13px; }
+}
+
+/* Panel del menú en móvil */
+.nh-panel {
+  position: fixed; inset: var(--header-alto) 0 0 0; z-index: 49;
+  background: var(--color-morado); color: var(--color-blanco);
+  padding: var(--s-7) var(--margen);
+  display: flex; flex-direction: column; gap: var(--s-5);
+  transform: translateY(-8px); opacity: 0; visibility: hidden;
+  transition: opacity var(--transicion), transform var(--transicion), visibility var(--transicion);
+}
+.nh-panel.abierto { transform: none; opacity: 1; visibility: visible; }
+.nh-panel ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--s-4); }
+.nh-panel a { font-family: var(--font-titulos); font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; font-size: 22px; color: var(--color-blanco); text-decoration: none; }
+.nh-panel a[aria-current="page"] { border-bottom: 2px solid var(--color-magenta); }
+.nh-panel .nh-idioma { display: flex; font-size: 14px; margin-top: var(--s-5); }
+.nh-panel .nh-idioma a { font-size: 14px; }
+@media (min-width: 1024px) { .nh-panel { display: none; } }
+body.nh-menu-abierto { overflow: hidden; }
+
+/* ==========================================================================
+   Botones
+   ========================================================================== */
+.boton {
+  display: inline-block; font-family: var(--font-titulos); font-weight: 500; text-transform: uppercase;
+  font-size: 13px; letter-spacing: 0.16em; line-height: 1; padding: 15px 32px;
+  border: 1px solid var(--color-morado); background: transparent; color: var(--color-morado); text-decoration: none; cursor: pointer;
+  transition: background-color var(--transicion), border-color var(--transicion), color var(--transicion);
+}
+.boton--solido { background: var(--color-blanco); border-color: var(--color-blanco); }
+.boton:hover, .boton:focus-visible { background: var(--color-magenta); border-color: var(--color-magenta); color: var(--color-blanco); }
+.boton:disabled { opacity: 0.45; cursor: not-allowed; background: transparent; color: var(--color-morado); border-color: var(--color-morado); }
+.enlace-accion {
+  font-family: var(--font-titulos); font-weight: 500; text-transform: uppercase; font-size: 12px; letter-spacing: 0.16em;
+  text-decoration: none; border-bottom: 2px solid var(--color-magenta); padding-bottom: 4px; transition: color var(--transicion);
+}
+.enlace-accion:hover { color: var(--color-magenta); }
+
+/* ==========================================================================
+   Reel del home
+   ========================================================================== */
+.reel { position: relative; height: calc(100svh - var(--header-alto)); min-height: 480px; overflow: hidden; background: var(--color-morado); }
+.reel video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.reel__contenido {
+  position: absolute; inset: 0; z-index: 2; padding: 0 var(--margen);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--s-6); text-align: center;
+}
+.reel__linea {
+  margin: 0; max-width: 22ch; color: var(--color-blanco);
+  font-family: var(--font-titulos); font-weight: 500; text-transform: uppercase;
+  font-size: 22px; letter-spacing: 0.16em; line-height: 1.35; text-wrap: balance;
+  text-shadow: 0 1px 2px rgba(61, 49, 131, 0.55), 0 2px 24px rgba(61, 49, 131, 0.65);
+}
+@media (min-width: 768px) { .reel__linea { font-size: 24px; max-width: none; } .reel__linea-1 { display: block; } }
+@media (min-width: 1200px) { .reel__linea { font-size: 36px; } }
+
+/* ==========================================================================
+   Grilla de proyectos (home, categorías, todos los proyectos)
+   ========================================================================== */
+.grilla { display: grid; grid-template-columns: 1fr; gap: var(--grilla-gap-y) var(--grilla-gap-x); }
+@media (min-width: 768px) { .grilla { grid-template-columns: repeat(2, 1fr); } .tarjeta--ancha { grid-column: 1 / -1; } }
+.tarjeta { display: block; text-decoration: none; color: var(--color-morado); }
+.tarjeta:hover { text-decoration: none; color: var(--color-morado); }
+.tarjeta__media { position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: var(--color-linea); }
+@media (min-width: 768px) { .tarjeta--ancha .tarjeta__media { aspect-ratio: 21 / 9; } }
+.tarjeta__media video, .tarjeta__media img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.001) translate(0, 0); transition: transform var(--transicion-lenta);
+}
+/* Se mueve con el cursor: --mx y --my van de -1 a 1 (js/nh.js) */
+.tarjeta:hover .tarjeta__media video, .tarjeta:hover .tarjeta__media img {
+  transform: scale(1.06) translate(calc(var(--mx, 0) * -14px), calc(var(--my, 0) * -10px));
+}
+.tarjeta__pie { margin: var(--s-4) 0 0; display: flex; align-items: baseline; gap: var(--s-3); flex-wrap: wrap; }
+.tarjeta__numero { font-family: var(--font-titulos); font-weight: 700; font-size: 13px; letter-spacing: 0.08em; color: var(--color-magenta); }
+.tarjeta__nombre {
+  font-family: var(--font-titulos); font-weight: 700; text-transform: uppercase; font-size: 15px; letter-spacing: 0.14em; line-height: 1.35;
+  background: linear-gradient(var(--color-magenta), var(--color-magenta)) left bottom / 0 2px no-repeat; transition: background-size var(--transicion-lenta); padding-bottom: 2px;
+}
+.tarjeta:hover .tarjeta__nombre { background-size: 100% 2px; }
+.tarjeta__cliente { color: var(--color-texto-suave); font-size: 14px; }
+@media (min-width: 1200px) { .tarjeta__nombre { font-size: 17px; } }
+
+/* Cursor "VER": mancha magenta que cambia de forma (solo con mouse) */
+.nh-cursor { position: fixed; left: 0; top: 0; z-index: 60; width: 96px; height: 96px; margin: -48px 0 0 -48px; pointer-events: none; opacity: 0; transform: translate(-200px, -200px) scale(0.4); transition: opacity 0.25s ease; display: none; }
+.nh-cursor svg { width: 100%; height: 100%; fill: var(--color-magenta); overflow: visible; display: block; }
+.nh-cursor b { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: var(--color-blanco); font-family: var(--font-titulos); font-weight: 700; font-size: 14px; letter-spacing: 0.16em; }
+.nh-cursor.activo { opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+  .nh-cursor { display: block; }
+  .tarjeta, #lightgallery .item { cursor: none; }
+}
+
+/* ==========================================================================
+   Franja de marca: recreación del GIF 1 del branding (Lucero Pérez)
+   Ciclo de 7 s que va y vuelve: 0–8 % quieto, 8–85 % el color fluye, 85–100 % quieto.
+   ========================================================================== */
+.franja { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; background: var(--color-blanco); }
+@media (min-width: 768px) { .franja { grid-template-columns: repeat(4, 1fr); gap: 6px; } }
+.franja svg { display: block; width: 100%; height: auto; aspect-ratio: 1; }
+.franja .a { animation-duration: 7s; animation-iteration-count: infinite; animation-direction: alternate;
+             animation-timing-function: cubic-bezier(.55, 0, .3, 1); animation-fill-mode: both; transform-box: fill-box; transform-origin: center; }
+.franja:not(.en-vista) .a, .franja:not(.en-vista) .ondas-flujo { animation-play-state: paused; }
+.c1-mancha { animation-name: c1-mancha; }
+.c1-ola-a  { animation-name: c1-ola-a; }
+.c1-ola-b  { animation-name: c1-ola-b; }
+.c1-puntos { animation-name: c1-puntos; }
+@keyframes c1-mancha { 0%, 8% { transform: scale(1) rotate(0); } 18% { transform: scale(1.12) rotate(-10deg); } 26% { transform: scale(.94) rotate(8deg); } 38% { transform: scale(1.9) rotate(-6deg); } 50%, 100% { transform: scale(5) rotate(0); } }
+@keyframes c1-ola-a  { 0%, 22% { transform: translate(190px, -190px); } 42%, 100% { transform: translate(0, 0); } }
+@keyframes c1-ola-b  { 0%, 28% { transform: translate(-190px, 190px); } 47%, 100% { transform: translate(0, 0); } }
+@keyframes c1-puntos { 0%, 39% { opacity: 0; transform: scale(.6); } 47%, 100% { opacity: 1; transform: scale(1); } }
+.ondas-flujo { animation: c2-flujo 2.4s linear infinite; }
+@keyframes c2-flujo { from { transform: translateY(0); } to { transform: translateY(-12px); } }
+.c3-verde   { animation-name: c3-verde; }
+.c3-coral   { animation-name: c3-coral; }
+.c3-magenta { animation-name: c3-magenta; }
+@keyframes c3-verde   { 0%, 10% { transform: translate(230px, 60px) rotate(30deg); } 15% { transform: translate(115px, 175px) rotate(-20deg); } 23%, 100% { transform: translate(0, 0) rotate(0); } }
+@keyframes c3-coral   { 0%, 19% { transform: translate(-30px, 230px) rotate(-15deg); } 37%, 100% { transform: translate(0, 0) rotate(0); } }
+@keyframes c3-magenta { 0%, 19% { transform: translate(140px, 220px) rotate(20deg); } 33% { transform: translate(70px, 90px) rotate(10deg); } 52%, 100% { transform: translate(0, 0) rotate(0); } }
+.c4-morada  { animation-name: c4-morada; }
+.c4-puntos  { animation-name: c4-puntos; }
+.c4-magenta { animation-name: c4-magenta; }
+@keyframes c4-morada  { 0%, 8% { transform: translate(-18px, -10px) scale(1.25); } 25%, 100% { transform: translate(34px, 52px) scale(.62); } }
+@keyframes c4-puntos  { 0%, 8% { opacity: .55; transform: translateY(14px); } 30%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes c4-magenta { 0%, 24% { transform: translate(-60px, 210px) rotate(-12deg); } 51%, 100% { transform: translate(0, 0) rotate(0); } }
+
+/* Forma que se transforma (del GIF 3 del branding), sin texto */
+.forma-viva { position: relative; width: min(100%, 360px); aspect-ratio: 1; margin-top: var(--s-6); }
+.forma-viva svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.forma-viva img { position: absolute; width: 48%; right: -6%; top: -8%; animation: latir 5s ease-in-out infinite; }
+@keyframes latir { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08) rotate(4deg); } }
+
+/* ==========================================================================
+   Bloques de texto (Studio)
+   ========================================================================== */
+.bloque-texto { display: grid; gap: var(--s-7); align-items: start; }
+@media (min-width: 1024px) { .bloque-texto { grid-template-columns: minmax(0, 1fr) minmax(0, var(--ancho-texto)); } }
+.texto p { margin: 0 0 var(--s-5); }
+.texto .entrada { font-family: var(--font-titulos); font-weight: 400; font-size: 21px; line-height: 1.5; }
+@media (min-width: 1200px) { .texto .entrada { font-size: 26px; } }
+.texto .entrada em { font-style: normal; color: var(--color-magenta); font-weight: 500; }
+
+/* Studio */
+.studio-intro { display: grid; gap: var(--s-7); align-items: center; }
+@media (min-width: 1024px) { .studio-intro { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--s-9); } }
+.studio-retrato img { width: 100%; height: auto; }
+.areas { margin: 0; font-family: var(--font-titulos); font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; font-size: 15px; line-height: 1.9; max-width: 60ch; }
+@media (min-width: 1200px) { .areas { font-size: 18px; } }
+.areas span { color: var(--color-magenta); }
+.clientes { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-5) var(--s-6); }
+@media (min-width: 768px) { .clientes { grid-template-columns: repeat(4, 1fr); } }
+/* Todos los logos en un solo color (morado) usando el logo como máscara */
+.cliente { aspect-ratio: 16 / 9; background: var(--color-morado); -webkit-mask: var(--logo) center / contain no-repeat; mask: var(--logo) center / contain no-repeat; transition: background-color var(--transicion); }
+.cliente:hover { background: var(--color-magenta); }
+.cierre { text-align: center; }
+.cierre p { font-family: var(--font-titulos); font-size: 22px; line-height: 1.4; margin: 0 0 var(--s-5); }
+@media (min-width: 1200px) { .cierre p { font-size: 30px; } }
+.cierre .correo { display: inline-block; font-family: var(--font-texto); font-size: 17px; margin-bottom: var(--s-6); border-bottom: 1px solid var(--color-magenta); text-decoration: none; }
+
+/* ==========================================================================
+   Contacto
+   ========================================================================== */
+.contacto { display: grid; gap: var(--s-8); }
+@media (min-width: 1024px) { .contacto { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--s-9); } }
+.contacto-datos { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--s-4); }
+.contacto-datos a { font-family: var(--font-titulos); font-weight: 500; font-size: 18px; text-decoration: none; border-bottom: 1px solid var(--color-linea); transition: border-color var(--transicion); }
+.contacto-datos a:hover { border-bottom-color: var(--color-magenta); }
+.contacto-datos small { display: block; font-family: var(--font-titulos); text-transform: uppercase; letter-spacing: 0.14em; font-size: 11px; color: var(--color-texto-suave); }
+.formulario { display: grid; gap: var(--s-5); }
+.campo label { display: block; font-family: var(--font-titulos); font-weight: 500; text-transform: uppercase; letter-spacing: 0.14em; font-size: 12px; margin-bottom: var(--s-2); }
+.campo input, .campo select, .campo textarea {
+  width: 100%; font: inherit; color: var(--color-morado); background: var(--color-blanco);
+  border: 0; border-bottom: 1px solid var(--color-morado); border-radius: 0; padding: var(--s-3) 0; appearance: none;
+}
+.campo select { background: linear-gradient(45deg, transparent 50%, var(--color-morado) 50%) right 6px center / 7px 7px no-repeat, var(--color-blanco); padding-right: var(--s-6); }
+.campo textarea { min-height: 140px; resize: vertical; }
+.campo input:focus, .campo select:focus, .campo textarea:focus { outline: none; border-bottom: 2px solid var(--color-magenta); }
+.campo .error { display: none; font-size: 13px; color: var(--color-magenta); margin-top: var(--s-1); }
+.campo.con-error .error { display: block; }
+.formulario__pie { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-3); margin-top: var(--s-3); }
+.formulario__nota { font-size: 13px; color: var(--color-texto-suave); margin: 0; }
+.formulario__nota a { text-decoration: underline; text-decoration-color: var(--color-magenta); }
+.formulario__estado { font-size: 15px; margin: 0; }
+.formulario__estado a { text-decoration: underline; text-decoration-color: var(--color-magenta); }
+.formulario__exito { display: none; }
+.formulario__exito.visible { display: block; }
+.honey { position: absolute !important; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+/* ==========================================================================
+   Páginas de proyecto (markup de scripts/prerender.py y project-gallery.js)
+   ========================================================================== */
+.proyecto-cabecera { padding-top: var(--s-8); }
+@media (min-width: 1200px) { .proyecto-cabecera { padding-top: var(--s-9); } }
+.project-video-hero { max-width: var(--ancho-max); margin: 0 auto var(--s-8); padding: 0 var(--margen); }
+.project-video-hero-media { overflow: hidden; background: var(--color-linea); }
+.project-video-hero-media video { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; display: block; }
+.project-video-hero-copy { margin-top: var(--s-7); max-width: 920px; }
+.project-video-hero-copy__title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } /* ya está en el título de la página */
+.project-video-hero-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.project-video-hero-table th, .project-video-hero-table td { text-align: left; vertical-align: top; padding: var(--s-4) var(--s-4) var(--s-4) 0; border-bottom: 1px solid var(--color-linea); }
+.project-video-hero-table th[scope="row"] { width: 28%; font-family: var(--font-titulos); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 12px; padding-top: calc(var(--s-4) + 3px); }
+.project-video-hero-table td p { margin: 0 0 var(--s-3); }
+.project-video-hero-table td p:last-child { margin-bottom: 0; }
+.project-video-hero-table__section { font-family: var(--font-titulos); font-weight: 700; text-transform: uppercase; letter-spacing: 0.16em; font-size: 13px; color: var(--color-magenta); padding-top: var(--s-6) !important; border-bottom: 0 !important; }
+.project-video-hero-table__list { margin: 0; padding-left: 1.1em; }
+.project-video-hero-table__list li { margin-bottom: var(--s-2); }
+.project-video-hero-table__list li::marker { color: var(--color-magenta); }
+@media (max-width: 767px) {
+  .project-video-hero-table, .project-video-hero-table tbody, .project-video-hero-table tr, .project-video-hero-table th, .project-video-hero-table td { display: block; width: 100%; }
+  .project-video-hero-table th[scope="row"] { border-bottom: 0; padding-bottom: 0; }
+}
+/* Galería */
+#lightgallery.row { display: grid; grid-template-columns: 1fr; gap: var(--grilla-gap-x); max-width: var(--ancho-max); margin: 0 auto; padding: 0 var(--margen) var(--seccion); }
+@media (min-width: 768px) { #lightgallery.row { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1200px) { #lightgallery.row { grid-template-columns: repeat(3, 1fr); } }
+#lightgallery .item { position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: var(--color-linea); padding: 0; max-width: none; }
+#lightgallery .item > a { position: absolute; inset: 0; display: block; }
+#lightgallery .item img, #lightgallery .item video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform var(--transicion-lenta); }
+#lightgallery .item:hover img, #lightgallery .item:hover video { transform: scale(1.05); }
+@media (min-width: 768px) { #lightgallery .desktop-hide-first-video { display: none; } }
+
+/* ==========================================================================
+   Páginas legales y de texto
+   ========================================================================== */
+.texto-legal { max-width: 760px; }
+.texto-legal h1 { font-family: var(--font-titulos); font-weight: 700; text-transform: uppercase; letter-spacing: 0.18em; font-size: 26px; line-height: 1.2; border-left: 3px solid var(--color-morado); padding-left: var(--s-5); margin-bottom: var(--s-7); }
+@media (min-width: 1200px) { .texto-legal h1 { font-size: 34px; } }
+.texto-legal h2 { font-family: var(--font-titulos); font-weight: 700; font-size: 18px; margin: var(--s-7) 0 var(--s-3); }
+.texto-legal p, .texto-legal li { margin: 0 0 var(--s-3); }
+.texto-legal ul { padding-left: 1.2em; margin: 0 0 var(--s-4); }
+.texto-legal li::marker { color: var(--color-magenta); }
+.texto-legal a { text-decoration: underline; text-decoration-color: var(--color-magenta); }
+
+/* ==========================================================================
+   Pie de página (nh-pie)
+   ========================================================================== */
+.nh-pie, .nh-pie * { box-sizing: border-box; }
+.nh-pie { position: relative; overflow: hidden; background: var(--color-morado); color: var(--color-blanco); font-family: var(--font-texto); font-weight: 300; font-size: 13px; line-height: 1.7; padding: var(--s-9) 0; -webkit-font-smoothing: antialiased; }
+.nh-pie__barra { position: relative; z-index: 1; max-width: var(--ancho-max); margin: 0 auto; padding: 0 var(--margen); display: flex; flex-direction: column; gap: var(--s-5); }
+.nh-pie__logo { height: 52px; width: auto; display: block; }
+.nh-pie__datos { margin: var(--s-5) 0 0; color: var(--color-blanco); }
+.nh-pie__datos a { color: var(--color-blanco); text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.4); transition: border-color var(--transicion); }
+.nh-pie__datos a:hover { color: var(--color-blanco); text-decoration: none; border-bottom-color: var(--color-magenta); }
+.nh-pie__legal { font-size: 11px; display: flex; flex-wrap: wrap; gap: var(--s-4); }
+.nh-pie__legal a { color: var(--color-blanco-suave); text-decoration: none; }
+.nh-pie__legal a:hover { color: var(--color-blanco); text-decoration: underline; text-decoration-color: var(--color-magenta); }
+.nh-pie__ondas { position: absolute; right: -20px; bottom: -30px; width: clamp(180px, 26vw, 420px); opacity: 0.5; animation: ondear 10s ease-in-out infinite alternate; pointer-events: none; }
+@keyframes ondear { from { transform: translate(0, 0) rotate(-4deg); } to { transform: translate(-12%, 6%) rotate(4deg); } }
+@media (min-width: 1024px) { .nh-pie__barra { flex-direction: row; align-items: flex-end; justify-content: space-between; } }
+
+/* ==========================================================================
+   WhatsApp flotante (nh-whatsapp)
+   ========================================================================== */
+.nh-whatsapp {
+  position: fixed; right: 20px; bottom: 20px; z-index: 55; width: 54px; height: 54px; border-radius: 50%;
+  background: var(--color-magenta); color: var(--color-blanco); border: 2px solid var(--color-blanco);
+  display: flex; align-items: center; justify-content: center; box-sizing: border-box;
+  transition: transform var(--transicion), background-color var(--transicion);
+}
+.nh-whatsapp:hover { background: var(--color-morado); color: var(--color-blanco); transform: scale(1.06); }
+.nh-whatsapp svg { width: 25px; height: 25px; fill: currentColor; display: block; }
+
+/* ===== Movimiento reducido ===== */
+@media (prefers-reduced-motion: reduce) {
+  .franja .a { animation-delay: -6.9s !important; animation-play-state: paused !important; }
+  .ondas-flujo, .nh-pie__ondas, .forma-viva img { animation: none !important; }
+  .tarjeta__media video, .tarjeta__media img, #lightgallery .item img, #lightgallery .item video { transition: none !important; }
+}

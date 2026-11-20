@@ -1,0 +1,17 @@
+{
+  "_nota": "Nombre y cliente que se muestran en las grillas. El orden de cada grilla se define en el atributo data-proyectos de su HTML. Después de editar este archivo corre: python scripts/prerender.py",
+  "proyectos": {
+    "mecaigoderisa-peru-2026": { "nombre": "Me Caigo de Risa Perú", "cliente": "Latina Televisión", "categoria": "tv" },
+    "esb-dreamleague": { "nombre": "DreamLeague 22 y 23", "nombre_en": "DreamLeague 22 & 23", "cliente": "ESB", "categoria": "esports-y-eventos" },
+    "todogood-2025": { "nombre": "Todo Good", "cliente": "Todo Good", "categoria": "streaming" },
+    "evidenciaoculta-2025": { "nombre": "Evidencia Oculta", "cliente": "América Televisión", "categoria": "tv" },
+    "esb-esl-one-birmingham-2024": { "nombre": "ESL One Birmingham", "cliente": "ESB", "categoria": "esports-y-eventos" },
+    "lamula-2025": { "nombre": "La Mula", "cliente": "La Mula", "categoria": "streaming" },
+    "ti-pubstomp": { "nombre": "TI Pubstomp", "cliente": "ESB", "categoria": "esports-y-eventos" },
+    "esb-pgl-wallachia-season-1": { "nombre": "PGL Wallachia S1", "cliente": "ESB", "categoria": "esports-y-eventos" },
+    "esb-eliteleague-s1": { "nombre": "Elite League S1", "cliente": "ESB", "categoria": "esports-y-eventos" },
+    "esb-betboom-dacha-2024": { "nombre": "BetBoom Dacha Dubai", "cliente": "ESB", "categoria": "esports-y-eventos" },
+    "pgl-major-copenhagen-2024": { "nombre": "PGL Major Copenhagen", "cliente": "ESB", "categoria": "esports-y-eventos" },
+    "canalya-2025": { "nombre": "Canal Ya", "cliente": "Canal Ya", "categoria": "streaming" }
+  }
+}
