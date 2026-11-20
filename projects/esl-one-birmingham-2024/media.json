@@ -5,7 +5,7 @@
   "media": [
     {
       "type": "image",
-      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/1.png",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/1.webp",
       "alt": "ESL Birmingham frame 1"
     },
     {
@@ -15,12 +15,12 @@
     },
     {
       "type": "image",
-      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/2.png",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/2.webp",
       "alt": "ESL Birmingham frame 2"
     },
     {
       "type": "image",
-      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/3.png",
+      "src": "/images/direccion-de-arte/esl-one-birmingham-2024/3.webp",
       "alt": "ESL Birmingham frame 3"
     }
   ]

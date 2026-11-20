@@ -5,7 +5,7 @@
   "media": [
     {
       "type": "image",
-      "src": "/images/direccion-de-arte/betboom-dacha/1.png",
+      "src": "/images/direccion-de-arte/betboom-dacha/1.webp",
       "alt": "BetBoom Dacha frame 1"
     },
     {
@@ -15,12 +15,12 @@
     },
     {
       "type": "image",
-      "src": "/images/direccion-de-arte/betboom-dacha/2.png",
+      "src": "/images/direccion-de-arte/betboom-dacha/2.webp",
       "alt": "BetBoom Dacha frame 2"
     },
     {
       "type": "image",
-      "src": "/images/direccion-de-arte/betboom-dacha/3.png",
+      "src": "/images/direccion-de-arte/betboom-dacha/3.webp",
       "alt": "BetBoom Dacha frame 3"
     }
   ]
