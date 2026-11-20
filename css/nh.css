@@ -77,11 +77,12 @@ body.nh :focus-visible { outline: 2px solid var(--color-magenta); outline-offset
    ========================================================================== */
 .nh-encabezado, .nh-encabezado * { box-sizing: border-box; }
 .nh-encabezado {
+  display: block; width: 100%; margin: 0; padding: 0; /* blindaje contra estilos heredados de la plantilla vieja */
   position: sticky; top: 0; z-index: 50; height: var(--header-alto);
   background: var(--color-morado); color: var(--color-blanco);
   font-family: var(--font-titulos); -webkit-font-smoothing: antialiased;
 }
-.nh-encabezado__barra { height: 100%; max-width: var(--ancho-max); margin: 0 auto; padding: 0 var(--margen); display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); }
+.nh-encabezado__barra { width: 100%; height: 100%; max-width: var(--ancho-max); margin: 0 auto; padding: 0 var(--margen); display: flex; align-items: center; justify-content: space-between; gap: var(--s-5); }
 .nh-logo { display: block; line-height: 0; }
 .nh-logo img { height: var(--logo-alto); width: auto; display: block; }
 .nh-menu { display: flex; align-items: center; gap: var(--s-6); }
@@ -102,6 +103,9 @@ body.nh :focus-visible { outline: 2px solid var(--color-magenta); outline-offset
   .nh-menu-boton { display: none; }
   .nh-menu a, .nh-idioma { font-size: 13px; }
 }
+
+/* Páginas antiguas: la plantilla vieja reservaba espacio para su encabezado fijo */
+body:has(> .nh-encabezado) { padding-top: 0 !important; }
 
 /* Panel del menú en móvil */
 .nh-panel {
@@ -338,8 +342,8 @@ body.nh-menu-abierto { overflow: hidden; }
    Pie de página (nh-pie)
    ========================================================================== */
 .nh-pie, .nh-pie * { box-sizing: border-box; }
-.nh-pie { position: relative; overflow: hidden; background: var(--color-morado); color: var(--color-blanco); font-family: var(--font-texto); font-weight: 300; font-size: 13px; line-height: 1.7; padding: var(--s-9) 0; -webkit-font-smoothing: antialiased; }
-.nh-pie__barra { position: relative; z-index: 1; max-width: var(--ancho-max); margin: 0 auto; padding: 0 var(--margen); display: flex; flex-direction: column; gap: var(--s-5); }
+.nh-pie { display: block; width: 100%; margin: 0; text-align: left; position: relative; overflow: hidden; background: var(--color-morado); color: var(--color-blanco); font-family: var(--font-texto); font-weight: 300; font-size: 13px; line-height: 1.7; padding: var(--s-9) 0; -webkit-font-smoothing: antialiased; }
+.nh-pie__barra { width: 100%; position: relative; z-index: 1; max-width: var(--ancho-max); margin: 0 auto; padding: 0 var(--margen); display: flex; flex-direction: column; gap: var(--s-5); }
 .nh-pie__logo { height: 52px; width: auto; display: block; }
 .nh-pie__datos { margin: var(--s-5) 0 0; color: var(--color-blanco); }
 .nh-pie__datos a { color: var(--color-blanco); text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.4); transition: border-color var(--transicion); }
