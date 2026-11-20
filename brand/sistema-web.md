@@ -1,144 +1,126 @@
-# Sistema visual web — Nathaly Habich (v2)
+# Sistema visual web — Nathaly Habich (v3)
 
-Basado en el brandbook 2019 (`/brand/brandbook.pdf`, 9 páginas) y los archivos de `/brand/`.
+Basado en el brandbook 2019 (`/brand/brandbook.pdf`), los archivos de `/brand/` y las animaciones de la publicación del branding en Behance (Lucero Pérez).
 Página de prueba: `/brand/prueba.html`.
 
-> **Estado: v2, pendiente de aprobación.**
-> Cambios desde la v1, por tu feedback: más personalidad con los elementos gráficos del brandbook, tarjetas con video en movimiento y hover magenta en el botón.
+> **Estado: v3, pendiente de aprobación.**
+>
+> | Versión | Qué cambió |
+> |---|---|
+> | v2 | Más personalidad con los elementos del brandbook; tarjetas con video; hover magenta. |
+> | v3 | Sin formas ni capas de color sobre fotos y videos; reel nítido; interacción con el cursor; dos momentos animados inspirados en los GIF del branding. |
+>
 > Quedan 2 decisiones abiertas (❓ al final).
 
 ---
 
-## 1. Lo que dice el brandbook (resumen)
+## 1. Fuentes de inspiración
 
-| Página | Contenido | Cómo se usa en la web |
+| Fuente | Elemento | Uso en la web |
 |---|---|---|
-| Portada | Manchas orgánicas (magenta, coral, amarillo), racimo de puntos rosa y líneas onduladas blancas sobre morado | Reel del home y pie de página |
-| 1 | Logotipo NATHALY + Habich, en morado | Encabezado |
-| 2 | Futura Bold + Golden Plains modificada | El logo va como SVG |
-| 3 | Logo responsive NH (solo formatos pequeños) | Favicon |
-| 1–7 | **Título con barra vertical**: primera línea en negrita, segunda en peso normal ("TIPOGRAFÍAS / LOGOTIPO") | Todos los títulos de página y sección |
-| 1–7 | **Número de página dentro de una mancha de color** en la esquina superior derecha | Número de cada tarjeta de proyecto |
-| 4 | Paleta de 7 colores | Ver sección 2 |
-| 5–6 | Combinaciones permitidas del logo sobre color | Color del número sobre cada mancha |
-| 7 | Tipografías: títulos, subtítulos y cuerpo | Ver sección 3 |
-
----
+| Brandbook, páginas 1–7 | Título con barra vertical, primera línea en negrita y segunda en peso normal | Todos los títulos ✅ *aprobado* |
+| Brandbook, portada | Manchas orgánicas, racimo de puntos, líneas onduladas | Franja de marca, sección de valores, pie, cursor |
+| Brandbook, página 4 | Paleta de 7 colores | Ver sección 2 |
+| Behance, GIF 1 | Franja de 4 cuadros con patrones de la marca que se mueven y se transforman | **Franja de marca** animada |
+| Behance, GIF 3 | Los valores de la marca junto a una forma que pasa de triángulo a mancha, con puntos amarillos | **Sección de valores** animada |
 
 ## 2. Colores
 
-| Variable CSS | HEX | Uso en la web |
+| Variable CSS | HEX | Uso |
 |---|---|---|
-| `--color-morado` | `#3d3183` | Principal: texto, títulos y su barra, logo, menú, fondo del pie, capa sobre videos. |
-| `--color-blanco` | `#ffffff` | Fondo de las páginas; texto sobre morado y sobre videos. |
-| `--color-magenta` | `#ee3f75` | **Acento:** hover del botón "Hablemos", subrayados, botón de WhatsApp, palabra destacada, mancha principal del reel. |
-| `--color-amarillo` | `#fdba4d` | Detalles gráficos: mancha del reel, número de tarjeta. |
-| `--color-coral` | `#f47854` | Detalles gráficos: mancha del reel, número de tarjeta. |
-| `--color-verde` | `#22a36d` | Detalles gráficos: número de tarjeta. |
-| `--color-rosa` | `#fabbaf` | Racimo de puntos, número de tarjeta. |
+| `--color-morado` | `#3d3183` | Texto, títulos y su barra, logo, etiqueta del reel, pie, cuadro de ondas. |
+| `--color-blanco` | `#ffffff` | Fondo; botón "Hablemos" sobre el reel; texto sobre morado. |
+| `--color-magenta` | `#ee3f75` | Acento: hover de botones, subrayados, número de tarjeta, cursor "VER", WhatsApp, palabra destacada. |
+| `--color-amarillo` | `#fdba4d` | Fondos de cuadros de la franja; puntos de la sección de valores. |
+| `--color-coral` | `#f47854` | Formas animadas. |
+| `--color-verde` | `#22a36d` | Formas animadas. |
+| `--color-rosa` | `#fabbaf` | Fondo de un cuadro de la franja. |
 
-Regla: **ningún color se usa como fondo de una sección entera**, salvo el morado del pie. Amarillo, coral, verde y rosa solo aparecen en formas gráficas (manchas, puntos, números).
+**Reglas:**
+- Las fotos y los videos **se muestran tal cual**: sin capas, degradados ni formas encima.
+- Los colores secundarios aparecen solo en la franja de marca, los valores y el pie, nunca como fondo detrás de texto.
 
-**Derivados** (el mismo color con transparencia): texto suave = morado 80 % (`#645a9c`), líneas = morado 15 %, capa del reel = morado 15 % → 70 %, capa de tarjetas = morado 0 % → 78 %.
-
-### Contraste (WCAG AA: 4,5:1 texto normal · 3:1 texto grande y gráficos)
+### Contraste (WCAG AA)
 
 | Combinación | Contraste | Resultado |
 |---|---:|---|
 | Morado sobre blanco / blanco sobre morado | 10,68 | ✅ |
-| Morado 80 % sobre blanco | 6,02 | ✅ |
-| Blanco sobre video con capa morada (peor caso) | ≈ 4,6 | ✅ |
-| Morado sobre amarillo / rosa (números de tarjeta) | 6,26 / 6,51 | ✅ |
-| Blanco sobre verde (número, texto grande en negrita) | 3,22 | ✅ texto grande |
-| **Blanco sobre magenta** (hover de "Hablemos", número 01) | **3,75** | ⚠️ Cumple como texto grande; no como texto normal. Elegiste mantenerlo. |
-| Blanco sobre coral (número 04) | 2,74 | ⚠️ No cumple, pero el brandbook usa esta misma combinación para sus números. El número es decorativo y está oculto para lectores de pantalla. |
-| Coral, verde, amarillo o rosa como texto sobre blanco | 1,6 – 3,2 | ❌ No se usan como color de texto. |
+| Etiqueta del reel: texto blanco sobre fondo morado sólido | 10,68 | ✅ Se lee sobre cualquier fotograma, sin oscurecer el video |
+| "Hablemos" sobre el reel: morado sobre blanco | 10,68 | ✅ |
+| Hover de "Hablemos": blanco sobre magenta | 3,75 | ⚠️ Solo texto grande. Elegido por ti. |
+| Número de tarjeta en magenta sobre blanco | 3,75 | ⚠️ Decorativo, oculto para lectores de pantalla. |
+| Cursor "VER": blanco sobre magenta, 14 px en negrita | 3,75 | ⚠️ Decorativo. |
+| Valores en morado sobre blanco | 10,68 | ✅ |
 
----
+## 3. Tipografías *(❓ pendiente: Jost e Inter)*
 
-## 3. Tipografías
-
-| Rol (brandbook) | Fuente del brandbook | Propuesta web (Google Fonts) |
+| Rol | Fuente del brandbook | Web |
 |---|---|---|
-| Títulos — MAYÚSCULAS, espaciado amplio | Futura Md BT | **Jost** 400 y 700 (versión libre de Futura) |
-| Subtítulos y nombres de proyecto | Futura Bold | **Jost** 700 |
-| Frase destacada | Futura | **Jost** 400 |
-| Cuerpo de texto | Helvetica LT Light | **Inter** 300 |
+| Títulos (MAYÚSCULAS, espaciado amplio) | Futura Md BT | Jost 400 / 700 |
+| Nombres de proyecto, subtítulos | Futura Bold | Jost 700 |
+| Valores y frase destacada | Futura | Jost 400–500 |
+| Cuerpo | Helvetica LT Light | Inter 300 |
 
-Futura y Helvetica no tienen licencia web (las de `/brand/fonts` son de escritorio).
-
-| Elemento | Móvil | Escritorio | Estilo |
-|---|---:|---:|---|
-| Título con barra, línea 1 | 26 px | 40 px | Jost 700, MAYÚSCULAS, espaciado 0,22 em, barra morada de 3 px |
-| Título con barra, línea 2 | 22 px | 34 px | Jost 400, MAYÚSCULAS, espaciado 0,2 em |
-| Línea del reel | 14 px | 17 px | Jost 500, MAYÚSCULAS, espaciado 0,22 em, blanco |
-| Menú y ES/EN | 12 px | 13 px | Jost 500, MAYÚSCULAS, espaciado 0,12 em |
-| Nombre del proyecto (sobre el video) | 15 px | 17 px (22 px en tarjeta ancha) | Jost 700, MAYÚSCULAS, espaciado 0,14 em, blanco |
-| Cliente (sobre el video) | 14 px | 14 px | Inter 300, blanco |
-| Frase destacada | 21 px | 26 px | Jost 400; una palabra clave en magenta |
-| Cuerpo | 16 px | 17 px | Inter 300, interlineado 1,7, máx. 640 px |
-
----
+| Elemento | Móvil | Escritorio |
+|---|---:|---:|
+| Título con barra (negrita / normal) | 26 / 22 px | 40 / 34 px |
+| Etiqueta del reel | 13 px | 15 px |
+| Nombre del proyecto | 15 px | 17 px |
+| Lista de valores | 34 px | 56 px |
+| Frase destacada | 21 px | 26 px |
+| Cuerpo | 16 px | 17 px |
 
 ## 4. Logo
 
-| Archivo | Color | Va sobre |
+`/images/marca/logo-nathaly-habich.svg` (morado, encabezado) y `logo-nathaly-habich-blanco.svg` (blanco, pie).
+
+## 5. Reel
+
+- **Nítido en pantalla grande:** en pantallas de 1024 px o más se sirve un reel nuevo en **1920 × 1080, códec AV1** (`/reel3-av1.mp4`, 17 MB), con la calidad del original. En celulares, o en navegadores sin AV1, se usa el reel liviano actual (`/reel3.mp4`, 1280 px, 7,3 MB).
+- **Sin capa de color.** La frase va en una **etiqueta morada sólida** y al lado el botón **"Hablemos"** blanco (hover magenta).
+- El original del reel ya viene algo suave de fábrica; esta versión conserva toda la nitidez que tiene.
+
+## 6. Tarjetas de proyecto
+
+- **Video limpio en movimiento** (se reproduce al entrar en pantalla, con portada mientras carga).
+- **Ritmo:** una ancha (21:9) y dos medianas (4:3); en móvil, una columna en 4:3.
+- **Debajo del video:** número en magenta (`01`), **NOMBRE DEL PROYECTO** y el cliente en morado suave.
+- **Con el cursor** (solo computadoras con mouse):
+  - el puntero se convierte en una **mancha magenta que cambia de forma** con la palabra **VER**;
+  - el video se agranda un 6 % y **se desplaza levemente siguiendo el mouse**;
+  - el nombre se subraya en magenta de izquierda a derecha.
+- En celulares no hay cursor especial; las tarjetas se tocan normal.
+
+## 7. Momentos animados (inspirados en los GIF del branding)
+
+| Momento | Qué se ve | Dónde iría |
 |---|---|---|
-| `/images/marca/logo-nathaly-habich.svg` | Morado | Encabezado blanco |
-| `/images/marca/logo-nathaly-habich-blanco.svg` | Blanco | Pie morado |
+| **Franja de marca** (GIF 1) | 4 cuadros a todo el ancho (2 × 2 en móvil): rosa con mancha magenta que se desplaza, morado con ondas blancas que ondulan, amarillo con capas verde, coral y magenta que suben y bajan, y amarillo con mancha morada y puntos blancos que laten. | Entre la grilla de proyectos y el pie del home; también como cierre de las páginas de categoría |
+| **Valores** (GIF 3) | "equilibrio, frescura, originalidad, pasión, fuerza, libertad, expresividad, creatividad" se encienden uno a uno; al lado, una forma que se transforma de triángulo coral a mancha verde y luego magenta, con puntos amarillos. | Página Studio |
 
-Recortados del `Logotipo.svg` original (mismo trazo). Alto: 34 px móvil, 42 px escritorio, 52 px en el pie.
+Todas las animaciones se detienen si el visitante tiene activado "reducir movimiento" en su sistema.
 
-## 5. Elementos gráficos (de la portada del brandbook)
-
-| Elemento | Archivo / forma | Dónde |
-|---|---|---|
-| Manchas orgánicas | 3 formas SVG en magenta, coral y amarillo | Esquinas del reel (flotan despacio) y mancha magenta en el pie |
-| Racimo de puntos | `/images/marca/puntos-rosa.svg` | Junto a la mancha magenta del reel y bajo el título de bloques de texto (solo escritorio) |
-| Líneas onduladas | `/images/marca/ondas-blanco.svg` y `ondas-morado.svg` | Esquina inferior derecha del reel y del pie |
-| Mancha de esquina con número | Forma SVG | Esquina superior derecha de cada tarjeta, colores en rotación |
-
-Si el visitante tiene activado "reducir movimiento" en su sistema, las manchas no se mueven.
-
-## 6. Botones
+## 8. Botones
 
 | | Principal — "Hablemos" | Secundario |
 |---|---|---|
-| Forma | Rectángulo de esquinas rectas, borde de 1 px, sin fondo | Texto con línea magenta de 2 px debajo |
-| Texto | Jost 500, 13 px, MAYÚSCULAS, espaciado 0,16 em | Jost 500, 12 px, MAYÚSCULAS, espaciado 0,16 em |
-| Color | Blanco sobre el reel; morado sobre blanco | Morado |
-| **Hover** | **Fondo magenta, texto blanco** ✅ (elegido) | El texto pasa a magenta |
-| WhatsApp flotante | Círculo de 54 px, magenta con borde blanco; hover: morado | — |
+| Forma | Rectángulo, esquinas rectas, borde de 1 px | Texto con línea magenta de 2 px |
+| Sobre el reel | Fondo blanco, texto morado | — |
+| Sobre blanco | Borde y texto morados | Texto morado |
+| Hover | **Fondo magenta, texto blanco** ✅ | Texto magenta |
+| WhatsApp flotante | Círculo magenta con borde blanco; hover morado | — |
 
-## 7. Grilla y tarjetas de proyecto
+## 9. Espaciado y estructura
 
-- **Videos en movimiento**, como antes: cada tarjeta reproduce su video (con portada mientras carga) cuando entra en pantalla.
-- **Ritmo:** una tarjeta ancha (21:9) y luego dos medianas (4:3), y se repite. En móvil, una columna en 4:3.
-- **Encima del video:** capa morada abajo, **NOMBRE DEL PROYECTO** en blanco y debajo el cliente.
-- **Número** 01, 02, 03… en una mancha de color en la esquina, rotando magenta, verde, amarillo, coral, rosa y morado.
-- **Hover:** el video crece un 4 %, la mancha del número crece y aparece la línea magenta bajo el nombre.
-- Separación entre tarjetas: 16 px móvil, 20 px tablet, 24 px escritorio.
-
-## 8. Espaciado
-
-Escala 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128 px.
-
-| | Móvil | Tablet (≥ 768 px) | Escritorio (≥ 1200 px) |
-|---|---:|---:|---:|
-| Margen lateral | 20 px | 32 px | 56 px |
-| Encabezado | 64 px | 72 px | 84 px |
-| Espacio entre secciones | 72 px | 104 px | 136 px |
-
-Ancho máximo del contenido: 1440 px. Ancho máximo del texto: 640 px.
-
-## 9. Encabezado y pie
-
-- **Encabezado:** blanco, fijo al hacer scroll, logo morado, menú en Jost con subrayado magenta en hover y en la página actual. En móvil, **CONTACTO** siempre visible + ícono de menú.
-- **Pie:** morado, mancha magenta asomando arriba a la izquierda, ondas blancas abajo a la derecha, logo blanco, datos de contacto y enlaces legales pequeños.
+- Escala: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64 · 96 · 128 px.
+- Márgenes laterales: 20 / 32 / 56 px. Encabezado: 64 / 72 / 84 px. Espacio entre secciones: 72 / 104 / 136 px.
+- Ancho máximo 1440 px; texto máximo 640 px.
+- **Encabezado:** blanco y fijo, logo morado; en móvil, CONTACTO visible + menú.
+- **Pie:** morado, ondas blancas en movimiento suave, logo blanco, datos y legales.
 
 ---
 
-## ❓ Decisiones que siguen abiertas
+## ❓ Decisiones abiertas
 
-1. **Fuentes web:** ¿apruebas **Jost** (por Futura) e **Inter** (por Helvetica)?
-2. **"Siempre en minúsculas":** lo aplico como *nunca en MAYÚSCULAS sostenidas* (por ejemplo, "Latina Televisión"). ¿O lo quieres todo en minúscula?
+1. **Fuentes web:** ¿apruebas Jost (por Futura) e Inter (por Helvetica)?
+2. **"Siempre en minúsculas":** ¿lo aplico como *nunca en MAYÚSCULAS sostenidas* ("Latina Televisión")?
