@@ -4,6 +4,18 @@
 
   const posterFor = (src) => src.replace(/\.mp4$/i, "-poster.webp");
 
+  // Si el contenido ya viene en el HTML (scripts/prerender.py), no lo duplicamos:
+  // solo activamos los videos diferidos y la galería/lightbox.
+  if (gallery.dataset.prerendered === "true") {
+    if (window.lazyVideos) window.lazyVideos.observe(gallery);
+    if (window.lightGallery) {
+      window.lightGallery(gallery, {
+        selector: ".item"
+      });
+    }
+    return;
+  }
+
   // Cache-bust para que siempre cargue lo nuevo
   const currentScript = document.currentScript;
   const mediaBase = currentScript ? new URL(".", currentScript.src) : new URL("./", window.location.href);

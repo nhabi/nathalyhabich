@@ -1036,7 +1036,76 @@
       </div>
 
       <div class="container-fluid" data-aos="fade" data-aos-delay="500">
-        <div class="row" id="portfolio-grid"></div>
+        <div class="row" id="portfolio-grid" data-prerendered="true">
+          <!-- prerender:start (generado por scripts/prerender.py, no editar a mano) -->
+          <div class="col-lg-4">
+        <a class="portfolio-card" href="/mecaigoderisa-peru-2026/" aria-label="Me Caigo de Risa Perú 2026">
+          <video src="/images/direccion-de-arte/mecaigoderisa-peru-2026/Mecaigoderisa.mp4" poster="/images/direccion-de-arte/mecaigoderisa-peru-2026/Mecaigoderisa-poster.webp" class="img-fluid" muted loop playsinline preload="none" data-lazy-video></video>
+          <span class="portfolio-card__overlay">
+            <span class="portfolio-card__content">
+              <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">Me Caigo de Risa Perú 2026</span>
+              <p class="portfolio-card__excerpt">Dirección de arte para el escenario inclinado de Me Caigo de Risa Perú: diseño y conceptualización de +65 escenografías temáticas únicas en producción diaria continua, set completamente nuevo cada día, construido en 48 horas y destruido en vivo en 15 minutos.</p>
+            </span>
+          </span>
+        </a>
+      </div>
+          <div class="col-lg-4">
+        <a class="portfolio-card" href="/evidenciaoculta-2025/" aria-label="Evidencia Oculta 2025">
+          <video src="/images/direccion-de-arte/evidenciaoculta-2025/Evidenciaoculta.mp4" poster="/images/direccion-de-arte/evidenciaoculta-2025/Evidenciaoculta-poster.webp" class="img-fluid" muted loop playsinline preload="none" data-lazy-video></video>
+          <span class="portfolio-card__overlay">
+            <span class="portfolio-card__content">
+              <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">Evidencia Oculta 2025</span>
+              <p class="portfolio-card__excerpt">Dirección de arte para serie televisiva de investigación criminal: diseño de sets, ambientación y supervisión visual para dramatizaciones de casos reales.</p>
+            </span>
+          </span>
+        </a>
+      </div>
+          <div class="col-lg-4">
+        <a class="portfolio-card" href="/todogood-2025/" aria-label="Todo Good 2025">
+          <video src="/images/direccion-de-arte/todogood-2025/Estreno3.mp4" poster="/images/direccion-de-arte/todogood-2025/Estreno3-poster.webp" class="img-fluid" muted loop playsinline preload="none" data-lazy-video></video>
+          <span class="portfolio-card__overlay">
+            <span class="portfolio-card__content">
+              <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">Todo Good 2025</span>
+              <p class="portfolio-card__excerpt">Diseño espacial y dirección de arte para estudio de streaming: desarrollo de layout, diseño de sets y supervisión de implementación del nuevo estudio del canal.</p>
+            </span>
+          </span>
+        </a>
+      </div>
+          <div class="col-lg-4">
+        <a class="portfolio-card" href="/lamula-2025/" aria-label="La Mula 2025">
+          <video src="/images/direccion-de-arte/lamula-2025/lamulaprograma.mp4" poster="/images/direccion-de-arte/lamula-2025/lamulaprograma-poster.webp" class="img-fluid" muted loop playsinline preload="none" data-lazy-video></video>
+          <span class="portfolio-card__overlay">
+            <span class="portfolio-card__content">
+              <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">La Mula 2025</span>
+              <p class="portfolio-card__excerpt">Diseño espacial y dirección de arte para set de streaming: desarrollo de identidad visual y sistema escenográfico para el lanzamiento audiovisual de La Mula.</p>
+            </span>
+          </span>
+        </a>
+      </div>
+          <div class="col-lg-4">
+        <a class="portfolio-card" href="/esb-pgl-wallachia-season-1/" aria-label="PGL Wallachia Season 1">
+          <video src="/images/direccion-de-arte/pgl-wallachia-season-1/Wallachia1.mp4" poster="/images/direccion-de-arte/pgl-wallachia-season-1/Wallachia1-poster.webp" class="img-fluid" muted loop playsinline preload="none" data-lazy-video></video>
+          <span class="portfolio-card__overlay">
+            <span class="portfolio-card__content">
+              <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">PGL Wallachia Season 1</span>
+              <p class="portfolio-card__excerpt">Dirección de arte y diseño de set para broadcast de esports: desarrollo de escenografía temática alineada al branding de la liga PGL Wallachia 2024.</p>
+            </span>
+          </span>
+        </a>
+      </div>
+          <div class="col-lg-4">
+        <a class="portfolio-card" href="/canalya-2025/" aria-label="Canal Ya 2025">
+          <video src="/images/direccion-de-arte/canalya-2025/Canalya-Streaming(1).mp4" poster="/images/direccion-de-arte/canalya-2025/Canalya-Streaming(1)-poster.webp" class="img-fluid" muted loop playsinline preload="none" data-lazy-video></video>
+          <span class="portfolio-card__overlay">
+            <span class="portfolio-card__content">
+              <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">Canal Ya 2025</span>
+              <p class="portfolio-card__excerpt">Diseño conceptual de set para canal de streaming periodístico: desarrollo de sistema escenográfico adaptable para producción digital en vivo.</p>
+            </span>
+          </span>
+        </a>
+      </div>
+          <!-- prerender:end -->
+        </div>
       </div>
     </section>
 
@@ -1231,6 +1300,8 @@
 
     async function renderPortfolio() {
       const grid = document.getElementById('portfolio-grid');
+      // Tarjetas ya escritas en el HTML por scripts/prerender.py: no duplicar
+      if (grid && grid.dataset.prerendered === 'true') return;
       if (!grid) return;
 
       const loaded = await Promise.all(
