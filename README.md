@@ -29,6 +29,8 @@ El script:
    y `/en/<proyecto>/index.html` (entre los comentarios `<!-- prerender:start … -->` y `<!-- prerender:end -->`).
 2. Escribe las tarjetas de proyectos dentro de `#portfolio-grid` en `index.html`, `en/index.html`,
    `proyectos.html` y `en/proyectos.html`, siguiendo la lista `const projects = [...]` de cada página.
+3. Agrega a cada página de proyecto su bloque de datos estructurados JSON-LD (schema.org `CreativeWork`)
+   con nombre, descripción (el `excerpt` / `excerpt_en`), imagen y autora.
 
 Se puede correr las veces que haga falta: reemplaza lo que generó la vez anterior. No edites a mano lo
 que está entre esos comentarios, porque se sobrescribe.

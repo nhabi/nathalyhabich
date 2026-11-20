@@ -40,30 +40,45 @@ def is_noindex_html(html_path: Path) -> bool:
     return bool(re.search(r"<meta[^>]+name=['\" ]?robots['\" ]?[^>]+content=['\" ][^'\"]*noindex", head))
 
 
+# Páginas internas que no deben aparecer en buscadores
+EXCLUDED_FILES = {"propuestas.html", "404.html"}
+
+
+def is_redirect_html(html_path: Path) -> bool:
+    try:
+        head = html_path.read_text(encoding="utf-8", errors="ignore")[:3000].lower()
+    except OSError:
+        return False
+    return 'http-equiv="refresh"' in head or "http-equiv='refresh'" in head
+
+
 def discover_static_pages(repo_root: Path) -> set[str]:
+    """Páginas en español (raíz) y en inglés (/en/).
+
+    GitHub Pages usa `permalink: /:title/` (_config.yml): `slug.html` se publica como `/slug/`.
+    Si además existe `slug/index.html`, la que se publica en `/slug/` es la carpeta, así que se evalúa
+    esa (por ejemplo, si tiene noindex la URL queda fuera).
+    """
     urls: set[str] = set()
 
-    directory_routes: set[str] = set()
-    for index_file in repo_root.glob("*/index.html"):
-        if is_noindex_html(index_file):
+    for prefix_dir, prefix in ((repo_root, ""), (repo_root / "en", "/en")):
+        if not prefix_dir.is_dir():
             continue
-        route = normalize_path(f"/{index_file.parent.name}/index.html")
-        directory_routes.add(route)
-        urls.add(route)
+        routes: dict[str, Path] = {}
+        for html_file in prefix_dir.glob("*.html"):
+            if html_file.name in EXCLUDED_FILES:
+                continue
+            route = f"{prefix}/" if html_file.name == "index.html" else f"{prefix}/{html_file.stem}/"
+            routes.setdefault(route, html_file)
+        for index_file in prefix_dir.glob("*/index.html"):
+            if prefix == "" and index_file.parent.name == "en":
+                continue
+            routes[f"{prefix}/{index_file.parent.name}/"] = index_file  # la carpeta tiene prioridad
 
-    for html_file in repo_root.glob("*.html"):
-        if is_noindex_html(html_file):
-            continue
-        if html_file.name == "index.html":
-            urls.add("/")
-            continue
-
-        # Evita duplicar /slug.html cuando ya existe /slug/
-        route_with_slash = normalize_path(f"/{html_file.stem}/index.html")
-        if route_with_slash in directory_routes:
-            continue
-
-        urls.add(f"/{html_file.name}")
+        for route, served in routes.items():
+            if is_noindex_html(served) or is_redirect_html(served):
+                continue
+            urls.add(route)
 
     return urls
 

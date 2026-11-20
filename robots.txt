@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /propuestas.html
+Disallow: /propuestas/
+
+Sitemap: https://nathalyhabich.me/sitemap.xml

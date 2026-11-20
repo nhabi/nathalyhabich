@@ -9,6 +9,7 @@ Qué hace:
      que genera project-gallery.js. El JS detecta data-prerendered="true" y solo activa galería y lightbox.
   2. Tarjetas de proyectos del home y de proyectos.html (ES y EN): escribe las tarjetas dentro de
      #portfolio-grid con el mismo HTML que genera el JS de cada página.
+  3. Agrega a cada página de proyecto su bloque de datos estructurados JSON-LD (schema.org CreativeWork).
 
 Es idempotente: se puede correr las veces que haga falta; reemplaza lo que generó la vez anterior.
 
@@ -23,8 +24,10 @@ import re
 import sys
 import time
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
+SITE = "https://nathalyhabich.me"
 
 START = "<!-- prerender:start (generado por scripts/prerender.py, no editar a mano) -->"
 END = "<!-- prerender:end -->"
@@ -117,10 +120,47 @@ def project_markup(data: dict, copy: str | None, indent: str) -> tuple[str, str]
     return hero, grid
 
 
-def prerender_project_page(page: Path, data: dict, copy: str | None) -> bool:
+def absolute_url(path: str) -> str:
+    return SITE + quote(path, safe="/:%()")
+
+
+def creative_work_jsonld(text: str, data: dict, lang: str, folder: str) -> str:
+    media = data.get("media") or []
+    first_image = next((m for m in media if m.get("type") == "image"), None)
+    first_video = next((m for m in media if m.get("type") == "video"), None)
+    if first_image:
+        image = absolute_url(first_image["src"])
+    elif first_video:
+        image = absolute_url(poster_for(first_video["src"]))
+    else:
+        image = None
+    canonical = re.search(r'<link rel="canonical" href="([^"]+)"', text)
+    url = canonical.group(1) if canonical else f"{SITE}{'/en' if lang == 'en' else ''}/{folder}/"
+    description = (data.get("excerpt_en") if lang == "en" else None) or data.get("excerpt") or ""
+    work = {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": data.get("title", ""),
+        "description": re.sub(r"<[^>]+>", "", description),
+        "url": url,
+        "inLanguage": lang,
+        "author": {"@type": "Person", "name": "Nathaly Habich", "url": f"{SITE}/"},
+    }
+    if image:
+        work["image"] = image
+    payload = json.dumps(work, ensure_ascii=False, indent=2).replace("</", "<\\/")
+    payload = "\n".join("  " + line for line in payload.split("\n"))
+    return f'  {START}\n  <script type="application/ld+json">\n{payload}\n  </script>\n  {END}\n'
+
+
+def prerender_project_page(page: Path, data: dict, copy: str | None, lang: str, folder: str) -> bool:
     text, crlf = read(page)
     original = text
     text = strip_blocks(text)
+    # Datos estructurados (JSON-LD CreativeWork) al final del <head>
+    head_end = text.find("</head>")
+    if head_end != -1:
+        text = text[:head_end] + creative_work_jsonld(text, data, lang, folder) + text[head_end:]
     m = re.search(r'\n([ \t]*)<div class="row" id="lightgallery"></div>', text)
     if not m:
         print(f"  ! {page.relative_to(ROOT)}: no encontré <div id=\"lightgallery\">, la salto")
@@ -151,7 +191,7 @@ def run_projects() -> int:
         for lang, page in (("es", folder / "index.html"), ("en", ROOT / "en" / folder.name / "index.html")):
             if not page.exists():
                 continue
-            if prerender_project_page(page, data, copies.get(lang)):
+            if prerender_project_page(page, data, copies.get(lang), lang, folder.name):
                 print(f"  ✓ {page.relative_to(ROOT).as_posix()}")
             count += 1
     return count
