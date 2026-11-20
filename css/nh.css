@@ -54,10 +54,11 @@ body.nh {
   -webkit-font-smoothing: antialiased;
 }
 @media (min-width: 1200px) { body.nh { font-size: 17px; } }
-body.nh img, body.nh video { display: block; max-width: 100%; }
-body.nh a { color: inherit; }
-body.nh h1, body.nh h2, body.nh h3 { margin: 0; font-weight: inherit; }
-body.nh :focus-visible { outline: 2px solid var(--color-magenta); outline-offset: 3px; }
+:where(body.nh) :where(img, video) { display: block; max-width: 100%; }
+:where(body.nh) :where(a) { color: inherit; }
+/* :where() deja estas reglas con especificidad 0: cualquier clase de componente las reemplaza */
+:where(body.nh) :where(h1, h2, h3) { margin: 0; font-weight: inherit; }
+:where(body.nh) :focus-visible { outline: 2px solid var(--color-magenta); outline-offset: 3px; }
 .contenedor { width: 100%; max-width: var(--ancho-max); margin: 0 auto; padding: 0 var(--margen); }
 .solo-lectores { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .seccion { padding: var(--seccion) 0; position: relative; overflow-x: clip; }

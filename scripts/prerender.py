@@ -7,8 +7,9 @@ Qué hace:
      escribe el bloque del video principal + cuadro resumen (tomado de <proyecto>/project-gallery.js)
      y la grilla de fotos/videos (tomada de <proyecto>/media.json), con las mismas etiquetas y clases
      que genera project-gallery.js. El JS detecta data-prerendered="true" y solo activa galería y lightbox.
-  2. Tarjetas de proyectos del home y de proyectos.html (ES y EN): escribe las tarjetas dentro de
-     #portfolio-grid con el mismo HTML que genera el JS de cada página.
+  2. Grillas de proyectos (home, /tv/, /streaming/, /esports-y-eventos/ y proyectos.html, ES y EN):
+     escribe las tarjetas de cada <div class="grilla" data-proyectos="..."> con el mismo HTML que
+     genera js/nh-grilla.js. Nombre y cliente salen de data/proyectos.json.
   3. Agrega a cada página de proyecto su meta description (el excerpt) y su bloque de datos
      estructurados JSON-LD (schema.org CreativeWork). En las páginas en inglés traduce los alts.
 
@@ -33,15 +34,6 @@ SITE = "https://nathalyhabich.me"
 START = "<!-- prerender:start (generado por scripts/prerender.py, no editar a mano) -->"
 END = "<!-- prerender:end -->"
 BLOCK_RE = re.compile(r"[ \t]*" + re.escape(START) + r".*?" + re.escape(END) + r"\n?", re.S)
-
-# Páginas con tarjetas de proyectos: idioma y si aceptan proyectos sin video (usan la primera imagen)
-LISTING_PAGES = {
-    "index.html": {"lang": "es", "allow_image": False},
-    "en/index.html": {"lang": "en", "allow_image": False},
-    "proyectos.html": {"lang": "es", "allow_image": True},
-    "en/proyectos.html": {"lang": "en", "allow_image": True},
-}
-
 
 def attr(value: str) -> str:
     return html.escape(value or "", quote=True)
@@ -74,7 +66,8 @@ def write(path: Path, text: str, crlf: bool) -> None:
 def strip_blocks(text: str) -> str:
     text = BLOCK_RE.sub("", text)
     text = text.replace(' data-prerendered="true"', "")
-    return re.sub(r'(<div class="row" id="(?:lightgallery|portfolio-grid)">)\s*</div>', r"\1</div>", text)
+    text = re.sub(r'(<div class="row" id="(?:lightgallery|portfolio-grid)">)\s*</div>', r"\1</div>", text)
+    return re.sub(r'(<div class="grilla" data-proyectos="[^"]*" data-lang="(?:es|en)">)\s*</div>', r"\1</div>", text)
 
 
 # --------------------------------------------------------------------------- páginas de proyecto
@@ -218,74 +211,72 @@ def run_projects() -> int:
     return count
 
 
-# --------------------------------------------------------------------------- tarjetas (home / proyectos)
+# --------------------------------------------------------------------------- grillas de proyectos
 
-def card_markup(data: dict, lang: str, allow_image: bool) -> str | None:
-    media = data.get("media") or []
-    first_video = next((m for m in media if m.get("type") == "video"), None)
-    first_image = next((m for m in media if m.get("type") == "image"), None)
-    preview = first_video or (first_image if allow_image else None)
-    title, href = data.get("title"), data.get("href")
-    if not preview or not href or not title:
-        return None
-    if lang == "en":
-        excerpt = data.get("excerpt_en") or data.get("excerpt") or ""
-        href = data.get("href_en") or (f"/en{href}" if href.startswith("/") else href)
+GRILLA_RE = re.compile(r'\n([ \t]*)<div class="grilla" data-proyectos="([^"]*)" data-lang="(es|en)"></div>')
+
+
+def es_ancha(i: int, total: int) -> bool:
+    """Ritmo: una ancha y dos medianas; si al final sobran dos, van las dos medianas (igual que js/nh-grilla.js)."""
+    if total % 3 == 2 and i >= total - 2:
+        return False
+    return i % 3 == 0
+
+
+def card_html(slug: str, datos: dict, media: dict, i: int, total: int, lang: str) -> str:
+    """Mantener idéntico a tarjeta() de js/nh-grilla.js."""
+    nombre = datos.get("nombre_en") if lang == "en" and datos.get("nombre_en") else datos["nombre"]
+    href = ("/en/" if lang == "en" else "/") + slug + "/"
+    items = media.get("media") or []
+    video = next((m for m in items if m.get("type") == "video"), None)
+    foto = next((m for m in items if m.get("type") == "image"), None)
+    if video:
+        visual = (f'<video src="{attr(video["src"])}" poster="{attr(poster_for(video["src"]))}" '
+                  f'muted loop playsinline preload="none" data-lazy-video></video>')
+    elif foto:
+        visual = f'<img src="{attr(foto["src"])}" alt="{attr(nombre)}" loading="lazy" decoding="async">'
     else:
-        excerpt = data.get("excerpt") or ""
-    # Igual que el JS: título y excerpt se insertan tal cual (innerHTML)
-    if preview.get("type") == "video":
-        src = preview["src"]
-        media_html = (f'<video src="{src}" poster="{poster_for(src)}" class="img-fluid" muted loop playsinline '
-                      f'preload="none" data-lazy-video></video>')
-    else:
-        media_html = f'<img src="{preview["src"]}" class="img-fluid" alt="{title}" loading="lazy">'
-    excerpt_html = f'<p class="portfolio-card__excerpt">{excerpt}</p>' if excerpt else ""
-    return (
-        f'<div class="col-lg-4">\n'
-        f'        <a class="portfolio-card" href="{href}" aria-label="{title}">\n'
-        f'          {media_html}\n'
-        f'          <span class="portfolio-card__overlay">\n'
-        f'            <span class="portfolio-card__content">\n'
-        f'              <span class="btn btn-outline-white py-2 px-4 portfolio-card__button">{title}</span>\n'
-        f'              {excerpt_html}\n'
-        f'            </span>\n'
-        f'          </span>\n'
-        f'        </a>\n'
-        f'      </div>'
-    )
+        visual = ""
+    clase = "tarjeta tarjeta--ancha" if es_ancha(i, total) else "tarjeta"
+    return (f'<a class="{clase}" href="{href}">'
+            f'<div class="tarjeta__media">{visual}</div>'
+            f'<p class="tarjeta__pie"><span class="tarjeta__numero" aria-hidden="true">{i + 1:02d}</span>'
+            f'<span class="tarjeta__nombre">{attr(nombre)}</span>'
+            f'<span class="tarjeta__cliente">— {attr(datos["cliente"])}</span></p></a>')
 
 
-def run_listings() -> int:
+def run_grillas() -> int:
+    """Escribe las tarjetas de cada <div class="grilla" data-proyectos="..." data-lang="..."> del sitio."""
+    catalogo = json.loads((ROOT / "data" / "proyectos.json").read_text(encoding="utf-8"))["proyectos"]
     count = 0
-    for rel, cfg in LISTING_PAGES.items():
-        page = ROOT / rel
-        if not page.exists():
+    for page in sorted(ROOT.rglob("*.html")):
+        rel = page.relative_to(ROOT).as_posix()
+        if rel.startswith(("brand/", "_originales/", "fonts/")):
             continue
         text, crlf = read(page)
+        if 'class="grilla" data-proyectos=' not in text:
+            continue
         original = text
         text = strip_blocks(text)
-        lst = re.search(r"const projects = \[(.*?)\];", text, re.S)
-        m = re.search(r'\n([ \t]*)<div class="row" id="portfolio-grid"></div>', text)
-        if not lst or not m:
-            print(f"  ! {rel}: no encontré la lista de proyectos o #portfolio-grid, la salto")
-            continue
-        indent = m.group(1)
-        cards = []
-        for path in re.findall(r"'([^']+media\.json)'", lst.group(1)):
-            media_file = ROOT / path.lstrip("/")
-            if not media_file.exists():
-                print(f"  ! {rel}: falta {path}")
-                continue
-            card = card_markup(json.loads(media_file.read_text(encoding="utf-8")), cfg["lang"], cfg["allow_image"])
-            if card:
-                cards.append(f"{indent}  {card}")
-        new = (f'\n{indent}<div class="row" id="portfolio-grid" data-prerendered="true">\n'
-               f"{indent}  {START}\n" + "\n".join(cards) + f"\n{indent}  {END}\n{indent}</div>")
-        text = text[:m.start()] + new + text[m.end():]
+
+        def reemplazar(m: re.Match) -> str:
+            indent, lista, lang = m.group(1), m.group(2), m.group(3)
+            pedidos = [s.strip() for s in lista.split(",") if s.strip()]
+            slugs = [s for s in pedidos if s in catalogo]
+            faltan = [s for s in pedidos if s not in catalogo]
+            if faltan:
+                print(f"  ! {rel}: no están en data/proyectos.json: {', '.join(faltan)}")
+            cards = []
+            for n, slug in enumerate(slugs):
+                media = json.loads((ROOT / slug / "media.json").read_text(encoding="utf-8"))
+                cards.append(f"{indent}  " + card_html(slug, catalogo[slug], media, n, len(slugs), lang))
+            return (f'\n{indent}<div class="grilla" data-proyectos="{lista}" data-lang="{lang}" data-prerendered="true">\n'
+                    f"{indent}  {START}\n" + "\n".join(cards) + f"\n{indent}  {END}\n{indent}</div>")
+
+        text = GRILLA_RE.sub(reemplazar, text)
         if text != original:
             write(page, text, crlf)
-            print(f"  ✓ {rel} ({len(cards)} tarjetas)")
+            print(f"  ✓ {rel}")
         count += 1
     return count
 
@@ -293,9 +284,9 @@ def run_listings() -> int:
 def main() -> int:
     print("Páginas de proyecto:")
     n1 = run_projects()
-    print("Tarjetas de proyectos:")
-    n2 = run_listings()
-    print(f"Listo: {n1} páginas de proyecto y {n2} páginas con tarjetas revisadas.")
+    print("Grillas de proyectos:")
+    n2 = run_grillas()
+    print(f"Listo: {n1} páginas de proyecto y {n2} páginas con grilla revisadas.")
     return 0
 
 
