@@ -92,6 +92,10 @@ def discover_project_pages(repo_root: Path) -> set[str]:
         except json.JSONDecodeError:
             continue
 
+        page = media_file.parent / "index.html"
+        if page.exists() and (is_noindex_html(page) or is_redirect_html(page)):
+            continue  # páginas fuera del sitio (noindex) no van al sitemap
+
         href = data.get("href")
         if isinstance(href, str) and href.strip():
             urls.add(normalize_path(href))
