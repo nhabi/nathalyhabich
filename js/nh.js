@@ -87,6 +87,12 @@
       var media = t.querySelector('.tarjeta__media');
       if (media) { media.style.removeProperty('--mx'); media.style.removeProperty('--my'); }
     });
+    // Al hacer scroll sin mover el mouse, el elemento bajo el puntero cambia sin mouseout
+    window.addEventListener('scroll', function () {
+      if (!activo) return;
+      var debajo = document.elementFromPoint(x, y);
+      if (!debajo || !debajo.closest(objetivos)) { activo = false; cursor.classList.remove('activo'); arrancar(); }
+    }, { passive: true });
     document.addEventListener('mousemove', function (e) {
       var media = e.target.closest && e.target.closest('.tarjeta__media');
       if (!media || reducir) return;

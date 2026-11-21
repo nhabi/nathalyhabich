@@ -266,6 +266,7 @@ body.nh-menu-abierto { overflow: hidden; }
 .cierre p { font-family: var(--font-titulos); font-size: 22px; line-height: 1.4; margin: 0 0 var(--s-5); }
 @media (min-width: 1200px) { .cierre p { font-size: 30px; } }
 .cierre .correo { display: inline-block; font-family: var(--font-texto); font-size: 17px; margin-bottom: var(--s-6); border-bottom: 1px solid var(--color-magenta); text-decoration: none; }
+.cierre__acciones { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--s-5) var(--s-7); }
 
 /* ==========================================================================
    Contacto
